@@ -1,0 +1,124 @@
+@import "keep-react/css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Estilo para el track del scrollbar */
+*::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+/* Estilo para el scrollbar en general */
+*::-webkit-scrollbar {
+  width: 6px; /* Grosor del scrollbar vertical */
+  height: 6px; /* Grosor del scrollbar horizontal */
+  background-color: #f5f5f5;
+}
+
+/* Estilo para el thumb del scrollbar */
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgb(214, 214, 214);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.carousel_dinamic {
+  height: 20rem !important;
+}
+
+body {
+  font-family: var(--font-poppins);
+  overflow-x: hidden;
+  color: #3D3D3D;
+}
+
+.floating-image {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.card {
+  transform-style: preserve-3d;
+	
+}
+.front{
+  backface-visibility: hidden;
+}
+.back{
+  transform: rotateY(180deg);
+}
+.container:hover .card{
+  transform: rotateY(180deg);
+}
+
+
+.scrollDown span::before {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: translateY(-10px) rotate(135deg);
+  left: -6px;
+  margin-top: 10px;
+  opacity: 0;
+  animation: ani 1.8s infinite linear;
+}
+
+
+
+.scrollDown span::after {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border: none;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: translateY(-10px) rotate(135deg);
+  left: -6px;
+  margin-top: 10px;
+  opacity: 0;
+
+  animation: ani 1.8s infinite linear;
+  animation-delay: 0.8s;
+}
+
+@keyframes ani {
+  0% {
+      margin-top: 10px;
+      opacity: 0;
+  }
+
+  50% {
+      margin-top: 25px;
+      opacity: 1;
+  }
+
+  100% {
+      margin-top: 40px;
+      opacity: 0;
+  }
+}
+
+

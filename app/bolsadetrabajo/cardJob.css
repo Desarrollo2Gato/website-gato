@@ -1,0 +1,34 @@
+.slick-slide{
+    transform: scale(0.75);
+    transition: all 0.4s ease-in-out;
+  
+  }
+  .slick-track{
+    display: flex !important;
+    align-items: center !important;
+  }
+  /* .slick-slide .detalle{
+    display: none;
+  } */
+  
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+  
+  .slick-center{
+    transform: scale(0.95);
+  }
+  /* .slick-center .detalle{
+    display: flex;
+  } */
+  @media (max-width: 768px) {
+    .slick-slide{
+      transform: scale(0.95);
+    }
+    .slick-slide > div {
+      margin: 0 auto;
+    }
+  /*   .slick-slide .detalle{
+      display: flex;
+    } */
+  }

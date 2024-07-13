@@ -1,0 +1,37 @@
+/* slider plans*/
+
+.slick-slide{
+    transform: scale(0.75);
+    transition: all 0.4s ease-in-out;
+  }
+  .slick-slide .detalle{
+    display: none;
+  }
+  
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+  
+  .slick-center{
+    transform: scale(0.9);
+  }
+  .slick-center .detalle{
+    display: flex;
+  }
+  
+  @media (max-width: 768px) {
+    .slick-slide{
+      transform: scale(0.9);
+    }
+    .slick-slide .detalle{
+      display: flex;
+    }
+  }
+  @media (min-width: 1536px) {
+    .slick-slide{
+      transform: scale(0.9);
+    }
+    .slick-slide .detalle{
+      display: flex;
+    }
+  }
