@@ -98,13 +98,15 @@ function BannerAbout() {
                     className="front w-full min-h-[250px] max-h-[500px] lg:min-h-[350px] object-cover aspect-square shadow-md"
                     src="https://i.pinimg.com/originals/0a/ec/7b/0aec7b72bbf7111392c9fdb5341e8700.jpg"
                     alt="Atención Personalizada"
+                    title="Atención personalizada"
                   />
                   <div className="back absolute opacity-0 group-hover:opacity-100 w-full h-full">
                     <img
                       loading="lazy"
                       className=" w-full h-full object-cover aspect-square shadow-md"
                       src="https://i.pinimg.com/originals/0a/ec/7b/0aec7b72bbf7111392c9fdb5341e8700.jpg"
-                      alt="Atención Personalizada"
+                      alt="Atención Personalizada fondo"
+                      title="Atención Personalizada fondo"
                     />
                     <div className="absolute top-0 left-0 bg-[#6D28D9] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
                       <p>
@@ -136,13 +138,15 @@ function BannerAbout() {
                     className="front w-full min-h-[250px] max-h-[500px] lg:min-h-[350px] object-cover aspect-square shadow-md"
                     src="https://i.pinimg.com/originals/be/3e/c0/be3ec039bbfc3736c73736f19fc935dc.jpg"
                     alt="Experiencia"
+                    title="Experiencia"
                   />
                   <div className="back absolute opacity-0 group-hover:opacity-100 w-full h-full">
                     <img
                       loading="lazy"
                       className=" w-full h-full object-cover aspect-square shadow-md"
                       src="https://i.pinimg.com/originals/be/3e/c0/be3ec039bbfc3736c73736f19fc935dc.jpg"
-                      alt="Experiencia"
+                      alt="Experiencia fondo"
+                      title="Experiencia fondo"
                     />
                     <div className="absolute top-0 left-0 bg-[#6D28D9] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
                       <p>
@@ -174,13 +178,15 @@ function BannerAbout() {
                     className="front w-full min-h-[250px] max-h-[500px] lg:min-h-[350px] object-cover aspect-square shadow-md"
                     src="https://i.pinimg.com/736x/64/a1/c7/64a1c71b6f8274d4a920c8457c083f9b.jpg"
                     alt="Transparencia y confianza"
+                    title="Transparencia y confianza"
                   />
                   <div className="back absolute opacity-0 group-hover:opacity-100 w-full h-full">
                     <img
                       loading="lazy"
                       className=" w-full h-full object-cover aspect-square shadow-md"
                       src="https://i.pinimg.com/736x/64/a1/c7/64a1c71b6f8274d4a920c8457c083f9b.jpg"
-                      alt="Transparencia y confianza"
+                      alt="Transparencia y confianza fondo"
+                      title="Transparencia y confianza fondo"
                     />
                     <div className="absolute top-0 left-0 bg-[#6D28D9] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
                       <p>

@@ -49,7 +49,7 @@ const CardNew = ({ post }: { post: Post }) => {
             loading="lazy"
             className="w-full h-full object-cover"
             src={post?.acf?.banner}
-            alt="imagen new entrada"
+            alt={'Imagen sobre ' + post.acf?.titulo}
           />
           <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-t from-black flex flex-col justify-between p-2 lg:p-4">
             <div className="flex gap-1 overflow-x-auto overflow-y-hidden whitespace-nowrap">
@@ -78,7 +78,8 @@ const CardNew = ({ post }: { post: Post }) => {
                     loading="lazy"
                     className="w-4 h-4 md:w-5 md:h-5 aspect-square rounded-full object-cover"
                     src={post?.acf["autor-profile"]}
-                    alt="autor"
+                    alt={'Imagen del autor: ' + post.acf["autor-profile"]}
+                    title={'Imagen del autor: ' + post.acf["autor-profile"]}
                   />
                   <span className="truncate">{post?.acf["autor-name"]}</span>
                 </div>

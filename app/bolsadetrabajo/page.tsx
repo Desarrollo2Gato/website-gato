@@ -1,6 +1,6 @@
 import React from "react";
 import BolsaDeTrabajo from "./bolsadetrabajo";
-import "./cardJob.css";
+import "@/app/components/slider3items.css";
 import { Metadata } from "next";
 import Head from "next/head";
 

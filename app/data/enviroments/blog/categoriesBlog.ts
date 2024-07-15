@@ -5,7 +5,7 @@ export const Categories: Category[] = [
       name: "Marketing Digital",
       path: "marketing-digital",
       metadata: {
-        title: "Gato - Blog - Marketing Digital",
+        title: "Blog: Marketing Digital",
         description: "Todo sobre marketing digital",
         keywords: ["marketing", "digital", "seo", "redes sociales"],
         openGraph: {
@@ -20,7 +20,7 @@ export const Categories: Category[] = [
       name: "Diseño Web",
       path: "diseno-web",
       metadata: {
-        title: "Gato - Blog - Diseño Web",
+        title: "Blog: Diseño Web",
         description: "Las últimas tendencias en diseño web",
         keywords: ["diseño web", "ux", "ui", "responsive"],
         openGraph: {
@@ -35,7 +35,7 @@ export const Categories: Category[] = [
       name: "Desarrollo de Software",
       path: "desarrollo-software",
       metadata: {
-        title: "Gato - Blog - Desarrollo de Software",
+        title: "Blog: Desarrollo de Software",
         description: "Conceptos y prácticas en desarrollo de software",
         keywords: [
           "desarrollo de software",
@@ -56,7 +56,7 @@ export const Categories: Category[] = [
       name: "Desarrollo Móvil",
       path: "desarrollo-movil",
       metadata: {
-        title: "Gato - Blog - Desarrollo Móvil",
+        title: "Blog: Desarrollo Móvil",
         description: "Todo lo que necesitas saber sobre desarrollo móvil",
         keywords: ["desarrollo móvil", "apps", "iOS", "Android"],
         openGraph: {
@@ -71,7 +71,7 @@ export const Categories: Category[] = [
       name: "Branding",
       path: "branding",
       metadata: {
-        title: "Gato - Blog - Branding",
+        title: "Blog: Branding",
         description: "Estrategias y consejos sobre branding",
         keywords: [
           "branding",
@@ -80,7 +80,7 @@ export const Categories: Category[] = [
           "estrategia de marca",
         ],
         openGraph: {
-          title: "Branding",
+          title: "Blog: Branding",
           description:
             "Aprende a construir y gestionar la identidad de tu marca.",
           type: "article",

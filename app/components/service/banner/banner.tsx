@@ -119,13 +119,13 @@ const banner = (prop: Props) => {
               className={"w-full lg:w-1/3"}
             >
               <div className="flex flex-col gap-5 lg:gap-4 xl:gap-8  md:justify-start items-center md:items-start">
-                <h2 className="uppercase text-4xl sm:text-5xl 2xl:text-7xl font-bold w-full text-center md:text-left">
+                <h1 className="uppercase text-4xl sm:text-5xl 2xl:text-7xl font-bold w-full text-center md:text-left">
                   {prop.service}
                   <span className={`text-[${mainColor}]`}>
                     {" "}
                     {prop.service2}
                   </span>
-                </h2>
+                </h1>
                 <p className="w-full text-center md:text-left text-lg sm:text-xl lg:text-2xl text-[#666666]">
                   {prop.description}
                 </p>
@@ -147,7 +147,8 @@ const banner = (prop: Props) => {
                 <img
                   loading="lazy"
                   src={prop.banner}
-                  alt="imagen banner"
+                  alt={'Imagen del banner de ' + prop.service}
+                  title={'Imagen del banner de ' + prop.service}
                   className=" h-full w-full object-cover rounded-lg "
                 />
               </RevealWrapper>

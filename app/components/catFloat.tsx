@@ -54,7 +54,8 @@ const catFloat: React.FC<Props> = ({ openPopup }) => {
       <img
         onClick={openPopup}
         src="/gatofloat.png"
-        alt="gato"
+        alt="Gato saludando"
+        title="Gato saludando"
         className={` cursor-pointer h-[70px] md:h-[100px] drop-shadow-xl transition-transform duration-500 ${
           isVisible ? "translate-x-0" : "translate-x-full"
         }`}

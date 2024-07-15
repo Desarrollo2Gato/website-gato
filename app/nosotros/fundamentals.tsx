@@ -5,10 +5,15 @@ const fundamentals = () => {
   return (
     <div className="w-full bg-gray-100">
       <div className="w-full max-w-[1920px] mx-auto xl:px-32 md:px-24 px-8 py-8 lg:py-16 justify-between">
-        <RevealWrapper origin="bottom" duration={1000}>
-          <h1 className="md:text-[3rem] text-[2rem] text-center mb-8 uppercase">Quienes Somos</h1>
+      <RevealWrapper origin="top" duration={1000} className={'mb-3'}>
+          <h2
+            className="text-3xl text-center
+         text-[#3D3D3D] font-medium uppercase "
+          >
+            Nuestros fundamentos
+          </h2>
         </RevealWrapper>
-        <div className=" flex flex-col lg:flex-row gap-6 md:gap-8  lg:gap-12 justify-between">
+        <div className=" flex flex-col lg:flex-row gap-6 md:gap-8  lg:gap-12 justify-between mt-8">
           <div className="w-full lg:w-1/3 lg:max-w-[350px]">
             <div className="h-full w-full flex flex-col gap-4 items-center justify-between text-[#3D3D3D]">
               <RevealWrapper origin="left" duration={1500}>
@@ -49,6 +54,8 @@ const fundamentals = () => {
                     className="rounded-md shadow-md w-full h-auto aspect-video lg:max-h-[250px] object-cover"
                     src="https://i.pinimg.com/736x/fc/cf/b0/fccfb08b7b601c7b23e738d690ff3c69.jpg"
                     alt="misión"
+                    title="misión"
+
                   />
                 </div>
               </RevealWrapper>
@@ -117,6 +124,8 @@ const fundamentals = () => {
                     loading="lazy"
                     className="rounded-md shadow-md w-full h-auto aspect-video lg:max-h-[250px] object-cover"
                     src="https://i.pinimg.com/originals/27/0e/3e/270e3e5b8ed666060491db3bf0f7cedd.jpg"
+                    alt="Misión"
+                    title="Misión"
                   />
                 </div>
               </RevealWrapper>
@@ -184,7 +193,8 @@ const fundamentals = () => {
                     loading="lazy"
                     className="rounded-md shadow-md w-full h-auto aspect-video lg:max-h-[250px] object-cover"
                     src="https://i.pinimg.com/736x/10/96/18/10961839a65ced06476a13f79d29c628.jpg"
-                    alt="misión"
+                    alt="valores"
+                    title="valores"
                   />
                 </div>
               </RevealWrapper>

@@ -106,13 +106,13 @@ function CollagePortfolio() {
     <section className="w-full  xl:px-24 md:px-20 sm:px-12 p-8 md:py-16">
       <RevealWrapper duration={1500} origin="top">
         <div>
-          <h2
+          <h1
             title="GATO - Portafolio de proyectos"
             className="text-4xl
             text-[#3D3D3D] font-medium uppercase mb-8"
           >
             Portafolio
-          </h2>
+          </h1>
         </div>
       </RevealWrapper>
       <RevealWrapper duration={1500} origin="left">

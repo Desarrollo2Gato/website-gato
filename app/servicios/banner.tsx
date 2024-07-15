@@ -21,6 +21,14 @@ function BannerServices() {
         <div className="absolute max-w-[1920px] w-full h-full flex flex-col mx-auto xl:px-32 lg:px:16 px-8 py-16 items-center justify-center text-center text-white uppercase">
         <h2 className="text-[#C6C6C6]  md:text-2xl mb-4 md:mb-8 underline">Soluciones digitales de alta calidad.</h2>
         <h1 className="text-lg md:text-3xl lg:text-5xl font-medium"> Descubre nuestros servicios y comienza tu transformación hoy mismo</h1>
+        <div className="absolute w-full bottom-4 ">
+          <a
+            href="#detail"
+            className="hidden scrollDown opacity-100 relative  w-[55px] h-[80px] xl:w-[85px] xl:h-[110px] md:flex justify-center  mx-auto "
+          >
+            <span className="bg-white relative"></span>
+          </a>
+        </div>
         </div>
       </div>
       

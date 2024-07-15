@@ -1,6 +1,46 @@
 import { Metadata } from "next";
 import About from "./about";
-import Head from "next/head";
+import { Organization, WebPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Acerca de Nosotros - GATO',
+  url: 'https://gato.pe/nosotros',
+  description: 'Conoce más sobre GATO, nuestra misión, visión, y el equipo que impulsa nuestras soluciones de marketing digital y desarrollo de software.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Agencia GATO',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://gato.pe/gato-icon.png',
+      width: '60',
+      height: '60',
+    },
+    url: 'https://gato.pe',
+    sameAs: [
+      'https://www.facebook.com/agenciagatope',
+      'https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3',
+      'https://www.linkedin.com/company/agenciagato/',
+    ],
+  },
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Agencia GATO',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://gato.pe/gato-icon.png',
+      width: '60',
+      height: '60',
+    },
+    url: 'https://gato.pe',
+    sameAs: [
+      'https://www.facebook.com/agenciagatope',
+      'https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3',
+      'https://www.linkedin.com/company/agenciagato/',
+    ],
+  }
+};
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
@@ -57,6 +97,10 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="w-full  ">
         <About></About>
       </div>

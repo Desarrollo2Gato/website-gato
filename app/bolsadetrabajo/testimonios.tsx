@@ -8,6 +8,7 @@ const Testimonios = () => {
           className=" relative -translate-y-6 h-20 w-20 object-cover rounded-[100%] shadow-sm"
           src="https://i.pinimg.com/originals/c1/06/00/c106004d4e455cce80725708f73efce2.png"
           alt="profile"
+          title="Perfil del testimonio"
         />
         <div>
           <div>

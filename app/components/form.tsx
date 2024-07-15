@@ -192,7 +192,8 @@ function Form({ color }: FormProps) {
               loading="lazy"
               className="h-full object-cover w-full lg:max-w-[85%] rounded-xl shadow-md"
               src="https://i.pinimg.com/originals/6a/8c/f8/6a8cf8cf2c09665f3d5758dc0846231e.jpg"
-              alt="contáctanos"
+              alt="Trabajador de GATOcon celular"
+              title="Trabajador de GATO con celular"
             />
             <div
               className={`hidden bg-[${color}] px-3 py-4 lg:flex lg:flex-col justify-center items-center w-fit lg:h-fit gap-6 shadow-md lg:rounded-none lg:rounded-r-xl  rounded-b-xl`}

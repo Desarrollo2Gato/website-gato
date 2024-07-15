@@ -56,6 +56,9 @@ function About() {
         </div>
 
         <div className="min-w-screen w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
+        <header>
+          <h1 className="sr-only">¿Quiénes Somos?</h1>
+        </header>
           <BannerAbout></BannerAbout>
           <Fundamentals></Fundamentals>
           <Section1></Section1>

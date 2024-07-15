@@ -9,20 +9,20 @@ interface PostProps {
 
 interface Posts {
   id: number;
-    title: {rendered: string}
-    content: { rendered: string };
-    slug: string;
-    acf: {
-      introducion: string;
-      secciones: string[];
-      titulo: string;
-      banner: string;
-      fecha: string;
-      "autor-name": string;
-      "autor-profile": string;
-      descripcion: string;
-      descripcion_corta: string;
-      "descripcion-imagen": string;
+  title: { rendered: string };
+  content: { rendered: string };
+  slug: string;
+  acf: {
+    introducion: string;
+    secciones: string[];
+    titulo: string;
+    banner: string;
+    fecha: string;
+    "autor-name": string;
+    "autor-profile": string;
+    descripcion: string;
+    descripcion_corta: string;
+    "descripcion-imagen": string;
   };
 }
 
@@ -40,7 +40,8 @@ const ContentPost = ({ post }: PostProps) => {
               loading="lazy"
               className="float-left mr-4 mb-4 w-full md:w-1/3 xl:w-2/4 aspect-square object-cover"
               src={post.acf["descripcion-imagen"]}
-              alt={post.acf.titulo}
+              alt={"Imagen de " + post.acf.titulo}
+              title={"Imagen de " + post.acf.titulo}
             />
             <div
               className="mb-4"

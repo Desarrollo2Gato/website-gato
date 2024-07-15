@@ -50,7 +50,8 @@ const Banner: React.FC<PostProps> = ({ post }) => {
           loading="lazy"
           className="w-full h-full object-cover"
           src={post.acf?.banner}
-          alt={post.acf.titulo}
+          alt={"Banner " + post.acf?.titulo}
+          title={"Imagen sobre " + post.acf?.titulo}
         />
 
         <div className="absolute top-0 left-0 w-full h-full bg-[#1E004D] bg-opacity-50 flex justify-start items-end">
@@ -74,16 +75,17 @@ const Banner: React.FC<PostProps> = ({ post }) => {
                   </Link>
                 ))}
               </div>
-              <h2 className="capitalize text-white text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold drop-shadow-xl">
+              <h1 className="capitalize text-white text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold drop-shadow-xl">
                 <Typewriter words={[`${post.title.rendered}`]} typeSpeed={60} />
-              </h2>
+              </h1>
               <div className="py-4 text-[#CACACA] flex gap-2 lg:gap-4 md:text-lg text-sm ">
                 <div className="flex gap-1 lg:gap-2 items-center">
                   <img
                     loading="lazy"
                     className="w-5 h-5 md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] aspect-square rounded-full object-cover"
                     src={post.acf["autor-profile"]}
-                    alt={post.acf['autor-name']}
+                    alt={'Perfil de '+post.acf["autor-name"]}
+                    title={'Imagen del autor(a):' + post.acf["autor-name"]}
                   />{" "}
                   <span className=" drop-shadow">{post.acf["autor-name"]}</span>
                 </div>

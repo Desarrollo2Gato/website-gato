@@ -1,58 +1,39 @@
 import Section from "./section";
 import type { Metadata } from "next";
+import {BlogPosting, WithContext } from "schema-dts";
 
-import {Categories} from "@/app/data/enviroments/blog/categoriesBlog"
-
-/* export async function generateStaticParams() {
-  const dataCategories = Categories;
-  const slugs = dataCategories.map((category) => category.path);
-
-  return slugs.map((slug) => ({ slug }));
-} */
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  try {
-    const category = Categories.find((cat) => cat.path === params.slug);
-
-    if (!category) {
-      throw new Error("Categoría no encontrada");
+const jsonLd: WithContext<BlogPosting> = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: 'Título del post',
+  description: 'Descripción del post',
+  image: 'https://gato.pe/imagen-del-post.png',
+  author: {
+    '@type': 'Person',
+    name: 'Nombre del autor'
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Agencia GATO',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://gato.pe/gato-icon.png',
+      width: '60px',
+      height: '60px'
     }
+  },
+  datePublished: '2023-01-01T08:00:00+08:00',
+  dateModified: '2023-01-01T09:00:00+08:00'
+};
 
-    return {
-      title: category.metadata.title,
-      description: category.metadata.description,
-      keywords: category.metadata.keywords,
-      openGraph: {
-        title: category.metadata.openGraph.title,
-        description: category.metadata.openGraph.description,
-        type: category.metadata.openGraph.type,
-        url: category.metadata.openGraph.url,
-        images: category.metadata.openGraph.images,
-      },
-    };
-  } catch (error) {
-    console.error(error);
-    return {
-      title: "Página no encontrada",
-      description: "La página que buscas no está disponible.",
-      keywords: [],
-      openGraph: {
-        title: "Página no encontrada",
-        description: "La página que buscas no está disponible.",
-        type: "website",
-        url: "https://gato.pe",
-      },
-    };
-  }
-}
 
 export default function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Section name={params.slug}></Section>
     </div>
   );

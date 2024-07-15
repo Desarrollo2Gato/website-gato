@@ -72,7 +72,8 @@ function GridClients() {
               src={
                 client.acf?.imagen_url ? client.acf.imagen_url : defaultImageUrl
               }
-              alt={client.title.rendered}
+              alt={'Cliente: ' + client.title.rendered}
+              title={'Cliente: ' + client.title.rendered}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = defaultImageUrl;
@@ -86,7 +87,8 @@ function GridClients() {
               src={
                 client.acf?.imagen_url ? client.acf.imagen_url : defaultImageUrl
               }
-              alt={client.title.rendered}
+              alt={'Cliente: ' + client.title.rendered}
+              title={'Cliente: ' + client.title.rendered}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = defaultImageUrl;

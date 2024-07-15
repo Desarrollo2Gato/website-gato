@@ -77,7 +77,8 @@ const cardSubject = ({ post }: { post: Post }) => {
                     loading="lazy"
                     className="w-[16px] h-[16px] xl:w-[22px] xl:h-[22px] aspect-square rounded-full object-cover"
                     src={post.acf["autor-profile"]}
-                    alt="autor"
+                    alt={'Autor:' + post.acf["autor-name"]}
+                    title={'Autor:' + post.acf["autor-name"]}
                   />
                   <span className="truncate">{post.acf["autor-name"]}</span>
                 </div>

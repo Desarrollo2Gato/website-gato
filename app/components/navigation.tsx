@@ -32,7 +32,8 @@ function Navigation({
             loading="lazy"
             className="h-full lg:w-full"
             src="https://i.pinimg.com/originals/73/fe/ce/73fece7ac631330d0dd4c1bd22325029.png"
-            alt=""
+            alt="GATO logo"
+            title="GATO logo"
           />
         </Link>
 

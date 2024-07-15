@@ -47,7 +47,8 @@ const MorePostCard = ({ post }: { post: Post }) => {
             loading="lazy"
             className="w-full h-auto aspect-video object-cover "
             src={post.acf["descripcion-imagen"]}
-            alt={post.acf.titulo}
+            alt={'Imagen sobre: ' + post.acf.titulo}
+            title={'Imagen sobre: ' + post.acf.titulo}
           />
           <div className="w-full h-full flex flex-col justify-between  text-[#3D3D3D] gap-2 md:gap-0">
             <div className="flex gap-1 overflow-x-auto overflow-y-hidden whitespace-nowrap h-fit pb-2">
@@ -77,7 +78,8 @@ const MorePostCard = ({ post }: { post: Post }) => {
                     loading="lazy"
                     className="w-[16px] h-[16px] xl:w-[22px] xl:h-[22px] aspect-square rounded-full object-cover"
                     src={post.acf["autor-profile"]}
-                    alt="autor"
+                    alt={'Autor: ' + post.acf["autor-name"]}
+                    title={'Autor: ' + post.acf["autor-name"]}
                   />
                   <span>{post.acf["autor-name"]}</span>
                 </div>

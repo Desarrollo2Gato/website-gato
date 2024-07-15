@@ -8,6 +8,7 @@ import BannerServices from "./banner";
 import WhatsappContact from "../components/whatsapp-contact";
 import CatFloat from "../components/catFloat";
 import Testimonios from "./testimonios";
+import "@/app/components/slider3items.css";
 function Services() {
   const [isDrawer, setIsDrawer] = useState(false);
 

@@ -105,7 +105,8 @@ const Form = ({ vacante }: { vacante: string }) => {
       <div className="max-w-[1440px] mx-auto p-8 md:p-16 xl:px-32 flex gap-10">
         <img
           src="https://i.pinimg.com/originals/27/07/76/270776ad2bf7eba7d5479e09e32282dd.jpg"
-          alt="Familia gato"
+          alt="Trabajadores de GATO en blanco y negro"
+          title="Trabajadores de GATO en blanco y negro"
           className="w-3/5 shadow-xl object-cover rounded-xl"
         />
         <form

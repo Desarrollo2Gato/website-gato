@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import Index from ".";
-import { WithContext, WebSite } from 'schema-dts';
+
+import { WebSite, WithContext } from 'schema-dts'
 
 const jsonLd: WithContext<WebSite> = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'GATO',
+  name: 'Marketing y Software - GATO',
   url: 'https://gato.pe',
   sameAs: [
     'https://www.facebook.com/agenciagatope',
@@ -17,8 +18,17 @@ const jsonLd: WithContext<WebSite> = {
     target: 'https://gato.pe/search?q={search_term_string}',
     'query': "required name=search_term"
   },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Agencia GATO',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://gato.pe/gato-icon.png',
+      width: '60px',
+      height: '60px'
+    }
+  }
 };
-
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gato.pe/"),
@@ -81,7 +91,7 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://www.gato.pe/",
     siteName: "GATO",
-    title: "Marketing Software - Gato",
+    title: "Marketing y Software - Gato",
     description:
       "En GATO, transformamos ideas en soluciones digitales. Diseño web, marketing digital, software y branding. Potencia tu presencia en línea.",
     images: [
@@ -101,7 +111,6 @@ export const metadata: Metadata = {
   },
   
 };
- 
 export default function Home() {
   return (
     <main className="">

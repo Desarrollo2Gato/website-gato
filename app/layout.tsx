@@ -1,24 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 import type { Viewport } from 'next'
-import { Product, WithContext } from 'schema-dts'
-
-
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400"],
-  variable: "--font-poppins",
-});
-const jsonLd: WithContext<Product> = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: 'Next.js Sticker',
-  image: 'https://nextjs.org/imgs/sticker.png',
-  description: 'Dynamic at the speed of static.',
-}
 
 export const viewport: Viewport = {
   initialScale: 1,
@@ -28,7 +10,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gato.pe/"),
   title: {
-    default: "GATO",
+    default: "GATO - Marketing y Software",
     template: "%s - GATO",
   },
   alternates:{
@@ -40,8 +22,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  authors: [{ name: "GATO" }, { name: "GATO", url: "https://www.gato.pe/" }],
+  authors: [{ name: "Marketing y Software - GATO" }, { name: "GATO", url: "https://www.gato.pe/" }],
   referrer: "origin-when-cross-origin",
+  publisher: 'Marketing y Software - GATO',
   formatDetection: {
     email: false,
     address: false,
@@ -59,10 +42,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="font-body">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      
         {children}</body>
     </html>
   );

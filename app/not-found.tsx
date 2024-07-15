@@ -49,7 +49,8 @@ export default function ErrorPage() {
             <img
               className="h-full max-h-[550px] w-auto object-contain"
               src="/gato404.png"
-              alt="error"
+              alt="Gato con un cartel de error"
+              title="Gato 404"
             />
           </div>
         </div>

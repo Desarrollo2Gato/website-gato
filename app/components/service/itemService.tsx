@@ -33,7 +33,6 @@ const ItemService: React.FC<Props> = ({
   img_1,
   img_2,
 }) => {
-  console.log(reverse);
   const [isEnter, setIsEnter] = useState(false);
 
   function handleEnter() {
@@ -46,25 +45,28 @@ const ItemService: React.FC<Props> = ({
 
   return (
     <div
-      className={`w-full  lg:flex  py-8 md:py-16 ${
+      className={`w-full   lg:flex  py-8 md:py-16 ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
     >
       {/* imágenes */}
       <div
-        className={`relative w-full lg:w-1/2 h-auto sm:flex sm:gap-8 ${
-          reverse ? "lg:ml-4" : "lg:mr-4"
+        className={`relative w-full mb-8 lg:mb-0 lg:w-1/2 h-auto sm:flex sm:gap-8 ${
+          reverse ? "lg:ml-4 2xl:ml-10" : "lg:mr-4 2xl:mr-10"
         }  `}
       >
         <img
           className="w-full max-h-[200px] md:max-h-[300px] lg:max-h-[80%] sm:w-1/2 lg:w-[70%] 2xl:max-w-[400px] object-cover  shadow-xl mb-8 md:mb-0"
           src={img_1}
-          alt={name + "1"}
+          alt={name + " icono 1"}
+          title={name + " icono 1"}
+          
         />
         <img
           className="shadow-md lg:absolute bottom-0 right-0 w-full max-h-[200px] md:max-h-[300px] lg:max-h-[60%] sm:w-1/2 lg:w-[80%] 2xl:max-w-[500px] object-cover"
           src={img_2}
-          alt={name + "2"}
+          alt={name + " icono 2"}
+          title={name + " icono 2"}
         />
         <div className="hidden absolute top-0 right-0 bg-white lg:flex justify-center items-center w-fit h-fit rounded-[100%] border border-gray-200 p-1">
           <svg
@@ -145,40 +147,40 @@ const ItemService: React.FC<Props> = ({
             />
           </svg>
 
-          <div style={{ backgroundColor:color }} className=" rounded-[100%] absolute w-16 h-16 content-center border border-gray-200">
+          <div style={{ backgroundColor:color }} className="rounded-[100%] absolute w-16 h-16 content-center border border-gray-200">
           <FaMedal className="text-white text-4xl mx-auto" />
           </div>
         </div>
       </div>
       <div
-        className={`flex flex-col gap-5 lg:w-1/2 ${
-          reverse ? "lg:mr-4" : "lg:ml-4"
+        className={`flex flex-col gap-5 lg:gap-8 lg:w-1/2 ${
+          reverse ? "lg:mr-4 2xl:mr-10" : "lg:ml-4 2xl:ml-10"
         } `}
       >
         <Link
           href={"/portafolio"}
           style={{ color: color }}
-          className="hover:translate-x-2 transition-all duration-300 inline-block"
+          className="hover:translate-x-2 font-medium transition-all duration-300 inline-block 2xl:text-lg content-center"
         >
           <FaArrowRightLong className="inline-block mr-2 " />
           Conoce nuestro trabajo
         </Link>
         <div>
-          <h3 className="text-2xl text-[#3d3d3d] font-semibold mb-2">{name}</h3>
-          <p className="text-[#8D8D8D]">{description}</p>
+          <h3 className="text-2xl 2xl:text-3xl text-[#3d3d3d] font-semibold mb-2 lg:mb-4 2xl:bg-8">{name}</h3>
+          <p className="text-[#8D8D8D] 2xl:text-lg">{description}</p>
         </div>
-        <div className="flex flex-wrap justify-between gap-4 w-full">
+        <div className="flex flex-wrap justify-between 2xl:justify-start gap-4 2xl:gap-20 w-full">
           {benefits.map((benefits: any, index: number) => (
             <div
               key={index}
               style={{ backgroundColor: hexToRgba(color, "0.10") }}
               className="flex flex-wrap gap-4 items-center justify-center w-fit lg:w-[45%] xl:w-fit rounded py-4 px-6"
             >
-              <div style={{ color: color }} className="text-4xl inline-block">
+              <div style={{ color: color }} className="text-4xl 2xl:text-5xl inline-block">
                 {benefits.icon}
               </div>
 
-              <p className="font-medium whitespace-break-spaces text-lg text-[#5d5d5d] md:text-center">
+              <p className="font-medium whitespace-break-spaces text-lg 2xl:text-xl text-[#5d5d5d] md:text-center">
                 {benefits.text}
               </p>
             </div>
@@ -187,12 +189,12 @@ const ItemService: React.FC<Props> = ({
         <div>
           <ul>
             {items.map((item: string, index: number) => (
-              <li key={index} className="mt-2 text-[#6d6d6d] flex items-start">
+              <li key={index} className="mt-2 text-[#6d6d6d] xl:text-lg flex items-start">
                 <FaCheckCircle
                   style={{ color: color }}
                   className="mr-2  flex-shrink-0 mt-1.5"
                 />{" "}
-                <span className="flex-1">{item}</span>
+                <span className="flex-1 2">{item}</span>
               </li>
             ))}
           </ul>

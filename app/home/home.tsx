@@ -31,12 +31,17 @@ function Home() {
     <div className="relative bg-white flex w-full">
       <WhatsappContact></WhatsappContact>
       <div
-        className={`fixed top-0 left-0  ${isDrawer ? "w-screen h-screen" : "w-screen lg:w-16"} h-[60px] lg:h-screen z-10 flex flex-col lg:flex-row`}
+        className={`fixed top-0 left-0  ${
+          isDrawer ? "w-screen h-screen" : "w-screen lg:w-16"
+        } h-[60px] lg:h-screen z-10 flex flex-col lg:flex-row`}
       >
         <Navigation isDrawer={isDrawer} setIsDrawer={setIsDrawer}></Navigation>
         {isDrawer && <Drawer></Drawer>}
       </div>
       <main className="min-w-screen flex flex-col w-full pt-[60px] lg:pl-[80px] lg:pt-0">
+        <header>
+          <h1 className="sr-only">Marketing y Software GATO</h1>
+        </header>
         <Banner></Banner>
         <Collage></Collage>
         <Detail></Detail>
@@ -44,7 +49,6 @@ function Home() {
         <Form color="#6D28D9"></Form>
         <Footer></Footer>
       </main>
-      
     </div>
   );
 }

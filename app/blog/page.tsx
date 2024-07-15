@@ -1,9 +1,25 @@
-import Blog from "./blog";
+import BlogComponent from "./blog";
 import { Metadata } from "next";
-import Head from "next/head";
+import { Blog, WithContext } from "schema-dts";
 
+const jsonLdBlog: WithContext<Blog> = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Nuestro Blog- GATO",
+  url: "https://gato.pe/blog",
+  publisher: {
+    "@type": "Organization",
+    name: "Agencia GATO",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://gato.pe/gato-icon.png",
+      width: "60px",
+      height: "60px",
+    },
+  },
+};
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Nuestro Blog",
   description:
     "Descubre quiénes somos en GATO. Conoce nuestro equipo, nuestra misión y nuestra pasión por transformar ideas en soluciones digitales innovadoras.",
   keywords: [
@@ -17,8 +33,8 @@ export const metadata: Metadata = {
     "innovación digital",
     "estrategias digitales",
   ],
-  alternates:{
-    canonical: 'https://www.gato.pe/blog'
+  alternates: {
+    canonical: "https://www.gato.pe/blog",
   },
   openGraph: {
     type: "website",
@@ -46,8 +62,12 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBlog) }}
+      />
       <div className="w-full h-screen ">
-        <Blog></Blog>
+        <BlogComponent></BlogComponent>
       </div>
     </>
   );

@@ -64,7 +64,8 @@ const CardJob: React.FC<Props> = ({
       <div className="text-center mb-6">
         <img
           src={imgUrl}
-          alt={jobPosition}
+          alt={"Imagen relacionada a " + jobPosition}
+          title={"Imagen sobre " + jobPosition}
           className=" shadow-lg rounded-[100%] h-20 w-20 mx-auto  object-cover mb-4"
         />
         {area && (
@@ -80,8 +81,12 @@ const CardJob: React.FC<Props> = ({
         )}
       </div>
       <div className="mb-6">
-        <h3 className="text-[#3D3D3D] text-xl font-medium capitalize">{jobPosition}</h3>
-        <span style={{ color: dataColor }} className="font-medium text-lg">S/ {sueldo}</span>
+        <h3 className="text-[#3D3D3D] text-xl font-medium capitalize">
+          {jobPosition}
+        </h3>
+        <span style={{ color: dataColor }} className="font-medium text-lg">
+          S/ {sueldo}
+        </span>
       </div>
       <p className="mb-6 text-[#666]">{jobDescription}</p>
       <div
@@ -102,12 +107,12 @@ const CardJob: React.FC<Props> = ({
           }`}
         ></div>
         <Link
-         href="/bolsadetrabajo/[slug]/"
-         as={`/bolsadetrabajo/${slug}`}
+          href="/bolsadetrabajo/[slug]/"
+          as={`/bolsadetrabajo/${slug}`}
           style={{ color: isEnter ? "white" : dataColor }}
           className={`pl-4 z-10 text-lg`}
         >
-          Postular {'>'}
+          Postular {">"}
         </Link>
       </div>
       {/* </div>

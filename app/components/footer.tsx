@@ -13,6 +13,7 @@ function Footer() {
             className="w-24"
             src="https://i.pinimg.com/originals/73/fe/ce/73fece7ac631330d0dd4c1bd22325029.png"
             alt="GATO - Desarrollo Web, Marketing Digital, Software"
+            title="GATO logo"
           />
         </Link>
         <div className="flex flex-col ">

@@ -3,6 +3,49 @@ import Content from "./content";
 import { Metadata } from "next";
 import Head from "next/head";
 import '../plans.css';
+import { Organization, WebPage, WithContext } from "schema-dts";
+
+const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Servicio de Branding - GATO",
+  url: "https://www.gato.pe/branding",
+  description:
+    "Descubre nuestro branding en GATO. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
+  publisher: {
+    "@type": "Organization",
+    name: "Agencia GATO",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://gato.pe/gato-icon.png",
+      width: "60",
+      height: "60",
+    },
+    url: "https://gato.pe",
+    sameAs: [
+      "https://www.facebook.com/agenciagatope",
+      "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3",
+      "https://www.linkedin.com/company/agenciagato/",
+    ],
+  },
+  mainEntity: {
+    "@type": "Organization",
+    name: "Agencia GATO",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://gato.pe/gato-icon.png",
+      width: "60",
+      height: "60",
+    },
+    url: "https://gato.pe",
+    sameAs: [
+      "https://www.facebook.com/agenciagatope",
+      "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3",
+      "https://www.linkedin.com/company/agenciagato/",
+    ],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Servicio de Branding",
   description:
@@ -49,6 +92,12 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <Content></Content>
       <Footer></Footer>
     </>

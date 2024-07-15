@@ -3,10 +3,11 @@ import { Metadata } from "next";
 import Head from "next/head";
 
 export const metadata: Metadata = {
-  title: "Portafolio",
+  title: "Nuestro Portafolio",
   description:
     "Explora nuestro portafolio en GATO. Descubre los proyectos en los que hemos trabajado y las soluciones digitales que hemos creado para nuestros clientes.",
   keywords: [
+    "portfolio",
     "portafolio GATO",
     "proyectos digitales",
     "ejemplos de proyectos digitales",
