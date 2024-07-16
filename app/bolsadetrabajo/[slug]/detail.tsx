@@ -8,9 +8,40 @@ import { useEffect, useState } from "react";
 import Form from '../form'
 import Banner from "./banner";
 import Info from "./info";
+import { api_areas, api_vacantes } from "@/app/data/enviroments/api.enviroment";
+import axios from "axios";
 const Detail = ({ name }: { name: string }) => {
   const [isDrawer, setIsDrawer] = useState(false);
+  const [data, setData] = useState<any>({});
+  const [area, setArea] = useState<any>({});
 
+  useEffect(() => {
+    const fetchVacante = async () => {
+      try {
+        const response = await axios.get(api_vacantes + '?slug=' + name);
+        setData(response.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchVacante();
+  }, [name]);
+
+  useEffect(() => {
+    const fetchArea = async () => {
+      if (data.acf?.area) {
+        try {
+          const response = await axios.get(api_areas + '/' + data.acf.area);
+          setArea(response.data);
+          console.log(response.data)
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    fetchArea();
+  }, [data]);
+  console.log(area);
   useEffect(() => {
     const handleKeyDown = (event: any) => {
       if (event.key === "Escape") {
@@ -35,9 +66,19 @@ const Detail = ({ name }: { name: string }) => {
         {isDrawer && <Drawer></Drawer>}
       </div>
       <main className="min-w-screen flex flex-col w-full pt-[60px] lg:pl-[80px] lg:pt-0">
-        <h2>Detail {name}</h2>
-        <Banner/>
-        <Info/>
+        {/* <h2>Detail {name}</h2> */}
+        <Banner
+        color={area.acf?.color}
+        description={area.acf?.descripcion_para_postulacion}
+        area={area.name}
+        />
+        <Info
+        jobPosition={data.acf?.job_position}
+        jobDescription={data.acf?.description}
+        salary={data.acf?.salary}
+        color={area.acf?.color}
+        modalidad={data.acf?.modalidad}
+        />
         <Form vacante={name}/>
         <Footer></Footer>
       </main>

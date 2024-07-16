@@ -9,7 +9,7 @@ const banner = () => {
         alt="imagen"
         className="rounded-[100%] aspect-square object-cover h-auto w-[1500px] float-right -translate-y-1/4 translate-x-1/2 shadow-2xl"
       />
-      <div className="p-8 md:p-16 2xl:px-32 mx-auto max-w-[1440px] absolute w-full h-full flex items-center justify-start">
+      <div className="p-8 md:p-16  mx-auto max-w-[1440px] absolute w-full h-full flex items-center justify-start">
         <div className="w-1/2">
           <h2 className=" drop-shadow-md lg:text-6xl text-4xl  font-semibold uppercase">
             Únete al equipo de <span className="text-blue-500">Software</span>

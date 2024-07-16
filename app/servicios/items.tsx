@@ -14,11 +14,7 @@ import { MdOutlineSupportAgent } from "react-icons/md";
 import { LuHeartHandshake } from "react-icons/lu";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { FaChartLine } from "react-icons/fa";
-import { rgbToHex } from "@mui/material";
-import hexToRgba from "hex-to-rgba";
-import { FaCheckCircle } from "react-icons/fa";
 import ItemService from "../components/service/itemService";
-import { reverse } from "dns";
 
 function Items() {
   const services = [
@@ -42,6 +38,11 @@ function Items() {
         "Estrategias Personalizadas",
         "Análisis de Datos",
         "Mejora de la Visibilidad",
+      ],
+      items2: [
+        "Desarrollo de Contenido Enganchador",
+        "Segmentación de Audiencias",
+        "Optimización de Conversiones",
       ],
       path: "marketing-digital",
       img_1:
@@ -67,6 +68,11 @@ function Items() {
         },
       ],
       items: ["Navegación Intuitiva", "Optimización SEO", "Velocidad de Carga"],
+      items2: [
+        "Innovación en Diseño",
+        "Paletas de Colores Atractivas",
+        "Implementación de Tecnologías Modernas",
+      ],
       path: "disenio-web",
       img_1:
         "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
@@ -90,6 +96,11 @@ function Items() {
         },
       ],
       items: ["Integración Perfecta", "Seguridad", "Optimization de Procesos"],
+      items2: [
+        "Arquitectura Escalable",
+        "Seguridad Avanzada",
+        "Desarrollo Eficiente de Código",
+      ],
       path: "desarrollo-software",
       img_1:
         "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
@@ -113,6 +124,11 @@ function Items() {
         },
       ],
       items: ["Identidad Unica", "Consistencia de Marca", "Imagen Profesional"],
+      items2: [
+        "Conexión con la Audiencia",
+        "Impacto Visual",
+        "Interacción Intuitiva",
+      ],
       path: "branding",
       img_1:
         "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
@@ -136,9 +152,14 @@ function Items() {
         },
       ],
       items: [
-        "Compatibilidad Multiplataforma",
         "Actualizaciones continuas",
         "Seguridad y Privacidad",
+        "Compatibilidad Multiplataforma",
+      ],
+      items2: [
+        "Segmentación de Audiencias",
+        "Optimización de Conversiones",
+        "Desarrollo de Contenido Enganchador",
       ],
       path: "desarrollo-movil",
       img_1:
@@ -150,37 +171,29 @@ function Items() {
 
   return (
     <section id="detail" className=" bg-gray-100">
-      <div className="w-full pt-16 ">
-        <h2
-          className="text-3xl text-center
-         text-[#3D3D3D] font-medium uppercase mb-8"
-        >
-          Nuestros Servicios
-        </h2>
+      <div className="w-full">
         <div className="w-full flex flex-col gap-16 ">
           {services.map((service: any, index) => (
             <RevealWrapper
               origin="bottom"
               duration={index * 400 + 1000}
-              className={
-                `w-full ${service.reverse ? '' : 'bg-white' }`
-              }
+              className={`w-full ${service.reverse ? "bg-white" : ""}`}
               key={index}
             >
-              <div className="w-full max-w-[1920px] mx-auto xl:px-24 md:px-16  px-8">
-              <ItemService
-                reverse={service.reverse}
-                color={service.color}
-                name={service.name}
-                description={service.description}
-                benefits={service.benefits}
-                items={service.items}
-                path={service.path}
-                img_1={service.img_1}
-                img_2={service.img_2}
-              />
+              <div className="w-full max-w-[1440px] mx-auto xl:px-24 md:px-16  px-8">
+                <ItemService
+                  reverse={service.reverse}
+                  color={service.color}
+                  name={service.name}
+                  description={service.description}
+                  benefits={service.benefits}
+                  items={service.items}
+                  items2={service.items2}
+                  path={service.path}
+                  img_1={service.img_1}
+                  img_2={service.img_2}
+                />
               </div>
-             
             </RevealWrapper>
           ))}
         </div>

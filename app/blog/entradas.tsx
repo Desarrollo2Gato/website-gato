@@ -59,7 +59,7 @@ const entradas = () => {
   const renderPost = (post: Post) => <CardSubject key={post.id} post={post} />;
 
   return (
-    <div className="w-full max-w-[1920px] mx-auto px-8 pb-8 lg:px-16 md:pb-0 xl:px32">
+    <div className="w-full max-w-[1440px] mx-auto px-8 pb-8 lg:px-16 md:pb-0 xl:px32">
       <div className=" relative mb-8  grid grid-cols-1 md:grid-cols-3 justify-between gap-4 md:gap-2 lg:gap-8 xl:gap-12">
         {latestPosts.map((post) => (
           <CardNew key={post.id} post={post} />

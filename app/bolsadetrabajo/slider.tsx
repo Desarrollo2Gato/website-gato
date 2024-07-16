@@ -20,7 +20,6 @@ const SliderComponent = () => {
     const response = await axios.get(
       "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/testimonio"
     );
-    console.log(response.data);
     setData(response.data);
   };
 
@@ -113,7 +112,7 @@ const SliderComponent = () => {
   };
   return (
     <div className="w-full ">
-      <div className="max-w-[1920px] mx-auto relative xl:px-32 lg:px:16 px-8 py-16">
+      <div className="max-w-[1440px] mx-auto relative xl:px-32 lg:px:16 px-8 py-16">
         <h2 className="text-[#444] text-3xl uppercase font-semibold text-center mb-8">
           Testimonios
         </h2>

@@ -4,7 +4,7 @@ import React from "react";
 const fundamentals = () => {
   return (
     <div className="w-full bg-gray-100">
-      <div className="w-full max-w-[1920px] mx-auto xl:px-32 md:px-24 px-8 py-8 lg:py-16 justify-between">
+      <div className="w-full max-w-[1440px] mx-auto xl:px-32 md:px-24 px-8 py-8 lg:py-16 justify-between">
       <RevealWrapper origin="top" duration={1000} className={'mb-3'}>
           <h2
             className="text-3xl text-center

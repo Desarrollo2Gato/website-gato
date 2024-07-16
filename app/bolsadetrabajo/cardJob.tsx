@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { api_vacantes } from "../data/enviroments/api.enviroment";
+import { api_areas, api_vacantes } from "../data/enviroments/api.enviroment";
 import hexToRgba from "hex-to-rgba";
 import Link from "next/link";
 type Props = {
@@ -14,8 +14,8 @@ type Props = {
 
 interface Area {
   id: number;
+  name: string;
   acf: {
-    name: string;
     color: string;
   };
 }
@@ -44,12 +44,10 @@ const CardJob: React.FC<Props> = ({
   const fetchColor = async () => {
     try {
       const response = await axios.get(
-        `https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/area/${idColor}`
+        `${api_areas}/${idColor}?per_page=100`
       );
-      const fetchedArea = response.data as Area;
-      console.log(response.data);
-      setArea(fetchedArea);
-      setColor(fetchedArea.acf.color);
+      setArea(response.data)
+      setColor(response.data.acf.color);
     } catch (error) {
       console.error("Error fetching color data:", error);
     }
@@ -76,7 +74,7 @@ const CardJob: React.FC<Props> = ({
             }}
             className="px-4 py-0.5 text-sm font-medium rounded-full inline-block mx-auto"
           >
-            {area.acf.name}
+            {area.name}
           </span>
         )}
       </div>
@@ -110,7 +108,7 @@ const CardJob: React.FC<Props> = ({
         ></div>
         <div
           style={{ color: isEnter ? "white" : dataColor }}
-          className={`pl-4 z-10 text-lg`}
+          className={`pl-4 z-[1] text-lg`}
         >
           Postular {">"}
         </div>

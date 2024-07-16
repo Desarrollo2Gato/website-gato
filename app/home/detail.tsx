@@ -24,7 +24,7 @@ function Detail() {
 
   return (
     <section className="w-full bg-white">
-      <div className="w-full max-w-[1920px] mx-auto xl:px-32 lg:px-24  px-8 flex pb-16">
+      <div className="w-full max-w-[1440px] mx-auto xl:px-32 lg:px-24  px-8 flex pb-16">
         <div className="flex flex-col md:flex-row w-full justify-between gap-6 md:gap-8 xl:gap-24">
           <RevealWrapper duration={1500} origin="left">
             <div className=" flex justify-center md:justify-start md:flex-col gap-2 md:gap-4 ">

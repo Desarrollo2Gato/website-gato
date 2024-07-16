@@ -11,7 +11,7 @@ const Banner = () => {
         loading="lazy"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-violet-700 flex items-end">
-        <div className="max-w-[1920px] mx-auto xl:px-32 lg:px:16 p-4 flex gap-4 md:gap-8 justify-between items-center">
+        <div className="max-w-[1440px] mx-auto xl:px-32 lg:px:16 p-4 flex gap-4 md:gap-8 justify-between items-center">
           <p className="text-white text-sm md:text-2xl drop-shadow-lg md:text-center items-center">
             Cambiamos el mundo con ideas innovadoras y empatía. Creemos que
             todas las pequeñas acciones apuntan a grandes resultados{" "}

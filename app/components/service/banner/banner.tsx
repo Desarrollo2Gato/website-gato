@@ -14,7 +14,7 @@ const banner = (prop: Props) => {
   return (
     <div className="w-full h-auto md:h-[25rem] 2xl:h-[800px] lg:h-[600px] bg-white shadow-lg">
       <RevealWrapper origin="left" duration={1000} className={"w-full h-full"}>
-        <div className="relative w-full max-w-[1920px] mx-auto h-full flex px-8 py-8 xl:px-32 lg:px:16 lg:py-16">
+        <div className="relative w-full max-w-[1440px] mx-auto h-full flex px-8 py-8 xl:px-32 lg:px:16 lg:py-16">
           <div className="relative hidden w-full h-full md:flex flex-col md:flex-row justify-end">
             <div className="absolute left-16   opacity-90">
               <RevealWrapper

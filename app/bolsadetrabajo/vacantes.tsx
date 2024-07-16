@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import CardJob from "./cardJob";
-import { api_vacantes } from "../data/enviroments/api.enviroment";
+import { api_areas, api_vacantes } from "../data/enviroments/api.enviroment";
 import axios from "axios";
 
 interface Job {
   acf: {
-    area: number[];
+    area: number;
     imagen_url: string;
     job_position: string;
     description: string;
+    descripcion_corta: string;
     salary: string;
   };
   slug: string;
@@ -16,8 +17,8 @@ interface Job {
 
 interface Area {
   id: number;
+  name: string;
   acf: {
-    name: string;
     color: string;
   };
 }
@@ -32,7 +33,6 @@ const Vacantes: React.FC = () => {
     try {
       const response = await axios.get(api_vacantes);
       setData(response.data);
-      
     } catch (error) {
       console.error("Error fetching vacantes:", error);
     }
@@ -40,9 +40,7 @@ const Vacantes: React.FC = () => {
 
   const fetchAreas = async () => {
     try {
-      const response = await axios.get(
-        "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/area"
-      );
+      const response = await axios.get(api_areas);
       setAreas(response.data);
     } catch (error) {
       console.error("Error fetching areas:", error);
@@ -63,7 +61,7 @@ const Vacantes: React.FC = () => {
   };
 
   const filteredData = data.filter((job) => {
-    const matchesArea = selectedArea === 0 || job.acf.area.includes(selectedArea);
+    const matchesArea = selectedArea === 0 || job.acf.area === selectedArea;
     const matchesSearchTerm =
       job.acf.job_position.toLowerCase().includes(searchTerm.toLowerCase()) ||
       job.acf.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -72,7 +70,7 @@ const Vacantes: React.FC = () => {
 
   return (
     <div className="bg-gray-100">
-      <div className="max-w-[1920px] mx-auto relative xl:px-32 lg:px:16 px-8 py-16">
+      <div className="max-w-[1440px] mx-auto relative xl:px-32 lg:px:16 px-8 py-16">
         <h2 className="text-[#444] text-3xl uppercase font-semibold text-center mb-8">
           Vacantes
         </h2>
@@ -96,7 +94,7 @@ const Vacantes: React.FC = () => {
               <option value="0">Todos</option>
               {areas.map((area) => (
                 <option key={area.id} value={area.id.toString()}>
-                  {area.acf.name}
+                  {area.name}
                 </option>
               ))}
             </select>
@@ -118,10 +116,10 @@ const Vacantes: React.FC = () => {
               filteredData.map((job, index) => (
                 <CardJob
                   key={index}
-                  idColor={job.acf.area[0]}
+                  idColor={job.acf.area}
                   imgUrl={job.acf.imagen_url}
                   jobPosition={job.acf.job_position}
-                  jobDescription={job.acf.description}
+                  jobDescription={job.acf.descripcion_corta}
                   sueldo={job.acf.salary}
                   slug={job.slug}
                 />

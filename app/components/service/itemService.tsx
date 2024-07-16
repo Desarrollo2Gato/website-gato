@@ -18,6 +18,7 @@ interface Props {
     }
   ];
   items: string[];
+  items2: string[];
   path: string;
   img_1: string;
   img_2: string;
@@ -29,6 +30,7 @@ const ItemService: React.FC<Props> = ({
   description,
   benefits,
   items,
+  items2,
   path,
   img_1,
   img_2,
@@ -45,6 +47,7 @@ const ItemService: React.FC<Props> = ({
 
   return (
     <div
+    id={path}
       className={`w-full   lg:flex  py-8 md:py-16 ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
@@ -168,17 +171,17 @@ const ItemService: React.FC<Props> = ({
           Conoce nuestro trabajo
         </Link>
         <div>
-          <h3 className="text-2xl 2xl:text-3xl text-[#3d3d3d] font-semibold mb-2 lg:mb-4 2xl:bg-8">
+          <h2 className="text-2xl 2xl:text-3xl text-[#3d3d3d] font-semibold mb-2 lg:mb-4 2xl:bg-8">
             {name}
-          </h3>
+          </h2>
           <p className="text-[#8D8D8D] 2xl:text-lg">{description}</p>
         </div>
-        <div className="flex flex-wrap justify-between 2xl:justify-start gap-4 2xl:gap-20 w-full">
+        <div className="flex flex-wrap md:flex-nowrap justify-between xl:grid xl:grid-cols-2 xl:gap-8 gap-4  w-full">
           {benefits.map((benefits: any, index: number) => (
             <div
               key={index}
               style={{ backgroundColor: hexToRgba(color, "0.10") }}
-              className="flex flex-wrap gap-4 items-center justify-center w-fit lg:w-[45%] xl:w-fit rounded py-4 px-6"
+              className="flex flex-wrap lg:flex-col gap-4 items-center justify-center w-fit lg:w-[45%] xl:w-full rounded py-4 px-6"
             >
               <div
                 style={{ color: color }}
@@ -193,12 +196,26 @@ const ItemService: React.FC<Props> = ({
             </div>
           ))}
         </div>
-        <div>
+        <div className="grid md:grid-cols-2 md:gap-4 lg:gap-8">
           <ul>
             {items.map((item: string, index: number) => (
               <li
                 key={index}
-                className="mt-2 text-[#6d6d6d] xl:text-lg flex items-start"
+                className="mb-2 text-[#6d6d6d] xl:text-lg flex items-start"
+              >
+                <FaCheckCircle
+                  style={{ color: color }}
+                  className="mr-2  flex-shrink-0 mt-1.5"
+                />{" "}
+                <span className="flex-1 2">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <ul>
+            {items2.map((item: string, index: number) => (
+              <li
+                key={index}
+                className="mb-2 text-[#6d6d6d] xl:text-lg flex items-start"
               >
                 <FaCheckCircle
                   style={{ color: color }}
