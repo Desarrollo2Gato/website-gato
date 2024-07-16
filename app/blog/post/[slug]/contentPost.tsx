@@ -32,7 +32,7 @@ const ContentPost = ({ post }: PostProps) => {
   };
   return (
     <div className="w-full   ">
-      <div className="bg-gray-50 max-w-[1440px] mx-auto flex flex-col lg:flex-row pt-8 px-8 lg:px16 lg:py-16 xl:px-32">
+      <div className="bg-gray-50 max-w-[1440px] mx-auto flex flex-col lg:flex-row pt-8 px-8 lg:px16 lg:py-16 xl: ">
         <div className="flex flex-col w-full lg:w-3/4 h-fit">
           <div className="w-full pr-4 flex-1 text-[1rem] 2xl:text-[1.2rem]">
             <p className="pb-4">{post.acf.introducion}</p>

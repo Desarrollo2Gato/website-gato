@@ -102,7 +102,7 @@ const Form = ({ vacante }: { vacante: string }) => {
   };
   return (
     <div className="w-full">
-      <div className="max-w-[1440px] mx-auto p-8 md:p-16 xl:px-32 flex gap-10">
+      <div className="max-w-[1440px] mx-auto p-8 md:p-16 xl:  flex gap-10">
         <img
           src="https://i.pinimg.com/originals/27/07/76/270776ad2bf7eba7d5479e09e32282dd.jpg"
           alt="Trabajadores de GATO en blanco y negro"

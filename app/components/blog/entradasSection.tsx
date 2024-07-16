@@ -30,7 +30,7 @@ const entradas = ({ posts, name }: { posts: Post[], name?:string }) => {
   const renderPost = (post: Post) => <CardSubject key={post.id} post={post} />;
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-8  lg:px-16  xl:px-32">
+    <div className="w-full max-w-[1440px] mx-auto px-8  lg:px-16  xl: ">
       <div className=" relative grid grid-cols-1 md:grid-cols-3 justify-between gap-4 md:gap-2 lg:gap-8 pb-8">
         {latestPosts.map((post) => (
           <CardNew key={post.id} post={post} />

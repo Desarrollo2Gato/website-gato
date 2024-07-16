@@ -2,7 +2,7 @@
 
 function TestimonialsCards() {
   return (
-    <section className="xl:px-32 md:px-24  px-8 bg-gray-100  pb-24 pt-8">
+    <section className="xl:  md:px-24  px-8 bg-gray-100  pb-24 pt-8">
       <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
         <div className="bg-white rounded-lg shadow-small p-4">
           <div className="flex gap-2">

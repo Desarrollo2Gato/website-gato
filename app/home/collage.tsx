@@ -15,7 +15,7 @@ function Collage() {
 
   return (
     <section id="collage" className="  w-full bg-white">
-      <div className="w-full max-w-[1440px] mx-auto  xl:px-32 lg:px-24  px-8 py-16">
+      <div className="w-full max-w-[1440px] mx-auto  xl:  lg:px-24  px-8 py-16">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
           <RevealWrapper
             duration={1500}

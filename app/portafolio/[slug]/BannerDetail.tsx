@@ -85,7 +85,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
     <section className="w-full md:min-h-screen h-full">
       {!isLoading ? (
         <div className={` flex bg-gray-100 relative w-full flex-col `}>
-          <div className="max-w-[1440px] mx-auto w-full pb-4 lg:pb-8 xl:px-32 lg:px-16 px-8 py-8 lg:py-16">
+          <div className="max-w-[1440px] mx-auto w-full pb-4 lg:pb-8 xl:  lg:px-16 px-8 py-8 lg:py-16">
             <RevealWrapper origin="left" duration={1500}>
               <Link
                 href={"/portafolio"}
@@ -184,7 +184,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
               </RevealWrapper>
             </div>
           </div>
-          <div className="max-w-[1440px] mx-auto w-full xl:px-32 lg:px-16 px-8 py-8 lg:py-16 relative flex items-end flex-col lg:flex-row">
+          <div className="max-w-[1440px] mx-auto w-full xl:  lg:px-16 px-8 py-8 lg:py-16 relative flex items-end flex-col lg:flex-row">
             <div className=" relative w-full lg:w-[60%] lg:h-[700px] h-auto ">
               <RevealWrapper
                 origin="left"

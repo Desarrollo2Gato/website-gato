@@ -30,7 +30,7 @@ const Info: React.FC<Props> = ({
   
   return (
     <div className="bg-gray-100">
-      <div className="max-w-[1440px] mx-auto relative xl:px-32 lg:px:16 px-8 py-16 text-[#3d3d3d]">
+      <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16 text-[#3d3d3d]">
         <h2 className=" text-3xl uppercase font-semibold text-center mb-8">
           {jobPosition}
         </h2>

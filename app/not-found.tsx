@@ -30,7 +30,7 @@ export default function ErrorPage() {
       </div>
 
       <div className="min-w-screen w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
-        <div className="max-w-[1440px] min-w-screen w-full min-h-screen mx-auto  flex flex-col md:flex-row justify-center items-center xl:px-32 md:px-24  px-8  gap-4 lg:gap-8 xl:gap-16">
+        <div className="max-w-[1440px] min-w-screen w-full min-h-screen mx-auto  flex flex-col md:flex-row justify-center items-center xl:  md:px-24  px-8  gap-4 lg:gap-8 xl:gap-16">
           <div className="w-full flex flex-col gap-4 md:gap-10 items-start ">
             <h2 className="text-[3rem] text-[#3D3D3D] font-bold">
               ¡Oops! Página no encontrada

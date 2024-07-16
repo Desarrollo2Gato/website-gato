@@ -94,7 +94,7 @@ const process: React.FC<ProcessProps> = ({
 
   return (
     <div>
-      <div className=" w-full flex flex-col xl:px-32 lg:px-16 px-8 py-8 lg:py-16 gap-4 xl:gap-10 lg:gap-6 bg-gray-100">
+      <div className=" w-full flex flex-col xl:  lg:px-16 px-8 py-8 lg:py-16 gap-4 xl:gap-10 lg:gap-6 bg-gray-100">
         <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 xl:gap-12">
           {cardContents.map((content, index) => (
             <CardSolution

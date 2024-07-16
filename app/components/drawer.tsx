@@ -84,7 +84,7 @@ function Drawer() {
 
   return (
     <>
-      <div className="overflow-y-scroll bg-white h-full w-screen  animate-fade-right animate-duration-500 animate-ease-linear animate-normal pt-8 md:pt-24 xl:px-32 px-8 md:px-16 z-30">
+      <div className="overflow-y-scroll bg-white h-full w-screen  animate-fade-right animate-duration-500 animate-ease-linear animate-normal pt-8 md:pt-24 xl:  px-8 md:px-16 z-30">
         <div className="flex justify-between flex-col gap-4 md:gap-0 md:flex-row">
           <div className="flex flex-col">
             <div className="flex items-center">

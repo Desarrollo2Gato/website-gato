@@ -112,7 +112,7 @@ const SliderComponent = () => {
   };
   return (
     <div className="w-full ">
-      <div className="max-w-[1440px] mx-auto relative xl:px-32 lg:px:16 px-8 py-16">
+      <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16">
         <h2 className="text-[#444] text-3xl uppercase font-semibold text-center mb-8">
           Testimonios
         </h2>

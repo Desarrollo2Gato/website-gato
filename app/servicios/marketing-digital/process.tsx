@@ -65,7 +65,7 @@ const process = () => {
 
   return (
     <div className=" w-full lg:px-10 bg-gray-100">
-      <div className="w-full max-w-[1440px] mx-auto px-8 py-8 xl:px-32 lg:px:16 lg:py-16 ">
+      <div className="w-full max-w-[1440px] mx-auto px-8 py-8 xl:  lg:px:16 lg:py-16 ">
         <h2
           className="text-3xl text-center
          text-[#3D3D3D] font-medium uppercase mb-8"
