@@ -2,7 +2,7 @@ import React, { MouseEventHandler, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import InstagramEmbed from "./reel";
 interface ArrowProps {
   className?: string;
   style?: React.CSSProperties;
@@ -10,7 +10,6 @@ interface ArrowProps {
 }
 
 const TestimoniosSlider = () => {
-
   const [currentSlide, setCurrentSlide] = useState(0);
 
   function SampleNextArrow(props: ArrowProps) {
@@ -102,43 +101,18 @@ const TestimoniosSlider = () => {
   return (
     <div className="slider-container w-full">
       <Slider {...settings} className="">
-        <div className="h-[500px] w-full rounded-xl shadow-lg">
-          <iframe
-            width="100%"
-            height="100%"
-            className="rounded-3xl"
-            src="https://www.youtube.com/embed/x5NayHaDADk?si=wHkO8t0AeTdq7KGs"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            /* referrerpolicy="strict-origin-when-cross-origin" */
-            /* allowfullscreen */
-          ></iframe>
+        <div className="h-fit">
+          <InstagramEmbed url="https://www.instagram.com/reel/C7SNb2HiNUY/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
         </div>
-        <div className="h-[500px] w-full rounded-xl shadow-lg">
-          <iframe
-          className="rounded-3xl"
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/x5NayHaDADk?si=wHkO8t0AeTdq7KGs"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            /* referrerpolicy="strict-origin-when-cross-origin" */
-            /* allowfullscreen */
-          ></iframe>
+        <div className="h-fit">
+          <InstagramEmbed url="https://www.instagram.com/reel/C7SNb2HiNUY/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
         </div>
-        <div className="h-[500px] w-full rounded-xl shadow-lg">
-          <iframe
-          className="rounded-3xl"
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/x5NayHaDADk?si=wHkO8t0AeTdq7KGs"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            /* referrerpolicy="strict-origin-when-cross-origin" */
-            /* allowfullscreen */
-          ></iframe>
+        <div className="h-fit">
+          <InstagramEmbed url="https://www.instagram.com/reel/C7SNb2HiNUY/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
         </div>
-        
+        <div className="h-fit">
+          <InstagramEmbed url="https://www.instagram.com/reel/C7SNb2HiNUY/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
+        </div>
       </Slider>
     </div>
   );

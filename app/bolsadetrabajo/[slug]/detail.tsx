@@ -6,6 +6,8 @@ import Footer from "@/app/components/footer";
 import WhatsappContact from "@/app/components/whatsapp-contact";
 import { useEffect, useState } from "react";
 import Form from '../form'
+import Banner from "./banner";
+import Info from "./info";
 const Detail = ({ name }: { name: string }) => {
   const [isDrawer, setIsDrawer] = useState(false);
 
@@ -34,6 +36,8 @@ const Detail = ({ name }: { name: string }) => {
       </div>
       <main className="min-w-screen flex flex-col w-full pt-[60px] lg:pl-[80px] lg:pt-0">
         <h2>Detail {name}</h2>
+        <Banner/>
+        <Info/>
         <Form vacante={name}/>
         <Footer></Footer>
       </main>

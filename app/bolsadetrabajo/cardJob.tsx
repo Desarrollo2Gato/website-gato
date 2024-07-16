@@ -60,7 +60,7 @@ const CardJob: React.FC<Props> = ({
   }, [idColor]);
 
   return (
-    <div className="relative text-center rounded-xl shadow-md h-full bg-white p-8">
+    <div className="relative flex flex-col justify-between text-center rounded-xl shadow-md h-full bg-white p-8">
       <div className="text-center mb-6">
         <img
           src={imgUrl}
@@ -89,7 +89,9 @@ const CardJob: React.FC<Props> = ({
         </span>
       </div>
       <p className="mb-6 text-[#666]">{jobDescription}</p>
-      <div
+      <Link
+        href="/bolsadetrabajo/[slug]/"
+        as={`/bolsadetrabajo/${slug}`}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         role="button"
@@ -106,21 +108,13 @@ const CardJob: React.FC<Props> = ({
             isEnter ? "w-full" : ""
           }`}
         ></div>
-        <Link
-          href="/bolsadetrabajo/[slug]/"
-          as={`/bolsadetrabajo/${slug}`}
+        <div
           style={{ color: isEnter ? "white" : dataColor }}
           className={`pl-4 z-10 text-lg`}
         >
           Postular {">"}
-        </Link>
-      </div>
-      {/* </div>
-      <div className=' w-full h-fit rounded-xl  bg-white  p-4 text-center'>
-      <h3 className='text-[#444] font-medium'>{jobPosition}</h3>
-      <p className='text-[#666] mt-4'>{jobDescription}</p>
-      <p className='text-[#888] text-lg'>{sueldo}</p>
-      <button style={{ backgroundColor: color }} className='rounded-lg text-white px-8 py-2 font-medium mt-4'>Postular</button> */}
+        </div>
+      </Link>
     </div>
   );
 };

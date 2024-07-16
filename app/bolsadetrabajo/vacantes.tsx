@@ -93,7 +93,7 @@ const Vacantes: React.FC = () => {
               value={selectedArea.toString()}
               onChange={handleAreaChange}
             >
-              <option value="0">All</option>
+              <option value="0">Todos</option>
               {areas.map((area) => (
                 <option key={area.id} value={area.id.toString()}>
                   {area.acf.name}
