@@ -3,10 +3,7 @@ import React, { MouseEventHandler, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Banner from "@/app/components/job/banner";
-import CardJob from "./cardJob";
 import Testimonios from "./testimonios";
-import { api_vacantes } from "../data/enviroments/api.enviroment";
 import axios from "axios";
 
 interface ArrowProps {
@@ -17,16 +14,18 @@ interface ArrowProps {
 
 const SliderComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [vacantes, setVacantes] = useState<any[]>([]);
+  const [data, setData] = useState<any[]>([]);
 
-  const fetchVacantes = async () => {
-    const response = await axios.get(api_vacantes);
+  const fetchData = async () => {
+    const response = await axios.get(
+      "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/testimonio"
+    );
     console.log(response.data);
-    setVacantes(response.data);
+    setData(response.data);
   };
 
   useEffect(() => {
-    fetchVacantes();
+    fetchData();
   }, []);
 
   function SampleNextArrow(props: ArrowProps) {
@@ -83,15 +82,6 @@ const SliderComponent = () => {
       </div>
     );
   }
-/*   {vacantes.map((job) => (
-    <CardJob
-      idColor={job.acf?.area}
-      imgUrl={job.acf?.imagen_url}
-      jobPosition={job.acf?.job_position}
-      jobDescription={job.acf?.description}
-      sueldo={job.acf?.salary}
-    />
-  ))} */
 
   const settings = {
     className: "center",
@@ -117,8 +107,6 @@ const SliderComponent = () => {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          infinite: true,
-          centerMode: false,
         },
       },
     ],
@@ -130,23 +118,24 @@ const SliderComponent = () => {
           Testimonios
         </h2>
         <p className="md:text-center text-[#666] mb-8">
-        En Agencia GATO, valoramos la innovación, la creatividad y el trabajo en equipo. Conoce las experiencias de nuestros empleados, quienes destacan nuestro ambiente dinámico y colaborativo. ¡Descubre por qué cada idea cuenta y cada logro se celebra con nosotros!
+          En Agencia GATO, valoramos la innovación, la creatividad y el trabajo
+          en equipo. Conoce las experiencias de nuestros empleados, quienes
+          destacan nuestro ambiente dinámico y colaborativo. ¡Descubre por qué
+          cada idea cuenta y cada logro se celebra con nosotros!
         </p>
         <div className="slider-container w-full h-fit">
           <Slider {...settings} className="">
-            <div className="pt-6">
-            <Testimonios/>
-            </div>
-            <div className="pt-6">
-            <Testimonios/>
-            </div>
-            <div className="pt-6">
-            <Testimonios/>
-            </div>
-            <div className="pt-6">
-            <Testimonios/>
-            </div>
-           
+            {data.map((testimonio, index) => (
+              <div className="pt-6" key={index}>
+                <Testimonios
+                  profile={testimonio.acf?.profile}
+                  name={testimonio.acf?.name}
+                  role={testimonio.acf?.role}
+                  score={testimonio.acf?.score}
+                  testimonio={testimonio.acf?.testimonio}
+                />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>

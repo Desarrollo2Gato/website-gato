@@ -85,7 +85,7 @@ function CollagePortfolio() {
     >
       <img
         loading="lazy"
-        className="xl:w-[65%] h-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
+        className="xl:w-[65%] xl:h-[65%] h-[85%] w-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
         src={item.acf?.imagen ? item.acf.imagen : defaultImageUrl}
         onError={(e) => {
           e.currentTarget.onerror = null;

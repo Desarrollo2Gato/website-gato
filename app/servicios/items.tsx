@@ -8,7 +8,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { FaUsers } from "react-icons/fa6";
 import { PiStrategyBold } from "react-icons/pi";
 import { MdWeb } from "react-icons/md";
-import { DiResponsive } from "react-icons/di";
+import { MdDevicesOther } from "react-icons/md";
 import { GrLineChart } from "react-icons/gr";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { LuHeartHandshake } from "react-icons/lu";
@@ -62,7 +62,7 @@ function Items() {
           text: "Sitios atractivos",
         },
         {
-          icon: <DiResponsive />,
+          icon: <MdDevicesOther />,
           text: "Diseño responsivo",
         },
       ],

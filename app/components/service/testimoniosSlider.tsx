@@ -10,6 +10,7 @@ interface ArrowProps {
 }
 
 const TestimoniosSlider = () => {
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   function SampleNextArrow(props: ArrowProps) {

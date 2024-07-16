@@ -9,6 +9,7 @@ import CountNumber from "../components/countNumber";
 import CountrySelect from "./countrySelect";
 
 import ConfirmationModal from "./modal";
+import { useRouter } from "next/navigation";
 
 interface FormProps {
   color: string;
@@ -32,6 +33,7 @@ function Form({ color }: FormProps) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isEnter, setIsEnter] = useState(false);
+  const router = useRouter();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
@@ -76,7 +78,7 @@ function Form({ color }: FormProps) {
       console.log("Form submitted, capturing token...");
       const token = await captureTokenDynamic();
       console.log("Token received, sending data...", data);
-      await axios.post(
+      const response = await axios.post(
         "https://palegreen-anteater-636608.hostingersite.com/wp-json/api/v1/send-mail/",
         {
           name: data.name,
@@ -93,18 +95,28 @@ function Form({ color }: FormProps) {
           },
         }
       );
+      if (response.status === 200) {
+        setModalMessage(
+          "Gracias por dejar tus datos, Un ejecutivo te contactara o puedes contactarnos."
+        );
+        setIsModalOpen(true);
+        router.replace('/registrado');
+      } else {
+        setModalMessage(
+          "Error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos"
+        );
+        setIsModalOpen(true);
+      }
       setIsSubmitting(false);
-      setModalMessage(
-        "Gracias por dejar tus datos, Un ejecutivo te contactara o puedes contactarnos."
-      );
-      setIsModalOpen(true);
+      
     } catch (error) {
       console.error("Error sending data:", error);
-      setIsSubmitting(false);
       setModalMessage(
         "Error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos"
       );
       setIsModalOpen(true);
+    } finally{
+      setIsSubmitting(false);
     }
   }
 
@@ -415,7 +427,7 @@ function Form({ color }: FormProps) {
               <div className="w-full flex flex-col md:flex-row gap-8">
                 {/* countries */}
                 <div className="w-2/4">
-                  <CountrySelect/>
+                  <CountrySelect />
                 </div>
                 <div className="relative w-full md:w-2/4">
                   <input

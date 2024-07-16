@@ -2,7 +2,7 @@ import React from "react";
 import BolsaDeTrabajo from "./bolsadetrabajo";
 import "@/app/components/slider3items.css";
 import { Metadata } from "next";
-import Head from "next/head";
+import '@/app/components/slider3items.css'
 
 export const metadata: Metadata = {
   title: "Bolsa de Trabajo",

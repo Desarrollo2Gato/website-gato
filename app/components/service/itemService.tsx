@@ -60,7 +60,6 @@ const ItemService: React.FC<Props> = ({
           src={img_1}
           alt={name + " icono 1"}
           title={name + " icono 1"}
-          
         />
         <img
           className="shadow-md lg:absolute bottom-0 right-0 w-full max-h-[200px] md:max-h-[300px] lg:max-h-[60%] sm:w-1/2 lg:w-[80%] 2xl:max-w-[500px] object-cover"
@@ -70,7 +69,7 @@ const ItemService: React.FC<Props> = ({
         />
         <div className="hidden absolute top-0 right-0 bg-white lg:flex justify-center items-center w-fit h-fit rounded-[100%] border border-gray-200 p-1">
           <svg
-          className=" h-26 w-24"
+            className=" h-26 w-24"
             width="100%"
             height="100%"
             viewBox="0 0 140 139"
@@ -147,8 +146,11 @@ const ItemService: React.FC<Props> = ({
             />
           </svg>
 
-          <div style={{ backgroundColor:color }} className="rounded-[100%] absolute w-16 h-16 content-center border border-gray-200">
-          <FaMedal className="text-white text-4xl mx-auto" />
+          <div
+            style={{ backgroundColor: color }}
+            className="rounded-[100%] absolute w-16 h-16 content-center border border-gray-200"
+          >
+            <FaMedal className="text-white text-4xl mx-auto" />
           </div>
         </div>
       </div>
@@ -166,7 +168,9 @@ const ItemService: React.FC<Props> = ({
           Conoce nuestro trabajo
         </Link>
         <div>
-          <h3 className="text-2xl 2xl:text-3xl text-[#3d3d3d] font-semibold mb-2 lg:mb-4 2xl:bg-8">{name}</h3>
+          <h3 className="text-2xl 2xl:text-3xl text-[#3d3d3d] font-semibold mb-2 lg:mb-4 2xl:bg-8">
+            {name}
+          </h3>
           <p className="text-[#8D8D8D] 2xl:text-lg">{description}</p>
         </div>
         <div className="flex flex-wrap justify-between 2xl:justify-start gap-4 2xl:gap-20 w-full">
@@ -176,7 +180,10 @@ const ItemService: React.FC<Props> = ({
               style={{ backgroundColor: hexToRgba(color, "0.10") }}
               className="flex flex-wrap gap-4 items-center justify-center w-fit lg:w-[45%] xl:w-fit rounded py-4 px-6"
             >
-              <div style={{ color: color }} className="text-4xl 2xl:text-5xl inline-block">
+              <div
+                style={{ color: color }}
+                className="text-4xl 2xl:text-5xl inline-block"
+              >
                 {benefits.icon}
               </div>
 
@@ -189,7 +196,10 @@ const ItemService: React.FC<Props> = ({
         <div>
           <ul>
             {items.map((item: string, index: number) => (
-              <li key={index} className="mt-2 text-[#6d6d6d] xl:text-lg flex items-start">
+              <li
+                key={index}
+                className="mt-2 text-[#6d6d6d] xl:text-lg flex items-start"
+              >
                 <FaCheckCircle
                   style={{ color: color }}
                   className="mr-2  flex-shrink-0 mt-1.5"
@@ -199,10 +209,10 @@ const ItemService: React.FC<Props> = ({
             ))}
           </ul>
         </div>
-        <div
+        <Link
+          href={`/servicios/${path}`}
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
-          role="button"
           className={`mx-auto relative rounded-3xl py-3 pr-2  w-fit   font-semibold flex items-center   ${
             isEnter && " transition-all"
           } transition-all`}
@@ -216,14 +226,13 @@ const ItemService: React.FC<Props> = ({
               isEnter ? "w-full" : ""
             }`}
           ></div>
-          <Link
-            href={`/servicios/${path}`}
+          <div
             style={{ color: isEnter ? "white" : color }}
             className={`pl-4 z-10 text-lg`}
           >
             Ver Servicio {">"}
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     </div>
   );
