@@ -1,6 +1,5 @@
 import hexToRgba from "hex-to-rgba";
 import React from "react";
-import { Interface } from "readline";
 
 interface Props {
   description: string;

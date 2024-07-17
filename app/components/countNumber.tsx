@@ -1,6 +1,6 @@
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 interface NumberProps {
   n: number;
 }

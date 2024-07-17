@@ -1,5 +1,4 @@
 import Section from "./section";
-import type { Metadata } from "next";
 import {BlogPosting, WithContext } from "schema-dts";
 
 const jsonLd: WithContext<BlogPosting> = {

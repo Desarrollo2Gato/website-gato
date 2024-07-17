@@ -58,11 +58,11 @@ const Banner: React.FC<PostProps> = ({ post }) => {
           <RevealWrapper origin="left" duration={1500} className={`w-full`}>
             <div className="w-full max-w-[1440px] mx-auto px-8 pb-8 lg:px-16 lg:pb-16 xl:  flex flex-col gap-1 md:gap-4 lg:gap-4 ">
               <div className="flex flex-wrap mb-2 gap-2 ">
-                {post?.acf?.secciones.map((tag) => (
+                {post?.acf?.secciones.map((tag,index) => (
                   <Link
                     href="/blog/[slug]/"
                     as={`/blog/${tag}`}
-                    key={tag}
+                    key={index}
                     className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize"
                     style={{
                       backgroundColor: sectionColors[tag],

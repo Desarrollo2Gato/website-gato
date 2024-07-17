@@ -50,11 +50,11 @@ const ContentPost = ({ post }: PostProps) => {
           </div>
           <div>
             <div className="flex flex-wrap gap-1 pb-8 lg:pb-0 ">
-              {post?.acf?.secciones.map((tag) => (
+              {post?.acf?.secciones.map((tag, index) => (
                 <Link
                   href="/blog/[slug]/"
                   as={`/blog/${tag}`}
-                  key={tag}
+                  key={index}
                   className="text-xs px-2 py-1  text-gray-400 font-medium capitalize bg-gray-300"
                 >
                   {tag === "diseno-web" ? "Diseño Web" : tag.replace(/-/g, " ")}

@@ -1,10 +1,6 @@
 "use client";
 
 import { RevealWrapper } from "next-reveal";
-import Link from "next/link";
-import React, { useState } from "react";
-import FastContact from "../components/fast-contac";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { FaUsers } from "react-icons/fa6";
 import { PiStrategyBold } from "react-icons/pi";
 import { MdWeb } from "react-icons/md";
@@ -46,9 +42,9 @@ function Items() {
       ],
       path: "marketing-digital",
       img_1:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/bb/fe/0b/bbfe0b0801797a53c1e536c5d6652099.png",
       img_2:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/ce/c5/ec/cec5eccb5d86c6ac29e98e833a18038c.png",
     },
 
     {
@@ -75,9 +71,9 @@ function Items() {
       ],
       path: "disenio-web",
       img_1:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/27/15/ec/2715ec3263bdf98ffa6a76f885216e4e.png",
       img_2:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/ab/63/41/ab6341a71607f1d22aa8abdbbe395754.png",
     },
     {
       reverse: false,
@@ -103,9 +99,9 @@ function Items() {
       ],
       path: "desarrollo-software",
       img_1:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/1c/d6/1a/1cd61a1c5f199951185fc15f0d40449c.png",
       img_2:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/21/2f/c5/212fc5176c1c45f3b23b0bce4672dbf3.png",
     },
     {
       reverse: true,
@@ -131,9 +127,9 @@ function Items() {
       ],
       path: "branding",
       img_1:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/4c/a8/f1/4ca8f188a31ac53aa6a7da772fcd6943.png",
       img_2:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/29/23/83/292383959150daca4f0dd94f2f0435be.png",
     },
     {
       reverse: false,
@@ -163,9 +159,9 @@ function Items() {
       ],
       path: "desarrollo-movil",
       img_1:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/fe/92/7e/fe927e929ef77cd915158c97cb942cff.png",
       img_2:
-        "https://i.pinimg.com/originals/1c/e6/5b/1ce65b19daf61d5ba01fa30739599c82.jpg",
+        "https://i.pinimg.com/originals/09/87/cd/0987cd2430f0c40b65cc6e58af1fbb13.png",
     },
   ];
 

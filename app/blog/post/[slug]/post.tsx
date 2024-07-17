@@ -7,7 +7,6 @@ import WhatsappContact from "@/app/components/whatsapp-contact";
 import { useEffect, useState } from "react";
 import Banner from "./banner";
 import ContentPost from "./contentPost";
-import Form from "@/app/components/form";
 import axios from "axios";
 import { api_blog } from "@/app/data/enviroments/api.enviroment";
 

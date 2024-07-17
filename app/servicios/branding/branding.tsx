@@ -4,9 +4,23 @@ import Banner from "@/app/components/service/banner/banner";
 import Benefits from "./benefits";
 import Plans from "@/app/components/service/plan/plans";
 import Process from "./process";
-import { DataBranding } from "./dataBranding";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Branding() {
+  const [dataBranding, setDataBranding] = useState<any[]>([]);
+  const fetchDtaBranding = async () => {
+    try {
+      const response = await axios.get('https://raw.githubusercontent.com/Desarrollo2Gato/gato/main/planes/databranding.json');
+      setDataBranding(response.data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  useEffect(() => {
+    fetchDtaBranding();
+  }, []);
+
   return (
     <>
       <Banner
@@ -17,10 +31,11 @@ function Branding() {
         description="Haz que tu marca brille: ¡Descubre cómo podemos transformar tu identidad!"
       />
       <Benefits color="#A52DE6" />
-      <Plans color="#A52DE6" data={DataBranding} />
+      <Plans color="#A52DE6" data={dataBranding} />
       <Process />
     </>
   );
+  
 }
 
 export default Branding;

@@ -1,9 +1,6 @@
-import type { Metadata } from "next";
-import axios from "axios";
-import { api_blog, api_vacantes } from "@/app/data/enviroments/api.enviroment";
 import Detail from "./detail";
 
-interface Vacante {
+/* interface Vacante {
   id: number;
   title: {rendered: string}
   content: { rendered: string };
@@ -16,7 +13,7 @@ interface Vacante {
     salary: string;
   };
 }
-
+ */
 /* 
 export async function generateStaticParams() {
   try {

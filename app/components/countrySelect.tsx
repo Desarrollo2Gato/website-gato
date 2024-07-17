@@ -50,6 +50,7 @@ const CountrySelect = () => {
       borderBottom: "1px solid #3D3D3D",
       backgroundColor: "transparent",
       borderRadius: 0,
+      paddingLeft: 0,
       outline: "none",
       boxShadow: state.isFocused ? "none" : "none",
       "&:hover": {
@@ -72,12 +73,17 @@ const CountrySelect = () => {
     }),
     option: (provided, state) => ({
       ...provided,
+      margin:0,
       backgroundColor: state.isSelected ? "#3D3D3D" : "transparent",
       color: state.isSelected ? "#fff" : "#3D3D3D",
       "&:hover": {
         backgroundColor: "#3D3D3D",
         color: "#fff",
       },
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      padding: 0,
     }),
   };
 

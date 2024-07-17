@@ -20,6 +20,7 @@ const Detail = ({ name }: { name: string }) => {
       try {
         const response = await axios.get(api_vacantes + '?slug=' + name);
         setData(response.data[0]);
+        console.log('vancte',response.data[0]);
       } catch (error) {
         console.log(error);
       }
@@ -78,8 +79,10 @@ const Detail = ({ name }: { name: string }) => {
         salary={data.acf?.salary}
         color={area.acf?.color}
         modalidad={data.acf?.modalidad}
+        requisitos={data.acf?.requisitos}
+        responsabilidades={data.acf?.responsabilidades}
         />
-        <Form vacante={name}/>
+        <Form vacante={data.acf?.job_position}/>
         <Footer></Footer>
       </main>
     </div>

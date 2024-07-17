@@ -7,6 +7,8 @@ interface Props {
   modalidad: number;
   salary: string;
   color: string;
+  requisitos: any[];
+  responsabilidades: any[];
 }
 const Info: React.FC<Props> = ({
   jobPosition,
@@ -14,6 +16,8 @@ const Info: React.FC<Props> = ({
   modalidad,
   salary,
   color,
+  requisitos,
+  responsabilidades,
 }) => {
   const getModalidadText = (modalidad: number): string => {
     switch (modalidad) {
@@ -122,7 +126,8 @@ const Info: React.FC<Props> = ({
               <span>Responsabilidades</span>
             </h3>
             <ul>
-              <li className="flex">
+              {responsabilidades?.map((items, index) => (
+                <li className="flex" key={index}>
                 <div className="mr-2">
                   <svg
                     className="w-4 h-4 object-contain mt-2"
@@ -145,12 +150,12 @@ const Info: React.FC<Props> = ({
                     </defs>
                   </svg>
                 </div>
-
                 <span className="text-[#6D6D6D] ">
-                  Colaborar con equipos de desarrollo, producto y marketing para
-                  definir y ejecutar la visión del producto.
+                  {items?.item}
                 </span>
               </li>
+              ))}
+              
             </ul>
           </div>
           <div>
@@ -216,10 +221,11 @@ const Info: React.FC<Props> = ({
                   fill="#0BC2E1"
                 />
               </svg>
-              <span>Responsabilidades</span>
+              <span>Requisitos</span>
             </h3>
             <ul>
-              <li className="flex">
+            {requisitos?.map((items, index) => (
+                <li className="flex" key={index}>
                 <div className="mr-2">
                   <svg
                     className="w-4 h-4 object-contain mt-2"
@@ -242,12 +248,11 @@ const Info: React.FC<Props> = ({
                     </defs>
                   </svg>
                 </div>
-
                 <span className="text-[#6D6D6D] ">
-                  Colaborar con equipos de desarrollo, producto y marketing para
-                  definir y ejecutar la visión del producto.
+                  {items?.item}
                 </span>
               </li>
+              ))}
             </ul>
           </div>
         </div>
