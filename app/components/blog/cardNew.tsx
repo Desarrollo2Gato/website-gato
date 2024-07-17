@@ -2,6 +2,7 @@ import React from "react";
 import { RevealWrapper } from "next-reveal";
 import { sectionColors } from "./sectionColors";
 import Link from "next/link";
+import { redirect } from "next/dist/server/api-utils";
 
 interface Post {
   id: number;
@@ -53,11 +54,11 @@ const CardNew = ({ post }: { post: Post }) => {
           />
           <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-t from-black flex flex-col justify-between p-2 lg:p-4">
             <div className="flex gap-1 overflow-x-auto overflow-y-hidden whitespace-nowrap">
-              {post?.acf?.secciones.map((tag) => (
-                <Link
-                  href="/blog/[slug]/"
-                  as={`/blog/${tag}`}
-                  key={tag}
+              {post?.acf?.secciones.map((tag, index) => (
+                <span
+                  /* href= */
+                  /* as={`/blog/${tag}`} */
+                  key={index}
                   className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize"
                   style={{
                     backgroundColor: sectionColors[tag],
@@ -65,7 +66,7 @@ const CardNew = ({ post }: { post: Post }) => {
                   }}
                 >
                   {tag === "diseno-web" ? "Diseño Web" : tag.replace(/-/g, " ")}
-                </Link>
+                </span>
               ))}
             </div>
             <div className=" flex flex-col gap-1 lg:gap-3">

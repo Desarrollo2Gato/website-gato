@@ -52,9 +52,10 @@ const MorePostCard = ({ post }: { post: Post }) => {
           />
           <div className="w-full h-full flex flex-col justify-between  text-[#3D3D3D] gap-2 md:gap-0">
             <div className="flex gap-1 overflow-x-auto overflow-y-hidden whitespace-nowrap h-fit pb-2">
-              {post?.acf?.secciones.map((tag) => (
-                <Link href="/blog/[slug]/" as={`/blog/${tag}`} key={tag}>
+              {post?.acf?.secciones.map((tag, index) => (
+              /*   <Link href="/blog/[slug]/" as={`/blog/${tag}`} key={tag}> */
                   <span
+                  key={index}
                     className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize inline-block"
                     style={{
                       backgroundColor: sectionColors[tag],
@@ -65,7 +66,7 @@ const MorePostCard = ({ post }: { post: Post }) => {
                       ? "Diseño Web"
                       : tag.replace(/-/g, " ")}
                   </span>
-                </Link>
+                /* </Link> */
               ))}
             </div>
             <div className="flex flex-col flex-grow justify-end h-full">

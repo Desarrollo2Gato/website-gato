@@ -51,9 +51,10 @@ const cardSubject = ({ post }: { post: Post }) => {
           />
           <div className="w-full md:w-2/4 xl:w-3/5 h-full flex flex-col justify-between  text-[#3D3D3D] gap-2 md:gap-0">
             <div className="flex gap-1 overflow-x-auto overflow-y-hidden  whitespace-nowrap h-fit pb-2">
-              {post?.acf?.secciones.map((tag) => (
-                <Link href="/blog/[slug]/" as={`/blog/${tag}`} key={tag}>
+              {post?.acf?.secciones.map((tag, index) => (
+                
                   <span
+                  key={index}
                     className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize inline-block"
                     style={{
                       backgroundColor: sectionColors[tag],
@@ -64,7 +65,7 @@ const cardSubject = ({ post }: { post: Post }) => {
                       ? "Diseño Web"
                       : tag.replace(/-/g, " ")}
                   </span>
-                </Link>
+                
               ))}
             </div>
             <div className="flex flex-col flex-grow justify-end h-full gap-1 lg:gap-2">
