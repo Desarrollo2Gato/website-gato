@@ -109,10 +109,9 @@ const process: React.FC<ProcessProps> = ({
         </div>
         <div className=" lg:max-w-[960px] mx-auto min-w-full lg:min-w-0 w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 xl:gap-12">
           {cardContents2.map((content, index) => (
-            <RevealWrapper duration={1500} origin="left">
+            <RevealWrapper key={index} duration={1500} origin="left">
               <CardSolution
                 color={color}
-                key={index}
                 title={content.title}
                 description={content.description}
                 imgSrc={content.imgSrc}
