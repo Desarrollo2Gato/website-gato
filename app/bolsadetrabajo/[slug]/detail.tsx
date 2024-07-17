@@ -20,7 +20,6 @@ const Detail = ({ name }: { name: string }) => {
       try {
         const response = await axios.get(api_vacantes + '?slug=' + name);
         setData(response.data[0]);
-        console.log('vancte',response.data[0]);
       } catch (error) {
         console.log(error);
       }
@@ -34,7 +33,6 @@ const Detail = ({ name }: { name: string }) => {
         try {
           const response = await axios.get(api_areas + '/' + data.acf.area);
           setArea(response.data);
-          console.log(response.data)
         } catch (error) {
           console.log(error);
         }
@@ -42,7 +40,6 @@ const Detail = ({ name }: { name: string }) => {
     };
     fetchArea();
   }, [data]);
-  console.log(area);
   useEffect(() => {
     const handleKeyDown = (event: any) => {
       if (event.key === "Escape") {
