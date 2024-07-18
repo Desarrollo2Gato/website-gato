@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Section from "./section";
 import { BlogPosting, WithContext } from "schema-dts";
 
+
 const capitalizeWords = (str: string) => {
   return str.replace(/\b\w/g, (char) => char.toUpperCase());
 };
