@@ -10,8 +10,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gato.pe/"),
   title: {
-    default: "GATO - Marketing y Software",
-    template: "%s - GATO",
+    default: "Marketing y Desarrollo de Software - Agencia Gato",
+    template: "%s - Agencia Gato",
   },
   alternates:{
     canonical: 'https://www.gato.pe/',
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  authors: [{ name: "Marketing y Software - GATO" }, { name: "GATO", url: "https://www.gato.pe/" }],
+  authors: [{ name: "Marketing y Desarrollo de Software - Agencia Gato" }, { name: "Agencia Gato", url: "https://www.gato.pe/" }],
   referrer: "origin-when-cross-origin",
-  publisher: 'Marketing y Software - GATO',
+  publisher: 'Marketing y Desarrollo de Software - Agencia Gato',
   formatDetection: {
     email: false,
     address: false,

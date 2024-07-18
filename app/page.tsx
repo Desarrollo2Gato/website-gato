@@ -6,7 +6,7 @@ import { WebSite, WithContext } from 'schema-dts'
 const jsonLd: WithContext<WebSite> = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Marketing y Software - GATO',
+  name: 'Agencia Gato - Marketing y Desarrollo de Software',
   url: 'https://gato.pe',
   sameAs: [
     'https://www.facebook.com/agenciagatope',
@@ -35,6 +35,18 @@ export const metadata: Metadata = {
   description:
     "En GATO, transformamos ideas en soluciones digitales. Diseño web, marketing digital, software y branding. Potencia tu presencia en línea.",
   keywords: [
+    "marketing digital en lima",
+    "desarrollo de software en lima",
+    "diseño web en lima",
+    "branding digital en lima",
+    "desarrollo web en lima",
+    "desarrollo mobile en lima",
+    "desarrollo movil en lima",
+    "desarrollo de software a medida en lima",
+    "diseño web profesional en lima",
+    "servicios de branding en Lima",
+    "desarrollo de aplicaciones móviles en Perú",
+    "agencia de marketing digital en lima",
     "marketing digital",
     "branding",
     "publicidad online",
@@ -82,7 +94,7 @@ export const metadata: Metadata = {
   
   twitter: {
     card: "summary_large_image",
-    title: "Marketing y Software - GATO",
+    title: "Agencia Gato - Marketing y Desarrollo de Software",
     "description": "Impulsa tu negocio con nuestras soluciones integrales de marketing y desarrollo de software personalizado.",
     images: "/opengraph-image.png",
   },
@@ -90,8 +102,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://www.gato.pe/",
-    siteName: "GATO",
-    title: "Marketing y Software - Gato",
+    siteName: "Agencia Gato",
+    title: "Marketing y Desarrollo de Software - Agencia GAto",
     description:
       "En GATO, transformamos ideas en soluciones digitales. Diseño web, marketing digital, software y branding. Potencia tu presencia en línea.",
     images: [
@@ -99,7 +111,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Marketing y Software - GATO",
+        alt: "Agencia Gato - Marketing y Desarrollo de Software",
       },
       {
         url: "/mstile-310x310.png",

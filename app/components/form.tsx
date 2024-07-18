@@ -47,11 +47,11 @@ function Form({ color }: FormProps) {
   }
 
   async function captureTokenDynamic() {
-    console.log(
+    /* console.log(
       "Capturing token with:",
       process.env.NEXT_PUBLIC_EMAIL,
       process.env.NEXT_PUBLIC_PASSWORD
-    );
+    ); */
     try {
       const response: any = await axios.post(
         "https://palegreen-anteater-636608.hostingersite.com/wp-json/jwt-auth/v1/token",
@@ -60,7 +60,7 @@ function Form({ color }: FormProps) {
           password: process.env.NEXT_PUBLIC_PASSWORD,
         }
       );
-      console.log("Token captured:", response.data.token);
+      /* console.log("Token captured:", response.data.token); */
       return response.data.token;
     } catch (error) {
       console.error("Error capturing token:", error);
@@ -75,9 +75,9 @@ function Form({ color }: FormProps) {
     setIsSubmitting(true);
 
     try {
-      console.log("Form submitted, capturing token...");
+      /* console.log("Form submitted, capturing token..."); */
       const token = await captureTokenDynamic();
-      console.log("Token received, sending data...", data);
+      /* console.log("Token received, sending data...", data); */
       const response = await axios.post(
         "https://palegreen-anteater-636608.hostingersite.com/wp-json/api/v1/send-mail/",
         {

@@ -53,7 +53,7 @@ export async function generateStaticParams() {
   } */
 
 export default function Page({ params }: { params: { slug: string } }) {
-  console.log(params.slug);
+  /* console.log(params.slug); */
   return (
     <div>
       <Detail name={params.slug} />

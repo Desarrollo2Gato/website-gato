@@ -5,7 +5,7 @@ const Benefits = () => {
     <div className="bg-gray-100">
       <div className="max-w-[1440px] mx-auto relative p-8 py-16 lg:px-24 text-[#3d3d3d] ">
         <h2 className="text-[#444] text-3xl uppercase font-semibold text-center mb-8">
-          Únete a nuestro equipo
+          Nuestro beneficios
         </h2>
         <p className="md:text-center text-[#666] ">
           En Agencia GATO, creemos en la innovación, la creatividad y el trabajo

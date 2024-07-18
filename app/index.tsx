@@ -59,7 +59,7 @@ function Index() {
             <div className=" rounded-full p-2  bg-[#9623DE]">
               <img
                 loading="lazy"
-                className="w-60 rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
+                className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
                 src="animation-cat.gif"
                 alt="Gato gif"
               />

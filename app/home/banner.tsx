@@ -52,9 +52,8 @@ function Banner() {
   return (
     <section className=" xl:min-h-screen min-h-[25rem] md:h-[40rem] bg-gray-100 relative flex flex-col justify-center">
       {/* this is decorator */}
-      <div className="absolute w-full   h-full bg-red-100 md:max-h-screen overflow-hidden ">
+      <div className="absolute w-full h-full bg-red-100 md:max-h-screen overflow-hidden ">
         <img
-          loading="lazy"
           alt="Equipo de GATO: Expertos en Desarrollo Web, Marketing Digital y Software"
           title="Equipo de GATO"
           className="w-full h-full object-cover  overflow-hidden brightness-75"

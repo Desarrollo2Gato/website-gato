@@ -21,7 +21,7 @@ const Testimonios:React.FC<Props> = ({
 
   return (
     <div className="w-full relative bg-[#6D28D9] text-white h-auto  rounded-2xl shadow-lg ">
-      <div className="max-w-[1440px] mx-auto p-8 py-16 lg:px-24">
+      <div className="max-w-[1440px] mx-auto p-4">
         <div className="flex gap-4">
         <img
           className=" relative  h-12 w-12 object-cover rounded-[100%] shadow-sm"

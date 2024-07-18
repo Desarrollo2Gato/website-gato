@@ -40,6 +40,7 @@ export default function ErrorPage() {
             </p>
             <Link
               href={"/"}
+              title="GATO"
               className="text-[#6D28D9] font-bold hover:scale-105 transition-all duration-300"
             >
               Volver al inicio

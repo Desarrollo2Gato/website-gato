@@ -6,10 +6,10 @@ import { Organization, WebPage, WithContext } from "schema-dts";
 const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Servicio de Desarrollo de Software - GATO",
+  name: "Servicio de Desarrollo de Software - Agencia Gato",
   url: "https://www.gato.pe/desarrollo-software",
   description:
-    "Descubre nuestro servicio de desarrollo de software en GATO. Creamos soluciones personalizadas y escalables para satisfacer las necesidades digitales de tu negocio.",
+    "Descubre nuestro servicio de desarrollo de software en Agencia Gato. Creamos soluciones personalizadas y escalables para satisfacer las necesidades digitales de tu negocio.",
   publisher: {
     "@type": "Organization",
     name: "Agencia GATO",
@@ -47,27 +47,18 @@ const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
 export const metadata: Metadata = {
   title: "Servicio de Desarrollo de Software",
   description:
-    "Descubre nuestro servicio de desarrollo de software en GATO. Creamos soluciones personalizadas y escalables para satisfacer las necesidades digitales de tu negocio.",
+    "Descubre nuestro servicio de desarrollo de software en Agencia Gato. Creamos soluciones personalizadas y escalables para satisfacer las necesidades digitales de tu negocio.",
   keywords: [
-    "desarrollo de software",
-    "desarrollo de software en lima",
-    "programación de software",
-    "desarrollo de aplicaciones",
-    "desarrollo web",
-    "desarrollo backend",
-    "desarrollo frontend",
-    "software a medida",
-    "soluciones de software",
-    "custom software",
-    "programación web",
-    "software escalable",
-    "ingeniería de software",
-    "consultoría de software",
-    "desarrollo de sistemas",
-    "gestión de proyectos de software",
-    "optimización de procesos",
-    "integración de sistemas",
-    "automatización de procesos",
+    "desarrollo de software a medida en lima",
+    "desarrollo de aplicaciones empresariales",
+    "soluciones tecnológicas personalizadas",
+    "programación de software a medida",
+    "desarrollo backend y frontend",
+    "consultoría de desarrollo de software",
+    "agencia de desarrollo de software",
+    "soluciones innovadoras de software",
+    "servicios de programación a medida",
+    "desarrollo de sistemas personalizados"
   ],
   alternates:{
     canonical: 'https://www.gato.pe/servicios/desarrollo-software'
@@ -76,9 +67,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://gato.pe/servicios/desarrollo-software",
-    title: "Desarrollo de Software - GATO",
+    title: "Desarrollo de Software - Agencia Gato",
     description:
-      "Descubre nuestro servicio en GATO. Creamos soluciones personalizadas y escalables para tus necesidades digitales.",
+      "Descubre nuestro servicio en Agencia Gato. Creamos soluciones personalizadas y escalables para tus necesidades digitales.",
     images: [
       {
         url: "/opengraph-image.png",

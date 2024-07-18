@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Footer from "../components/footer";
 import Services from "./services";
-import Head from "next/head";
 import Form from "../components/form";
 
 export const metadata: Metadata = {
@@ -9,24 +8,32 @@ export const metadata: Metadata = {
   description:
     "En GATO, ofrecemos desarrollo web, diseño UX/UI, marketing digital, branding y desarrollo de software móvil. Transformamos ideas en soluciones digitales.",
   keywords: [
-    "servicios digitales GATO",
-    "desarrollo web",
-    "diseño UX/UI",
-    "marketing digital",
-    "consultoría de marca",
-    "branding",
-    "diseño de logotipos",
-    "desarrollo de aplicaciones móviles",
-    "programación web",
-    "SEO",
-    "optimización de motores de búsqueda",
-    "estrategias de marketing",
-    "campañas publicitarias",
+    "marketing digital en Lima",
+    "desarrollo de software a medida en lima",
+    "diseño web profesional en lima",
+    "branding digital en Lima",
+    "desarrollo de aplicaciones móviles en lima",
+    "SEO en Lima",
+    "publicidad online",
+    "marketing de contenidos",
     "email marketing",
     "social media marketing",
-    "identidad corporativa",
-    "rebranding",
     "gestión de marca",
+    "estrategia de marca",
+    "rebranding",
+    "optimización de motores de búsqueda",
+    "SEO on-page y off-page",
+    "análisis de palabras clave",
+    "link building",
+    "auditoría SEO",
+    "diseño web responsive",
+    "diseño UX/UI",
+    "desarrollo frontend y backend",
+    "consultoría de marca",
+    "identidad corporativa",
+    "campañas publicitarias",
+    "digital marketing",
+    "brand management"
   ],
   alternates: {
     canonical: "https://www.gato.pe/servicios",
@@ -35,9 +42,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://gato.pe/servicios",
-    title: "Servicios - GATO",
+    title: "Nuestros Servicios - Agencia gato",
     description:
-      "En GATO, ofrecemos desarrollo web, diseño UX/UI, marketing digital, branding y desarrollo de software móvil. Transformamos ideas en soluciones digitales.",
+      "En Agencia Gato, ofrecemos desarrollo web, diseño UX/UI, marketing digital, branding y desarrollo de software móvil. Transformamos ideas en soluciones digitales.",
     images: [
       {
         url: "/opengraph-image.png",

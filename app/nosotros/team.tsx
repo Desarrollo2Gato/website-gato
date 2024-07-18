@@ -59,7 +59,7 @@ function Team() {
   const filteredWorkers = workers.filter(
     (worker) => worker.acf.tipo_de_trabajador !== "ceo"
   );
-  console.log(filteredWorkers);
+  /* console.log(filteredWorkers); */
 
 
   const workersByArea: { [key: number]: Worker[] } = {};
