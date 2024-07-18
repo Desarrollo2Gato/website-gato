@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: cleanedTitle,
     description: yoastMeta.og_description,
-
+    robots: "noindex, follow",
     alternates: {
       canonical: formatURL(yoastMeta.og_url),
     },
@@ -112,10 +112,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
       "@type": "WebPage",
       "@id": yoastMeta.schema?.["@graph"]?.find((item:any) => item["@type"] === "WebPage")?.url || "",
     },
-    /* breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: yoastMeta.schema?.["@graph"]?.find(item => item["@type"] === "BreadcrumbList")?.itemListElement || [],
-    }, */
   };
 
   return (
