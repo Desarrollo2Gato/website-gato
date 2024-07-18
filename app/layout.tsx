@@ -30,7 +30,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
