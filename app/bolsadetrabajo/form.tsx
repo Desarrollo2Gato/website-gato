@@ -70,7 +70,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
       if (data.file !== null && data.file instanceof File) {
         console.log("hola");
         const formData = new FormData();
-        formData.append("name", "nombreprueba");
+        formData.append("name", data.name);
         formData.append("email", data.email);
         formData.append("phone", `${data.country_code} ${data.phone}`);
         formData.append("salary", data.salary);
