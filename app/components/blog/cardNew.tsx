@@ -59,7 +59,7 @@ const CardNew = ({ post }: { post: Post }) => {
                   /* href= */
                   /* as={`/blog/${tag}`} */
                   key={index}
-                  className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize"
+                  className="inline-block text-xs px-2 py-1  text-white font-medium shadow-md capitalize"
                   style={{
                     backgroundColor: sectionColors[tag],
                     color: "white",

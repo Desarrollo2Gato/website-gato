@@ -117,14 +117,14 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                 >
                   Servicio de {proyecto.acf?.services}
                 </span>
-                <h2
+                <h1
                   style={{ color: mainColor }}
                   className={`text-4xl md:text-6xl font-semibold
                      capitalize`}
                   title={proyecto.acf?.cliente}
                 >
                   {proyecto.acf?.cliente}
-                </h2>
+                </h1>
               </div>
             </RevealWrapper>
 
@@ -157,12 +157,12 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                 duration={1500}
                 className={"lg:w-1/3"}
               >
-                <span
+                <h2
                   style={{ color: mainColor }}
                   className={`text-xl lg:text-2xl font-bold`}
                 >
                   PROBLEMA
-                </span>
+                </h2>
                 <p
                   className={` font-light text-[#444] xl:text-lg md:font-normal`}
                 >
@@ -175,12 +175,12 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                 duration={1500}
                 className={"lg:w-1/3"}
               >
-                <span
+                <h2
                   style={{ color: mainColor }}
                   className={`text-xl lg:text-2xl  font-bold`}
                 >
                   NECESIDAD
-                </span>
+                </h2>
                 <p className="font-light text-[#444] xl:text-lg md:font-normal">
                   {proyecto.acf?.necesidad}
                 </p>
@@ -191,12 +191,12 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                 duration={1500}
                 className={"lg:w-1/3"}
               >
-                <span
+                <h2
                   style={{ color: mainColor }}
                   className={`text-xl lg:text-2xl  font-bold`}
                 >
                   Redes Sociales
-                </span>
+                </h2>
                 {!proyecto.acf?.facebook &&
                 !proyecto.acf?.instagram &&
                 !proyecto.acf?.tiktok &&
@@ -292,12 +292,12 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                   "lg:absolute lg:top-4 lg:left-[35%] xl:left-[60%] pt-8 relative"
                 }
               >
-                <span
+                <h2
                   style={{ color: mainColor }}
                   className={` font-black text-4xl md:text-5xl lg:text-9xl drop-shadow-md`}
                 >
                   SOLUCIÓN
-                </span>
+                </h2>
               </RevealWrapper>
             </div>
             <RevealWrapper

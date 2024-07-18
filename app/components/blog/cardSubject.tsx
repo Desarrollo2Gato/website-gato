@@ -50,12 +50,12 @@ const cardSubject = ({ post }: { post: Post }) => {
             alt={post.acf.titulo}
           />
           <div className="w-full md:w-2/4 xl:w-3/5 h-full flex flex-col justify-between  text-[#3D3D3D] gap-2 md:gap-0">
-            <div className="flex gap-1 overflow-x-auto overflow-y-hidden  whitespace-nowrap h-fit pb-2">
+            <div className="flex items-center justify-start gap-1 overflow-x-auto overflow-y-hidden  whitespace-nowrap h-fit pb-1">
               {post?.acf?.secciones.map((tag, index) => (
                 
                   <span
                   key={index}
-                    className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize inline-block"
+                    className="text-xs px-2 py-1 h-fit  text-white font-medium shadow-md capitalize inline-block content-center"
                     style={{
                       backgroundColor: sectionColors[tag],
                       color: "white",

@@ -1,59 +1,46 @@
+import { Metadata } from "next";
 import Detail from "./detail";
+import axios from "axios";
+import { api_vacantes } from "@/app/data/enviroments/api.enviroment";
 
-/* interface Vacante {
-  id: number;
-  title: {rendered: string}
-  content: { rendered: string };
-  slug: string;
-  acf: {
-    area: number[];
-    imagen_url: string;
-    job_position: string;
-    description: string;
-    salary: string;
-  };
-}
- */
-/* 
-export async function generateStaticParams() {
+const fetchVacanteData = async (name: string) => {
   try {
-    const response = await axios.get(
-      `${api_vacantes}?per_page=100`
-    );
-
-    const vacante: Vacante[] = response.data;
-    const slugs = vacante.map((vac) => vac.slug);
-
-    return slugs.map((slug) => ({ slug }));
+    const response = await axios.get(api_vacantes + "?slug=" + name);
+    return response.data[0];
   } catch (error) {
-    console.error("Error fetching project data:", error);
-    return [];
+    console.log("Error fetching project data:", error);
   }
-} */
+};
 
-/* export async function generateMetadata({
-    params,
-  }: {
-    params: { slug: string };
-  }): Promise<Metadata> {
-    try {
-      const post = await fetchVacanteData(params.slug);
-      return {
-        title: "Gato - Blog: " + post.title.rendered,
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  try {
+    console.log(params.slug);
+    const post = await fetchVacanteData(params.slug);
+    return {
+      title: "Vacante: " + post.title.rendered,
+      description: post.acf.descripcion_corta,
+      keywords: [
+        "vacante de " + post.title.rendered + " en lima",
+        "vacante de " + post.title.rendered + " en jesus maria",
+        "trabaja en agencia gato",
+        "equipo de profesionales en agencia gato",
+      ],
+      openGraph: {
+        title: post.title.rendered,
         description: post.acf.descripcion_corta,
-        openGraph: {
-          title: post.title.rendered,
-          description: post.acf.descripcion_corta,
-          images: [{ url: post.acf["descripcion-imagen"] }],
-        },
-      };
-    } catch (error) {
-      return {};
-    }
-  } */
+        images: [{ url: post.acf["descripcion-imagen"] }],
+      },
+    };
+  } catch (error) {
+    return {};
+  }
+}
 
 export default function Page({ params }: { params: { slug: string } }) {
-  /* console.log(params.slug); */
   return (
     <div>
       <Detail name={params.slug} />

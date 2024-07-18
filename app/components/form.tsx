@@ -100,7 +100,7 @@ function Form({ color }: FormProps) {
           "Gracias por dejar tus datos, Un ejecutivo te contactara o puedes contactarnos."
         );
         setIsModalOpen(true);
-        router.replace('/registrado');
+        /* router.replace('/registrado'); */
       } else {
         setModalMessage(
           "Error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos"

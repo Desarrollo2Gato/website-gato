@@ -8,7 +8,7 @@ interface Project {
   slug: string;
   title: { rendered: string };
   acf: {
-    descripcion_corta: string;
+    "descripcion_corta": string;
     banner: string;
     "imagen-solucion": string;
     services: string;
@@ -46,21 +46,6 @@ async function fetchProjectData(slug: string): Promise<Project> {
   }
 }
 
-/* export async function generateStaticParams() {
-  try {
-    const response = await axios.get(
-      "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/proyecto?per_page=100"
-    );
-
-    const projects: Project[] = response.data;
-    const slugs = projects.map((project) => project.slug);
-
-    return slugs.map((slug) => ({ slug }));
-  } catch (error) {
-    console.error("Error fetching project data:", error);
-    return [];
-  }
-} */
 
 export async function generateMetadata({
   params,
@@ -71,10 +56,10 @@ export async function generateMetadata({
     const project = await fetchProjectData(params.slug);
     return {
       title: "Proyecto " + project.acf.cliente,
-      description: project.acf.descripcion_corta,
+      description: project.acf["descripcion_corta"],
       openGraph: {
         title: "Proyecto " + project.acf.cliente,
-        description: project.acf.descripcion_corta,
+        description: project.acf["descripcion_corta"],
         images: [{ url: project.acf.imagen }],
       },
     };
