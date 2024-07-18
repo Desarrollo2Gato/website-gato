@@ -54,7 +54,7 @@ const Benefits = () => {
                 </defs>
               </svg>
             </div>
-            <p className="text-center text-xl mt-4 font-medium">Butterfly</p>
+            <p className="text-center text-xl mt-4 font-medium">Betterfly</p>
           </div>
           <div>
             <div className="bg-[#6D28D9] rounded-[100%] w-32 h-32 content-center bg-opacity-20 shadow-lg">

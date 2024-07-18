@@ -190,6 +190,9 @@ function Form({ color }: FormProps) {
       },
     }),
   };
+  const handleCountryChange = (countryCode: string) => {
+    setData({ ...data, country_code: countryCode });
+  };
 
   return (
     <section className=" flex  py-16 w-full">
@@ -427,7 +430,7 @@ function Form({ color }: FormProps) {
               <div className="w-full flex flex-col md:flex-row gap-8">
                 {/* countries */}
                 <div className="w-2/4">
-                  <CountrySelect />
+                <CountrySelect onChange={handleCountryChange}/>
                 </div>
                 <div className="relative w-full md:w-2/4">
                   <input

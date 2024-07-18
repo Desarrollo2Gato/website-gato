@@ -13,13 +13,18 @@ interface ArrowProps {
 type SliderPlansProps = {
   color: string;
   data: Plan[];
-  handleViewPlan: (plan: Plan) => void;
+  handleViewPlan: (plan: Plan, color: string) => void;
+  word: string;
 };
 
-const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
+const sliderPlans = ({
+  color,
+  data,
+  handleViewPlan,
+  word,
+}: SliderPlansProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const mainColor = color;
-
 
   function SampleNextArrow(props: ArrowProps) {
     const { className, style, onClick } = props;
@@ -87,7 +92,6 @@ const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
-
       {
         breakpoint: 1536,
         settings: {
@@ -96,7 +100,7 @@ const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
           infinite: true,
         },
       },
-      
+
       {
         breakpoint: 768,
         settings: {
@@ -121,36 +125,55 @@ const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
     <div className="slider-container w-full">
       <Slider {...settings} className="">
         {data.map((item, index) => (
-          
           <div key={index} className="max-w-full flex flex-col gap-5 h-fit">
             <div
-              style={{ borderColor: mainColor }} 
+              style={{ borderColor: mainColor }}
               className={` border-2  rounded-lg p-2 md:p-6 flex flex-col justify-center items-center gap-5 max-w-full  h-auto aspect-square`}
             >
               <h3
-              style={{ backgroundColor: mainColor }} 
+                style={{ backgroundColor: mainColor }}
                 className={`uppercase font-bold text-white text-[1.1rem] lg:text-[1.4rem] shadow-xl w-full text-center rounded-md p-2 truncate`}
               >
-                {item.name}
+                {item.plan_name}
               </h3>
-              <p style={{ color: mainColor }}  className={` text-[1rem] lg:text-[1.2rem] text-center truncate w-full`}>
-                {item.descriptionCorta}
+              <p
+                style={{ color: mainColor }}
+                className={` text-[1rem] lg:text-[1.2rem] text-center truncate w-full`}
+              >
+                {item.short_description}
               </p>
               <div
                 style={{ color: mainColor }}
                 className={`w-full flex flex-col items-center justify-center text-[${mainColor}]`}
               >
-                <span className="font-bold text-[1rem] lg:text-[1.3rem]  text-center uppercase">{item.word}</span>
+                <span className="font-bold text-[1rem] lg:text-[1.3rem]  text-center uppercase">
+                  {word}
+                </span>
                 <div className="flex font-black items-center">
-                  <span className="text-[1rem] md:text-[1.5rem] lg:text-[1.5rem] 2xl:text-[1.8rem]">S/</span>
-                  <span className="text-[2.5rem] md:text-[3rem] lg:text-[2.8rem] 2xl:text-[3.2rem]">{item.price}</span>
-                  <span className="text-[1rem] md:text-[1.5rem] lg:text-[1.5rem] 2xl:text-[1.8rem]">.00</span>
+                  <span className="text-[1rem] md:text-[1.5rem] lg:text-[1.5rem] 2xl:text-[1.8rem]">
+                    S/
+                  </span>
+                  {(() => {
+                    const price = item.price;
+                    const mainPrice = price.slice(0, -3);
+                    const lastThreeChars = price.slice(-3);
+                    return (
+                      <>
+                        <span className="text-[2.5rem] md:text-[3rem] lg:text-[2.8rem] 2xl:text-[3.2rem]">
+                          {mainPrice}
+                        </span>
+                        <span className="text-[1rem] md:text-[1.5rem] lg:text-[1.5rem] 2xl:text-[1.8rem]">
+                          {lastThreeChars}
+                        </span>
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             </div>
             <div
               className={`detalle w-full uppercase bg-[${mainColor}] font-bold text-white text-xl shadow-xl w-full rounded-md py-2 capitalize flex justify-between px-6 mt-4 items-center`}
-              onClick={() => handleViewPlan(item)}
+              onClick={() => handleViewPlan(item, color)}
             >
               ver plan
               <svg

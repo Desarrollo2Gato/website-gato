@@ -120,7 +120,6 @@ const Vacantes: React.FC = () => {
                   imgUrl={job.acf.imagen_url}
                   jobPosition={job.acf.job_position}
                   jobDescription={job.acf.descripcion_corta}
-                  sueldo={job.acf.salary}
                   slug={job.slug}
                 />
               ))

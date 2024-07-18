@@ -1,18 +1,19 @@
 import DetailPlan from "./modalDetail";
 import SliderPlans from "./sliderPlans";
 import { useState } from "react";
-import { Plan } from "./iPlan";
+import {Plan } from "./iPlan";
+import { color } from "framer-motion";
 
 type Props = {
   color: string;
-  data: Plan[];
+  data:Plan[];
 };
 
 const plans = (prop: Props) => {
-  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<{ plan: Plan; color: string } | null>(null);
 
-  const handleViewPlan = (plan: Plan) => {
-    setSelectedPlan(plan);
+  const handleViewPlan = (plan:Plan, color:string) => {
+    setSelectedPlan({plan, color});
   };
   const closePopup = () => {
     setSelectedPlan(null);
@@ -31,6 +32,7 @@ const plans = (prop: Props) => {
             color={prop.color}
             data={prop.data}
             handleViewPlan={handleViewPlan}
+            word="pago único"
           />
         </div>
       </div>
@@ -61,7 +63,7 @@ const plans = (prop: Props) => {
               </svg>
             </button>
             <div className="">
-            <DetailPlan {...selectedPlan} />
+            {selectedPlan && <DetailPlan color={selectedPlan.color} plan={selectedPlan.plan} />}
             </div>
             
           </div>

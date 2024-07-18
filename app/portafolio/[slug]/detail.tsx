@@ -19,6 +19,7 @@ interface Project {
     banner: string;
     "imagen-solucion": string;
     cliente: string;
+    services: string;
     problema: string;
     necesidad: string;
     imagen: string;
@@ -29,6 +30,10 @@ interface Project {
     "solucion-pruebas": string;
     "solucion-despliegue": string;
     "banner-descripcion": string;
+    facebook: string;
+    instagram: string;
+    tiktok: string;
+    linkedin: string;
   };
 }
 

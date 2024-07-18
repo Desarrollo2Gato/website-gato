@@ -5,16 +5,16 @@ interface Props {
   jobPosition: string;
   jobDescription: string;
   modalidad: number;
-  salary: string;
   color: string;
   requisitos: any[];
+  imgUrl: string;
   responsabilidades: any[];
 }
 const Info: React.FC<Props> = ({
   jobPosition,
   jobDescription,
   modalidad,
-  salary,
+  imgUrl,
   color,
   requisitos,
   responsabilidades,
@@ -50,13 +50,8 @@ const Info: React.FC<Props> = ({
               Modalidad: <span className="font-normal">{getModalidadText(modalidad)}</span>
             </p>
           </div>
-          <div className="flex items-center">
-            <div style={{ backgroundColor: color? hexToRgba(color, '0.1') : '#fff'}} className="rounded-xl w-full lg:w-fit flex flex-col justify-center items-center  gap-4 p-8 px-12 h-fit">
-              <p style={{ color:color }} className="text-4xl font-bold">Sueldo</p>
-              <p className="text-[#4D4D4D] text-6xl font-bold">
-                S/ <span>{salary}</span>
-              </p>
-            </div>
+          <div>
+            <img className="w-[300px] h-auto object-contain" src={imgUrl} alt={jobPosition} title={jobPosition} />
           </div>
         </div>
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-10">

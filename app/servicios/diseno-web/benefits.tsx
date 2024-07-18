@@ -50,9 +50,8 @@ const benefits = (prop: Props) => {
         </h2>
         <div className="grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 lg:gap-y-5 xl:gap-x-16">
           {benefitsInfo.map((benefit, index) => (
-            <RevealWrapper origin="bottom" duration={1500}>
+            <RevealWrapper key={index} origin="bottom" duration={1500}>
               <BenefitCard
-                key={index}
                 color={mainColor}
                 title={benefit.title}
                 content={benefit.content}

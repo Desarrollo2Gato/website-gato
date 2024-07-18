@@ -1,7 +1,7 @@
 import React from "react";
 
 type Prop = {
-  price: number;
+  price: string;
   color: string;
   word: string;
 };

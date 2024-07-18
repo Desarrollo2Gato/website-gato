@@ -73,13 +73,13 @@ const Detail = ({ name }: { name: string }) => {
         <Info
         jobPosition={data.acf?.job_position}
         jobDescription={data.acf?.description}
-        salary={data.acf?.salary}
+        imgUrl={data.acf?.imagen_url}
         color={area.acf?.color}
         modalidad={data.acf?.modalidad}
         requisitos={data.acf?.requisitos}
         responsabilidades={data.acf?.responsabilidades}
         />
-        <Form vacante={data.acf?.job_position}/>
+        <Form vacante={data.acf?.job_position} color={area.acf?.color}/>
         <Footer></Footer>
       </main>
     </div>

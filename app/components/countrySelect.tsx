@@ -1,5 +1,5 @@
 "use client";
-import Select, { StylesConfig } from "react-select";
+import Select, { SingleValue, StylesConfig } from "react-select";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -8,8 +8,13 @@ interface Country {
   code: string;
   id: number;
 }
-const CountrySelect = () => {
+interface CountrySelectProps {
+  onChange: (countryCode: string) => void;
+}
+const CountrySelect: React.FC<CountrySelectProps> = ({ onChange }) => {
+
   const [codes, setCodes] = useState<Country[]>([]);
+
   const fetchCountries = async () => {
     try {
       const response = await axios.get(
@@ -86,6 +91,11 @@ const CountrySelect = () => {
       padding: 0,
     }),
   };
+  const handleChange = (selectedOption: SingleValue<{ value: string; label: string }>) => {
+    if (selectedOption) {
+      onChange(selectedOption.value);
+    }
+  };
 
   return (
     <Select
@@ -93,6 +103,7 @@ const CountrySelect = () => {
       options={options}
       styles={customStyles}
       placeholder="Cod. de país"
+      onChange={handleChange}
     />
   );
 };

@@ -11,6 +11,7 @@ interface Project {
     descripcion_corta: string;
     banner: string;
     "imagen-solucion": string;
+    services: string;
     cliente: string;
     problema: string;
     necesidad: string;
@@ -22,6 +23,10 @@ interface Project {
     "solucion-pruebas": string;
     "solucion-despliegue": string;
     "banner-descripcion": string;
+    facebook: string;
+    instagram: string;
+    tiktok: string;
+    linkedin: string;
   };
 }
 
@@ -65,10 +70,10 @@ export async function generateMetadata({
   try {
     const project = await fetchProjectData(params.slug);
     return {
-      title: "Proyecto " + project.title.rendered,
+      title: "Proyecto " + project.acf.cliente,
       description: project.acf.descripcion_corta,
       openGraph: {
-        title: project.title.rendered,
+        title: "Proyecto " + project.acf.cliente,
         description: project.acf.descripcion_corta,
         images: [{ url: project.acf.imagen }],
       },

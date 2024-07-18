@@ -13,6 +13,7 @@ function CollagePortfolio() {
       imagen: string;
       cliente: string;
       "cliente-slug": string;
+      services: string;
     };
     title: {
       rendered: string;
@@ -98,7 +99,7 @@ function CollagePortfolio() {
         <span className="font-semibold text-base md:text-2xl text-center">
           {item.acf.cliente}
         </span>
-        <span className="text-xs md:text-base text-center">{item.title.rendered}</span>
+        <span className="text-xs md:text-base text-center capitalize">{item.acf?.services}</span>
       </div>
     </Link>
   );

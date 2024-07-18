@@ -8,7 +8,6 @@ type Props = {
   imgUrl: string;
   jobPosition: string;
   jobDescription: string;
-  sueldo: string;
   slug: string;
 };
 
@@ -25,7 +24,6 @@ const CardJob: React.FC<Props> = ({
   imgUrl,
   jobPosition,
   jobDescription,
-  sueldo,
   slug,
 }) => {
   const [area, setArea] = useState<Area | null>(null);
@@ -70,7 +68,7 @@ const CardJob: React.FC<Props> = ({
           <span
             style={{
               color: dataColor,
-              backgroundColor: hexToRgba(dataColor, 0.09),
+              backgroundColor: hexToRgba(dataColor, 0.2),
             }}
             className="px-4 py-0.5 text-sm font-medium rounded-full inline-block mx-auto"
           >
@@ -82,9 +80,9 @@ const CardJob: React.FC<Props> = ({
         <h3 className="text-[#3D3D3D] text-xl font-medium capitalize">
           {jobPosition}
         </h3>
-        <span style={{ color: dataColor }} className="font-medium text-lg">
+        {/* <span style={{ color: dataColor }} className="font-medium text-lg">
           S/ {sueldo}
-        </span>
+        </span> */}
       </div>
       <p className="mb-6 text-[#666]">{jobDescription}</p>
       <Link
