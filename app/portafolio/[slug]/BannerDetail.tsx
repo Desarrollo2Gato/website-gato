@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Link from "next/link";
-import { Spinner } from "keep-react";
 import { RevealWrapper } from "next-reveal";
 import Process from "./process";
+import { IoChevronBackOutline } from "react-icons/io5";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaLinkedinIn,
+  FaGlobe,
+} from "react-icons/fa";
 
 interface ProjectData {
   title: { rendered: string };
@@ -11,8 +17,10 @@ interface ProjectData {
     banner: string;
     "imagen-solucion": string;
     cliente: string;
+    services: string;
     problema: string;
     necesidad: string;
+    url: string;
     imagen: string;
     "solucion-analisis": string;
     "solucion-diseno": string;
@@ -20,6 +28,10 @@ interface ProjectData {
     "solucion-pruebas": string;
     "solucion-despliegue": string;
     "banner-descripcion": string;
+    facebook: string;
+    instagram: string;
+    tiktok: string;
+    linkedin: string;
   };
 }
 interface BannerDetailProps {
@@ -58,8 +70,8 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
   }, []);
 
   useEffect(() => {
-    if (!isLoading && proyecto?.title?.rendered) {
-      const projectTitle = proyecto.title.rendered.toLowerCase();
+    if (!isLoading && proyecto?.acf?.services) {
+      const projectTitle = proyecto.acf?.services.toLowerCase();
       let selectedColor = { color: "", solution: "" };
 
       if (
@@ -90,24 +102,12 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
               <Link
                 href={"/portafolio"}
                 style={{ color: mainColor }}
-                className={`flex gap-x-2 items-center`}
+                className={`flex gap-x-1 items-center hover:translate-x-1 transition-all duration-300`}
               >
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 md:h-[1.5rem] w-auto"
-                >
-                  <path
-                    d="M15 20L7 12L15 4"
-                    stroke={mainColor}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <IoChevronBackOutline
+                  style={{ color: mainColor }}
+                  className=""
+                />
                 Ver todos los proyectos
               </Link>
             </RevealWrapper>
@@ -117,16 +117,16 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                   style={{ color: mainColor }}
                   className={`md:text-xl font-bold lg:font-bold uppercase`}
                 >
-                  Categoría de servicio: {proyecto.title?.rendered}
+                  Servicio de {proyecto.acf?.services}
                 </span>
-                <h2
+                <h1
                   style={{ color: mainColor }}
                   className={`text-4xl md:text-6xl font-semibold
                      capitalize`}
                   title={proyecto.acf?.cliente}
                 >
                   {proyecto.acf?.cliente}
-                </h2>
+                </h1>
               </div>
             </RevealWrapper>
 
@@ -134,7 +134,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
               <RevealWrapper origin="bottom" duration={1500} className={""}>
                 <div className=" md:absolute w-full h-full top-0 left-0 md:justify-center md:items-center flex">
                   <p
-                    className={`text-xl text-white lg:text-2xl xl:text-3xl 2xl:text-4xl md:text-center md:max-w-[40%] font-semibold pb-4 md:pb-0 drop-shadow-lg`}
+                    className={`text-xl md:text-white lg:text-2xl xl:text-3xl 2xl:text-4xl md:text-center md:max-w-[40%] font-semibold pb-4 md:pb-0 drop-shadow-lg`}
                   >
                     {proyecto.acf?.["banner-descripcion"]}
                   </p>
@@ -159,13 +159,15 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                 duration={1500}
                 className={"lg:w-1/3"}
               >
-                <span
+                <h2
                   style={{ color: mainColor }}
                   className={`text-xl lg:text-2xl font-bold`}
                 >
                   PROBLEMA
-                </span>
-                <p className={` font-light text-[#444] xl:text-lg md:font-normal`}>
+                </h2>
+                <p
+                  className={` font-light text-[#444] xl:text-lg md:font-normal`}
+                >
                   {proyecto.acf?.problema}
                 </p>
               </RevealWrapper>
@@ -175,12 +177,88 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                 duration={1500}
                 className={"lg:w-1/3"}
               >
-                <span style={{ color: mainColor }} className={`text-xl lg:text-2xl  font-bold`}>
+                <h2
+                  style={{ color: mainColor }}
+                  className={`text-xl lg:text-2xl  font-bold`}
+                >
                   NECESIDAD
-                </span>
+                </h2>
                 <p className="font-light text-[#444] xl:text-lg md:font-normal">
                   {proyecto.acf?.necesidad}
                 </p>
+              </RevealWrapper>
+
+              <RevealWrapper
+                origin="bottom"
+                duration={1500}
+                className={"lg:w-fit"}
+              >
+                <h2
+                  style={{ color: mainColor }}
+                  className={`text-xl lg:text-2xl  font-bold`}
+                >
+                  Enlaces
+                </h2>
+                {!proyecto.acf?.url &&
+                !proyecto.acf?.facebook &&
+                !proyecto.acf?.instagram &&
+                !proyecto.acf?.tiktok &&
+                !proyecto.acf?.linkedin ? (
+                  <p>Enlaces no encontrados</p>
+                ) : (
+                  <div className="flex gap-4 flex-wrap justify-center h-full items-center">
+                    {proyecto.acf?.url && (
+                      <Link
+                        target="_blanck"
+                        href={proyecto.acf?.url}
+                        style={{ backgroundColor: mainColor }}
+                        className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
+                      >
+                        <FaGlobe />
+                      </Link>
+                    )}
+                    {proyecto.acf?.facebook && (
+                      <Link
+                        target="_blanck"
+                        href={proyecto?.acf?.facebook}
+                        style={{ backgroundColor: mainColor }}
+                        className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
+                      >
+                        <FaFacebookF />
+                      </Link>
+                    )}
+                    {proyecto.acf?.instagram && (
+                      <Link
+                        target="_blanck"
+                        href={proyecto?.acf?.instagram}
+                        style={{ backgroundColor: mainColor }}
+                        className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
+                      >
+                        <FaInstagram />
+                      </Link>
+                    )}
+                    {proyecto.acf?.tiktok && (
+                      <Link
+                        target="_blanck"
+                        href={proyecto?.acf?.tiktok}
+                        style={{ backgroundColor: mainColor }}
+                        className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
+                      >
+                        <FaTiktok />
+                      </Link>
+                    )}
+                    {proyecto.acf?.linkedin && (
+                      <Link
+                        target="_blanck"
+                        href={proyecto?.acf?.linkedin}
+                        style={{ backgroundColor: mainColor }}
+                        className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
+                      >
+                        <FaLinkedinIn />
+                      </Link>
+                    )}
+                  </div>
+                )}
               </RevealWrapper>
             </div>
           </div>
@@ -227,12 +305,12 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                   "lg:absolute lg:top-4 lg:left-[35%] xl:left-[60%] pt-8 relative"
                 }
               >
-                <span
-                style={{ color: mainColor }}
+                <h2
+                  style={{ color: mainColor }}
                   className={` font-black text-4xl md:text-5xl lg:text-9xl drop-shadow-md`}
                 >
                   SOLUCIÓN
-                </span>
+                </h2>
               </RevealWrapper>
             </div>
             <RevealWrapper
@@ -241,13 +319,25 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
               className={"w-full lg:w-[40%] lg:h-full h-auto pt-8 lg:pt-0"}
             >
               <div className="flex justify-center items-start w-full h-full mb-8">
-                <div className="relative h-[340px] w-[86px]  border-t-8 border-r-8 border-[#A52DE6]">
-                  <div className="absolute border-none -top-5 left-0  h-8 w-8 bg-[#A52DE6]"></div>
-                  <div className="absolute -right-5 top-1/2 h-8 w-8 bg-[#A52DE6]"></div>
-                  <div className="absolute -right-5 bottom-0 h-8 w-8 bg-[#A52DE6]"></div>
+                <div
+                  style={{ borderColor: mainColor }}
+                  className="relative h-[340px] w-[86px]  border-t-8 border-r-8"
+                >
+                  <div
+                    style={{ backgroundColor: mainColor }}
+                    className="absolute border-none -top-5 left-0  h-8 w-8"
+                  ></div>
+                  <div
+                    style={{ backgroundColor: mainColor }}
+                    className="absolute -right-5 top-1/2 h-8 w-8"
+                  ></div>
+                  <div
+                    style={{ backgroundColor: mainColor }}
+                    className="absolute -right-5 bottom-0 h-8 w-8"
+                  ></div>
                 </div>
                 <div
-                style={{ color: mainColor }}
+                  style={{ color: mainColor }}
                   className={`-translate-y-[14px] lg:translate-y-0 h-[400px] lg:h-[460px] flex flex-col ml-4 text-xl lg:text-2xl font-semibold lg:font-bold justify-between`}
                 >
                   <div className="flex flex-col gap-5">

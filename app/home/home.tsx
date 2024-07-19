@@ -40,7 +40,7 @@ function Home() {
       </div>
       <main className="min-w-screen flex flex-col w-full pt-[60px] lg:pl-[80px] lg:pt-0">
         <header>
-          <h1 className="sr-only">Marketing y Software GATO</h1>
+          <h1 className="sr-only">Gato: Marketing y Desarrollo de Software</h1>
         </header>
         <Banner></Banner>
         <Collage></Collage>

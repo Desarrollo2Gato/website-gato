@@ -12,3 +12,5 @@ export const api_areas =
 
 export const api_blog = "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/posts";
 export const api_testimonios = "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/testimonio?per_page=100";
+
+export const api_plan = "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/plan"

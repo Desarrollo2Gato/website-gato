@@ -103,9 +103,8 @@ const process = () => {
         </h2>
         <div className="w-full flex flex-wrap gap-4 lg:gap-0">
           {Procesos.map((proceso, index) => (
-            <RevealWrapper origin="left" duration={1500}>
+            <RevealWrapper key={index} origin="left" duration={1500}>
               <ProcessCard
-                key={index}
                 color={proceso.color}
                 title={proceso.title}
                 paso={proceso.paso}

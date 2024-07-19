@@ -6,13 +6,14 @@ import Plans from "@/app/components/service/plan/plans";
 import Process from "./process";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { api_plan } from "@/app/data/enviroments/api.enviroment";
 
 function Branding() {
   const [dataBranding, setDataBranding] = useState<any[]>([]);
   const fetchDtaBranding = async () => {
     try {
-      const response = await axios.get('https://raw.githubusercontent.com/Desarrollo2Gato/gato/main/planes/databranding.json');
-      setDataBranding(response.data);
+      const response = await axios.get(`${api_plan}?slug=planes-de-branding`);
+      setDataBranding(response.data[0].acf.plans);
     } catch (e) {
       console.error(e);
     }

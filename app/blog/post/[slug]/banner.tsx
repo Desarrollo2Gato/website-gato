@@ -62,6 +62,9 @@ const Banner: React.FC<PostProps> = ({ post }) => {
                   <Link
                     href="/blog/[slug]/"
                     as={`/blog/${tag}`}
+                    title= {tag === "diseno-web"
+                      ? "Diseño Web"
+                      : tag.replace(/-/g, " ")}
                     key={index}
                     className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize"
                     style={{

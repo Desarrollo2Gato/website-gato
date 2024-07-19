@@ -52,9 +52,8 @@ function Banner() {
   return (
     <section className=" xl:min-h-screen min-h-[25rem] md:h-[40rem] bg-gray-100 relative flex flex-col justify-center">
       {/* this is decorator */}
-      <div className="absolute w-full   h-full bg-red-100 md:max-h-screen overflow-hidden ">
+      <div className="absolute w-full h-full bg-red-100 md:max-h-screen overflow-hidden ">
         <img
-          loading="lazy"
           alt="Equipo de GATO: Expertos en Desarrollo Web, Marketing Digital y Software"
           title="Equipo de GATO"
           className="w-full h-full object-cover  overflow-hidden brightness-75"
@@ -71,8 +70,7 @@ function Banner() {
       </div>
 
       {/*  */}
-      <div className="xl:px-24 md:px-12 sm:px-12  px-8 flex  ">
-        <div className="w-full max-w-[1440px] mx-auto flex flex-col animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in-out animate-normal">
+        <div className="w-full max-w-[1440px] mx-auto flex flex-col animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in-out animate-normal sm:px-12 lg:px-16 px-8">
           <div className="flex flex-col animate-fade-right ">
             <h2
               className={`${sizing.title} 
@@ -178,8 +176,7 @@ function Banner() {
               )}
             </div>
           </div>
-        </div>
-      </div>
+     </div>
     </section>
   );
 }

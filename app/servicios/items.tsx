@@ -69,7 +69,7 @@ function Items() {
         "Paletas de Colores Atractivas",
         "Implementación de Tecnologías Modernas",
       ],
-      path: "disenio-web",
+      path: "diseno-web",
       img_1:
         "https://i.pinimg.com/originals/27/15/ec/2715ec3263bdf98ffa6a76f885216e4e.png",
       img_2:

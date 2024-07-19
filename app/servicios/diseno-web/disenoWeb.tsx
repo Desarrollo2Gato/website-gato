@@ -4,9 +4,24 @@ import Banner from "@/app/components/service/banner/banner";
 import Benefits from "./benefits";
 import Plans from "@/app/components/service/plan/plans";
 import Process from "./process";
-import { DataDisenoWeb } from "./dataDisenoWeb";
+
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { api_plan } from "@/app/data/enviroments/api.enviroment";
 
 function Service02() {
+  const [dataWeb, setDataWeb] = useState<any[]>([]);
+  const fetchDtaWeb = async () => {
+    try {
+      const response = await axios.get(`${api_plan}?slug=planes-de-disenio-web`);
+      setDataWeb(response.data[0].acf.plans);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  useEffect(() => {
+    fetchDtaWeb();
+  }, []);
   return (
     <>
       <Banner
@@ -17,7 +32,7 @@ function Service02() {
         description="Diseños web que inspiran y convierten. ¡Descubre nuestras soluciones de diseño web!"
       />
       <Benefits color="#0BC2E1" />
-      <Plans color="#0BC2E1" data={DataDisenoWeb} />
+      <Plans color="#0BC2E1" data={dataWeb} />
       <Process />
     </>
   );

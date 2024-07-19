@@ -110,7 +110,7 @@ function GridClients() {
 
   return (
     <section className="  w-full bg-gray-100 " id="clientes">
-      <div className="w-full max-w-[1440px] mx-auto xl:  md:px-24 px-8 flex flex-col py-16">
+      <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col">
         <div className="">
           <h2
             className="text-3xl text-center

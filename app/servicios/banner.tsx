@@ -20,13 +20,13 @@ function BannerServices() {
           proyecto al siguiente nivel con nuestro equipo especializado!
         </p>
 
-        <div className="flex flex-wrap justify-around lg:justify-between gap-4 2xl:gap-8 mt-10">
+        <div className="flex flex-wrap justify-center  gap-4 2xl:gap-6 mt-10">
           <Link
             href={"#marketing-digital"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[200px] h-[200px] flex flex-col items-center justify-center gap-2 hover:bg-opacity-30 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[230px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-24 w-24 object-contain"
+              className="h-16 w-16 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"
@@ -100,10 +100,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#disenio-web"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[200px] h-[200px] flex flex-col items-center justify-center gap-2 hover:bg-opacity-30 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-24 w-24 object-contain"
+              className="h-16 w-16 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"
@@ -170,10 +170,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#desarrollo-software"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[200px] h-[200px] flex flex-col items-center justify-center gap-2 hover:bg-opacity-30 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-24 w-24 object-contain"
+              className="h-16 w-16 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 98 98"
@@ -260,10 +260,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#branding"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[200px] h-[200px] flex flex-col items-center justify-center gap-2 hover:bg-opacity-30 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-24 w-24 object-contain"
+              className="h-16 w-16 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"
@@ -286,10 +286,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#desarrollo-movil"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[200px] h-[200px] flex flex-col items-center justify-center gap-2 hover:bg-opacity-30 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-24 w-24 object-contain"
+              className="h-16 w-16 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"

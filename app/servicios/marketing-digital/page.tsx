@@ -7,10 +7,10 @@ import { Organization, WebPage, WithContext } from "schema-dts";
 const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Servicio de Marketing Digital - GATO",
+  name: "Servicio de Marketing Digital - Agencia Gato",
   url: "https://www.gato.pe/marketing-digital",
   description:
-    "Descubre nuestro servicio de marketing digital en GATO. Impulsa tu negocio con estrategias efectivas de marketing online y gestión de marca.",
+    "Descubre nuestro servicio de marketing digital en Agencia Gato. Impulsa tu negocio con estrategias efectivas de marketing online y gestión de marca.",
   publisher: {
     "@type": "Organization",
     name: "Agencia GATO",
@@ -46,31 +46,23 @@ const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
 };
 
 export const metadata: Metadata = {
-  title: "Marketing Digital",
+  title: "Servicio de Marketing Digital",
   description:
-    "Descubre nuestro servicio de marketing digital en GATO. Impulsa tu negocio con estrategias efectivas de marketing online y gestión de marca.",
+    "Descubre nuestro servicio de marketing digital en Agencia Gato. Impulsa tu negocio con estrategias efectivas de marketing online y gestión de marca.",
   keywords: [
-    "marketing digital",
-    "marketing digital en lima",
-    "estrategias de marketing",
-    "publicidad online",
-    "SEO",
+    "marketing digital en Lima",
+    "agencia de marketing digital en lima",
+    "estrategias de marketing online",
+    "campañas publicitarias digitales",
+    "SEO y SEM en Lima",
     "social media marketing",
-    "email marketing",
-    "campañas publicitarias",
-    "branding digital",
-    "gestión de marca",
-    "consultoría de marca",
     "marketing de contenidos",
-    "marketing online",
-    "optimización de motores de búsqueda",
-    "agencia de marketing digital",
+    "email marketing",
+    "optimización de conversiones",
+    "consultoría de marketing digital",
     "servicios de marketing digital",
-    "estrategias SEO",
-    "SEM",
-    "PPC",
-    "estrategia digital",
-    "digital marketing Lima",
+    "agencia de publicidad online",
+    "digital marketing agency"
   ],
   alternates: {
     canonical: "https://www.gato.pe/servicios/marketing-digital",
@@ -79,15 +71,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://gato.pe/servicios/marketing-digital",
-    title: "Marketing Digital - GATO",
+    title: "Servicio de Marketing Digital - Agencia Gato",
     description:
-      "Descubre nuestro servicio de marketing digital en GATO. Impulsa tu negocio con estrategias efectivas de marketing online y gestión de marca.",
+      "Descubre nuestro servicio de marketing digital en Agencia Gato. Impulsa tu negocio con estrategias efectivas de marketing online y gestión de marca.",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Imagen de la página de Marketing Digital de GATO",
+        alt: "Imagen de la página de Marketing Digital de Agencia Gato",
       },
       {
         url: "/mstile-310x310.png",

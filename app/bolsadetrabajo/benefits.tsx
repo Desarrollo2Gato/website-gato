@@ -3,9 +3,9 @@ import React from "react";
 const Benefits = () => {
   return (
     <div className="bg-gray-100">
-      <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16 text-[#3d3d3d] ">
+      <div className="max-w-[1440px] mx-auto relative p-8 py-16 lg:px-24 text-[#3d3d3d] ">
         <h2 className="text-[#444] text-3xl uppercase font-semibold text-center mb-8">
-          Únete a nuestro equipo
+          Nuestro beneficios
         </h2>
         <p className="md:text-center text-[#666] ">
           En Agencia GATO, creemos en la innovación, la creatividad y el trabajo
@@ -54,7 +54,7 @@ const Benefits = () => {
                 </defs>
               </svg>
             </div>
-            <p className="text-center text-xl mt-4 font-medium">Butterfly</p>
+            <p className="text-center text-xl mt-4 font-medium">Betterfly</p>
           </div>
           <div>
             <div className="bg-[#6D28D9] rounded-[100%] w-32 h-32 content-center bg-opacity-20 shadow-lg">

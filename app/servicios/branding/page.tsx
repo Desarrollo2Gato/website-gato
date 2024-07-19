@@ -8,10 +8,10 @@ import { Organization, WebPage, WithContext } from "schema-dts";
 const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Servicio de Branding - GATO",
+  name: "Servicio de Branding - Agencia Gato",
   url: "https://www.gato.pe/branding",
   description:
-    "Descubre nuestro branding en GATO. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
+    "Descubre nuestro branding en Agencia Gato. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
   publisher: {
     "@type": "Organization",
     name: "Agencia GATO",
@@ -49,18 +49,18 @@ const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
 export const metadata: Metadata = {
   title: "Servicio de Branding",
   description:
-    "Descubre nuestro branding en GATO. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
+    "Descubre nuestro branding en Agencia Gato. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
   keywords: [
-    "servicio de branding",
-    "branding digital",
-    "identidad corporativa",
-    "estrategia de marca",
-    "diseño de logotipos",
-    "rebranding",
+    "branding digital en Lima",
+    "estrategias de branding",
     "gestión de marca",
+    "identidad corporativa",
+    "rebranding",
+    "brand management",
     "consultoría de marca",
-    "posicionamiento de marca",
-    "imagen de marca",
+    "servicios de branding digital",
+    "agencia de branding",
+    "posicionamiento de marca"
   ],
   alternates:{
     canonical: 'https://www.gato.pe/servicios/branding'
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://gato.pe/servicios/branding",
-    title: "Servicio de Branding - GATO",
+    title: "Servicio de Branding - Agencia Gato",
     description:
-      "Descubre nuestro branding en GATO. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
+      "Descubre nuestro branding en Agencia Gato. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
     images: [
       {
         url: "/opengraph-image.png",

@@ -32,9 +32,9 @@ const cardSolution: React.FC<cardProps> = ({
               `,
               }}
             />
-            <span className="text-white text-2xl md:text-3xl font-semibold">
+            <h3 className="text-white text-2xl md:text-3xl font-semibold">
               {title}
-            </span>
+            </h3>
           </div>
         </div>
 

@@ -13,6 +13,7 @@ function CollagePortfolio() {
       imagen: string;
       cliente: string;
       "cliente-slug": string;
+      services: string;
     };
     title: {
       rendered: string;
@@ -98,13 +99,14 @@ function CollagePortfolio() {
         <span className="font-semibold text-base md:text-2xl text-center">
           {item.acf.cliente}
         </span>
-        <span className="text-xs md:text-base text-center">{item.title.rendered}</span>
+        <span className="text-xs md:text-base text-center capitalize">{item.acf?.services}</span>
       </div>
     </Link>
   );
   return (
-    <section className="w-full  xl:px-24 md:px-20 sm:px-12 p-8 md:py-16">
-      <RevealWrapper duration={1500} origin="top">
+    <section className="w-full">
+      <div className="sm:px-12 lg:px-16 px-8 py-16 max-w-[1440px] mx-auto">
+         <RevealWrapper duration={1500} origin="top">
         <div>
           <h1
             title="GATO - Portafolio de proyectos"
@@ -209,6 +211,8 @@ function CollagePortfolio() {
           />
         )}
       </RevealWrapper>
+      </div>
+     
     </section>
   );
 }

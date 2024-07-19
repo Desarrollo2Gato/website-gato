@@ -11,7 +11,10 @@ const Banner = () => {
         loading="lazy"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-violet-700 flex items-end">
-        <div className="max-w-[1440px] mx-auto xl:  lg:px:16 p-4 flex gap-4 md:gap-8 justify-between items-center">
+        <div className="max-w-[1440px] mx-auto lg:px:16 p-4">
+        <h1 className="text-4xl xl:text-5xl text-white text-center drop-shadow-lg font-semibold mb-4">Unete a nuestro equipo</h1>
+        <div className=" flex gap-4 md:gap-8 justify-between items-center">
+          
           <p className="text-white text-sm md:text-2xl drop-shadow-lg md:text-center items-center">
             Cambiamos el mundo con ideas innovadoras y empatía. Creemos que
             todas las pequeñas acciones apuntan a grandes resultados{" "}
@@ -23,6 +26,8 @@ const Banner = () => {
             className="h-16 md:h-20"
           />
         </div>
+        </div>
+        
       </div>
     </div>
   );

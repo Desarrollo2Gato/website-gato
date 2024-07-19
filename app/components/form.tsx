@@ -47,11 +47,6 @@ function Form({ color }: FormProps) {
   }
 
   async function captureTokenDynamic() {
-    console.log(
-      "Capturing token with:",
-      process.env.NEXT_PUBLIC_EMAIL,
-      process.env.NEXT_PUBLIC_PASSWORD
-    );
     try {
       const response: any = await axios.post(
         "https://palegreen-anteater-636608.hostingersite.com/wp-json/jwt-auth/v1/token",
@@ -60,7 +55,6 @@ function Form({ color }: FormProps) {
           password: process.env.NEXT_PUBLIC_PASSWORD,
         }
       );
-      console.log("Token captured:", response.data.token);
       return response.data.token;
     } catch (error) {
       console.error("Error capturing token:", error);
@@ -75,9 +69,7 @@ function Form({ color }: FormProps) {
     setIsSubmitting(true);
 
     try {
-      console.log("Form submitted, capturing token...");
       const token = await captureTokenDynamic();
-      console.log("Token received, sending data...", data);
       const response = await axios.post(
         "https://palegreen-anteater-636608.hostingersite.com/wp-json/api/v1/send-mail/",
         {
@@ -100,7 +92,6 @@ function Form({ color }: FormProps) {
           "Gracias por dejar tus datos, Un ejecutivo te contactara o puedes contactarnos."
         );
         setIsModalOpen(true);
-        router.replace('/registrado');
       } else {
         setModalMessage(
           "Error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos"
@@ -119,81 +110,13 @@ function Form({ color }: FormProps) {
       setIsSubmitting(false);
     }
   }
-
-  const [codes, setCodes] = useState<Country[]>([]);
-  const fetchCountries = async () => {
-    try {
-      const response = await axios.get(
-        "https://raw.githubusercontent.com/Desarrollo2Gato/countries/main/data.json"
-      );
-      let countryData: Country[] = response.data.map(
-        (country: any, index: number) => ({
-          id: index + 1,
-          name: country.country,
-          code: country.calling_code,
-        })
-      );
-      countryData = countryData.sort((a, b) => a.name.localeCompare(b.name));
-      setCodes(countryData);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  useEffect(() => {
-    fetchCountries();
-  }, []);
-
-  const options = codes.map((country) => ({
-    value: country.code,
-    label: `(${country.code}) ${country.name}`,
-    key: country.id,
-  }));
-
-  const customStyles: StylesConfig<{ value: string; label: string }, false> = {
-    control: (provided, state) => ({
-      ...provided,
-      color: "#3D3D3D",
-      border: "none",
-      paddingTop: "16px",
-      paddingBottom: "4px",
-      borderBottom: "1px solid #3D3D3D",
-      backgroundColor: "transparent",
-      borderRadius: 0,
-      outline: "none",
-      boxShadow: state.isFocused ? "none" : "none",
-      "&:hover": {
-        borderBottom: "1px solid #3D3D3D",
-      },
-    }),
-    placeholder: (provided) => ({
-      ...provided,
-      color: "#3D3D3D",
-    }),
-    singleValue: (provided) => ({
-      ...provided,
-      color: "#3D3D3D",
-    }),
-    menu: (provided) => ({
-      ...provided,
-      border: "1px solid #3D3D3D",
-      color: "#3D3D3D",
-      borderRadius: 0,
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected ? "#3D3D3D" : "transparent",
-      color: state.isSelected ? "#fff" : "#3D3D3D",
-      "&:hover": {
-        backgroundColor: "#3D3D3D",
-        color: "#fff",
-      },
-    }),
+  const handleCountryChange = (countryCode: string) => {
+    setData({ ...data, country_code: countryCode });
   };
 
   return (
-    <section className=" flex  py-16 w-full">
-      <div className="max-w-[1440px] mx-auto w-full xl:  md:px-24  px-8 flex justify-between gap-6 flex-col-reverse lg:flex-row">
+    <section className=" flex w-full">
+      <div className="max-w-[1440px] mx-auto w-full sm:px-12 lg:px-16 px-8 py-16 flex justify-between gap-6 flex-col-reverse lg:flex-row">
         <RevealWrapper
           origin="left"
           duration={1500}
@@ -427,7 +350,7 @@ function Form({ color }: FormProps) {
               <div className="w-full flex flex-col md:flex-row gap-8">
                 {/* countries */}
                 <div className="w-2/4">
-                  <CountrySelect />
+                <CountrySelect onChange={handleCountryChange}/>
                 </div>
                 <div className="relative w-full md:w-2/4">
                   <input

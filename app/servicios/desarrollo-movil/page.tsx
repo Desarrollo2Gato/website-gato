@@ -6,10 +6,10 @@ import { Organization, WebPage, WithContext } from "schema-dts";
 const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Servicio de Desarrollo Móvil - GATO",
+  name: "Servicio de Desarrollo Móvil - Agencia Gato",
   url: "https://www.gato.pe/desarrollo-movil",
   description:
-    "Descubre nuestro servicio de desarrollo móvil en GATO. Creamos apps personalizadas con diseño intuitivo y funcionalidad superior.",
+    "Descubre nuestro servicio de desarrollo móvil en Agencia Gato. Creamos apps personalizadas con diseño intuitivo y funcionalidad superior.",
   publisher: {
     "@type": "Organization",
     name: "Agencia GATO",
@@ -49,19 +49,16 @@ export const metadata: Metadata = {
   description:
     "Descubre nuestro servicio de desarrollo móvil en GATO. Creamos apps personalizadas con diseño intuitivo y funcionalidad superior.",
   keywords: [
+    "desarrollo de aplicaciones móviles en Perú",
     "desarrollo móvil en Lima",
-    "aplicaciones móviles en Lima",
-    "desarrollo de aplicaciones móviles en Lima",
-    "programación móvil en Lima",
-    "diseño de apps en Lima",
-    "UX/UI móvil en Lima",
-    "Android app en Lima",
-    "iOS app en Lima",
-    "mobile development en Lima",
-    "mobile app development en Lima",
-    "custom mobile apps en Lima",
-    "mobile app design en Lima",
-    "mobile UX/UI en Lima",
+    "desarrollo de apps móviles",
+    "aplicaciones móviles personalizadas",
+    "desarrollo iOS y Android",
+    "soluciones móviles a medida",
+    "consultoría de desarrollo móvil",
+    "agencia de desarrollo de aplicaciones",
+    "programación de aplicaciones móviles",
+    "desarrollo de software móvil"
   ],
   alternates: {
     canonical: "https://www.gato.pe/servicios/desarrollo-movil",
@@ -70,9 +67,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "https://gato.pe/servicios/desarrollo-movil",
-    title: "Desarrollo Móvil en Lima - GATO",
+    title: "Desarrollo Móvil en Lima - Agencia gato",
     description:
-      "Descubre nuestro servicio de desarrollo móvil en GATO. Creamos apps personalizadas con diseño intuitivo y funcionalidad superior.",
+      "Descubre nuestro servicio de desarrollo móvil en Agencia gato. Creamos apps personalizadas con diseño intuitivo y funcionalidad superior.",
     images: [
       {
         url: "/opengraph-image.png",

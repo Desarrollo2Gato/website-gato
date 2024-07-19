@@ -145,7 +145,7 @@ const Banner:React.FC<Props> = ({description, color, area}) => {
           />
         </svg>
         <svg
-          className="absolute bottom-2 right-4 lg:bottom-12 lg:right-0 lg:rotate-90"
+          className="absolute bottom-2 right-4 lg:bottom-16 lg:right-0 lg:rotate-90"
           width="140"
           height="50"
           viewBox="0 0 140 50"

@@ -54,6 +54,9 @@ const ContentPost = ({ post }: PostProps) => {
                 <Link
                   href="/blog/[slug]/"
                   as={`/blog/${tag}`}
+                  title= {tag === "diseno-web"
+                    ? "Diseño Web"
+                    : tag.replace(/-/g, " ")}
                   key={index}
                   className="text-xs px-2 py-1  text-gray-400 font-medium capitalize bg-gray-300"
                 >
