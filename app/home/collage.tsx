@@ -22,10 +22,10 @@ function Collage() {
             >
               <div>
                 <Image
+                  width={735}
+                  height={490}
                   src="https://i.pinimg.com/736x/9e/a4/5d/9ea45dc48908ce2f19947d3105dd0dbb.jpg"
                   loading="lazy"
-                  height={1104}
-                  width={736}
                   alt="Agecia GATO - Marketing Digital"
                   title="Agecia GATO - Marketing Digital"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
