@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="bg-white h-fit  border-t">
       <div className="max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 pt-8 flex w-full flex-col">
-        <div className="text-sm grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-16 gap-4 justify-between w-full mb-4">
+        <div className="text-sm grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-8 gap-4 justify-between w-full mb-4">
           <div className="flex flex-col">
             <Link href={"/"} className="w-24 h-24 ">
               <Image 
@@ -74,7 +74,7 @@ function Footer() {
             </Link>
           </div>
 
-          <div className="flex flex-col gap-1">
+          <div className="grid grid-cols-2  justify-between xl:grid-cols-1 gap-1 col-span-2 xl:col-span-1">
             <div>
               <span className="font-semibold ">Redes Sociales</span>
               <div className="flex gap-2 mt-1">
