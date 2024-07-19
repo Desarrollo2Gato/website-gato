@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Index from ".";
+import Script from 'next/script';
 
 import { WebSite, WithContext } from 'schema-dts'
 
@@ -126,9 +127,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="">
-      <script
+      <Script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        strategy="lazyOnload"
       />
       <Index></Index>
     </main>

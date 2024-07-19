@@ -1,18 +1,11 @@
 "use client";
 
 import { RevealWrapper } from "next-reveal";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { useState } from "react";
 
 function Collage() {
   const [position, setPosition] = useState(0);
-
-  const router = useRouter();
-
-  function handleRedirect(path: string) {
-    router.push("/servicios/" + path);
-  }
-
   return (
     <section id="collage" className="  w-full bg-white">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16">
@@ -28,9 +21,11 @@ function Collage() {
               onMouseLeave={() => setPosition(0)}
             >
               <div>
-                <img
+                <Image
                   src="https://i.pinimg.com/736x/9e/a4/5d/9ea45dc48908ce2f19947d3105dd0dbb.jpg"
                   loading="lazy"
+                  height={1104}
+                  width={736}
                   alt="Agecia GATO - Marketing Digital"
                   title="Agecia GATO - Marketing Digital"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
@@ -48,7 +43,7 @@ function Collage() {
                 </div>
 
                 <p className="hidden text-xl text-white xl:text-xl md:text-base sm:text-xs lg:w-[80%] lg-mx-auto group-hover:block text-center">
-                Nuestros servicios de Marketing Digital están orientados en
+                  Nuestros servicios de Marketing Digital están orientados en
                   transformar tus redes sociales en canales de ventas, según los
                   objetivos de tu negocio.
                 </p>
@@ -67,15 +62,15 @@ function Collage() {
               onMouseLeave={() => setPosition(0)}
             >
               <div>
-                <img
-                  // src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=1000"
+                <Image
+                  width={735}
+                  height={490}
                   src="https://i.pinimg.com/736x/da/57/8e/da578e890c011bf32b2aabe78d1e94c2.jpg"
                   loading="lazy"
                   alt="Agecia GATO - Branding"
                   title="Agecia GATO - Branding"
                   className="absolute inset-0 h-full w-full object-cover object-top  transition-all duration-500 ease-in-out group-hover:scale-110"
                 />
-                
               </div>
               {/* este div tiene que aparecer cuando haga hover a la imagen */}
 
@@ -90,8 +85,8 @@ function Collage() {
                   </span>
                 </div>
                 <p className="hidden text-xl text-white xl:text-xl md:text-base sm:text-xs lg:w-[80%] lg-mx-auto group-hover:block text-center ">
-                Transformamos tu presencia en línea con diseños web
-                impactantes y funcionales.
+                  Transformamos tu presencia en línea con diseños web
+                  impactantes y funcionales.
                 </p>
               </div>
             </div>
@@ -108,18 +103,17 @@ function Collage() {
               onMouseLeave={() => setPosition(0)}
             >
               <div>
-                <img
-                  // src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=1000"
+                <Image
+                  width={735}
+                  height={490}
                   src="https://i.pinimg.com/736x/ae/79/53/ae7953b8c7ec33f158077856980a77ee.jpg"
                   loading="lazy"
                   alt="Agecia GATO - Desarrollo de Software"
                   title="Agecia GATO - Desarrollo de Software"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
                 />
-                {/* <span className={`${position === 3 ? "hidden" : "block absolute  bottom-1 left-3 font-bold text-white font-lg uppercase"}`}>Impulsamos</span> */}
               </div>
               {/* este div tiene que aparecer cuando haga hover a la imagen */}
-
               <div
                 className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#6D28D9]  group-hover:bg-opacity-70
                   "
@@ -131,7 +125,7 @@ function Collage() {
                   </span>
                 </div>
                 <p className="hidden text-xl text-white xl:text-xl md:text-base sm:text-xs lg:w-[80%] lg-mx-auto group-hover:block text-center">
-                Transformamos tus ideas en software funcional. Desde la
+                  Transformamos tus ideas en software funcional. Desde la
                   conceptualización hasta la implementación, creamos soluciones
                   a medida que potencian tu negocio y simplifican tus
                   operaciones.
@@ -151,14 +145,15 @@ function Collage() {
               onMouseLeave={() => setPosition(0)}
             >
               <div>
-                <img
+                <Image
+                  width={735}
+                  height={490}
                   src="https://i.pinimg.com/736x/ab/1f/9b/ab1f9b72e259f15ac247e3ef90a63261.jpg"
                   loading="lazy"
                   alt="Agecia GATO - Desarrollo de Aplicaciones"
                   title="Agecia GATO - Desarrollo de Aplicaciones"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
                 />
-                {/* <span className={`${position === 4 ? "hidden" : "block absolute  bottom-1 left-3 font-bold text-white font-lg uppercase"}`}>Impulsamos</span> */}
               </div>
               {/* este div tiene que aparecer cuando haga hover a la imagen */}
 

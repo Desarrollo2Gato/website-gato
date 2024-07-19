@@ -57,12 +57,21 @@ function Index() {
         >
           <div className="flex gap-4">
             <div className=" rounded-full p-2  bg-[#9623DE]">
-              <img
+              <video
+                className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="animation-cat.mp4" type="video/mp4" />
+              </video>
+              {/* <img
                 loading="lazy"
                 className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
                 src="animation-cat.gif"
                 alt="Gato gif"
-              />
+              /> */}
             </div>
             {/* <div className="flex items-center animate-fade-right animate-duration-[2000ms] animate-ease-in-out ">
               <span className="text-xl font-semibold text-white">

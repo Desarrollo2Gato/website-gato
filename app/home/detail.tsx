@@ -1,6 +1,7 @@
 "use client";
 
 import { RevealWrapper } from "next-reveal";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -256,7 +257,9 @@ function Component1({
         </div>
       </div>
       <div className="flex items-center">
-        <img
+        <Image
+          width={735}
+          height={490}
           loading="lazy"
           className="rounded-md w-full h-auto mx-auto lg:max-w-[400px] md:max-w-[300px] md:w-auto md:h-full object-cover aspect-video shadow-lg"
           src="https://i.pinimg.com/736x/05/f6/a7/05f6a750173d902cdb9ecbf7783c9fd5.jpg"
@@ -316,7 +319,9 @@ function Component2({
         </div>
       </div>
       <div className="flex items-center">
-        <img
+        <Image
+          width={735}
+          height={490}
           loading="lazy"
           className="rounded-md w-full h-auto mx-auto lg:max-w-[400px] md:max-w-[300px] md:w-auto md:h-full object-cover aspect-video shadow-lg"
           src="https://i.pinimg.com/originals/d4/c3/fb/d4c3fbe8d97a0514ebe33641b8741f13.jpg"
@@ -374,7 +379,9 @@ function Component3({
         </div>
       </div>
       <div className="flex items-center">
-        <img
+        <Image
+          width={735}
+          height={490}
           loading="lazy"
           className="rounded-md w-full h-auto mx-auto lg:max-w-[400px] md:max-w-[300px] md:w-auto md:h-full object-cover aspect-video shadow-lg"
           src="https://i.pinimg.com/originals/be/3e/c0/be3ec039bbfc3736c73736f19fc935dc.jpg"
@@ -434,7 +441,9 @@ function Component4({
         </div>
       </div>
       <div className="flex items-center">
-        <img
+        <Image
+          width={735}
+          height={490}
           loading="lazy"
           className="rounded-md w-full h-auto mx-auto lg:max-w-[400px] md:max-w-[300px] md:w-auto md:h-full object-cover aspect-video shadow-lg"
           src="https://i.pinimg.com/736x/f7/8a/89/f78a89c21a83abd51bef3da2baf26c8d.jpg"
@@ -492,7 +501,9 @@ function Component5({
         </div>
       </div>
       <div className="flex items-center">
-        <img
+        <Image
+          width={735}
+          height={490}
           loading="lazy"
           className="rounded-md w-full h-auto mx-auto lg:max-w-[400px] md:max-w-[300px] md:w-auto md:h-full object-cover aspect-video shadow-lg"
           src="https://i.pinimg.com/originals/64/a1/c7/64a1c71b6f8274d4a920c8457c083f9b.jpg"
