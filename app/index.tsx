@@ -73,7 +73,7 @@ function Index() {
                 height={160}
                 width={160}
                 className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
-                src="animation-cat.gif"
+                src="/animation-cat.gif"
                 alt="Gato gif"
                 title="gif de gato"
               />
