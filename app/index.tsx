@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Page from "./home/page";
+import Image from "next/image";
 
 function Index() {
   const [isLoading, setIsLoading] = useState(true);
@@ -60,19 +61,21 @@ function Index() {
               {/* <video
                 height={160}
                 width={160}
-                className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
+                className=" object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
                 autoPlay
                 loop
                 muted
                 playsInline
               >
-                <source src="animation-cat.mp4" type="video/mp4" />
+                <source src="animation-cat.gif" type="video/mp4" />
               </video> */}
-              <img
-                loading="lazy"
+              <Image
+                height={160}
+                width={160}
                 className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
                 src="animation-cat.gif"
-                alt="Gato gif" title="gif de gato"
+                alt="Gato gif"
+                title="gif de gato"
               />
             </div>
             {/* <div className="flex items-center animate-fade-right animate-duration-[2000ms] animate-ease-in-out ">
