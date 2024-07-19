@@ -58,6 +58,8 @@ function Index() {
           <div className="flex gap-4">
             <div className=" rounded-full p-2  bg-[#9623DE]">
               <video
+                height={160}
+                width={160}
                 className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
                 autoPlay
                 loop

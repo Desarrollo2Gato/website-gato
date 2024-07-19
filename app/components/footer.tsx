@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 function Footer() {
@@ -9,7 +10,9 @@ function Footer() {
         <div className="text-sm grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-16 gap-4 justify-between w-full mb-4">
           <div className="flex flex-col">
             <Link href={"/"} className="w-24 h-24 ">
-              <img
+              <Image 
+                width={390}
+                height={457}
                 loading="lazy"
                 className="w-full h-full object-contain"
                 src="https://i.pinimg.com/originals/32/54/3a/32543a10e6d238eb84cadc78b57b3dd9.png"
