@@ -14,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
       }, */
 
     ],
-    sitemap: 'https://www.gato.pe/sitemap.xml',
+    sitemap: `${process.env.NEXT_PUBLIC_BASE_URL}/sitemap.xml`,
   }
 }

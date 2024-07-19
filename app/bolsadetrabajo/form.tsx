@@ -49,7 +49,6 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
           password: process.env.NEXT_PUBLIC_PASSWORD,
         }
       );
-     /*  console.log("Token captured:", response.data.token); */
       return response.data.token;
     } catch (error) {
       console.error("Error capturing token:", error);
@@ -65,10 +64,8 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
 
     try {
       const token = await captureTokenDynamic();
-      /* console.log(data); */
 
       if (data.file !== null && data.file instanceof File) {
-        /* console.log("hola"); */
         const formData = new FormData();
         formData.append("name", data.name);
         formData.append("email", data.email);

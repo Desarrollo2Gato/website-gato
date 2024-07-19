@@ -16,6 +16,7 @@ interface DetailProps {
 interface Project {
   title: { rendered: string };
   acf: {
+    url: string;
     banner: string;
     "imagen-solucion": string;
     cliente: string;

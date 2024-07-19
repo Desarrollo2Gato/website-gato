@@ -70,8 +70,7 @@ function Banner() {
       </div>
 
       {/*  */}
-      <div className="xl:px-24 md:px-12 sm:px-12  px-8 flex  ">
-        <div className="w-full max-w-[1440px] mx-auto flex flex-col animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in-out animate-normal">
+        <div className="w-full max-w-[1440px] mx-auto flex flex-col animate-fade-right animate-once animate-duration-[2000ms] animate-ease-in-out animate-normal sm:px-12 lg:px-16 px-8">
           <div className="flex flex-col animate-fade-right ">
             <h2
               className={`${sizing.title} 
@@ -177,8 +176,7 @@ function Banner() {
               )}
             </div>
           </div>
-        </div>
-      </div>
+     </div>
     </section>
   );
 }

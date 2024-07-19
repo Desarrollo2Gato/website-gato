@@ -51,10 +51,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     alternates: {
       canonical: formatURL(yoastMeta.og_url),
     },
-    /* robots: {
-      index: false,
-      follow: true,
-    }, */
     openGraph: {
       type: yoastMeta.og_type,
       locale: yoastMeta.og_locale,

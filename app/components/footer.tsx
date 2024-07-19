@@ -5,7 +5,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <footer className="bg-white h-fit  border-t">
-      <div className="max-w-[1440px] mx-auto md:px-24 px-8 flex  pt-8  w-full flex-col">
+      <div className="max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 pt-8 flex w-full flex-col">
         <div className="text-sm grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 md:gap-16 gap-4 justify-between w-full mb-4">
           <div className="flex flex-col">
             <Link href={"/"} className="w-24 h-24 ">
@@ -291,7 +291,7 @@ function Footer() {
           </div>
         </div>
         <hr />
-        <div className="text-center w-full my-4 col-span-4">
+        <div className="text-center w-full my-4 ">
           <span className="text-slate-600">&copy; 2024 - Agencia Gato</span>
         </div>
       </div>

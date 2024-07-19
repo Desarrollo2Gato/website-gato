@@ -8,6 +8,7 @@ import {
   FaInstagram,
   FaTiktok,
   FaLinkedinIn,
+  FaGlobe,
 } from "react-icons/fa";
 
 interface ProjectData {
@@ -19,6 +20,7 @@ interface ProjectData {
     services: string;
     problema: string;
     necesidad: string;
+    url: string;
     imagen: string;
     "solucion-analisis": string;
     "solucion-diseno": string;
@@ -189,21 +191,32 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
               <RevealWrapper
                 origin="bottom"
                 duration={1500}
-                className={"lg:w-1/3"}
+                className={"lg:w-fit"}
               >
                 <h2
                   style={{ color: mainColor }}
                   className={`text-xl lg:text-2xl  font-bold`}
                 >
-                  Redes Sociales
+                  Enlaces
                 </h2>
-                {!proyecto.acf?.facebook &&
+                {!proyecto.acf?.url &&
+                !proyecto.acf?.facebook &&
                 !proyecto.acf?.instagram &&
                 !proyecto.acf?.tiktok &&
                 !proyecto.acf?.linkedin ? (
-                  <p>Sin redes sociales :c</p>
+                  <p>Enlaces no encontrados</p>
                 ) : (
                   <div className="flex gap-4 flex-wrap justify-center h-full items-center">
+                    {proyecto.acf?.url && (
+                      <Link
+                        target="_blanck"
+                        href={proyecto.acf?.url}
+                        style={{ backgroundColor: mainColor }}
+                        className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
+                      >
+                        <FaGlobe />
+                      </Link>
+                    )}
                     {proyecto.acf?.facebook && (
                       <Link
                         target="_blanck"
