@@ -4,8 +4,8 @@ import React from "react";
 const fundamentals = () => {
   return (
     <div className="w-full bg-gray-100">
-      <div className="w-full max-w-[1440px] mx-auto xl:  md:px-24 px-8 py-8 lg:py-16 justify-between">
-      <RevealWrapper origin="top" duration={1000} className={'mb-3'}>
+      <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 justify-between">
+        <RevealWrapper origin="top" duration={1000} className={"mb-3"}>
           <h2
             className="text-3xl text-center
          text-[#3D3D3D] font-medium uppercase "
@@ -55,7 +55,6 @@ const fundamentals = () => {
                     src="https://i.pinimg.com/736x/fc/cf/b0/fccfb08b7b601c7b23e738d690ff3c69.jpg"
                     alt="misión"
                     title="misión"
-
                   />
                 </div>
               </RevealWrapper>

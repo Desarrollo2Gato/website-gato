@@ -29,7 +29,7 @@ function BannerAbout() {
   }, [position]);
   return (
     <section className=" w-full  ">
-      <div className="max-w-[1440px] flex flex-col mx-auto relative xl:  lg:px:16 px-8 py-16">
+      <div className="max-w-[1440px] flex flex-col mx-auto relative sm:px-12 lg:px-16 px-8 py-16 ">
         <div className="flex flex-col animate-fade-right mb-4">
           <h2
             className={`${sizing.title} 
