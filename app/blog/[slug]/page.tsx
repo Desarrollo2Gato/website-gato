@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Section from "./section";
 import { BlogPosting, WithContext } from "schema-dts";
+import Script from "next/script";
 
 
 const capitalizeWords = (str: string) => {
@@ -76,7 +77,8 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div>
-      <script
+      <Script
+      id="jsonLdBlogCategory"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

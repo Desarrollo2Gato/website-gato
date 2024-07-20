@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { useState } from "react";
 import { useMediaQuery } from "@react-hook/media-query"; //todo-> uninstall this package
+import Image from "next/image";
 
 function Navigation({
   isDrawer,
@@ -28,9 +29,10 @@ function Navigation({
     <div className=" flex w-full lg:w-[80px] lg:h-full h-[60px] left-0 top-0 lg:flex-col justify-between  bg-white items-center shadow-lg ">
       <div className="h-full w-full flex lg:flex-col justify-between items-center px-4  lg:py-4">
         <Link href={"/"} className="h-full lg:w-full lg:h-auto">
-          <img
-            loading="lazy"
-            className="h-full lg:w-full"
+          <Image
+            height={60}
+            width={60}
+            className="object-contain"
             src="https://i.pinimg.com/originals/73/fe/ce/73fece7ac631330d0dd4c1bd22325029.png"
             alt="GATO logo"
             title="GATO logo"

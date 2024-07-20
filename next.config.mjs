@@ -1,15 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* output: 'export', */
-  /* reactStrictMode: true, */
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "marketplace.canva.com",
+        hostname: "**",
         pathname: "**",
       },
     ],
+  },
+  webpack: (config, { dev, isServer }) => {
+    if (!dev) {
+      config.optimization.minimize = true;
+    }
+
+    return config;
   },
 };
 

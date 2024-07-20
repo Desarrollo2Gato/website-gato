@@ -1,9 +1,9 @@
 import Footer from "@/app/components/footer";
 import Content from "./content";
 import { Metadata } from "next";
-import Head from "next/head";
-import '../plans.css';
+import "../plans.css";
 import { Organization, WebPage, WithContext } from "schema-dts";
+import Script from "next/script";
 
 const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
   "@context": "https://schema.org",
@@ -60,10 +60,10 @@ export const metadata: Metadata = {
     "consultoría de marca",
     "servicios de branding digital",
     "agencia de branding",
-    "posicionamiento de marca"
+    "posicionamiento de marca",
   ],
-  alternates:{
-    canonical: 'https://www.gato.pe/servicios/branding'
+  alternates: {
+    canonical: "https://www.gato.pe/servicios/branding",
   },
   openGraph: {
     type: "website",
@@ -92,7 +92,8 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
-    <script
+      <Script
+        id="jsonLdServiceBranding"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd),

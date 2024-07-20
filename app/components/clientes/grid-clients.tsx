@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination";
 import { api_clients } from "@/app/data/enviroments/api.enviroment";
+import Image from "next/image";
 
 interface ClientItem {
   id: string;
@@ -32,7 +33,7 @@ function GridClients() {
 
   async function fetchData() {
     try {
-      const response = await axios.get(api_clients + '?per_page=100');
+      const response = await axios.get(api_clients + "?per_page=100");
       const clients: ClientItem[] = response.data.map((client: ClientItem) => ({
         ...client,
         title: {
@@ -66,14 +67,16 @@ function GridClients() {
       >
         <div className="card group relative transition-all duration-500">
           <div className="front w-full h-full bg-white flex items-center justify-center  aspect-square">
-            <img
+            <Image
+              width={237}
+              height={237}
               loading="lazy"
-              className="xl:w-[65%] h-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
+              className="w-[80%] h-[80%] lg:w-[70%] lg:h-[70%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
               src={
                 client.acf?.imagen_url ? client.acf.imagen_url : defaultImageUrl
               }
-              alt={'Cliente: ' + client.title.rendered}
-              title={'Cliente: ' + client.title.rendered}
+              alt={"Cliente: " + client.title.rendered}
+              title={"Cliente: " + client.title.rendered}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = defaultImageUrl;
@@ -81,14 +84,16 @@ function GridClients() {
             />
           </div>
           <div className="back absolute opacity-0 group-hover:opacity-100 flex flex-col top-0 h-full w-full transition-all justify-center items-center duration-500 ease-in-out bg-white">
-            <img
+            <Image
+              width={237}
+              height={237}
               loading="lazy"
-              className="xl:w-[65%] h-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
+              className="w-[80%] h-[80%] lg:w-[70%] lg:h-[70%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
               src={
                 client.acf?.imagen_url ? client.acf.imagen_url : defaultImageUrl
               }
-              alt={'Cliente: ' + client.title.rendered}
-              title={'Cliente: ' + client.title.rendered}
+              alt={"Cliente: " + client.title.rendered}
+              title={"Cliente: " + client.title.rendered}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = defaultImageUrl;

@@ -10,6 +10,7 @@ import CountrySelect from "./countrySelect";
 
 import ConfirmationModal from "./modal";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface FormProps {
   color: string;
@@ -99,14 +100,13 @@ function Form({ color }: FormProps) {
         setIsModalOpen(true);
       }
       setIsSubmitting(false);
-      
     } catch (error) {
       console.error("Error sending data:", error);
       setModalMessage(
         "Error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos"
       );
       setIsModalOpen(true);
-    } finally{
+    } finally {
       setIsSubmitting(false);
     }
   }
@@ -123,8 +123,11 @@ function Form({ color }: FormProps) {
           className={"xl:w-3/5 lg:w-2/4 w-full"}
         >
           <div className="w-full h-full  items-center max-h-[760px] flex flex-row">
-            <img
+            <Image
               loading="lazy"
+              sizes="(max-width: 600px) 400px, 800px"
+              width="800"
+              height="1200"
               className="h-full object-cover w-full lg:max-w-[85%] rounded-xl shadow-md"
               src="https://i.pinimg.com/originals/6a/8c/f8/6a8cf8cf2c09665f3d5758dc0846231e.jpg"
               alt="Trabajador de GATOcon celular"
@@ -350,7 +353,7 @@ function Form({ color }: FormProps) {
               <div className="w-full flex flex-col md:flex-row gap-8">
                 {/* countries */}
                 <div className="w-2/4">
-                <CountrySelect onChange={handleCountryChange}/>
+                  <CountrySelect onChange={handleCountryChange} />
                 </div>
                 <div className="relative w-full md:w-2/4">
                   <input

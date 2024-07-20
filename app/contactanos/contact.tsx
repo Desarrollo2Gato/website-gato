@@ -7,6 +7,7 @@ import Drawer from "../components/drawer";
 import WhatsappContact from "../components/whatsapp-contact";
 import Header from "./header";
 import Ubication from "./ubication";
+import Footer from "../components/footer";
 
 function Contact() {
   const [isDrawer, setIsDrawer] = useState(false);
@@ -52,6 +53,7 @@ function Contact() {
           <Header></Header>
           <Form color="#6D28D9"></Form>
           <Ubication></Ubication>
+      <Footer></Footer>
         </div>
       </div>
     </>

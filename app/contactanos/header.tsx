@@ -1,11 +1,14 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 const header = () => {
   return (
     <div className="w-full h-[400px] relative">
-      <img
-        loading="lazy"
+      <Image
+        priority
+        sizes="100vw"
+        fill
         src="https://i.pinimg.com/736x/64/a1/c7/64a1c71b6f8274d4a920c8457c083f9b.jpg"
         alt="contáctanos"
         className="h-full w-full object-cover"
