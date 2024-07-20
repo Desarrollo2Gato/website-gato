@@ -1,9 +1,9 @@
 import Footer from "@/app/components/footer";
 import Content from "./content";
-import Head from "next/head";
 import { Metadata } from "next";
 import "../plans.css";
 import { Organization, WebPage, WithContext } from "schema-dts";
+import Script from "next/script";
 const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -91,7 +91,8 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
-      <script
+      <Script
+      id="jsonLdServiceDisenoWeb"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd),

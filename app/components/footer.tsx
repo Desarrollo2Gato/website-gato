@@ -11,10 +11,10 @@ function Footer() {
           <div className="flex flex-col">
             <Link href={"/"} className="w-24 h-24 ">
               <Image 
-                width={390}
-                height={457}
+                width={96}
+                height={96}
                 loading="lazy"
-                className="w-full h-full object-contain"
+                className="object-contain"
                 src="https://i.pinimg.com/originals/32/54/3a/32543a10e6d238eb84cadc78b57b3dd9.png"
                 alt="GATO - Desarrollo Web, Marketing Digital, Software"
                 title="GATO logo"

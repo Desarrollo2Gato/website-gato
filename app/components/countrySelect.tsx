@@ -99,6 +99,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ onChange }) => {
 
   return (
     <Select
+    instanceId="country_code_select"
       inputId="country_code"
       options={options}
       styles={customStyles}

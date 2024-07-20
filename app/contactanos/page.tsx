@@ -2,7 +2,6 @@
 import Footer from "../components/footer";
 import Contact from "./contact";
 import { Metadata } from "next";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Contáctanos",
@@ -48,7 +47,7 @@ function Page() {
     <>
       <div className="w-full h-screen ">
         <Contact></Contact>
-        <Footer></Footer>
+
       </div>
     </>
   );

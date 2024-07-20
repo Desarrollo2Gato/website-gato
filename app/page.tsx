@@ -126,13 +126,14 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <main className="">
+    <>
       <Script
+        id="jsonLdHome"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         strategy="lazyOnload"
       />
       <Index></Index>
-    </main>
+    </>
   );
 }

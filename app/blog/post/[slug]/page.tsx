@@ -3,6 +3,7 @@ import Post from "./post";
 import { fetchYoastMeta } from '@/app/components/seo/fetchYoastMeta';
 import { BlogPosting, WithContext } from "schema-dts";
 import { api_blog } from "@/app/data/enviroments/api.enviroment";
+import Script from "next/script";
 
 const formatURL = (url: string) => {
   return url.replace("https://palegreen-anteater-636608.hostingersite.com", "https://www.gato.pe/blog/post/");
@@ -120,7 +121,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <script
+      <Script
+      id="jsonLdBlogPost"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

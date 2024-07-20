@@ -3,6 +3,7 @@ import Content from "./content";
 import { Metadata } from "next";
 import "../plans.css";
 import { Organization, WebPage, WithContext } from "schema-dts";
+import Script from "next/script";
 
 const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
   "@context": "https://schema.org",
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     "consultoría de marketing digital",
     "servicios de marketing digital",
     "agencia de publicidad online",
-    "digital marketing agency"
+    "digital marketing agency",
   ],
   alternates: {
     canonical: "https://www.gato.pe/servicios/marketing-digital",
@@ -93,7 +94,8 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
-      <script
+      <Script
+        id="jsonLdServiceMarketing"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd),

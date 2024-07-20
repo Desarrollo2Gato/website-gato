@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navigation from "./components/navigation";
 import Drawer from "./components/drawer";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function ErrorPage() {
   const [isDrawer, setIsDrawer] = useState(false);
@@ -47,8 +48,11 @@ export default function ErrorPage() {
             </Link>
           </div>
           <div>
-            <img
-              className="h-full max-h-[550px] w-auto object-contain"
+            <Image
+              height={500}
+              width={500}
+              layout="responsive"
+              className=" max-h-[550px] w-auto object-contain"
               src="/gato404.png"
               alt="Gato con un cartel de error"
               title="Gato 404"

@@ -4,6 +4,7 @@ import { api_projects } from "@/app/data/enviroments/api.enviroment";
 import axios from "axios";
 import { fetchYoastMeta } from "@/app/components/seo/fetchYoastMeta";
 import { CreativeWork, WithContext } from "schema-dts";
+import Script from "next/script";
 
 const formatURL = (url: string) => {
   return url.replace(
@@ -161,7 +162,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
     };
     return (
       <>
-        <script
+        <Script
+          id="jsonLdPortafolio"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />

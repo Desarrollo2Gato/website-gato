@@ -1,5 +1,6 @@
 import BlogComponent from "./blog";
 import { Metadata } from "next";
+import Script from "next/script";
 import { Blog, WithContext } from "schema-dts";
 
 const jsonLdBlog: WithContext<Blog> = {
@@ -88,7 +89,8 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
-      <script
+      <Script
+      id="jsonLdBlog"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBlog) }}
       />

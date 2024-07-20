@@ -1,29 +1,31 @@
 import { Metadata } from "next";
 import About from "./about";
 import { Organization, WebPage, WithContext } from "schema-dts";
+import Script from "next/script";
 
 const jsonLd: WithContext<WebPage> = {
-  '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Sobre Nosotros - Agencia Gato',
-  url: 'https://gato.pe/nosotros',
-  description: 'Conoce más sobre GATO, nuestra misión, visión, y el equipo que impulsa nuestras soluciones de marketing digital y desarrollo de software.',
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Sobre Nosotros - Agencia Gato",
+  url: "https://gato.pe/nosotros",
+  description:
+    "Conoce más sobre GATO, nuestra misión, visión, y el equipo que impulsa nuestras soluciones de marketing digital y desarrollo de software.",
   mainEntity: {
-    '@type': 'Organization',
-    name: 'Agencia GATO',
+    "@type": "Organization",
+    name: "Agencia GATO",
     logo: {
-      '@type': 'ImageObject',
-      url: 'https://gato.pe/gato-icon.png',
-      width: '60',
-      height: '60',
+      "@type": "ImageObject",
+      url: "https://gato.pe/gato-icon.png",
+      width: "60",
+      height: "60",
     },
-    url: 'https://gato.pe',
+    url: "https://gato.pe",
     sameAs: [
-      'https://www.facebook.com/agenciagatope',
-      'https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3',
-      'https://www.linkedin.com/company/agenciagato/',
+      "https://www.facebook.com/agenciagatope",
+      "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3",
+      "https://www.linkedin.com/company/agenciagato/",
     ],
-  }
+  },
 };
 
 export const metadata: Metadata = {
@@ -61,8 +63,8 @@ export const metadata: Metadata = {
     "comprometidos con el éxito de nuestros clientes",
     "equipo Agencia Gato",
   ],
-  alternates:{
-    canonical: 'https://www.gato.pe/nosotros'
+  alternates: {
+    canonical: "https://www.gato.pe/nosotros",
   },
   openGraph: {
     type: "website",
@@ -91,7 +93,8 @@ export const metadata: Metadata = {
 function Page() {
   return (
     <>
-    <script
+      <Script
+        id="jsonLdNosotros"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

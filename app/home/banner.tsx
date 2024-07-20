@@ -53,13 +53,13 @@ function Banner() {
       {/* this is decorator */}
       <div className="absolute w-full h-full bg-red-100 md:max-h-screen overflow-hidden ">
         <Image
-          
-          quality={100}
-          fill={true}
+          quality={75}
+          fill
+          sizes="100vw"
+          priority={true}
           alt="Equipo de GATO: Expertos en Desarrollo Web, Marketing Digital y Software"
           title="Equipo de GATO"
-          priority={true}
-          className=" object-cover overflow-hidden brightness-75"
+          className="object-cover overflow-hidden brightness-75"
           src="/banner_gato.jpg"
         />{" "}
         <div className="absolute w-full bottom-3 ">
