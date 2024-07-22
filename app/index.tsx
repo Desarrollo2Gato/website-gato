@@ -39,7 +39,6 @@ function Index() {
     }
   }, [isFirstVisit]);
 
-
   return (
     <>
       {isLoading ? (
@@ -60,9 +59,10 @@ function Index() {
                 muted
                 playsInline
               >
-                <source src="/animation-cat.mp4" type="video/mp4" />
+                <source src="/animation-cat.webm" type="video/mp4" />
+                Tu navegador no soporta este video
               </video>
-             {/*  <Image
+              {/*  <Image
                 height={160}
                 width={160}
                 className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
