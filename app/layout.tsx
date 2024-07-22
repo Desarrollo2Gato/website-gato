@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     default: "Marketing y Desarrollo de Software - Agencia Gato",
     template: "%s - Agencia Gato",
   },
+  
   alternates:{
     canonical: 'https://www.gato.pe/',
     languages: {

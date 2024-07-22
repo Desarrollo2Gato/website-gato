@@ -54,7 +54,7 @@ function Index() {
               <video
                 height={160}
                 width={160}
-                className=" object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
+                className="animate-spin animate-duration-1000 animate-ease-in-out"
                 autoPlay
                 loop
                 muted
