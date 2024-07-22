@@ -54,12 +54,18 @@ function Index() {
                 height={160}
                 width={160}
                 className="animate-spin animate-duration-1000 animate-ease-in-out"
-                autoPlay
-                loop
-                muted
-                playsInline
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
               >
-                <source src="/animation-cat.webm" type="video/mp4" />
+                <source src="/animation-cat.webm" type="video/webm" />
+                <track
+                  src="/captions.vtt"
+                  kind="subtitles"
+                  srcLang="es"
+                  label="Español"
+                />
                 Tu navegador no soporta este video
               </video>
               {/*  <Image
