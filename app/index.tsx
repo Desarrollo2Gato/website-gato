@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Page from "./home/page";
+import Image from "next/image";
 
 function Index() {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,12 +43,23 @@ function Index() {
       {isLoading ? (
         <div
           className={`bg-[#9623DE] w-full h-screen flex justify-center items-center ${
-            isFade && "animate-fade animate-duration-1000 animate-ease-linear animate-reverse"
+            isFade &&
+            "animate-fade animate-duration-1000 animate-ease-linear animate-reverse"
           }`}
         >
           <div className="flex gap-4">
             <div className="rounded-full p-2 bg-[#9623DE]">
-              <video
+              <Image
+                quality={75}
+                height={160}
+                width={160}
+                priority={true}
+                alt="Equipo de GATO: Expertos en Desarrollo Web, Marketing Digital y Software"
+                title="Equipo de GATO"
+                className=" rounded-full animate-spin animate-duration-1000 animate-ease-in-out"
+                src="/gato-icon.png"
+              />
+              {/* <video
                 height={160}
                 width={160}
                 className="animate-spin animate-duration-1000 animate-ease-in-out"
@@ -64,7 +76,7 @@ function Index() {
                   label="Español"
                 />
                 Tu navegador no soporta este video.
-              </video>
+              </video> */}
             </div>
           </div>
         </div>
