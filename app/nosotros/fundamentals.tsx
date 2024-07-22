@@ -1,4 +1,5 @@
 import { RevealWrapper } from "next-reveal";
+import Image from "next/image";
 import React from "react";
 
 const fundamentals = () => {
@@ -49,7 +50,9 @@ const fundamentals = () => {
                     por nuestra excelencia y compromiso con la
                     satisfacción del cliente.
                   </p>
-                  <img
+                  <Image
+                    width={735}
+                    height={490}
                     loading="lazy"
                     className="rounded-md shadow-md w-full h-auto aspect-video lg:max-h-[250px] object-cover"
                     src="https://i.pinimg.com/736x/fc/cf/b0/fccfb08b7b601c7b23e738d690ff3c69.jpg"
@@ -119,7 +122,9 @@ const fundamentals = () => {
                     empresas. Nos esforzamos por entender las necesidades únicas
                     de cada cliente y ofrecer soluciones personalizadas.
                   </p>
-                  <img
+                  <Image
+                    width={800}
+                    height={1200}
                     loading="lazy"
                     className="rounded-md shadow-md w-full h-auto aspect-video lg:max-h-[250px] object-cover"
                     src="https://i.pinimg.com/originals/27/0e/3e/270e3e5b8ed666060491db3bf0f7cedd.jpg"
@@ -188,7 +193,9 @@ const fundamentals = () => {
                     transparencia en todas las interacciones, y se fomenta un
                     ambiente para celebrar ideas innovadoras.
                   </p>
-                  <img
+                  <Image
+                    width={736}
+                    height={1104}
                     loading="lazy"
                     className="rounded-md shadow-md w-full h-auto aspect-video lg:max-h-[250px] object-cover"
                     src="https://i.pinimg.com/736x/10/96/18/10961839a65ced06476a13f79d29c628.jpg"

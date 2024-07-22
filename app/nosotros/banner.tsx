@@ -1,6 +1,7 @@
 "use client";
 
 import { RevealWrapper } from "next-reveal";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
@@ -93,15 +94,18 @@ function BannerAbout() {
             <div className="">
               <div className="container w-full flex flex-col gap-4">
                 <div className="card group relative transition-all duration-500 w-full h-full flex flex-end">
-                  <img
-                    loading="lazy"
+                  <Image
+                    width={800}
+                    height={1200}
                     className="front w-full min-h-[250px] max-h-[500px] lg:min-h-[350px] object-cover aspect-square shadow-md"
                     src="https://i.pinimg.com/originals/0a/ec/7b/0aec7b72bbf7111392c9fdb5341e8700.jpg"
                     alt="Atención Personalizada"
                     title="Atención personalizada"
                   />
                   <div className="back absolute opacity-0 group-hover:opacity-100 w-full h-full">
-                    <img
+                    <Image
+                      width={800}
+                      height={1200}
                       loading="lazy"
                       className=" w-full h-full object-cover aspect-square shadow-md"
                       src="https://i.pinimg.com/originals/0a/ec/7b/0aec7b72bbf7111392c9fdb5341e8700.jpg"
@@ -133,15 +137,18 @@ function BannerAbout() {
             <div className="">
               <div className="container w-full flex flex-col gap-4">
                 <div className="card group relative transition-all duration-500 w-full h-full flex flex-end">
-                  <img
-                    loading="lazy"
+                  <Image
+                    width={1200}
+                    height={800}
                     className="front w-full min-h-[250px] max-h-[500px] lg:min-h-[350px] object-cover aspect-square shadow-md"
                     src="https://i.pinimg.com/originals/be/3e/c0/be3ec039bbfc3736c73736f19fc935dc.jpg"
                     alt="Experiencia"
                     title="Experiencia"
                   />
                   <div className="back absolute opacity-0 group-hover:opacity-100 w-full h-full">
-                    <img
+                    <Image
+                      width={1200}
+                      height={800}
                       loading="lazy"
                       className=" w-full h-full object-cover aspect-square shadow-md"
                       src="https://i.pinimg.com/originals/be/3e/c0/be3ec039bbfc3736c73736f19fc935dc.jpg"
@@ -173,7 +180,9 @@ function BannerAbout() {
             <div className="">
               <div className="container w-full flex flex-col gap-4">
                 <div className="card group relative transition-all duration-500 w-full h-full flex flex-end">
-                  <img
+                  <Image
+                    width={735}
+                    height={490}
                     loading="lazy"
                     className="front w-full min-h-[250px] max-h-[500px] lg:min-h-[350px] object-cover aspect-square shadow-md"
                     src="https://i.pinimg.com/736x/64/a1/c7/64a1c71b6f8274d4a920c8457c083f9b.jpg"
@@ -181,7 +190,9 @@ function BannerAbout() {
                     title="Transparencia y confianza"
                   />
                   <div className="back absolute opacity-0 group-hover:opacity-100 w-full h-full">
-                    <img
+                    <Image
+                      width={735}
+                      height={490}
                       loading="lazy"
                       className=" w-full h-full object-cover aspect-square shadow-md"
                       src="https://i.pinimg.com/736x/64/a1/c7/64a1c71b6f8274d4a920c8457c083f9b.jpg"

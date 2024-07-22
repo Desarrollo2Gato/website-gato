@@ -1,4 +1,5 @@
 import hexToRgba from "hex-to-rgba";
+import Image from "next/image";
 import React from "react";
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
   area: string;
 }
 
-const Banner:React.FC<Props> = ({description, color, area}) => {
+const Banner: React.FC<Props> = ({ description, color, area }) => {
   return (
     <div className="relative w-full h-auto lg:h-[800px] lg:overflow-hidden">
       {/* fondo */}
@@ -213,21 +214,29 @@ const Banner:React.FC<Props> = ({description, color, area}) => {
       {/* contenido */}
       <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16 lg:pb-0 text-[#3d3d3d] w-full h-auto lg:h-[800px] z-[1] flex flex-col-reverse lg:flex-row justify-between ">
         <div className="relative h-full max-w-[40%] w-full">
-          <img src="/worker.png" alt="trabajador" title="trabajador" className="hidden lg:block h-[700px] w-auto aspect-auto bottom-0 left-0 absolute" />
+          <Image
+            width={824}
+            height={1144}
+            src="/worker.png"
+            alt="trabajador"
+            title="trabajador"
+            className="hidden lg:block h-[700px] w-auto aspect-auto bottom-0 left-0 absolute"
+          />
         </div>
         <div className="flex flex-col w-ful lg:w-1/2 items-center justify-center">
           <div>
             <h1 className="text-[#3d3d3d] text-6xl font-bold mb-8 text-center">
-              Se parte del equipo <span style={{ color:color }} className="lowercase">{area}</span>
+              Se parte del equipo{" "}
+              <span style={{ color: color }} className="lowercase">
+                {area}
+              </span>
             </h1>
-            <p className="text-[#6d6d6d] text-xl text-center">
-              {description}
-            </p>
+            <p className="text-[#6d6d6d] text-xl text-center">{description}</p>
           </div>
           {/* gato con lana */}
           <div className="relative w-fit mx-auto">
-          <svg
-          className=" transition-all duration-700 absolute left-0 bottom-4 -translate-x-1/2 z-[1] h-24 w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32 2xl:h-36 2xl:w-36 object-contain"
+            <svg
+              className=" transition-all duration-700 absolute left-0 bottom-4 -translate-x-1/2 z-[1] h-24 w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32 2xl:h-36 2xl:w-36 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 89 89"
@@ -241,7 +250,7 @@ const Banner:React.FC<Props> = ({description, color, area}) => {
                 />
                 <path
                   d="M66.3841 47.4315C68.3343 40.4779 67.46 33.1804 63.9226 26.884C60.3852 20.5875 54.6086 16.0466 47.6555 14.095C40.7014 12.1438 33.4049 13.0178 27.1085 16.5551C20.8112 20.093 16.2701 25.8695 14.319 32.8237C12.3678 39.7778 13.2414 47.0733 16.7787 53.3697C20.3161 59.6661 26.0937 64.2091 33.0477 66.1602C40.0017 68.1112 47.2974 67.2377 53.5947 63.6999C59.8912 60.1625 64.4331 54.3855 66.3841 47.4315Z"
-                  fill={color ? hexToRgba(color, '0.7') : '#fff'}
+                  fill={color ? hexToRgba(color, "0.7") : "#fff"}
                 />
                 <path
                   d="M66.6293 33.7158C64.2763 33.039 58.6126 31.6463 50.8532 31.3038C44.9133 31.0428 38.9735 31.459 33.2005 32.54C26.2957 33.8343 19.6128 36.0897 13.3193 39.2483C13.2853 40.235 13.3053 41.2209 13.3804 42.2032C13.489 42.1785 13.5988 42.1395 13.7027 42.0858C19.9897 38.8308 26.6965 36.5166 33.6334 35.211C39.1917 34.1644 44.9104 33.7567 50.633 34.0011C58.4481 34.3351 64.7153 35.8724 66.9388 36.6403C67.019 36.668 67.1016 36.6874 67.1828 36.6986C67.0547 35.6961 66.8709 34.6999 66.6293 33.7158Z"
@@ -276,13 +285,14 @@ const Banner:React.FC<Props> = ({description, color, area}) => {
                 </clipPath>
               </defs>
             </svg>
-            <img
+            <Image
+              width={343}
+              height={348}
               src="/gato-service.png"
               alt="Gato jugando"
               title="Gato jugando"
-              className="h-60 lg:h-72 xl:h-80 2xl:h-96"
+              className="h-60 lg:h-72 xl:h-80 2xl:h-96 object-scale-down"
             />
-            
           </div>
         </div>
       </div>

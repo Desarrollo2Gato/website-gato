@@ -1,14 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Page from "./home/page";
+import Image from "next/image";
 
 function Index() {
   const [isLoading, setIsLoading] = useState(true);
-
   const [isFade, setIsFade] = useState(false);
-
   const [isFirstVisit, setIsFirstVisit] = useState(true);
+
+  const timer1Ref = useRef<NodeJS.Timeout | null>(null);
+  const timer2Ref = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const hasVisited = localStorage.getItem("hasVisited");
@@ -21,55 +23,60 @@ function Index() {
   }, []);
 
   useEffect(() => {
-    let timer1: NodeJS.Timeout;
-    let timer2: NodeJS.Timeout;
-
     if (isFirstVisit) {
-      const timer1 = setTimeout(() => {
+      timer1Ref.current = setTimeout(() => {
         setIsLoading(false);
       }, 4000);
-      const timer2 = setTimeout(() => {
+      timer2Ref.current = setTimeout(() => {
         setIsFade(true);
       }, 3000);
-
-      return () => {
-        if (timer1) clearTimeout(timer1);
-        if (timer2) clearTimeout(timer2);
-      };
     }
-  }, [isFirstVisit]);
 
+    return () => {
+      if (timer1Ref.current) clearTimeout(timer1Ref.current);
+      if (timer2Ref.current) clearTimeout(timer2Ref.current);
+    };
+  }, [isFirstVisit]);
 
   return (
     <>
       {isLoading ? (
         <div
-          className={`bg-[#9623DE] w-full h-screen flex justify-center items-center  ${
+          className={`bg-[#9623DE] w-full h-screen flex justify-center items-center ${
             isFade &&
             "animate-fade animate-duration-1000 animate-ease-linear animate-reverse"
           }`}
         >
           <div className="flex gap-4">
-            <div className=" rounded-full p-2  bg-[#9623DE]">
-              <video
+            <div className="rounded-full p-2 bg-[#9623DE]">
+              <Image
+                quality={75}
                 height={160}
                 width={160}
-                className=" object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
+                priority={true}
+                alt="Equipo de GATO: Expertos en Desarrollo Web, Marketing Digital y Software"
+                title="Equipo de GATO"
+                className=" rounded-full animate-spin animate-duration-1000 animate-ease-in-out"
+                src="/gato-icon.png"
+              />
+              {/* <video
+                height={160}
+                width={160}
+                className="animate-spin animate-duration-1000 animate-ease-in-out"
                 autoPlay
                 loop
                 muted
                 playsInline
               >
-                <source src="/animation-cat.mp4" type="video/mp4" />
-              </video>
-             {/*  <Image
-                height={160}
-                width={160}
-                className="w-40 h-40 object-contain rounded-full animate-spin animate-once animate-duration-[1000ms] animate-ease-linear animate-reverse"
-                src="/animation-cat.gif"
-                alt="Gato gif"
-                title="gif de gato"
-              /> */}
+                <source src="/animation-cat.webm" type="video/webm" />
+                <track
+                  src="/captions.vtt"
+                  kind="subtitles"
+                  srcLang="es"
+                  label="Español"
+                />
+                Tu navegador no soporta este video.
+              </video> */}
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { RevealWrapper } from "next-reveal";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
 import { sectionColors } from "@/app/components/blog/sectionColors";
+import Image from "next/image";
 
 interface PostProps {
   post: Posts;
@@ -46,8 +47,11 @@ const Banner: React.FC<PostProps> = ({ post }) => {
   return (
     <div className="w-full relative">
       <div className="w-full h-[calc(50vh)] md:h-[600px] xl:h-[800px] relative  ">
-        <img
-          loading="lazy"
+        <Image
+          quality={75}
+          fill
+          sizes="100vw"
+          priority={true}
           className="w-full h-full object-cover"
           src={post.acf?.banner}
           alt={"Banner " + post.acf?.titulo}
@@ -65,6 +69,7 @@ const Banner: React.FC<PostProps> = ({ post }) => {
                     title= {tag === "diseno-web"
                       ? "Diseño Web"
                       : tag.replace(/-/g, " ")}
+                    aria-label="Ver categoría"
                     key={index}
                     className="text-xs px-2 py-1  text-white font-medium shadow-md capitalize"
                     style={{
@@ -83,7 +88,9 @@ const Banner: React.FC<PostProps> = ({ post }) => {
               </h1>
               <div className="py-4 text-[#CACACA] flex gap-2 lg:gap-4 md:text-lg text-sm ">
                 <div className="flex gap-1 lg:gap-2 items-center">
-                  <img
+                  <Image
+                    width={40}
+                    height={40}
                     loading="lazy"
                     className="w-5 h-5 md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] aspect-square rounded-full object-cover"
                     src={post.acf["autor-profile"]}

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { api_areas, api_vacantes } from "../data/enviroments/api.enviroment";
 import hexToRgba from "hex-to-rgba";
 import Link from "next/link";
+import Image from "next/image";
 type Props = {
   idColor: number;
   imgUrl: string;
@@ -58,7 +59,10 @@ const CardJob: React.FC<Props> = ({
   return (
     <div className="relative flex flex-col justify-between text-center rounded-xl shadow-md h-full bg-white p-8">
       <div className="text-center mb-6">
-        <img
+        <Image
+          width={80}
+          height={80}
+          loading="lazy"
           src={imgUrl}
           alt={"Imagen relacionada a " + jobPosition}
           title={"Imagen sobre " + jobPosition}
@@ -86,10 +90,11 @@ const CardJob: React.FC<Props> = ({
       </div>
       <p className="mb-6 text-[#666]">{jobDescription}</p>
       <Link
-        href="/bolsadetrabajo/[slug]/"
-        as={`/bolsadetrabajo/${slug}`}
+        href="/bolsa-de-trabajo/[slug]/"
+        as={`/bolsa-de-trabajo/${slug}`}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
+        aria-label={`Ver vacante de ${jobPosition}`}
         role="button"
         className={`mx-auto relative rounded-3xl py-3 pr-2  w-fit   font-semibold flex items-center   ${
           isEnter && " transition-all"

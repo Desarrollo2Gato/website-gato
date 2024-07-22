@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Branding from "./branding";
 import WhatsappContact from "@/app/components/whatsapp-contact";
 import Form from "@/app/components/form";
+import Footer from "@/app/components/footer";
 
 function Content() {
   const [isDrawer, setIsDrawer] = useState(false);
@@ -52,6 +53,7 @@ function Content() {
         <div className="min-w-screen w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
           <Branding></Branding>
           <Form color="#A52DE6"></Form>
+        <Footer></Footer>
         </div>
       </div>
     </>

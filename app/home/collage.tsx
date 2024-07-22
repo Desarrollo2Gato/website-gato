@@ -26,8 +26,8 @@ function Collage() {
                   height={490}
                   src="https://i.pinimg.com/736x/9e/a4/5d/9ea45dc48908ce2f19947d3105dd0dbb.jpg"
                   loading="lazy"
-                  alt="Agecia GATO - Marketing Digital"
-                  title="Agecia GATO - Marketing Digital"
+                  alt="Agencia GATO - Marketing Digital"
+                  title="Agencia GATO - Marketing Digital"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
                 />
               </div>
@@ -67,13 +67,11 @@ function Collage() {
                   height={490}
                   src="https://i.pinimg.com/736x/da/57/8e/da578e890c011bf32b2aabe78d1e94c2.jpg"
                   loading="lazy"
-                  alt="Agecia GATO - Branding"
-                  title="Agecia GATO - Branding"
+                  alt="Agencia GATO - Branding"
+                  title="Agencia GATO - Branding"
                   className="absolute inset-0 h-full w-full object-cover object-top  transition-all duration-500 ease-in-out group-hover:scale-110"
                 />
               </div>
-              {/* este div tiene que aparecer cuando haga hover a la imagen */}
-
               <div
                 className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#6D28D9]  group-hover:bg-opacity-70
                   "
@@ -108,12 +106,11 @@ function Collage() {
                   height={490}
                   src="https://i.pinimg.com/736x/ae/79/53/ae7953b8c7ec33f158077856980a77ee.jpg"
                   loading="lazy"
-                  alt="Agecia GATO - Desarrollo de Software"
-                  title="Agecia GATO - Desarrollo de Software"
+                  alt="Agencia GATO - Desarrollo de Software"
+                  title="Agencia GATO - Desarrollo de Software"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
                 />
               </div>
-              {/* este div tiene que aparecer cuando haga hover a la imagen */}
               <div
                 className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#6D28D9]  group-hover:bg-opacity-70
                   "
@@ -150,13 +147,11 @@ function Collage() {
                   height={490}
                   src="https://i.pinimg.com/736x/ab/1f/9b/ab1f9b72e259f15ac247e3ef90a63261.jpg"
                   loading="lazy"
-                  alt="Agecia GATO - Desarrollo de Aplicaciones"
-                  title="Agecia GATO - Desarrollo de Aplicaciones"
+                  alt="Agencia GATO - Desarrollo de Aplicaciones"
+                  title="Agencia GATO - Desarrollo de Aplicaciones"
                   className="absolute inset-0 h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover:scale-110"
                 />
               </div>
-              {/* este div tiene que aparecer cuando haga hover a la imagen */}
-
               <div
                 className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#6D28D9]  group-hover:bg-opacity-70
                   "

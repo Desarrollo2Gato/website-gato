@@ -2,6 +2,7 @@ import NavSections from "@/app/components/blog/navSections";
 import Link from "next/link";
 import MorePost from "./morePost";
 import Form from "@/app/components/form";
+import Image from "next/image";
 
 interface PostProps {
   post: Posts;
@@ -36,7 +37,9 @@ const ContentPost = ({ post }: PostProps) => {
         <div className="flex flex-col w-full lg:w-3/4 h-fit">
           <div className="w-full pr-4 flex-1 text-[1rem] 2xl:text-[1.2rem]">
             <p className="pb-4">{post.acf.introducion}</p>
-            <img
+            <Image
+              width={670}
+              height={670}
               loading="lazy"
               className="float-left mr-4 mb-4 w-full md:w-1/3 xl:w-2/4 aspect-square object-cover"
               src={post.acf["descripcion-imagen"]}
@@ -57,6 +60,7 @@ const ContentPost = ({ post }: PostProps) => {
                   title= {tag === "diseno-web"
                     ? "Diseño Web"
                     : tag.replace(/-/g, " ")}
+                    aria-label="Ver categoría"
                   key={index}
                   className="text-xs px-2 py-1  text-gray-400 font-medium capitalize bg-gray-300"
                 >

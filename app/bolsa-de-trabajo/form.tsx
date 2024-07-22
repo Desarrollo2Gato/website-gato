@@ -1,10 +1,11 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import CountrySelect from "../components/countrySelect";
 import axios from "axios";
 import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
 import ConfirmationModal from "../components/modal";
+import Image from "next/image";
 
 interface FormData {
   name: string;
@@ -120,7 +121,9 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
           className={"xl:w-3/5 lg:w-2/4 w-full"}
         >
           <div className="w-full h-full  items-center max-h-[760px] flex flex-row">
-            <img
+            <Image
+            width={1200}
+            height={800}
               loading="lazy"
               className="h-full object-cover w-full lg:max-w-[85%] rounded-xl shadow-md"
               src="https://i.pinimg.com/originals/27/07/76/270776ad2bf7eba7d5479e09e32282dd.jpg"
@@ -135,6 +138,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
                 href={
                   "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3"
                 }
+                aria-label="Visitar Instagram de Agencia Gato"
                 target="_blank"
                 className="flex justify-center items-center hover:scale-125 transition-all ease-in-out duration-300"
               >
@@ -194,6 +198,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
               </Link>
               <Link
                 href={"https://www.facebook.com/agenciagatope"}
+                aria-label="Visitar Facebook de Agencia Gato"
                 target="_blank"
                 className="hover:scale-125 transition-all ease-in-out duration-300"
               >
@@ -218,6 +223,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
               </Link>
               <Link
                 href={"https://www.linkedin.com/company/agenciagato/"}
+                aria-label="Visitar LinkedIn de Agencia Gato"
                 target="_blank"
                 className="flex justify-center items-center hover:scale-125 transition-all ease-in-out duration-300"
               >
