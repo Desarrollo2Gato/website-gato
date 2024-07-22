@@ -35,6 +35,7 @@ interface Project {
     instagram: string;
     tiktok: string;
     linkedin: string;
+    despliegue: string;
   };
 }
 

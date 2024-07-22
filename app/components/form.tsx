@@ -1,9 +1,8 @@
 "use client";
-import { StylesConfig } from "react-select";
 import axios from "axios";
 import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useState } from "react";
 
 import CountNumber from "../components/countNumber";
 import CountrySelect from "./countrySelect";
@@ -14,11 +13,6 @@ import Image from "next/image";
 
 interface FormProps {
   color: string;
-}
-interface Country {
-  name: string;
-  code: string;
-  id: number;
 }
 
 function Form({ color }: FormProps) {
@@ -355,7 +349,7 @@ function Form({ color }: FormProps) {
 
               <div className="w-full flex flex-col md:flex-row gap-8">
                 {/* countries */}
-                <div className="w-2/4">
+                <div className="w-full md:w-2/4">
                   <CountrySelect onChange={handleCountryChange} />
                 </div>
                 <div className="relative w-full md:w-2/4">

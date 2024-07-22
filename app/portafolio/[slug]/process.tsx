@@ -9,6 +9,7 @@ interface ProcessProps {
   desarrollo: string;
   prueba: string;
   despliegue: string;
+  despliegueImg: string;
 }
 
 const process: React.FC<ProcessProps> = ({
@@ -18,6 +19,7 @@ const process: React.FC<ProcessProps> = ({
   desarrollo,
   prueba,
   despliegue,
+  despliegueImg,
 }) => {
   const cardContents = [
     {
@@ -76,8 +78,7 @@ const process: React.FC<ProcessProps> = ({
     {
       title: "Despliegue",
       description: despliegue,
-      imgSrc:
-        "https://i.pinimg.com/originals/f9/39/27/f939276508cdb01eeb36d2b8b03fbfd2.jpg",
+      imgSrc: despliegueImg ? despliegueImg : "https://i.pinimg.com/originals/f9/39/27/f939276508cdb01eeb36d2b8b03fbfd2.jpg",
       svgPath: `<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_157_792)">
       <path d="M1.25781 20.3281C-0.507812 21.3359 -0.343749 24.0234 1.53906 24.8047L12.5 29.375V37.4453C12.5 38.8594 13.6406 40 15.0547 40C15.8125 40 16.5313 39.6641 17.0156 39.0781L21.8594 33.2734L31.5391 37.3047C33.0156 37.9219 34.7266 36.9531 34.9688 35.375L39.9688 2.87499C40.1172 1.92968 39.7031 0.976556 38.9141 0.437494C38.125 -0.101569 37.0938 -0.148444 36.2578 0.328119L1.25781 20.3281ZM5.32813 22.3203L32.0078 7.07812L14.8516 26.25L14.9453 26.3281L5.32813 22.3203ZM31.5078 33.2344L18.4922 27.8047L35.2187 9.10937L31.5078 33.2344Z" fill="white"/>
@@ -94,8 +95,8 @@ const process: React.FC<ProcessProps> = ({
 
   return (
     <div>
-      <div className=" w-full flex flex-col xl:  lg:px-16 px-8 py-8 lg:py-16 gap-4 xl:gap-10 lg:gap-6 bg-gray-100">
-        <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 xl:gap-12">
+      <div className="max-w-[1440px] mx-auto w-full flex flex-col lg:px-16 px-8 py-8 lg:py-16 gap-4 xl:gap-10 lg:gap-6 bg-gray-100">
+        <div className=" w-full grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 xl:gap-12">
           {cardContents.map((content, index) => (
             <CardSolution
               key={index}

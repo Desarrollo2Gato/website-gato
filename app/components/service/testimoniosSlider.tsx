@@ -1,8 +1,10 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import InstagramEmbed from "./reel";
+import { api_testimonial_services } from "@/app/data/enviroments/api.enviroment";
+import axios from "axios";
 interface ArrowProps {
   className?: string;
   style?: React.CSSProperties;
@@ -98,21 +100,29 @@ const TestimoniosSlider = () => {
     ],
   };
 
+  const [data, setData] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchTestimonias = async () => {
+      try {
+        const response = await axios.get(api_testimonial_services);
+        setData(response.data);
+        
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchTestimonias();
+  }, [data]);
+
   return (
     <div className="slider-container w-full">
       <Slider {...settings} className="">
-        <div className="h-fit">
-          <InstagramEmbed url="https://www.instagram.com/reel/C7SNb2HiNUY/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
+        {data.map((reel, index) => (
+          <div className="h-fit" key={index}>
+          <InstagramEmbed url={reel.acf.reel_url} />
         </div>
-        <div className="h-fit">
-          <InstagramEmbed url="https://www.instagram.com/reel/C9fLSkNiCk4/?igsh=MXM2NzNrcm16MHlicQ==" />
-        </div>
-        <div className="h-fit">
-          <InstagramEmbed url="https://www.instagram.com/reel/C7SNb2HiNUY/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" />
-        </div>
-        <div className="h-fit">
-          <InstagramEmbed url="https://www.instagram.com/reel/C9fLSkNiCk4/?igsh=MXM2NzNrcm16MHlicQ==" />
-        </div>
+        ))}
       </Slider>
     </div>
   );

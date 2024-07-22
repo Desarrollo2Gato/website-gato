@@ -1,0 +1,28 @@
+.content-post{
+    @apply text-[#3d3d3d] text-base
+}
+.content-post h2{
+    @apply text-xl my-2
+}
+.content-post h3{
+    @apply text-lg my-1
+}
+.content-post h2,
+.content-post h3,
+.content-post h4{
+    @apply font-bold ;
+}
+.content-post p{
+    @apply  mb-2
+}
+.content-post ul{
+    @apply list-disc list-inside
+}
+.content-post li{
+    @apply mb-1
+}
+.content-post a{
+    @apply underline
+}
+
+

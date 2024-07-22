@@ -176,7 +176,7 @@ function Items() {
               className={`w-full ${service.reverse ? "bg-white" : ""}`}
               key={index}
             >
-              <div className="w-full max-w-[1440px] mx-auto xl:px-24 md:px-16  px-8">
+              <div className="max-w-[1440px] mx-auto w-full sm:px-12 lg:px-16 px-8 py-16">
                 <ItemService
                   reverse={service.reverse}
                   color={service.color}

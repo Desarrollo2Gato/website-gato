@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import Service02 from "./disenoWeb";
 import WhatsappContact from "@/app/components/whatsapp-contact";
 import Form from "@/app/components/form";
+import Footer from "@/app/components/footer";
+
 
 function Content() {
   const [isDrawer, setIsDrawer] = useState(false);
@@ -69,6 +71,7 @@ function Content() {
         <div className="w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
           <Service02></Service02>
           <Form color="#0BC2E1"></Form>
+          <Footer></Footer>
         </div>
 
         {/* //todo-> section loadin -----------------------------------------------*/}

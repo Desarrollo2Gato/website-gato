@@ -3,7 +3,7 @@
 const ubication = () => {
   return (
     <div className="w-full  bg-[#f1f1f1]  ">
-      <div className="w-full max-w-[1440px] mx-auto py-16 xl:  md:px-24  px-8 flex flex-col lg:flex-row gap-6 lg:gap-16">
+      <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col lg:flex-row gap-6 lg:gap-16">
         <div className="w-full lg:w-2/5 flex flex-col gap-4 lg:gap-10 text-[#3D3D3D]">
           <h2 className="text-3xl text-center  font-medium uppercase">
             Ven a conocernos

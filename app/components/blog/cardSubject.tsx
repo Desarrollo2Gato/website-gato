@@ -2,6 +2,7 @@ import React from "react";
 import { RevealWrapper } from "next-reveal";
 import { sectionColors } from "./sectionColors";
 import Link from "next/link";
+import Image from "next/image";
 interface Post {
   id: number;
   slug: string;
@@ -43,7 +44,9 @@ const cardSubject = ({ post }: { post: Post }) => {
           origin="left"
           duration={1500}
         >
-          <img
+          <Image
+            width={626}
+            height={626}
             loading="lazy"
             className="w-full md:w-2/4 xl:w-2/5 h-full aspect-square object-cover group-hover:scale-105 transition-all duration-300 "
             src={post.acf["descripcion-imagen"]}
@@ -74,7 +77,9 @@ const cardSubject = ({ post }: { post: Post }) => {
               </h2>
               <div className=" flex gap-2 items-end text-[#bdbdbd] text-[0.8rem]">
                 <div className="flex gap-1 items-center justify-start ">
-                  <img
+                  <Image
+                    width={22}
+                    height={22}
                     loading="lazy"
                     className="w-[16px] h-[16px] xl:w-[22px] xl:h-[22px] aspect-square rounded-full object-cover"
                     src={post.acf["autor-profile"]}

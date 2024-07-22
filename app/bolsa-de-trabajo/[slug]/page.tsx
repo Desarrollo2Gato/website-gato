@@ -6,7 +6,7 @@ import { fetchYoastMeta } from "@/app/components/seo/fetchYoastMeta";
 import { WebPage, WithContext } from "schema-dts";
 
 const formatURL = (url: string) => {
-  return url.replace("https://palegreen-anteater-636608.hostingersite.com", "https://www.gato.pe/portafolio/");
+  return url.replace("https://palegreen-anteater-636608.hostingersite.com", "https://www.gato.pe/portafolio");
 };
 
 const cleanTitle = (title: string) => {

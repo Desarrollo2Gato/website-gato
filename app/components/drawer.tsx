@@ -133,15 +133,15 @@ function Drawer() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 text-sm">
-            <div className=" flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col gap-4  text-sm">
+            <div className=" grid  md:grid-cols-3 gap-4 md:gap-8 lg:gap-10 xl:gap-12">
               {/* escribenos */}
               <div className="flex flex-col">
                 <span className="font-semibold">Escríbenos</span>
                 <Link
                   href={"mailto:info@gato.com"}
                   className="text-slate-600
-            hover:underline underline-offset-4 mb-1"
+            hover:underline underline-offset-4 my-1"
                 >
                   info@gato.com
                 </Link>
@@ -166,7 +166,7 @@ function Drawer() {
                 <Link
                   href={"tel:+51 980005257"}
                   className="text-slate-600
-            hover:underline underline-offset-4 mb-1"
+            hover:underline underline-offset-4 my-1"
                 >
                   +51 946380310
                 </Link>
@@ -197,7 +197,7 @@ function Drawer() {
             {/* partners */}
             <div className="w-full">
               <span className="font-semibold">Partners Tecnológicos</span>
-              <div className="grid md:grid-cols-2 gap-2 justify-between mt-1">
+              <div className="grid md:grid-cols-3 gap-4 md:gap-8 lg:gap-10 xl:gap-12 justify-between my-1">
                 {/* Google */}
                 <svg
                   className="w-auto h-7 object-contain"

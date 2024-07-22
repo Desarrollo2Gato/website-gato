@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 function TestimonialsCards() {
   return (
     <section className="xl:  md:px-24  px-8 bg-gray-100  pb-24 pt-8">
@@ -60,7 +62,8 @@ function TestimonialsCards() {
 
         <div className="bg-white rounded-lg shadow-small p-4">
           <div className="flex gap-2">
-            <img
+            <Image
+              fill
               loading="lazy"
               className="rounded-full w-20 object-cover"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIikjoCF-c8UtN5zp0sk_baxDD-pJNIhRuSNXEddfKFg&s"

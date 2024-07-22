@@ -1,7 +1,6 @@
 import { Metadata } from "next";
-import Footer from "../components/footer";
 import Services from "./services";
-import Form from "../components/form";
+
 
 export const metadata: Metadata = {
   title: "Nuestros Servicios",
@@ -67,8 +66,7 @@ function Page() {
     <>
       <div className="w-full h-screen ">
         <Services></Services>
-        <Form color="#6D28D9"/>
-        <Footer></Footer>
+        
       </div>
     </>
   );

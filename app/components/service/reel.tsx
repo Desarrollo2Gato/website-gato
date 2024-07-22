@@ -6,13 +6,18 @@ interface InstagramEmbedProps {
 
 const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ url }) => {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.instagram.com/embed.js";
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
+    // Verifica si el script de Instagram ya está en el documento
+    if (!document.querySelector('script[src="https://www.instagram.com/embed.js"]')) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.instagram.com/embed.js";
+      document.body.appendChild(script);
+
+      // Limpieza al desmontar el componente
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
   }, []);
 
   return (

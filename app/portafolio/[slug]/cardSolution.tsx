@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 interface cardProps {
   color: string;
@@ -17,7 +18,9 @@ const cardSolution: React.FC<cardProps> = ({
     <div className="container min-w-full w-auto md:h-[550px] h-[450px]">
       <div className="card w-full h-full relative group shadow-md transition-all duration-500 rounded-xl bg-black">
         <div className="front absolute top-0 left-0 z-[2] w-full h-full ">
-          <img
+          <Image
+            width={700}
+            height={1000}
             loading="lazy"
             src={imgSrc}
             alt={title}
@@ -39,13 +42,15 @@ const cardSolution: React.FC<cardProps> = ({
         </div>
 
         <div
-        style={{ backgroundColor: color }}
-          className={`back absolute top-0 left-0 z-[1]  w-full h-full flex justify-center items-center flex-col p-3  text-white text-center transition-all duration-600 origin-center rounded-xl`}
+          style={{ backgroundColor: color }}
+          className={`back absolute top-0 left-0 z-[1]  w-full h-full  p-2  text-white text-center transition-all duration-600 origin-center rounded-xl `}
         >
-          <span className="text-2xl md:text-3xl mb-2 font-semibold">
-            {title}
-          </span>
-          <p className="text-center w-full lg:w4/5 xl:w-3/5">{description}</p>
+          <div className="w-full h-full p-1 md:p-4 lg:p-6 flex justify-center items-center flex-col overflow-y-auto">
+            <h4 className="text-2xl md:text-3xl mb-2 font-semibold ">
+              {title}
+            </h4>
+            <p className="text-center w-full ">{description}</p>
+          </div>
         </div>
       </div>
     </div>

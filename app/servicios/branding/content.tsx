@@ -53,7 +53,7 @@ function Content() {
         <div className="min-w-screen w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
           <Branding></Branding>
           <Form color="#A52DE6"></Form>
-        <Footer></Footer>
+          <Footer></Footer>
         </div>
       </div>
     </>

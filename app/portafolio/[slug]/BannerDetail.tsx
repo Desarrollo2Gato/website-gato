@@ -10,6 +10,7 @@ import {
   FaLinkedinIn,
   FaGlobe,
 } from "react-icons/fa";
+import Image from "next/image";
 
 interface ProjectData {
   title: { rendered: string };
@@ -32,6 +33,7 @@ interface ProjectData {
     instagram: string;
     tiktok: string;
     linkedin: string;
+    despliegue: string;
   };
 }
 interface BannerDetailProps {
@@ -94,10 +96,10 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
   }, [isLoading, proyecto]);
 
   return (
-    <section className="w-full md:min-h-screen h-full">
+    <section className="w-full md:min-h-screen h-full bg-gray-100">
       {!isLoading ? (
-        <div className={` flex bg-gray-100 relative w-full flex-col `}>
-          <div className="max-w-[1440px] mx-auto w-full pb-4 lg:pb-8 xl:  lg:px-16 px-8 py-8 lg:py-16">
+        <div className={` flex  relative w-full flex-col `}>
+          <div className="max-w-[1440px] mx-auto w-full sm:px-12 pb-4 lg:pb-8 lg:p-16 p-8">
             <RevealWrapper origin="left" duration={1500}>
               <Link
                 href={"/portafolio"}
@@ -139,16 +141,19 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                     {proyecto.acf?.["banner-descripcion"]}
                   </p>
                 </div>
-                <img
-                  loading="lazy"
+                <Image
+                  width={1440}
+                  height={800}
+                  priority
+
                   src={
                     proyecto.acf?.banner
                       ? proyecto.acf.banner
                       : "https://i.pinimg.com/736x/d4/c3/fb/d4c3fbe8d97a0514ebe33641b8741f13.jpg"
                   }
                   className="w-full h-auto object-cover aspect-video shadow-md"
-                  alt="Servicio de Marketing Digital para Social Commerce - Aumenta tu presencia en línea y maximiza tus ventas"
-                  title="Servicio de Marketing Digital para Social Commerce"
+                  alt={'Banner de ' + proyecto.acf.cliente}
+                  title={'Banner de ' + proyecto.acf.cliente}
                 />
               </RevealWrapper>
             </div>
@@ -269,7 +274,9 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                 duration={1500}
                 className={"w-ful h-full shadow-md"}
               >
-                <img
+                <Image
+                  height={770}
+                  width={770}
                   loading="lazy"
                   src={
                     proyecto.acf["imagen-solucion"]
@@ -277,8 +284,8 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                       : "https://i.pinimg.com/736x/d4/c3/fb/d4c3fbe8d97a0514ebe33641b8741f13.jpg"
                   }
                   className="w-full h-full object-cover  "
-                  alt="Servicio de Marketing Digital para Social Commerce - Aumenta tu presencia en línea y maximiza tus ventas"
-                  title="Servicio de Marketing Digital para Social Commerce"
+                  alt={"Imagen solucion de" + proyecto.acf.cliente}
+                  title={"Imagen solucion de" + proyecto.acf.cliente}
                 />
 
                 <div className="  ">
@@ -289,10 +296,13 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                       "absolute lg:bottom-6 lg:right-8 bottom-2 right-2"
                     }
                   >
-                    <img
+                    <Image
+                      height={60}
+                      width={90}
                       loading="lazy"
                       src={proyecto?.acf.imagen}
-                      alt={`logo ${proyecto?.acf.cliente}`}
+                      alt={`Logo de  ${proyecto?.acf.cliente}`}
+                      title={`Logo de  ${proyecto?.acf.cliente}`}
                       className="h-[3rem] lg:h-[60px] w-auto object-contain"
                     />
                   </RevealWrapper>
@@ -388,6 +398,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
         desarrollo={proyecto.acf["solucion-desarrollo"]}
         prueba={proyecto.acf["solucion-pruebas"]}
         despliegue={proyecto.acf["solucion-despliegue"]}
+        despliegueImg={proyecto.acf.despliegue}
       />
     </section>
   );

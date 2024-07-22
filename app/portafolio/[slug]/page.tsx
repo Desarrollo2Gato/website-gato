@@ -9,7 +9,7 @@ import Script from "next/script";
 const formatURL = (url: string) => {
   return url.replace(
     "https://palegreen-anteater-636608.hostingersite.com",
-    "https://www.gato.pe/portafolio/"
+    "https://www.gato.pe/portafolio"
   );
 };
 
@@ -42,6 +42,7 @@ interface Project {
     instagram: string;
     tiktok: string;
     linkedin: string;
+    despliegue: string;
   };
 }
 

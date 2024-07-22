@@ -5,7 +5,7 @@ function WhatsappContact() {
     window.open("https://wa.me/+51946380310", "_blank");
   }
   return (
-    <div className="fixed bottom-6 right-6 z-20">
+    <div className="fixed bottom-6 right-6 z-10">
      {/*  <div className="absolute w-full sm:w-[400px] max-w-[400px] bg-white shadow-2xl ">
         <div className="p-4">Bienvenido(a) a Gato</div>
         <div>
