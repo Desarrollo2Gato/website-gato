@@ -6,7 +6,7 @@ import { api_blog } from "@/app/data/enviroments/api.enviroment";
 import Script from "next/script";
 
 const formatURL = (url: string) => {
-  return url.replace("https://palegreen-anteater-636608.hostingersite.com", "https://www.gato.pe/blog/post/");
+  return url.replace("https://palegreen-anteater-636608.hostingersite.com", "https://www.gato.pe/blog/post");
 };
 
 const cleanTitle = (title: string) => {

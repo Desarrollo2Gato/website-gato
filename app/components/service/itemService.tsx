@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
 import { FaMedal } from "react-icons/fa";
+import Image from "next/image";
 
 interface Props {
   reverse?: boolean;
@@ -48,27 +49,31 @@ const ItemService: React.FC<Props> = ({
   return (
     <div
     id={path}
-      className={`w-full   lg:flex  py-8 md:py-16 ${
+      className={`w-full   lg:flex  py-8 md:py-16 gap-4 ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
     >
       {/* imágenes */}
       <div
-        className={`relative w-full mb-8 lg:mb-0 lg:w-1/2 h-auto sm:flex sm:gap-8 ${
-          reverse ? "lg:ml-4 2xl:ml-10" : "lg:mr-4 2xl:mr-10"
+        className={`relative w-full pb-8 lg:pb-0 lg:w-1/2 h-auto sm:flex sm:gap-8 ${
+          reverse ? "lg:pl-4 2xl:pl-10" : "lg:pr-4 2xl:pr-10"
         }  `}
       >
-        <img
-          className="w-full max-h-[200px] md:max-h-[300px] lg:max-h-[80%] sm:w-1/2 lg:w-[70%] 2xl:max-w-[400px] object-cover  shadow-xl mb-8 md:mb-0"
+        <Image
+          height={528}
+          width={400}
+          className="w-full max-h-[200px] md:max-h-[300px] lg:max-h-[80%] sm:w-1/2 lg:w-[70%] 2xl:max-w-[400px] object-cover  shadow-xl pb-8 md:pb-0"
           src={img_1}
-          alt={name + " icono 1"}
-          title={name + " icono 1"}
+          alt={"Imagen principal sobre " + name + "en Agencia Gato" }
+          title={"Imagen principal sobre " + name + "en Agencia Gato"}
         />
-        <img
+        <Image
+          height={300}
+          width={500}
           className="shadow-md lg:absolute bottom-0 right-0 w-full max-h-[200px] md:max-h-[300px] lg:max-h-[60%] sm:w-1/2 lg:w-[80%] 2xl:max-w-[500px] object-cover"
           src={img_2}
-          alt={name + " icono 2"}
-          title={name + " icono 2"}
+          alt={"Imagen secundaria sobre " + name + "en Agencia Gato"}
+          title={"Imagen secundaria  sobre " + name + "en Agencia Gato"}
         />
         <div className="hidden absolute top-0 right-0 bg-white lg:flex justify-center items-center w-fit h-fit rounded-[100%] border border-gray-200 p-1">
           <svg
@@ -159,7 +164,7 @@ const ItemService: React.FC<Props> = ({
       </div>
       <div
         className={`flex flex-col gap-5 lg:gap-8 lg:w-1/2 ${
-          reverse ? "lg:mr-4 2xl:mr-10" : "lg:ml-4 2xl:ml-10"
+          reverse ? "lg:pr-4 2xl:pr-10" : "lg:pl-4 2xl:pl-10"
         } `}
       >
         <Link

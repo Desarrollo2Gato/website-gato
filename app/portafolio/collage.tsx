@@ -5,6 +5,7 @@ import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Pagination from "../components/Pagination";
+import Image from "next/image";
 
 function CollagePortfolio() {
   interface PortafolioItem {
@@ -84,16 +85,18 @@ function CollagePortfolio() {
       as={`/portafolio/${item.slug}`}
       className="group relative flex justify-center items-center overflow-hidden border aspect-square"
     >
-      <img
+      <Image
         loading="lazy"
+        width={271}
+        height={271}
         className="xl:w-[65%] xl:h-[65%] h-[85%] w-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
         src={item.acf?.imagen ? item.acf.imagen : defaultImageUrl}
         onError={(e) => {
           e.currentTarget.onerror = null;
           e.currentTarget.src = defaultImageUrl;
         }}
-        alt={`GATO - Proyecto ${item.acf.cliente}`}
-        title={`GATO - Proyecto ${item.acf.cliente}`}
+        alt={`Logo de  ${item.acf.cliente}`}
+        title={`Logo de  ${item.acf.cliente}`}
       />
       <div className="absolute hidden group-hover:flex inset-0 bg-black bg-opacity-70 w-full h-full top-0 p-1 md:p-3 animate-fade-up flex-col justify-center items-center gap-4 text-white">
         <span className="font-semibold text-base md:text-2xl text-center">

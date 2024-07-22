@@ -1,4 +1,5 @@
 import { RevealWrapper } from "next-reveal";
+import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -14,7 +15,7 @@ const banner = (prop: Props) => {
   return (
     <div className="w-full h-auto md:h-[25rem] 2xl:h-[800px] lg:h-[600px] bg-white shadow-lg">
       <RevealWrapper origin="left" duration={1000} className={"w-full h-full"}>
-        <div className="relative w-full max-w-[1440px] mx-auto h-full flex px-8 py-8 xl:  lg:px:16 lg:py-16">
+        <div className="relative w-full max-w-[1440px] mx-auto h-full flex sm:px-12 lg:px-16 px-8 py-16">
           <div className="relative hidden w-full h-full md:flex flex-col md:flex-row justify-end">
             <div className="absolute left-16   opacity-90">
               <RevealWrapper
@@ -144,7 +145,9 @@ const banner = (prop: Props) => {
                 duration={1800}
                 className={"w-full h-full md:p-4 xl:p-6 bg-white rounded-xl"}
               >
-                <img
+                <Image
+                  width={702}
+                  height={478}
                   loading="lazy"
                   src={prop.banner}
                   alt={'Imagen del banner de ' + prop.service}

@@ -1,4 +1,3 @@
-import Footer from "@/app/components/footer";
 import Content from "./content";
 import { Metadata } from "next";
 import { Organization, WebPage, WithContext } from "schema-dts";
@@ -98,7 +97,7 @@ function Page() {
         }}
       />
       <Content></Content>
-      <Footer></Footer>
+      
     </>
   );
 }

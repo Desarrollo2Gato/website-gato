@@ -8,6 +8,8 @@ import BannerServices from "./banner";
 import WhatsappContact from "../components/whatsapp-contact";
 import Testimonios from "./testimonios";
 import "@/app/components/slider3items.css";
+import Footer from "../components/footer";
+import Form from "../components/form";
 function Services() {
   const [isDrawer, setIsDrawer] = useState(false);
 
@@ -54,6 +56,8 @@ function Services() {
           <BannerServices></BannerServices>
           <Items></Items>
           <Testimonios/>
+          <Form color="#6D28D9"/>
+        <Footer></Footer>
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ import Link from "next/link";
 function BannerServices() {
   return (
     <section className="relative w-full  overflow-hidden">
-      <div className="max-w-[1440px] mx-auto p-8 md:py-16 lg:p-16  ">
+      <div className="max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16  ">
         <h1
           className="text-3xl text-center
          text-[#3D3D3D] font-semibold uppercase mb-4"
@@ -20,13 +20,13 @@ function BannerServices() {
           proyecto al siguiente nivel con nuestro equipo especializado!
         </p>
 
-        <div className="flex flex-wrap justify-center  gap-4 2xl:gap-6 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-center  gap-4 2xl:gap-6 mt-10">
           <Link
             href={"#marketing-digital"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[230px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-16 w-16 object-contain"
+              className="h-14 w-14 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"
@@ -100,10 +100,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#disenio-web"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-16 w-16 object-contain"
+              className="h-14 w-14 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"
@@ -170,10 +170,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#desarrollo-software"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-16 w-16 object-contain"
+              className="h-14 w-14 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 98 98"
@@ -260,10 +260,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#branding"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-16 w-16 object-contain"
+              className="h-14 w-14 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"
@@ -286,10 +286,10 @@ function BannerServices() {
           </Link>
           <Link
             href={"#desarrollo-movil"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-[240px] h-24 flex flex-row items-center justify-center px-4 gap-4 2xl:gap-6 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
-              className="h-16 w-16 object-contain"
+              className="h-14 w-14 object-contain"
               width="100%"
               height="100%"
               viewBox="0 0 100 100"

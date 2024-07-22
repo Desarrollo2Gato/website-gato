@@ -8,11 +8,11 @@ import { api_blog } from "@/app/data/enviroments/api.enviroment";
 const content = ({ slug }: { slug: string }) => {
   const [posts, setPosts] = useState([]);
   const tagMap: Record<string, number> = {
-    'branding': 4,
-    'desarrollo-movil': 7,
-    'desarrollo-software': 6,
-    'diseno-web': 5,
-    'marketing-digital': 3
+    branding: 4,
+    "desarrollo-movil": 7,
+    "desarrollo-software": 6,
+    "diseno-web": 5,
+    "marketing-digital": 3,
   };
 
   useEffect(() => {
@@ -37,9 +37,8 @@ const content = ({ slug }: { slug: string }) => {
     <div>
       <Banner name={slug} />
       <div className=" relative -top-[8%] md:-top-[5%] lg:-top-[10%]">
-      <Entradas posts={posts} name={slug} />
+        <Entradas posts={posts} name={slug} />
       </div>
-      
     </div>
   );
 };

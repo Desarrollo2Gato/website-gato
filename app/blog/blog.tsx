@@ -8,7 +8,7 @@ import Banner from "./banner";
 import Entradas from "./entradas";
 
 const blog = () => {
-    const [isDrawer, setIsDrawer] = useState(false);
+  const [isDrawer, setIsDrawer] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (event: any) => {
@@ -26,7 +26,9 @@ const blog = () => {
       <WhatsappContact></WhatsappContact>
 
       <div
-        className={`fixed top-0 left-0  ${isDrawer ? "w-screen h-screen" : "w-screen lg:w-16"} h-[60px] lg:h-screen z-10 flex flex-col lg:flex-row`}
+        className={`fixed top-0 left-0  ${
+          isDrawer ? "w-screen h-screen" : "w-screen lg:w-16"
+        } h-[60px] lg:h-screen z-10 flex flex-col lg:flex-row`}
       >
         <Navigation isDrawer={isDrawer} setIsDrawer={setIsDrawer}></Navigation>
         {isDrawer && <Drawer></Drawer>}
@@ -34,13 +36,13 @@ const blog = () => {
       <main className="min-w-screen flex flex-col w-full pt-[60px] lg:pl-[80px] lg:pt-0">
         <Banner></Banner>
         <div className="relative -top-[1%] sm:-top-[3%] md:-top-[4%] xl:-top-[5%]">
-        <Entradas></Entradas>
+          <Entradas></Entradas>
         </div>
-        
+
         <Footer></Footer>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default blog
+export default blog;

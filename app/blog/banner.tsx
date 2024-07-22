@@ -43,7 +43,7 @@ const banner = () => {
           title="Banner principal de Blog"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-[#1E004D] bg-opacity-50 flex justify-start items-center">
-          <div className="w-full max-w-[1440px] mx-auto px-8 pb-8 lg:px-16 lg:pb-16 xl:px32 flex flex-col gap-2 md:gap-4 lg:gap-8 ">
+          <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 pb-8  lg:pb-16 flex flex-col gap-2 md:gap-4 lg:gap-8 ">
             <h1 className=" w-full capitalize text-white text-3xl md:text-5xl lg:text-6xl xl:text-8xl font-bold drop-shadow-xl">
               <Typewriter
                 words={[

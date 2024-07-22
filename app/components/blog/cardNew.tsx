@@ -73,12 +73,14 @@ const CardNew = ({ post }: { post: Post }) => {
               ))}
             </div>
             <div className=" flex flex-col gap-1 lg:gap-3">
-              <h2 className="truncate capitalize text-white text-[1rem] leading-[1.2rem] md:text-[1.5rem] md:leading-[1.3rem] lg:text-[1.5rem] lg:leading-[1.7rem]  2xl:text-[1.8rem] 2xl:leading-[2.2rem] md:text-base font-bold drop-shadow-xl">
+              <h2 className="truncate capitalize text-white text-[1rem] leading-[1.2rem] md:text-[1.5rem] md:leading-[1.3rem] lg:text-[1.5rem] lg:leading-[1.7rem] md:text-base font-bold drop-shadow-xl">
                 <span>{post?.acf?.titulo}</span>
               </h2>
               <div className="text-[#cacaca] flex gap-2 text-xs md:text-base ">
                 <div className="flex gap-1 items-center ">
-                  <img
+                  <Image
+                  width={20}
+                    height={20}
                     loading="lazy"
                     className="w-4 h-4 md:w-5 md:h-5 aspect-square rounded-full object-cover"
                     src={post?.acf["autor-profile"]}
