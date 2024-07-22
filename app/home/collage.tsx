@@ -104,8 +104,6 @@ function Collage() {
                 <Image
                   width={735}
                   height={490}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAAAAAAAD..."
                   src="https://i.pinimg.com/736x/ae/79/53/ae7953b8c7ec33f158077856980a77ee.jpg"
                   loading="lazy"
                   alt="Agencia GATO - Desarrollo de Software"
