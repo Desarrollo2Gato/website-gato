@@ -86,8 +86,8 @@ const CardJob: React.FC<Props> = ({
       </div>
       <p className="mb-6 text-[#666]">{jobDescription}</p>
       <Link
-        href="/bolsadetrabajo/[slug]/"
-        as={`/bolsadetrabajo/${slug}`}
+        href="/bolsa-de-trabajo/[slug]/"
+        as={`/bolsa-de-trabajo/${slug}`}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         role="button"
