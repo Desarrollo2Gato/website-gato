@@ -3,7 +3,7 @@ import Link from "next/link";
 import MorePost from "./morePost";
 import Form from "@/app/components/form";
 import Image from "next/image";
-
+import "@/app/components/post.css";
 interface PostProps {
   post: Posts;
 }
@@ -32,11 +32,11 @@ const ContentPost = ({ post }: PostProps) => {
     return { __html: htmlString };
   };
   return (
-    <div className="w-full   ">
+    <div className="w-full  text-[#3d3d3d] ">
       <div className="bg-gray-50 max-w-[1440px] mx-auto flex flex-col lg:flex-row sm:px-12 py-16 px-8 pb-8 lg:px-16 pt-8 lg:px16 lg:py-16">
         <div className="flex flex-col w-full lg:w-3/4 h-fit">
           <div className="w-full pr-4 flex-1 text-[1rem] 2xl:text-[1.2rem]">
-            <p className="pb-4">{post.acf.introducion}</p>
+            <p className="pb-4 ">{post.acf.introducion}</p>
             <Image
               width={670}
               height={670}
@@ -47,7 +47,7 @@ const ContentPost = ({ post }: PostProps) => {
               title={"Imagen de " + post.acf.titulo}
             />
             <div
-              className="mb-4"
+              className="mb-4 content-post"
               dangerouslySetInnerHTML={createMarkup(post.content.rendered)}
             />
           </div>
@@ -72,7 +72,7 @@ const ContentPost = ({ post }: PostProps) => {
         </div>
         <div className="w-full h-fit flex flex-col gap-4 lg:w-1/4 lg:pl-4 pb-8 lg:pb-0 lg:border-l">
           <NavSections />
-          <MorePost></MorePost>
+          <MorePost currentPost={post.slug}></MorePost>
         </div>
       </div>
       <Form color="#6D28D9"></Form>

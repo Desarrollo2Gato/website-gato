@@ -19,7 +19,8 @@ const cardSolution: React.FC<cardProps> = ({
       <div className="card w-full h-full relative group shadow-md transition-all duration-500 rounded-xl bg-black">
         <div className="front absolute top-0 left-0 z-[2] w-full h-full ">
           <Image
-            fill
+            width={700}
+            height={1000}
             loading="lazy"
             src={imgSrc}
             alt={title}

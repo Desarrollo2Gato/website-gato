@@ -73,7 +73,7 @@ const MorePostCard = ({ post }: { post: Post }) => {
               ))}
             </div>
             <div className="flex flex-col flex-grow justify-end h-full">
-              <h2 className="md:line-clamp-2 lg:line-clamp-3 capitalize font-bold drop-shadow-xl text-[1.2rem] 2xl:text-[1.5rem]  ">
+              <h2 className="md:line-clamp-2 lg:line-clamp-3 capitalize font-bold drop-shadow-xl text-[1.2rem]   ">
                 {post.acf.titulo}
               </h2>
               <div className="pt-1 md:pt-4 flex gap-2 text-[#bdbdbd] text-[0.8rem]">
