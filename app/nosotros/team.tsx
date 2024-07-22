@@ -10,6 +10,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Worker {
   acf: {
@@ -60,10 +61,9 @@ function Team() {
     (worker) => worker.acf.tipo_de_trabajador !== "ceo"
   );
 
-
   const workersByArea: { [key: number]: Worker[] } = {};
 
-  filteredWorkers.forEach(worker => {
+  filteredWorkers.forEach((worker) => {
     const area = worker.acf.area;
     if (!workersByArea[area]) {
       workersByArea[area] = [];
@@ -102,7 +102,9 @@ function Team() {
                 key={index}
               >
                 <div className="flex flex-col text-center gap-2 overflow-hidden rounded-2xl">
-                  <img
+                  <Image
+                    width={800}
+                    height={800}
                     loading="lazy"
                     role="button"
                     onClick={() => openModal(item.acf)}
@@ -120,29 +122,31 @@ function Team() {
             ))}
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 md:gap-8 justify-center">
-            { groupedWorkers.map((item, index) => (
-                <RevealWrapper
-                  origin="bottom"
-                  duration={index * 300 + 1000}
-                  key={index}
-                >
-                  <div className="flex flex-col text-center gap-2 overflow-hidden rounded-2xl">
-                    <img
-                      loading="lazy"
-                      role="button"
-                      onClick={() => openModal(item.acf)}
-                      className="rounded-2xl w-full hover:scale-105 transition-all cursor-pointer "
-                      src={item.acf.imagen}
-                      alt={item.acf.nombre}
-                      title={item.acf.nombre}
-                    />
-                    <span className="  text-gray-500 rounded-lg px-2 ">
-                      {item.acf.rol}
-                    </span>
-                    <span>{item.acf.nombre}</span>
-                  </div>
-                </RevealWrapper>
-              ))}
+            {groupedWorkers.map((item, index) => (
+              <RevealWrapper
+                origin="bottom"
+                duration={index * 300 + 1000}
+                key={index}
+              >
+                <div className="flex flex-col text-center gap-2 overflow-hidden rounded-2xl">
+                  <Image
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    role="button"
+                    onClick={() => openModal(item.acf)}
+                    className="rounded-2xl w-full hover:scale-105 transition-all cursor-pointer "
+                    src={item.acf.imagen}
+                    alt={item.acf.nombre}
+                    title={item.acf.nombre}
+                  />
+                  <span className="  text-gray-500 rounded-lg px-2 ">
+                    {item.acf.rol}
+                  </span>
+                  <span>{item.acf.nombre}</span>
+                </div>
+              </RevealWrapper>
+            ))}
           </div>
         </div>
       </div>
@@ -172,10 +176,12 @@ function ModalDetail({
               variant="h3"
               className="mb-4 text-metal-900 text-center"
             >
-              {data.rol}
+              {data.nombre}
             </Typography>
             <Typography variant="body2" className=" font-normal text-metal-600">
-              <img
+              <Image
+                width={800}
+                height={800}
                 loading="lazy"
                 className="rounded-lg my-2"
                 src={data.imagen}
@@ -184,7 +190,7 @@ function ModalDetail({
             </Typography>
             <Typography variant="body2" className="">
               <Typography variant="h5" className=" text-metal-900 text-center">
-                {data.nombre}
+              {data.rol}
               </Typography>
               <Typography
                 variant="h6"
@@ -193,18 +199,18 @@ function ModalDetail({
                 {data.education}
               </Typography>
               <div className="flex justify-around items-center text-2xl mt-4 text-[#666] ">
-                <Link href={data.fb} target="_blank">
+                {/* <Link href={data.fb} target="_blank">
                   {" "}
                   <FaFacebookF className="hover:text-[#444] transition-all duration-500" />
-                </Link>
-                <Link href={data.linkedin} target="_blank">
+                </Link> */}
+                <Link href={data.linkedin} target="_blank" aria-label="LinkedIn">
                   {" "}
                   <FaLinkedinIn className="hover:text-[#444] transition-all duration-500" />
                 </Link>
-                <Link href={data.ig} target="_blank">
+                {/* <Link href={data.ig} target="_blank">
                   {" "}
                   <FaInstagram className="hover:text-[#444] transition-all duration-500" />
-                </Link>
+                </Link> */}
               </div>
             </Typography>
           </Typography>

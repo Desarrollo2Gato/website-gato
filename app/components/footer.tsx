@@ -23,28 +23,28 @@ function Footer() {
           </div>
 
           <div className="flex flex-col ">
-            <span className="font-semibold mb-1">Visítanos </span>
+            <span className="font-semibold mb-2">Visítanos </span>
             <span className="text-slate-600">Av. Brasil 2475, Jesús María</span>
           </div>
           <div className="flex flex-col ">
-            <span className="font-semibold mb-1">Hablemos</span>
+            <span className="font-semibold mb-2">Hablemos</span>
             <Link
               href={"tel:+51 980005257"}
               className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-1"
+            hover:underline underline-offset-4 mb-2"
             >
               +51 946380310
             </Link>
             <Link
               href={"tel:+51 980005257"}
-              className="text-slate-600 md:text-sm text-xs relative inline-block hover:underline underline-offset-4 mb-1"
+              className="text-slate-600 md:text-sm text-xs relative inline-block hover:underline underline-offset-4 mb-2"
             >
               +51 980005257
             </Link>
             <Link
               href={"tel:+51 952341679"}
               className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-1"
+            hover:underline underline-offset-4 mb-2"
             >
               +51 952341679
             </Link>
@@ -54,21 +54,21 @@ function Footer() {
             <Link
               href={"mailto:info@gato.com"}
               className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-1 mt-1"
+            hover:underline underline-offset-4 mb-2 mt-2"
             >
               info@gato.com
             </Link>
             <Link
               href={"mailto:dortega@gato.com"}
               className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-1"
+            hover:underline underline-offset-4 mb-2"
             >
               dortega@gato.com
             </Link>
             <Link
               href={"mailto:mjara@gato.com"}
               className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-1"
+            hover:underline underline-offset-4 mb-2"
             >
               mjara@gato.com
             </Link>
@@ -77,7 +77,7 @@ function Footer() {
           <div className="grid grid-cols-2  justify-between xl:grid-cols-1 gap-1 col-span-2 xl:col-span-1">
             <div>
               <span className="font-semibold ">Redes Sociales</span>
-              <div className="flex gap-2 mt-1">
+              <div className="flex gap-2 mt-2">
                 <Link
                   href={"https://www.instagram.com/agenciagato2024/"}
                   target="_blank"
@@ -163,7 +163,7 @@ function Footer() {
             </div>
             <div>
               <span className="font-semibold ">Partners Tecnológicos</span>
-              <div className="grid grid-cols-2 gap-2 justify-between mt-1">
+              <div className="grid grid-cols-2 gap-2 justify-between mt-2">
               <svg
                 className="w-auto h-7 object-contain"
                 width="100%"

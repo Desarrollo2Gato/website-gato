@@ -141,6 +141,7 @@ function Form({ color }: FormProps) {
                   "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3"
                 }
                 target="_blank"
+                aria-label="Instagram de Agencia GATO"
                 className="flex justify-center items-center hover:scale-125 transition-all ease-in-out duration-300"
               >
                 <svg
@@ -205,6 +206,7 @@ function Form({ color }: FormProps) {
               <Link
                 href={"https://www.facebook.com/agenciagatope"}
                 target="_blank"
+                aria-label="Facebook de Agencia GATO"
                 className="hover:scale-125 transition-all ease-in-out duration-300"
               >
                 <svg
@@ -227,6 +229,7 @@ function Form({ color }: FormProps) {
                 </svg>
               </Link>
               <Link
+                title="LinkedIN Agencia GATO"
                 href={"https://www.linkedin.com/company/agenciagato/"}
                 target="_blank"
                 className="flex justify-center items-center hover:scale-125 transition-all ease-in-out duration-300"
@@ -369,28 +372,31 @@ function Form({ color }: FormProps) {
                     }
                   />
                   <label
-                    htmlFor="email"
+                    htmlFor="phone"
                     className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-[#3D3D3D] transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-[#3D3D3D] after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-[#3D3D3D] peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-[#3D3D3D]"
                   >
                     Número
                   </label>
                 </div>
               </div>
-
-              <select
-                id="service"
-                className="h-full w-full border-b border-[#3D3D3D] bg-transparent pt-4 pb-1.5 font-sans  font-normal text-[#3D3D3D] outline outline-0 "
-                defaultValue={data.service}
-                onChange={(e) => setData({ ...data, service: e.target.value })}
-              >
-                <option value="Marketing Digital">Marketing Digital</option>
-                <option value="Branding">Branding</option>
-                <option value="Diseno Web">Diseño Web</option>
-                <option value="Desarrollo de Software">
-                  Desarrollo de Software
-                </option>
-                <option value="Desarrollo Movil">Desarrollo Movil</option>
-              </select>
+              <label htmlFor="service">
+                <select
+                  id="service"
+                  className="h-full w-full border-b border-[#3D3D3D] bg-transparent pt-4 pb-1.5 font-sans  font-normal text-[#3D3D3D] outline outline-0 "
+                  defaultValue={data.service}
+                  onChange={(e) =>
+                    setData({ ...data, service: e.target.value })
+                  }
+                >
+                  <option value="Marketing Digital">Marketing Digital</option>
+                  <option value="Branding">Branding</option>
+                  <option value="Diseno Web">Diseño Web</option>
+                  <option value="Desarrollo de Software">
+                    Desarrollo de Software
+                  </option>
+                  <option value="Desarrollo Movil">Desarrollo Movil</option>
+                </select>
+              </label>
 
               <div className="relative w-full">
                 <textarea
