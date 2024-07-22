@@ -2,7 +2,6 @@ import DetailPlan from "./modalDetail";
 import SliderPlans from "./sliderPlans";
 import { useState } from "react";
 import {Plan } from "./iPlan";
-import { color } from "framer-motion";
 
 type Props = {
   color: string;
