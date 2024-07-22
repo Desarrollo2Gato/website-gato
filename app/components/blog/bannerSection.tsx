@@ -2,13 +2,15 @@
 import React from "react";
 import { RevealWrapper } from "next-reveal";
 import { Typewriter } from "react-simple-typewriter";
+import Image from "next/image";
 
 const banner = ({ name }: { name: string }) => {
   return (
     <div className="w-full relative">
       <div className="w-full h-screen md:h-[600px] relative  ">
-        <img
-          loading="lazy"
+        <Image
+          width={735}
+          height={490}
           className="w-full h-full object-cover"
           src="https://i.pinimg.com/736x/d4/c3/fb/d4c3fbe8d97a0514ebe33641b8741f13.jpg"
           alt={`Banner de  ${

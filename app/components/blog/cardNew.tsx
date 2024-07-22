@@ -3,6 +3,7 @@ import { RevealWrapper } from "next-reveal";
 import { sectionColors } from "./sectionColors";
 import Link from "next/link";
 import { redirect } from "next/dist/server/api-utils";
+import Image from "next/image";
 
 interface Post {
   id: number;
@@ -40,20 +41,22 @@ const CardNew = ({ post }: { post: Post }) => {
         href="/blog/post/[slug]/"
         as={`/blog/post/${post.slug}`}
         className="w-full "
+        aria-label="Ver post"
       >
         <RevealWrapper
           origin="bottom"
           duration={1500}
-          className={`w-full relative shadow-lg md:h-[160px] lg:h-auto`}
+          className={`w-full relative shadow-lg md:h-[160px] lg:h-full`}
         >
-          <img
-            loading="lazy"
+          <Image
+            width={400}
+            height={160}
             className="w-full h-full object-cover"
             src={post?.acf?.banner}
             alt={'Imagen sobre ' + post.acf?.titulo}
           />
           <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-t from-black flex flex-col justify-between p-2 lg:p-4">
-            <div className="flex gap-1 overflow-x-auto overflow-y-hidden whitespace-nowrap">
+            <div className="flex justify-start items-start gap-1 overflow-x-auto overflow-y-hidden whitespace-nowrap">
               {post?.acf?.secciones.map((tag, index) => (
                 <span
                   /* href= */

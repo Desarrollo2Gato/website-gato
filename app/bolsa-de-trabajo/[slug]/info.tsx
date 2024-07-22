@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -22,16 +23,16 @@ const Info: React.FC<Props> = ({
   const getModalidadText = (modalidad: number): string => {
     switch (modalidad) {
       case 14:
-        return 'Híbrido';
+        return "Híbrido";
       case 13:
-        return 'Presencial';
+        return "Presencial";
       case 15:
-        return 'Virtual';
+        return "Virtual";
       default:
-        return 'No especificado';
+        return "No especificado";
     }
   };
-  
+
   return (
     <div className="bg-gray-100">
       <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16 text-[#3d3d3d]">
@@ -43,15 +44,21 @@ const Info: React.FC<Props> = ({
             <h3 className="text-xl lg:text-2xl font-medium capitalize mb-4">
               Descripción de puesto
             </h3>
-            <p className="text-[#6D6D6D] mb-4 lg:text-lg">
-              {jobDescription}
-            </p>
+            <p className="text-[#6D6D6D] mb-4 lg:text-lg">{jobDescription}</p>
             <p className="font-medium capitalize lg:text-lg">
-              Modalidad: <span className="font-normal">{getModalidadText(modalidad)}</span>
+              Modalidad:{" "}
+              <span className="font-normal">{getModalidadText(modalidad)}</span>
             </p>
           </div>
           <div className="h-full w-full lg:w-1/2 flex items-center">
-            <img className="w-full h-[300px] object-cover" src={imgUrl} alt={jobPosition} title={jobPosition} />
+            <Image
+              width={670}
+              height={300}
+              className="w-full h-[300px] object-cover"
+              src={imgUrl}
+              alt={jobPosition}
+              title={jobPosition}
+            />
           </div>
         </div>
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-10">
@@ -122,16 +129,19 @@ const Info: React.FC<Props> = ({
             </h3>
             <ul>
               {responsabilidades?.map((items, index) => (
-                <li className="flex justify-start items-start mb-1 2xl:text:lg" key={index}>
+                <li
+                  className="flex justify-start items-start mb-1 2xl:text:lg"
+                  key={index}
+                >
                   <div>
-                  <FaCheckCircle style={{ color:color }} className=" mt-1.5 mr-2" />
+                    <FaCheckCircle
+                      style={{ color: color }}
+                      className=" mt-1.5 mr-2"
+                    />
                   </div>
-                <p className="text-[#6D6D6D] ">
-                  {items?.item}
-                </p>
-              </li>
+                  <p className="text-[#6D6D6D] ">{items?.item}</p>
+                </li>
               ))}
-              
             </ul>
           </div>
           <div>
@@ -200,15 +210,16 @@ const Info: React.FC<Props> = ({
               <span>Requisitos</span>
             </h3>
             <ul>
-            {requisitos?.map((items, index) => (
+              {requisitos?.map((items, index) => (
                 <li className="flex justify-start items-start mb-1" key={index}>
-                <div>
-                <FaCheckCircle style={{ color:color }} className=" mt-1.5 mr-2" />
-                </div>
-              <p className="text-[#6D6D6D] ">
-                {items?.item}
-              </p>
-            </li>
+                  <div>
+                    <FaCheckCircle
+                      style={{ color: color }}
+                      className=" mt-1.5 mr-2"
+                    />
+                  </div>
+                  <p className="text-[#6D6D6D] ">{items?.item}</p>
+                </li>
               ))}
             </ul>
           </div>

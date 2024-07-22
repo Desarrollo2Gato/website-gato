@@ -1,4 +1,4 @@
-import Footer from "@/app/components/footer";
+
 import Content from "./content";
 import { Metadata } from "next";
 import "../plans.css";
@@ -100,7 +100,7 @@ function Page() {
         }}
       />
       <Content></Content>
-      <Footer></Footer>
+      
     </>
   );
 }

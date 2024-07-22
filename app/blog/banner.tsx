@@ -1,6 +1,7 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
+import Image from "next/image";
 
 const banner = () => {
   const labels = [
@@ -33,8 +34,9 @@ const banner = () => {
   return (
     <div className="w-full relative">
       <div className="w-full h-[calc(100vh-50px)] md:h-[600px] xl:h-[800px] relative  ">
-        <img
-          loading="lazy"
+        <Image
+          width={735}
+          height={490}
           className="w-full h-full object-cover"
           src="https://i.pinimg.com/736x/d4/c3/fb/d4c3fbe8d97a0514ebe33641b8741f13.jpg"
           alt="banner blog"
