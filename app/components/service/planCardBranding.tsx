@@ -69,8 +69,23 @@ const planCard = (props: Prop) => {
         <span className="font-bold capitalize text-xl">{props.word}</span>
         <div className="flex font-black items-center">
           <span className="text-[1.8rem]">S/</span>
-          <span className="text-[3rem]">{props.price}</span>
-          <span className="text-[1.8rem]">.00</span>
+          {(() => {
+                    const price = props.price;
+                    const mainPrice = price.slice(0, -3);
+                    const lastThreeChars = price.slice(-3);
+                    return (
+                      <>
+                        <span className="text-[2.5rem] md:text-[3rem] lg:text-[2.8rem] 2xl:text-[3.2rem]">
+                          {mainPrice}
+                        </span>
+                        <span className="text-[1rem] md:text-[1.5rem] lg:text-[1.5rem] 2xl:text-[1.8rem]">
+                          {lastThreeChars}
+                        </span>
+                      </>
+                    );
+                  })()}
+         {/*  <span className="text-[3rem]">{props.price}</span>
+          <span className="text-[1.8rem]">.00</span> */}
         </div>
       </div>
     </div>

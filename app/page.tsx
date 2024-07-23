@@ -17,7 +17,7 @@ const jsonLd: WithContext<WebSite> = {
   potentialAction: {
     '@type': 'SearchAction',
     target: 'https://gato.pe/search?q={search_term_string}',
-    'query': "required name=search_term"
+    'query': "required name=search_term_string"
   },
   publisher: {
     '@type': 'Organization',

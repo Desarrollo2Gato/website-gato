@@ -96,6 +96,7 @@ const CardJob: React.FC<Props> = ({
         onMouseLeave={handleLeave}
         aria-label={`Ver vacante de ${jobPosition}`}
         role="button"
+        rel="bookmark"
         className={`mx-auto relative rounded-3xl py-3 pr-2  w-fit   font-semibold flex items-center   ${
           isEnter && " transition-all"
         } transition-all`}

@@ -93,6 +93,8 @@ function Form({ color }: FormProps) {
         );
         setIsModalOpen(true);
       }
+      const newPath = "/registro";
+      window.history.replaceState(null, "", newPath);
       setIsSubmitting(false);
     } catch (error) {
       console.error("Error sending data:", error);
@@ -135,6 +137,7 @@ function Form({ color }: FormProps) {
                   "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3"
                 }
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram de Agencia GATO"
                 className="flex justify-center items-center hover:scale-125 transition-all ease-in-out duration-300"
               >
@@ -200,6 +203,7 @@ function Form({ color }: FormProps) {
               <Link
                 href={"https://www.facebook.com/agenciagatope"}
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook de Agencia GATO"
                 className="hover:scale-125 transition-all ease-in-out duration-300"
               >
@@ -226,6 +230,7 @@ function Form({ color }: FormProps) {
                 title="LinkedIN Agencia GATO"
                 href={"https://www.linkedin.com/company/agenciagato/"}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex justify-center items-center hover:scale-125 transition-all ease-in-out duration-300"
               >
                 <svg

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import About from "./about";
-import { Organization, WebPage, WithContext } from "schema-dts";
+import { WebPage, WithContext } from "schema-dts";
 import Script from "next/script";
 
 const jsonLd: WithContext<WebPage> = {

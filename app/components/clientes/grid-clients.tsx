@@ -64,6 +64,7 @@ function GridClients() {
         href="/portafolio/[slug]"
         as={`/portafolio/${client.slug}`}
         className="container w-full group"
+        rel="bookmark"
       >
         <div className="card group relative transition-all duration-500">
           <div className="front w-full h-full bg-white flex items-center justify-center  aspect-square">

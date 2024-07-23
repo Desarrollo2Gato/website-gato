@@ -247,6 +247,7 @@ function Component1({
             ></div>
             <Link
               href={"/servicios/marketing-digital"}
+              rel="bookmark"
               className={`pl-4 z-10 text-sm  ${
                 isEnter ? "text-white" : "text-[#A52DE6]"
               } `}
@@ -309,6 +310,7 @@ function Component2({
             ></div>
             <Link
               href={"/servicios/diseno-web"}
+              rel="bookmark"
               className={`pl-4 z-10 text-sm  ${
                 isEnter ? "text-white" : "text-[#0BC2E1]"
               } `}
@@ -369,6 +371,7 @@ function Component3({
             ></div>
             <Link
               href={"/servicios/desarrollo-software"}
+              rel="bookmark"
               className={`pl-4 z-10 text-sm  ${
                 isEnter ? "text-white" : "text-[#007CF8]"
               } `}
@@ -431,6 +434,7 @@ function Component4({
             ></div>
             <Link
               href={"/servicios/desarrollo-movil"}
+              rel="bookmark"
               className={`pl-4 z-10 text-sm  ${
                 isEnter ? "text-white" : "text-[#007CF8]"
               } `}
@@ -491,6 +495,7 @@ function Component5({
             ></div>
             <Link
               href={"/servicios/branding"}
+              rel="bookmark"
               className={`pl-4 z-10 text-sm  ${
                 isEnter ? "text-white" : "text-[#A52DE6]"
               } `}

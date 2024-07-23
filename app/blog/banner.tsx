@@ -59,6 +59,7 @@ const banner = () => {
                   href="/blog/[slug]/"
                   as={`/blog/${label.path}`}
                   title={label.name}
+                  rel="tag"
                   style={{ backgroundColor: label.color }}
                   className="px-2 md:px-4 py-1 text-sm md:text-base text-white font-medium shadow-md hover:scale-105 transition-all duration-300"
                 >

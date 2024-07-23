@@ -235,6 +235,7 @@ const ItemService: React.FC<Props> = ({
           href={`/servicios/${path}`}
           onMouseEnter={handleEnter}
           onMouseLeave={handleLeave}
+          rel="bookmark"
           className={`mx-auto relative rounded-3xl py-3 pr-2  w-fit   font-semibold flex items-center   ${
             isEnter && " transition-all"
           } transition-all`}

@@ -203,7 +203,7 @@ function ModalDetail({
                   {" "}
                   <FaFacebookF className="hover:text-[#444] transition-all duration-500" />
                 </Link> */}
-                <Link href={data.linkedin} target="_blank" aria-label="LinkedIn">
+                <Link href={data.linkedin} rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
                   {" "}
                   <FaLinkedinIn className="hover:text-[#444] transition-all duration-500" />
                 </Link>
