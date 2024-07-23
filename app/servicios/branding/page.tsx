@@ -49,7 +49,7 @@ const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
 export const metadata: Metadata = {
   title: "Servicio de Branding",
   description:
-    "Descubre nuestro branding en Agencia Gato. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
+    "Descubre nuestro servicio de branding en Agencia Gato. Transformamos tu identidad y estrategia para potenciar tu presencia en el mercado digital.",
   keywords: [
     "branding digital en Lima",
     "estrategias de branding",

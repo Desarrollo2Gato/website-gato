@@ -41,6 +41,7 @@ const CardNew = ({ post }: { post: Post }) => {
         href="/blog/post/[slug]/"
         as={`/blog/post/${post.slug}`}
         className="w-full "
+        rel="bookmark"
         aria-label="Ver post"
       >
         <RevealWrapper

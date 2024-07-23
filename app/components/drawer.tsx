@@ -185,14 +185,14 @@ function Drawer() {
                 </Link>
               </div>
               {/* bolsa de trabajo */}
-            <div className="flex flex-col">
-              <Link
-                href={"/bolsa-de-trabajo"}
-                className="font-semibold text-slate-600 relative inline-block hover:underline underline-offset-4 mb-1"
-              >
-                Bolsa de trabajo
-              </Link>
-            </div>
+              <div className="flex flex-col">
+                <Link
+                  href={"/bolsa-de-trabajo"}
+                  className="font-semibold text-slate-600 relative inline-block hover:underline underline-offset-4 mb-1"
+                >
+                  Bolsa de trabajo
+                </Link>
+              </div>
             </div>
             {/* partners */}
             <div className="w-full">

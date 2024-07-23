@@ -81,6 +81,7 @@ function Footer() {
                 <Link
                   href={"https://www.instagram.com/agenciagato2024/"}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:scale-125 transition-all ease-in-out duration-00"
                 >
                   <svg
@@ -115,6 +116,7 @@ function Footer() {
                 <Link
                   href={"https://www.facebook.com/agenciagatope"}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:scale-125 transition-all ease-in-out duration-00"
                 >
                   <svg
@@ -139,6 +141,7 @@ function Footer() {
                 <Link
                   href={"https://www.linkedin.com/company/agenciagato/"}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:scale-125 transition-all ease-in-out duration-00"
                 >
                   <svg

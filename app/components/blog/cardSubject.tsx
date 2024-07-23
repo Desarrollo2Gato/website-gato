@@ -38,6 +38,7 @@ const cardSubject = ({ post }: { post: Post }) => {
         href="/blog/post/[slug]/"
         as={`/blog/post/${post.slug}`}
         className="w-full"
+        rel="bookmark"
       >
         <RevealWrapper
           className={`w-full h-full flex flex-col md:flex-row gap-2 `}

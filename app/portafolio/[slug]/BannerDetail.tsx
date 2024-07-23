@@ -214,7 +214,8 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                   <div className="flex gap-4 flex-wrap justify-center h-full items-center">
                     {proyecto.acf?.url && (
                       <Link
-                        target="_blanck"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         href={proyecto.acf?.url}
                         style={{ backgroundColor: mainColor }}
                         className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
@@ -224,7 +225,8 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                     )}
                     {proyecto.acf?.facebook && (
                       <Link
-                        target="_blanck"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         href={proyecto?.acf?.facebook}
                         style={{ backgroundColor: mainColor }}
                         className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
@@ -234,7 +236,8 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                     )}
                     {proyecto.acf?.instagram && (
                       <Link
-                        target="_blanck"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         href={proyecto?.acf?.instagram}
                         style={{ backgroundColor: mainColor }}
                         className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
@@ -244,7 +247,8 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                     )}
                     {proyecto.acf?.tiktok && (
                       <Link
-                        target="_blanck"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         href={proyecto?.acf?.tiktok}
                         style={{ backgroundColor: mainColor }}
                         className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"
@@ -254,7 +258,8 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                     )}
                     {proyecto.acf?.linkedin && (
                       <Link
-                        target="_blanck"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         href={proyecto?.acf?.linkedin}
                         style={{ backgroundColor: mainColor }}
                         className="text-xl lg:text-3xl text-white rounded-[100%] h-10 w-10 lg:h-16 lg:w-16 flex items-center justify-center hover:-translate-y-1 transition-all duration-500"

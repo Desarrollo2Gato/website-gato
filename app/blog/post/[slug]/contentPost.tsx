@@ -62,6 +62,7 @@ const ContentPost = ({ post }: PostProps) => {
                     : tag.replace(/-/g, " ")}
                     aria-label="Ver categoría"
                   key={index}
+                  rel="tag"
                   className="text-xs px-2 py-1  text-gray-400 font-medium capitalize bg-gray-300"
                 >
                   {tag === "diseno-web" ? "Diseño Web" : tag.replace(/-/g, " ")}

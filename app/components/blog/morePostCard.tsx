@@ -38,6 +38,7 @@ const MorePostCard = ({ post }: { post: Post }) => {
         href="/blog/post/[slug]/"
         as={`/blog/post/${post.slug}`}
         className="w-full"
+        rel="bookmark"
       >
         <RevealWrapper
           className={`w-full h-full flex flex-col gap-2`}
