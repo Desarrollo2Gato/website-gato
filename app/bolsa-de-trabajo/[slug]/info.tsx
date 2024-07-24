@@ -20,22 +20,10 @@ const Info: React.FC<Props> = ({
   requisitos,
   responsabilidades,
 }) => {
-  const getModalidadText = (modalidad: number): string => {
-    switch (modalidad) {
-      case 14:
-        return "Híbrido";
-      case 13:
-        return "Presencial";
-      case 15:
-        return "Virtual";
-      default:
-        return "No especificado";
-    }
-  };
 
   return (
     <div className="bg-gray-100">
-      <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16 text-[#3d3d3d]">
+      <div className="max-w-[1440px] mx-auto relative sm:px-12 lg:px-16 px-8 py-16 text-[#3d3d3d]">
         <h2 className=" text-3xl uppercase font-semibold text-center mb-8">
           {jobPosition}
         </h2>
@@ -46,8 +34,8 @@ const Info: React.FC<Props> = ({
             </h3>
             <p className="text-[#6D6D6D] mb-4 lg:text-lg">{jobDescription}</p>
             <p className="font-medium capitalize lg:text-lg">
-              Modalidad:{" "}
-              <span className="font-normal">{getModalidadText(modalidad)}</span>
+              Tipo de empleo:{" "}
+              <span className="font-normal">{modalidad}</span>
             </p>
           </div>
           <div className="h-full w-full lg:w-1/2 flex items-center">

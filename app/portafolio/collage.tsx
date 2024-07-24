@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Pagination from "../components/Pagination";
 import Image from "next/image";
+import { acf_format, api_projects, per_page } from "../data/enviroments/api.enviroment";
 
 function CollagePortfolio() {
   interface PortafolioItem {
@@ -35,7 +36,7 @@ function CollagePortfolio() {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/proyecto?per_page=100"
+        api_projects + "?" + acf_format + "&" + per_page
       );
       const projects = response.data;
       setDataPortfolio(projects);
@@ -90,7 +91,7 @@ function CollagePortfolio() {
         width={271}
         height={271}
         className="xl:w-[65%] xl:h-[65%] h-[85%] w-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
-        src={item.acf?.imagen ? item.acf.imagen : defaultImageUrl}
+        src={item.acf?.imagen_destacada ? item.acf.imagen_destacada : defaultImageUrl}
         onError={(e) => {
           e.currentTarget.onerror = null;
           e.currentTarget.src = defaultImageUrl;

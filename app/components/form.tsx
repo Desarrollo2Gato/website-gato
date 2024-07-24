@@ -125,7 +125,7 @@ function Form({ color }: FormProps) {
               width="800"
               height="1200"
               className="h-full object-cover w-full lg:max-w-[85%] rounded-xl shadow-md"
-              src="https://i.pinimg.com/originals/6a/8c/f8/6a8cf8cf2c09665f3d5758dc0846231e.jpg"
+              src="https://i.pinimg.com/originals/86/5c/dd/865cddbd8d55852b430677177ed427a5.jpg"
               alt="Trabajador de GATOcon celular"
               title="Trabajador de GATO con celular"
             />

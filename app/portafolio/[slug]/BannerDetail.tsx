@@ -22,7 +22,7 @@ interface ProjectData {
     problema: string;
     necesidad: string;
     url: string;
-    imagen: string;
+    imagen_destacada: string;
     "solucion-analisis": string;
     "solucion-diseno": string;
     "solucion-desarrollo": string;
@@ -59,7 +59,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
   const [mainColor, setMainColor] = useState("");
   const [solutionColor, setSolutionColor] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-
+  console.log(proyecto)
   useEffect(() => {
     async function fetchData() {
       try {
@@ -85,7 +85,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
         selectedColor = colors[1];
       } else if (
         projectTitle.includes("desarrollo de software") ||
-        projectTitle.includes("desarrollo movil")
+        projectTitle.includes("desarrollo móvil")
       ) {
         selectedColor = colors[2];
       }
@@ -305,7 +305,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
                       height={60}
                       width={90}
                       loading="lazy"
-                      src={proyecto?.acf.imagen}
+                      src={proyecto.acf?.imagen_destacada}
                       alt={`Logo de  ${proyecto?.acf.cliente}`}
                       title={`Logo de  ${proyecto?.acf.cliente}`}
                       className="h-[3rem] lg:h-[60px] w-auto object-contain"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardJob from "./cardJob";
 import { api_areas, api_vacantes } from "../data/enviroments/api.enviroment";
 import axios from "axios";
-
+import Pagination from "../components/Pagination";
 interface Job {
   acf: {
     area: number;
@@ -63,14 +63,23 @@ const Vacantes: React.FC = () => {
   const filteredData = data.filter((job) => {
     const matchesArea = selectedArea === 0 || job.acf.area === selectedArea;
     const matchesSearchTerm =
-      job.acf.job_position.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.acf.description.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesArea && matchesSearchTerm;
+      job.acf.job_position.toLowerCase().includes(searchTerm.toLowerCase())
+    return matchesArea && matchesSearchTerm;
   });
 
+  const renderVacanteItem = (item: any) => (
+    <CardJob
+      key={item.id}
+      idColor={item.acf.area}
+      imgUrl={item.acf.imagen_url}
+      jobPosition={item.acf.job_position}
+      jobDescription={item.acf.descripcion_corta}
+      slug={item.slug}
+    />
+  );
   return (
     <div className="bg-gray-100">
-      <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16">
+      <div className="max-w-[1440px] mx-auto relative sm:px-12 lg:px-16 px-8 py-16">
         <h2 className="text-[#444] text-3xl uppercase font-semibold text-center mb-8">
           Vacantes
         </h2>
@@ -106,14 +115,28 @@ const Vacantes: React.FC = () => {
               onChange={handleSearchChange}
             />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 xl:gap-12">
+
           {filteredData.length === 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 xl:gap-12">
               <p className="text-center text-gray-400 col-span-4">
                 No hay vacantes disponibles para el área seleccionada o término
                 de búsqueda.
               </p>
-            ) : (
-              filteredData.map((job, index) => (
+            </div>
+          ) : (
+            <Pagination
+              dataName="proyectos"
+              data={filteredData}
+              itemsPerPageMobile={6}
+              itemsPerPageTablet={9}
+              itemsPerPageDesktop={12}
+              itemsPerPageLargeDesktop={15}
+              render={renderVacanteItem}
+              gridClass={
+                "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 xl:gap-12"
+              }
+            />
+            /* filteredData.map((job, index) => (
                 <CardJob
                   key={index}
                   idColor={job.acf.area}
@@ -122,10 +145,8 @@ const Vacantes: React.FC = () => {
                   jobDescription={job.acf.descripcion_corta}
                   slug={job.slug}
                 />
-              ))
-            )}
-          </div>
-         
+              )) */
+          )}
         </div>
       </div>
     </div>

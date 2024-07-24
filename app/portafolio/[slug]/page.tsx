@@ -1,6 +1,6 @@
 import Detail from "./detail";
 import type { Metadata } from "next";
-import { api_projects } from "@/app/data/enviroments/api.enviroment";
+import { acf_format, api_projects } from "@/app/data/enviroments/api.enviroment";
 import axios from "axios";
 import { fetchYoastMeta } from "@/app/components/seo/fetchYoastMeta";
 import { CreativeWork, WithContext } from "schema-dts";
@@ -8,7 +8,7 @@ import Script from "next/script";
 
 const formatURL = (url: string) => {
   return url.replace(
-    "https://palegreen-anteater-636608.hostingersite.com",
+    "https://palegreen-anteater-636608.hostingersite.com/proyecto",
     "https://www.gato.pe/portafolio"
   );
 };
@@ -30,7 +30,7 @@ interface Project {
     cliente: string;
     problema: string;
     necesidad: string;
-    imagen: string;
+    imagen_destacada: string;
     "cliente-slug": string;
     "solucion-analisis": string;
     "solucion-diseno": string;
@@ -97,7 +97,7 @@ export async function generateMetadata({
 
 async function fetchProjectData(slug: string): Promise<Project> {
   try {
-    const response = await axios.get(`${api_projects}?slug=${slug}`);
+    const response = await axios.get(`${api_projects}?slug=${slug}&${acf_format}`);
     const projects: Project[] = response.data;
 
     if (!projects || projects.length === 0) {
