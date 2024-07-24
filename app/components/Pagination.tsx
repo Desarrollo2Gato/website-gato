@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-interface paginationProps {
+interface PaginationProps {
   data: Array<any>;
   itemsPerPageMobile: number;
   itemsPerPageTablet: number;
@@ -11,7 +11,7 @@ interface paginationProps {
   dataName: string;
 }
 
-const Pagination: React.FC<paginationProps> = ({
+const Pagination: React.FC<PaginationProps> = ({
   data,
   itemsPerPageMobile,
   itemsPerPageTablet,
@@ -27,7 +27,7 @@ const Pagination: React.FC<paginationProps> = ({
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-  
+
   useEffect(() => {
     const updateItemsPerPage = () => {
       if (window.innerWidth >= 1280) {
@@ -47,9 +47,42 @@ const Pagination: React.FC<paginationProps> = ({
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, [itemsPerPageMobile, itemsPerPageTablet, itemsPerPageDesktop, itemsPerPageLargeDesktop]);
 
+  useEffect(() => {
+    setCurrentPage(1); // Reset current page to 1 when itemsPerPage changes
+  }, [itemsPerPage]);
+
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const selectedData = data.slice(startIndex, startIndex + itemsPerPage);
+
+  const getPageNumbers = () => {
+    const pages = [];
+    const range = 1; // Number of pages to show on each side of the current page
+    const start = Math.max(2, currentPage - range);
+    const end = Math.min(totalPages - 1, currentPage + range);
+
+    // Always show the first page
+    pages.push(1);
+
+    if (start > 2) {
+      pages.push('...');
+    }
+
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
+    }
+
+    if (end < totalPages - 1) {
+      pages.push('...');
+    }
+
+    // Always show the last page
+    if (totalPages > 1) {
+      pages.push(totalPages);
+    }
+
+    return pages;
+  };
 
   return (
     <div>
@@ -61,20 +94,32 @@ const Pagination: React.FC<paginationProps> = ({
         )}
       </div>
       {totalPages > 1 && (
-        <div className="flex justify-center mt-4">
-          {Array.from({ length: totalPages }, (_, index) => (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+            className="px-2 py-0.5 text-xs md:text-sm  mx-1 h-7 rounded bg-gray-300 text-black"
+          >
+            Anterior
+          </button>
+          {getPageNumbers().map((page, index) => (
             <button
               key={index}
-              onClick={() => handlePageChange(index + 1)}
-              className={`px-2 py-1 text-xs md:text-base md:px-4 md:py-2 mx-1 rounded ${
-                index + 1 === currentPage
+              onClick={() => typeof page === 'number' && handlePageChange(page)}
+              className={`px-1 py-0.5 text-xs md:text-sm  aspect-square h-7 mx-1 rounded ${
+                typeof page === 'number' && page === currentPage
                   ? "bg-[#6D28D9] text-white"
                   : "bg-gray-300 text-black"
               }`}
             >
-              {index + 1}
+              {page}
             </button>
           ))}
+          <button
+            onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+            className="px-2 py-0.5 text-xs mx-1 h-7 md:text-sm  rounded bg-gray-300 text-black"
+          >
+            Siguiente
+          </button>
         </div>
       )}
     </div>

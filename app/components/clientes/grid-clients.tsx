@@ -5,7 +5,11 @@ import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Pagination from "../Pagination";
-import { api_clients } from "@/app/data/enviroments/api.enviroment";
+import {
+  acf_format,
+  api_projects,
+  per_page,
+} from "@/app/data/enviroments/api.enviroment";
 import Image from "next/image";
 
 interface ClientItem {
@@ -33,7 +37,9 @@ function GridClients() {
 
   async function fetchData() {
     try {
-      const response = await axios.get(api_clients + "?per_page=100");
+      const response = await axios.get(
+        api_projects + "?" + acf_format + "&" + per_page
+      );
       const clients: ClientItem[] = response.data.map((client: ClientItem) => ({
         ...client,
         title: {
@@ -74,7 +80,9 @@ function GridClients() {
               loading="lazy"
               className="w-[80%] h-[80%] lg:w-[70%] lg:h-[70%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
               src={
-                client.acf?.imagen_url ? client.acf.imagen_url : defaultImageUrl
+                client.acf?.imagen_destacada
+                  ? client.acf.imagen_destacada
+                  : defaultImageUrl
               }
               alt={"Cliente: " + client.title.rendered}
               title={"Cliente: " + client.title.rendered}
@@ -91,10 +99,12 @@ function GridClients() {
               loading="lazy"
               className="w-[80%] h-[80%] lg:w-[70%] lg:h-[70%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
               src={
-                client.acf?.imagen_url ? client.acf.imagen_url : defaultImageUrl
+                client.acf?.imagen_destacada
+                  ? client.acf.imagen_destacada
+                  : defaultImageUrl
               }
-              alt={"Cliente: " + client.title.rendered}
-              title={"Cliente: " + client.title.rendered}
+              alt={"Cliente: " + client.acf.cliente}
+              title={"Cliente: " + client.acf.cliente}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = defaultImageUrl;
@@ -102,10 +112,10 @@ function GridClients() {
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center px-1 md:px-2 gap-2">
               <span className="text-base md:text-2xl text-white text-center font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700">
-                {client.title.rendered}
+                {client.acf.cliente}
               </span>
               <p className=" text-sm md:text-base text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700">
-                {client.acf.servicio}
+                {client.acf.services}
               </p>
             </div>
           </div>

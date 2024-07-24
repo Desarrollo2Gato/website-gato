@@ -25,7 +25,7 @@ const Testimonios: React.FC<Props> = ({
 
   return (
     <div className="w-full relative bg-[#6D28D9] text-white h-auto  rounded-2xl shadow-lg ">
-      <div className="max-w-[1440px] mx-auto p-4">
+      <div className="max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16">
         <div className="flex gap-4">
           <Image
             width={48}

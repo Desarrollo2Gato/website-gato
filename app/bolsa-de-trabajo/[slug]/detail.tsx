@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import Form from "../form";
 import Banner from "./banner";
 import Info from "./info";
-import { api_areas, api_vacantes } from "@/app/data/enviroments/api.enviroment";
+import { acf_format, api_areas, api_vacantes } from "@/app/data/enviroments/api.enviroment";
 import axios from "axios";
 const Detail = ({ name }: { name: string }) => {
   const [isDrawer, setIsDrawer] = useState(false);
@@ -18,8 +18,9 @@ const Detail = ({ name }: { name: string }) => {
   useEffect(() => {
     const fetchVacante = async () => {
       try {
-        const response = await axios.get(api_vacantes + "?slug=" + name);
+        const response = await axios.get(api_vacantes + "?slug=" + name + '&'+ acf_format);
         setData(response.data[0]);
+        console.log(response.data[0]);
       } catch (error) {
         console.log(error);
       }
@@ -33,6 +34,7 @@ const Detail = ({ name }: { name: string }) => {
         try {
           const response = await axios.get(api_areas + "/" + data.acf.area);
           setArea(response.data);
+          
         } catch (error) {
           console.log(error);
         }
@@ -75,7 +77,7 @@ const Detail = ({ name }: { name: string }) => {
           jobDescription={data.acf?.description}
           imgUrl={data.acf?.imagen_url}
           color={area.acf?.color}
-          modalidad={data.acf?.modalidad}
+          modalidad={data.acf?.modalidad?.name}
           requisitos={data.acf?.requisitos}
           responsabilidades={data.acf?.responsabilidades}
         />

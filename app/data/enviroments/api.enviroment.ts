@@ -1,3 +1,5 @@
+export const acf_format = 'acf_format=standard';
+export const per_page = 'per_page=100';
 export const api_projects =
   "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/proyecto";
 

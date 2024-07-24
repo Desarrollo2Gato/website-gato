@@ -14,7 +14,7 @@ const Banner = () => {
         loading="lazy"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-violet-700 flex items-end">
-        <div className="max-w-[1440px] mx-auto lg:px:16 p-4">
+        <div className="max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16">
           <h1 className="text-4xl xl:text-5xl text-white text-center drop-shadow-lg font-semibold mb-4">
             Únete a nuestro equipo
           </h1>

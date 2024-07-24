@@ -23,7 +23,7 @@ interface Project {
     services: string;
     problema: string;
     necesidad: string;
-    imagen: string;
+    imagen_destacada: string;
     "cliente-slug": string;
     "solucion-analisis": string;
     "solucion-diseno": string;

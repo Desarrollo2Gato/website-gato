@@ -212,12 +212,12 @@ const Banner: React.FC<Props> = ({ description, color, area }) => {
         </svg>
       </div>
       {/* contenido */}
-      <div className="max-w-[1440px] mx-auto relative xl:  lg:px:16 px-8 py-16 lg:pb-0 text-[#3d3d3d] w-full h-auto lg:h-[800px] z-[1] flex flex-col-reverse lg:flex-row justify-between ">
+      <div className="max-w-[1440px] mx-auto relative sm:px-12 lg:px-16 px-8 py-16 lg:pb-0 text-[#3d3d3d] w-full h-auto lg:h-[800px] z-[1] flex flex-col-reverse lg:flex-row justify-between ">
         <div className="relative h-full max-w-[40%] w-full">
           <Image
             width={824}
             height={1144}
-            src="/worker.png"
+            src="https://i.pinimg.com/originals/db/17/61/db176112f0c2664bdd37dfa3b2d622b3.png"
             alt="trabajador"
             title="trabajador"
             className="hidden lg:block h-[700px] w-auto aspect-auto bottom-0 left-0 absolute"

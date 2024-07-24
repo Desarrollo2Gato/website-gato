@@ -20,10 +20,10 @@ function BannerServices() {
           proyecto al siguiente nivel con nuestro equipo especializado!
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-center  gap-4 2xl:gap-6 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5  justify-center  gap-4 xl:gap-8 2xl:gap-6 mt-10">
           <Link
             href={"#marketing-digital"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row xl:flex-col 2xl:flex-row xl:h-full xl:gap-4 items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
               className="h-14 w-14 object-contain"
@@ -100,7 +100,7 @@ function BannerServices() {
           </Link>
           <Link
             href={"#disenio-web"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row xl:flex-col 2xl:flex-row xl:h-full xl:gap-4 items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
               className="h-14 w-14 object-contain"
@@ -170,7 +170,7 @@ function BannerServices() {
           </Link>
           <Link
             href={"#desarrollo-software"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row xl:flex-col 2xl:flex-row xl:h-full xl:gap-4 items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
               className="h-14 w-14 object-contain"
@@ -260,7 +260,7 @@ function BannerServices() {
           </Link>
           <Link
             href={"#branding"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row xl:flex-col 2xl:flex-row xl:h-full xl:gap-4 items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
               className="h-14 w-14 object-contain"
@@ -286,7 +286,7 @@ function BannerServices() {
           </Link>
           <Link
             href={"#desarrollo-movil"}
-            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
+            className="rounded-lg bg-[#6D28D9] bg-opacity-10 w-full md:h-24 flex flex-col md:flex-row xl:flex-col 2xl:flex-row xl:h-full xl:gap-4 items-center justify-center p-4 gap-4 lg:gap-6 2xl:gap-8 hover:bg-opacity-20 transition-all duration-500 group"
           >
             <svg
               className="h-14 w-14 object-contain"
