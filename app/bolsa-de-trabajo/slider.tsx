@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Testimonios from "./testimonios";
 import axios from "axios";
+import { api_testimonios } from "../data/enviroments/api.enviroment";
 
 interface ArrowProps {
   className?: string;
@@ -18,7 +19,7 @@ const SliderComponent = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      "https://palegreen-anteater-636608.hostingersite.com/wp-json/wp/v2/testimonio"
+      api_testimonios
     );
     setData(response.data);
   };

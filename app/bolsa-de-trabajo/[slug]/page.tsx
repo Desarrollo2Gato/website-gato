@@ -6,7 +6,7 @@ import { fetchYoastMeta } from "@/app/components/seo/fetchYoastMeta";
 import { WebPage, WithContext } from "schema-dts";
 
 const formatURL = (url: string) => {
-  return url.replace("https://palegreen-anteater-636608.hostingersite.com/vacante", "https://www.gato.pe/bolsa-de-trabajo");
+  return url.replace("https://azure-pheasant-355159.hostingersite.com/vacante", "https://www.gato.pe/bolsa-de-trabajo");
 };
 
 const cleanTitle = (title: string) => {

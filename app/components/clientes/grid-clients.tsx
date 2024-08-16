@@ -48,6 +48,7 @@ function GridClients() {
         },
       }));
       setDataClient(clients);
+      console.log(clients);
     } catch (error) {
     } finally {
       setIsLoading(false);

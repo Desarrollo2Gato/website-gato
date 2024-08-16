@@ -8,7 +8,7 @@ import Script from "next/script";
 
 const formatURL = (url: string) => {
   return url.replace(
-    "https://palegreen-anteater-636608.hostingersite.com/proyecto",
+    "https://azure-pheasant-355159.hostingersite.com/proyecto",
     "https://www.gato.pe/portafolio"
   );
 };

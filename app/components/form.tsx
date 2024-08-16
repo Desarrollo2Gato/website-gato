@@ -10,6 +10,7 @@ import CountrySelect from "./countrySelect";
 import ConfirmationModal from "./modal";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { api_send_mail, api_token } from "../data/enviroments/api.enviroment";
 
 interface FormProps {
   color: string;
@@ -44,7 +45,7 @@ function Form({ color }: FormProps) {
   async function captureTokenDynamic() {
     try {
       const response: any = await axios.post(
-        "https://palegreen-anteater-636608.hostingersite.com/wp-json/jwt-auth/v1/token",
+        api_token,
         {
           username: process.env.NEXT_PUBLIC_EMAIL,
           password: process.env.NEXT_PUBLIC_PASSWORD,
@@ -66,7 +67,7 @@ function Form({ color }: FormProps) {
     try {
       const token = await captureTokenDynamic();
       const response = await axios.post(
-        "https://palegreen-anteater-636608.hostingersite.com/wp-json/api/v1/send-mail/",
+        api_send_mail,
         {
           name: data.name,
           company: data.company,

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
 import ConfirmationModal from "../components/modal";
 import Image from "next/image";
+import { api_email_job_aplication, api_token } from "../data/enviroments/api.enviroment";
 
 interface FormData {
   name: string;
@@ -44,7 +45,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
   async function captureTokenDynamic() {
     try {
       const response: any = await axios.post(
-        "https://palegreen-anteater-636608.hostingersite.com/wp-json/jwt-auth/v1/token",
+        api_token,
         {
           username: process.env.NEXT_PUBLIC_EMAIL,
           password: process.env.NEXT_PUBLIC_PASSWORD,
@@ -77,7 +78,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
         formData.append("resume", data.file);
 
         await axios.post(
-          "https://palegreen-anteater-636608.hostingersite.com/wp-json/api/v1/send-job-aplication-mail",
+          api_email_job_aplication,
           formData,
           {
             headers: {
