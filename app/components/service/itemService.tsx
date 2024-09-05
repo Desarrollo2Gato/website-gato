@@ -49,7 +49,7 @@ const ItemService: React.FC<Props> = ({
   return (
     <div
     id={path}
-      className={`w-full   lg:flex  py-8 md:py-16 gap-4 ${
+      className={`w-full lg:flex gap-4 ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
     >

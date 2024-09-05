@@ -18,6 +18,9 @@
   .slick-center .detalle{
     display: flex;
   }
+  .slick-arrow::before{
+    opacity: 0;
+  }
   
   @media (max-width: 768px) {
     .slick-slide{

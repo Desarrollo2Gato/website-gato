@@ -168,7 +168,7 @@ function Items() {
   return (
     <section id="detail" className=" bg-gray-100">
       <div className="w-full">
-        <div className="w-full flex flex-col gap-16 ">
+        <div className="w-full flex flex-col">
           {services.map((service: any, index) => (
             <RevealWrapper
               origin="bottom"

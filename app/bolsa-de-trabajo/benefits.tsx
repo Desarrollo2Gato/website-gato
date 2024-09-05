@@ -16,7 +16,7 @@ const Benefits = () => {
         </p>
         <div className="flex flex-wrap gap-8 mt-10 justify-center md:justify-between">
           <div className="">
-            <div className="bg-[#6D28D9] rounded-[100%] w-32 h-32 content-center bg-opacity-20 shadow-lg">
+            <div className="bg-[#6D28D9]  rounded-[100%] w-32 h-32 content-center bg-opacity-20 shadow-lg">
               <svg
                 className="h-16 w-16 object-contain mx-auto"
                 width="100%"
