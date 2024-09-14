@@ -10,6 +10,7 @@ import Testimonios from "./testimonios";
 import "@/app/components/slider3items.css";
 import Footer from "../components/footer";
 import Form from "../components/form";
+import NavServices from "../components/service/navServices";
 function Services() {
   const [isDrawer, setIsDrawer] = useState(false);
 
@@ -32,15 +33,51 @@ function Services() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+  const [activeSection, setActiveSection] = useState<string | null>("#marketing-digital");
 
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.getAttribute("id"));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    ); 
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
   useEffect(() => {
     changeLoading();
   }, []);
+  const handleSection = (sectionId: string): void => {
+    const element = document.querySelector(`${sectionId}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setActiveSection(sectionId);
+  };
 
   return (
     <>
       <div className="relative bg-white flex">
         <WhatsappContact></WhatsappContact>
+        <NavServices
+          activeSection={activeSection}
+          handleSection={handleSection}
+        />
+
         <div
           className={`fixed top-0 left-0  ${
             isDrawer ? "w-screen h-screen" : "w-screen lg:w-16"
@@ -55,9 +92,9 @@ function Services() {
         <div className="w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
           <BannerServices></BannerServices>
           <Items></Items>
-          <Testimonios/>
-          <Form color="#6D28D9"/>
-        <Footer></Footer>
+          <Testimonios />
+          <Form color="#6D28D9" />
+          <Footer></Footer>
         </div>
       </div>
     </>
