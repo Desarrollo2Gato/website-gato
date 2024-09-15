@@ -1,14 +1,14 @@
 import DetailPlan from "./modalDetail";
-import SliderPlans from "./sliderPlans";
 import { useState } from "react";
 import {Plan } from "./iPlan";
+import SliderPlans2 from "./sillerPlans2";
 
 type Props = {
   color: string;
   data:Plan[];
 };
 
-const plans = (prop: Props) => {
+const Plans2 = (prop: Props) => {
   const [selectedPlan, setSelectedPlan] = useState<{ plan: Plan; color: string } | null>(null);
 
   const handleViewPlan = (plan:Plan, color:string) => {
@@ -26,24 +26,14 @@ const plans = (prop: Props) => {
         >
           Planes
         </h2>
-        {
-          prop.data && prop.data.length > 0 ?(
-            <div className="px-8 w-full">
-            <SliderPlans
-              color={prop.color}
-              data={prop.data}
-              handleViewPlan={handleViewPlan}
-            />
-          </div>
-          ): (
-            <div className="w-full flex justify-center items-center">
-              <h2 className="text-xl text-center text-[#666] font-medium mb-8">
-                No se encontraron planes disponibles
-              </h2>
-            </div>
-          )
-        }
-       
+        <div className="px-8 w-full">
+          <SliderPlans2
+            color={prop.color}
+            data={prop.data}
+            handleViewPlan={handleViewPlan}
+            // word="pago único"
+          />
+        </div>
       </div>
       {selectedPlan && (
         <div
@@ -82,4 +72,4 @@ const plans = (prop: Props) => {
   );
 };
 
-export default plans;
+export default Plans2;

@@ -2,12 +2,12 @@
 
 import Banner from "@/app/components/service/banner/banner";
 import Benefits from "./benefits";
-import Plans from "@/app/components/service/plan/plans";
 import Process from "./process";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { api_plan } from "@/app/data/enviroments/api.enviroment";
+import Plans2 from "@/app/components/service/plan/plans2";
 
 function Service02() {
   const [dataWeb, setDataWeb] = useState<any[]>([]);
@@ -32,7 +32,7 @@ function Service02() {
         description="Diseños web que inspiran y convierten. ¡Descubre nuestras soluciones de diseño web!"
       />
       <Benefits color="#0BC2E1" />
-      <Plans color="#0BC2E1" data={dataWeb} />
+      <Plans2 color="#0BC2E1" data={dataWeb} />
       <Process />
     </>
   );

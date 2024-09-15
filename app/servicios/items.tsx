@@ -11,6 +11,8 @@ import { LuHeartHandshake } from "react-icons/lu";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { FaChartLine } from "react-icons/fa";
 import ItemService from "../components/service/itemService";
+import { TbMailCheck } from "react-icons/tb";
+import { TbMailCog } from "react-icons/tb";
 
 function Items() {
   const services = [
@@ -163,10 +165,42 @@ function Items() {
       img_2:
         "https://i.pinimg.com/originals/09/87/cd/0987cd2430f0c40b65cc6e58af1fbb13.png",
     },
+    {
+      reverse: true,
+      color: "#A52DE6",
+      name: "E-mail Marketing",
+      description:
+        "Optimice su comunicación con nuestros servicios de email marketing. Desde la creación de campañas personalizadas y el diseño de plantillas hasta la segmentación de audiencias y el análisis de resultados, le ayudamos a maximizar el impacto de sus correos electrónicos y a conectar de manera efectiva con sus clientes.",
+      benefits: [
+        {
+          icon: <TbMailCheck />,
+          text: "Comunicación Efectiva",
+        },
+        {
+          icon: <TbMailCog />,
+          text: "Segmentación Precisa",
+        },
+      ],
+      items: [
+        "Diseño de Plantillas Personalizadas",
+        "Segmentación de Audiencias",
+        "Automatización de Campañas",
+      ],
+      items2: [
+        "Análisis de Resultados en Tiempo Real",
+        "Optimización de Envíos",
+        "Reportes Detallados de Rendimiento",
+      ],
+      path: "email-marketing",
+      img_1:
+        "https://i.pinimg.com/originals/4c/a8/f1/4ca8f188a31ac53aa6a7da772fcd6943.png",
+      img_2:
+        "https://i.pinimg.com/originals/29/23/83/292383959150daca4f0dd94f2f0435be.png",
+    },
   ];
 
   return (
-    <section id="detail" className=" bg-gray-100">
+    <section className=" bg-gray-100">
       <div className="w-full">
         <div className="w-full flex flex-col">
           {services.map((service: any, index) => (

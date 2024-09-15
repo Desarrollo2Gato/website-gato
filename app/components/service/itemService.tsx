@@ -47,7 +47,7 @@ const ItemService: React.FC<Props> = ({
   }
 
   return (
-    <div
+    <section
     id={path}
       className={`w-full lg:flex gap-4 ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
@@ -245,8 +245,8 @@ const ItemService: React.FC<Props> = ({
               backgroundColor: color,
               opacity: isEnter ? 1 : 0.2,
             }}
-            className={`rounded-full w-12 h-full absolute transition-all duration-300 ${
-              isEnter ? "w-full" : ""
+            className={`rounded-full h-full  absolute transition-all duration-300 ${
+              isEnter ? "w-full " : "w-[52px] aspect-square"
             }`}
           ></div>
           <div
@@ -257,7 +257,7 @@ const ItemService: React.FC<Props> = ({
           </div>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

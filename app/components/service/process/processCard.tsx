@@ -73,7 +73,7 @@ const processCard = (prop: Props) => {
           </div>
           {/* icono */}
           <div
-            className="h-[100px] lg:h-[70%] w-auto aspect-square md:my-auto"
+            className="h-[100px] lg:h-[140px] w-auto aspect-square md:my-auto"
             dangerouslySetInnerHTML={{
               __html: `
                 ${prop.icono}

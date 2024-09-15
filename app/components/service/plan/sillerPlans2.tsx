@@ -1,3 +1,4 @@
+"use client";
 import React, { MouseEventHandler, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +18,11 @@ type SliderPlansProps = {
   handleViewPlan: (plan: Plan, color: string) => void;
 };
 
-const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
+const SliderPlans2 = ({
+  color,
+  data,
+  handleViewPlan,
+}: SliderPlansProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const mainColor = color;
 
@@ -106,24 +111,20 @@ const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
       },
     ],
   };
-
   return (
     <div className="slider-container w-full">
       <Slider {...settings} className="">
         {data.map((item, index) => (
           <div
             key={index}
-            className={`w-full h-[550px] "bg-white" rounded-2xl shadow-[0_5px_30px_rgb(0,0,0,0.08)] py-6 mx-auto`}
+            className="w-full h-[570px] rounded-2xl bg-white shadow-lg py-6 mx-auto"
           >
-            <div className="flex flex-col justify-between h-full">
+            <div className="flex flex-col justify-between h-full gap-6">
               <div className="">
                 <h3 className="px-6 text-[#666] font-[600] text-2xl text-left mb-1 capitalize">
                   {item.plan_name.toLocaleLowerCase()}
                 </h3>
-                <div
-                  style={{ backgroundColor: mainColor }}
-                  className="relative w-[90%] py-4 px-2 text-white rounded-r-full font-extrabold text-4xl mb-4 text-center"
-                >
+                <div style={{ backgroundColor: mainColor }} className="relative w-[90%] py-4 px-2 text-white rounded-r-full font-extrabold text-4xl mb-4 text-center">
                   S./
                   {(() => {
                     const price = item.price;
@@ -143,37 +144,39 @@ const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
                     );
                   })()}
                 </div>
-              </div>
-              <div className="px-6 h-full flex flex-col justify-between">
                 <p className="px-6 text-center text-[#666] font-medium ">
                   {item.short_description}
                 </p>
+              </div>
+              <div className="px-6 h-full flex flex-col justify-between">
                 <ul className="">
-                  {item.items.slice(0, 6).map((detail, index) => (
-                    <li
-                      key={index}
-                      className="flex justify-start items-start text-[#666] mb-3 "
-                    >
-                      <div>
-                        <svg
-                          className="w-5 h-5 object-contain drop-shadow-xl"
-                          width="100%"
-                          height="100%"
-                          viewBox="0 0 100 100"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M50 2.5C23.7664 2.5 2.5 23.7664 2.5 50C2.5 76.2336 23.7664 97.5 50 97.5C76.2336 97.5 97.5 76.2336 97.5 50C97.5 23.7664 76.2336 2.5 50 2.5ZM79.4718 40.4561C69.1786 50.7223 58.9049 61.0089 48.6247 71.2881C47.6257 72.2871 46.6363 73.297 45.6232 74.282C43.7603 76.0941 41.147 76.0908 39.3111 74.2592C33.2206 68.1839 27.1355 62.1031 21.058 56.0148C19.1215 54.0751 18.4069 51.7656 19.2513 49.1177C20.1195 46.3974 22.0776 44.8599 24.8747 44.4804C27.1161 44.1766 29.0103 45.0372 30.5781 46.6006C34.0218 50.0324 37.4071 53.5248 40.8821 56.923C42.8532 58.8498 42.2444 58.7687 44.0566 56.963C52.729 48.3176 61.3885 39.6582 70.0349 30.9857C71.7995 29.2169 73.8906 28.5497 76.3071 28.9941C79.4286 29.5682 81.618 32.3016 81.631 36.2069C81.6137 37.4687 80.859 39.0732 79.4718 40.4561Z"
-                            fill={mainColor}
-                          />
-                        </svg>
-                      </div>
-                      <span className="ml-3 text-base truncate lg:space-x-2">
-                        {detail.item_name}
-                      </span>
-                    </li>
-                  ))}
+                  {item.items.length > 0 &&
+                    item.items[0].sub_items &&
+                    item.items[0].sub_items.slice(0, 6).map((detail, index) => (
+                      <li
+                        key={index}
+                        className="flex justify-start items-start text-[#666] mb-3 "
+                      >
+                        <div>
+                          <svg
+                            className="w-5 h-5 object-contain drop-shadow-xl"
+                            width="100%"
+                            height="100%"
+                            viewBox="0 0 100 100"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M50 2.5C23.7664 2.5 2.5 23.7664 2.5 50C2.5 76.2336 23.7664 97.5 50 97.5C76.2336 97.5 97.5 76.2336 97.5 50C97.5 23.7664 76.2336 2.5 50 2.5ZM79.4718 40.4561C69.1786 50.7223 58.9049 61.0089 48.6247 71.2881C47.6257 72.2871 46.6363 73.297 45.6232 74.282C43.7603 76.0941 41.147 76.0908 39.3111 74.2592C33.2206 68.1839 27.1355 62.1031 21.058 56.0148C19.1215 54.0751 18.4069 51.7656 19.2513 49.1177C20.1195 46.3974 22.0776 44.8599 24.8747 44.4804C27.1161 44.1766 29.0103 45.0372 30.5781 46.6006C34.0218 50.0324 37.4071 53.5248 40.8821 56.923C42.8532 58.8498 42.2444 58.7687 44.0566 56.963C52.729 48.3176 61.3885 39.6582 70.0349 30.9857C71.7995 29.2169 73.8906 28.5497 76.3071 28.9941C79.4286 29.5682 81.618 32.3016 81.631 36.2069C81.6137 37.4687 80.859 39.0732 79.4718 40.4561Z"
+                              fill={color}
+                            />
+                          </svg>
+                        </div>
+                        <span className="ml-3 text-base truncate lg:space-x-2">
+                          {detail.name_sub_item}
+                        </span>
+                      </li>
+                    ))}
                 </ul>
                 <button
                   onClick={() => handleViewPlan(item, color)}
@@ -181,13 +184,13 @@ const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
                 >
                   Ver más
                 </button>
-                <Link
-                  href={"#contactanos"}
-                  style={{ backgroundColor: mainColor }}
-                  className=" text-white font-bold px-6 py-3 rounded-full hover:opacity-60 mx-auto transition-all duration-300"
-                >
-                  Empezar ahora
-                </Link>
+                  <Link
+                    href={"#contactanos"}
+                    style={{ backgroundColor: mainColor }} 
+                    className=" text-white font-bold px-6 py-3 rounded-full hover:opacity-60 mx-auto transition-all duration-300"
+                  >
+                    Empezar ahora
+                  </Link>
               </div>
             </div>
           </div>
@@ -197,4 +200,4 @@ const sliderPlans = ({ color, data, handleViewPlan }: SliderPlansProps) => {
   );
 };
 
-export default sliderPlans;
+export default SliderPlans2;

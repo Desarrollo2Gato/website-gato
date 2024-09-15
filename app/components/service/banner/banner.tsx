@@ -17,7 +17,7 @@ const banner = (prop: Props) => {
       <RevealWrapper origin="left" duration={1000} className={"w-full h-full"}>
         <div className="relative w-full max-w-[1440px] mx-auto h-full flex sm:px-12 lg:px-16 px-8 py-16">
           <div className="relative hidden w-full h-full md:flex flex-col md:flex-row justify-end">
-            <div className="absolute left-16   opacity-90">
+            <div className="absolute left-16  opacity-90">
               <RevealWrapper
                 origin="top"
                 duration={1500}
@@ -113,7 +113,7 @@ const banner = (prop: Props) => {
               </div>
             </RevealWrapper>
           </div>
-          <div className="relative md:absolute top-0 left-0 w-full h-full flex flex-col md:flex-row gap-5 lg:gap-16 items-center md:px-8 md:py-8 xl:  lg:px:16 justify-between ">
+          <div className="relative md:absolute top-0 left-0 w-full h-full flex flex-col md:flex-row gap-5 lg:gap-16 items-center sm:px-12 lg:px-16 px-8 py-16 justify-between ">
             <RevealWrapper
               origin="left"
               duration={1500}
@@ -150,8 +150,8 @@ const banner = (prop: Props) => {
                   height={478}
                   loading="lazy"
                   src={prop.banner}
-                  alt={'Imagen del banner de ' + prop.service}
-                  title={'Imagen del banner de ' + prop.service}
+                  alt={"Imagen del banner de " + prop.service}
+                  title={"Imagen del banner de " + prop.service}
                   className=" h-full w-full object-cover rounded-lg "
                 />
               </RevealWrapper>

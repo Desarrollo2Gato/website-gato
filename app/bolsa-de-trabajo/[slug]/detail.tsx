@@ -20,7 +20,6 @@ const Detail = ({ name }: { name: string }) => {
       try {
         const response = await axios.get(api_vacantes + "?slug=" + name + '&'+ acf_format);
         setData(response.data[0]);
-        console.log(response.data[0]);
       } catch (error) {
         console.log(error);
       }

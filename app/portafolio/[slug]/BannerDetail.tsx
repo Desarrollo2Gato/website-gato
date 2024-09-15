@@ -59,7 +59,6 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
   const [mainColor, setMainColor] = useState("");
   const [solutionColor, setSolutionColor] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  console.log(proyecto)
   useEffect(() => {
     async function fetchData() {
       try {

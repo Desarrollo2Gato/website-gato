@@ -112,7 +112,7 @@ function Form({ color }: FormProps) {
   };
 
   return (
-    <section className=" flex w-full">
+    <section className=" flex w-full" id="contactanos">
       <div className="max-w-[1440px] mx-auto w-full sm:px-12 lg:px-16 px-8 py-16 flex justify-between gap-6 flex-col-reverse lg:flex-row">
         <RevealWrapper
           origin="left"
