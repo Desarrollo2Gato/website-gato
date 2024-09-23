@@ -24,7 +24,7 @@ const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
     url: "https://gato.pe",
     sameAs: [
       "https://www.facebook.com/agenciagatope",
-      "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3",
+      "https://www.instagram.com/agenciagato.pe?igsh=bmZib2MxdDVxeXNu ",
       "https://www.linkedin.com/company/agenciagato/",
     ],
   },
@@ -40,7 +40,7 @@ const jsonLd: WithContext<WebPage> & { publisher: Organization } = {
     url: "https://gato.pe",
     sameAs: [
       "https://www.facebook.com/agenciagatope",
-      "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3",
+      "https://www.instagram.com/agenciagato.pe?igsh=bmZib2MxdDVxeXNu ",
       "https://www.linkedin.com/company/agenciagato/",
     ],
   },

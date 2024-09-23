@@ -57,6 +57,12 @@ function InfoDrawer({ word }: { word: string }) {
         >
           Desarrollo móvil
         </Link>
+        <Link
+          href={"/servicios/email-marketing"}
+          className="animate-fade-up animate-duration-900 animate-ease-linear animate-normal hover:font-semibold transition-all"
+        >
+          E-mail Marketing
+        </Link>
       </div>
     );
   } else if (word === "Blog") {

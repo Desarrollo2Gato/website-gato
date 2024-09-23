@@ -55,7 +55,7 @@ const ubication = () => {
             </svg>
             <div className="flex flex-col font-semibold">
               <span className="text-2xl md:text-3xl">+51 946380310 </span>
-              <span className="text-xl text-[#6D28D9]">info@gato.com</span>
+              <span className="text-xl text-[#6D28D9]">info@gato.pe</span>
             </div>
           </div>
         </div>

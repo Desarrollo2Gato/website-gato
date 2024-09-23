@@ -137,7 +137,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
             >
               <Link
                 href={
-                  "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3"
+                  "https://www.instagram.com/agenciagato.pe?igsh=bmZib2MxdDVxeXNu "
                 }
                 rel="noopener noreferrer"
                 aria-label="Visitar Instagram de Agencia Gato"

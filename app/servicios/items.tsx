@@ -193,9 +193,9 @@ function Items() {
       ],
       path: "email-marketing",
       img_1:
-        "https://i.pinimg.com/originals/4c/a8/f1/4ca8f188a31ac53aa6a7da772fcd6943.png",
+        "https://i.pinimg.com/originals/14/75/d0/1475d0f8a6db1f9ce5867e423d45b894.png",
       img_2:
-        "https://i.pinimg.com/originals/29/23/83/292383959150daca4f0dd94f2f0435be.png",
+        "https://i.pinimg.com/originals/42/23/48/422348651daefe3b14a2d87119ece1a8.png",
     },
   ];
 

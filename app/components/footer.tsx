@@ -52,25 +52,25 @@ function Footer() {
           <div className="flex flex-col ">
             <span className="font-semibold ">Escríbenos</span>
             <Link
-              href={"mailto:info@gato.com"}
+              href={"mailto:info@gato.pe"}
               className="text-slate-600 md:text-sm text-xs
             hover:underline underline-offset-4 mb-2 mt-2"
             >
-              info@gato.com
+              info@gato.pe
             </Link>
             <Link
-              href={"mailto:dortega@gato.com"}
+              href={"mailto:dortega@gato.pe"}
               className="text-slate-600 md:text-sm text-xs
             hover:underline underline-offset-4 mb-2"
             >
-              dortega@gato.com
+              dortega@gato.pe
             </Link>
             <Link
-              href={"mailto:mjara@gato.com"}
+              href={"mailto:mjara@gato.pe"}
               className="text-slate-600 md:text-sm text-xs
             hover:underline underline-offset-4 mb-2"
             >
-              mjara@gato.com
+              mjara@gato.pe
             </Link>
           </div>
 

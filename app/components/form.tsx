@@ -135,7 +135,7 @@ function Form({ color }: FormProps) {
             >
               <Link
                 href={
-                  "https://www.instagram.com/agenciagato2024?igsh=MmR4ZTQ1bHpwMmF3"
+                  "https://www.instagram.com/agenciagato.pe?igsh=bmZib2MxdDVxeXNu "
                 }
                 target="_blank"
                 rel="noopener noreferrer"

@@ -139,25 +139,25 @@ function Drawer() {
               <div className="flex flex-col">
                 <span className="font-semibold">Escríbenos</span>
                 <Link
-                  href={"mailto:info@gato.com"}
+                  href={"mailto:info@gato.pe"}
                   className="text-slate-600
             hover:underline underline-offset-4 my-1"
                 >
-                  info@gato.com
+                  info@gato.pe
                 </Link>
                 <Link
-                  href={"mailto:dortega@gato.com"}
+                  href={"mailto:dortega@gato.pe"}
                   className="text-slate-600
             hover:underline underline-offset-4 mb-1"
                 >
-                  dortega@gato.com
+                  dortega@gato.pe
                 </Link>
                 <Link
-                  href={"mailto:mjara@gato.com"}
+                  href={"mailto:mjara@gato.pe"}
                   className="text-slate-600
             hover:underline underline-offset-4 mb-1"
                 >
-                  mjara@gato.com
+                  mjara@gato.pe
                 </Link>
               </div>
               {/* hablanos */}

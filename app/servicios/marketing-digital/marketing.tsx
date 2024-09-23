@@ -24,7 +24,7 @@ function Service01() {
   return (
     <>
       <Banner
-        banner="https://i.pinimg.com/originals/8e/cb/9c/8ecb9cb7a19615e059b8e7b639b178db.png"
+        banner="https://i.pinimg.com/originals/a1/c0/e8/a1c0e89a4c10c936b08b65e66f216422.png"
         color="#A52DE6"
         service="Marketing"
         service2="digital"

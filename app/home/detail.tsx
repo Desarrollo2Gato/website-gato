@@ -575,9 +575,8 @@ function Component6({
         <div className="flex flex-col gap-4">
           <p className={`${sizing.description} text-[#7A7678] font-light`}>
             Conectamos tu marca con tu audiencia a través de campañas de email
-            impactantes. Creamos y optimizamos correos que generan resultados
-            medibles, impulsando interacciones clave y fortaleciendo la relación
-            con tus clientes.
+            impactantes. Diseñamos y optimizamos correos que generan resultados
+            medibles, impulsando el posicionamiento y recolección de tu marca.
           </p>
           <div
             onMouseEnter={handleEnter}
@@ -610,7 +609,7 @@ function Component6({
           height={490}
           loading="lazy"
           className="rounded-md w-full h-auto mx-auto lg:max-w-[400px] md:max-w-[300px] md:w-auto md:h-full object-cover aspect-video shadow-lg"
-          src="https://i.pinimg.com/originals/64/a1/c7/64a1c71b6f8274d4a920c8457c083f9b.jpg"
+          src="https://i.pinimg.com/originals/14/75/d0/1475d0f8a6db1f9ce5867e423d45b894.png"
           alt="GATO - Branding"
           title="GATO - Branding"
         />
