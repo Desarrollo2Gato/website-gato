@@ -6,7 +6,10 @@ import Link from "next/link";
 import { RevealWrapper } from "next-reveal";
 import ConfirmationModal from "../components/modal";
 import Image from "next/image";
-import { api_email_job_aplication, api_token } from "../data/enviroments/api.enviroment";
+import {
+  api_email_job_aplication,
+  api_token,
+} from "../data/enviroments/api.enviroment";
 
 interface FormData {
   name: string;
@@ -44,13 +47,10 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
   }
   async function captureTokenDynamic() {
     try {
-      const response: any = await axios.post(
-        api_token,
-        {
-          username: process.env.NEXT_PUBLIC_EMAIL,
-          password: process.env.NEXT_PUBLIC_PASSWORD,
-        }
-      );
+      const response: any = await axios.post(api_token, {
+        username: process.env.NEXT_PUBLIC_EMAIL,
+        password: process.env.NEXT_PUBLIC_PASSWORD,
+      });
       return response.data.token;
     } catch (error) {
       console.error("Error capturing token:", error);
@@ -77,16 +77,12 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
         formData.append("description", data.description);
         formData.append("resume", data.file);
 
-        await axios.post(
-          api_email_job_aplication,
-          formData,
-          {
-            headers: {
-              Authorization: "Bearer " + token,
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
+        await axios.post(api_email_job_aplication, formData, {
+          headers: {
+            Authorization: "Bearer " + token,
+            "Content-Type": "multipart/form-data",
+          },
+        });
         setIsSubmitting(false);
         setModalMessage("Postulación Enviada.");
         setIsModalOpen(true);
@@ -416,6 +412,7 @@ const Form = ({ vacante, color }: { vacante: string; color: string }) => {
         isOpen={isModalOpen}
         message={modalMessage}
         onClose={() => setIsModalOpen(false)}
+        isJob={true}
       />
     </section>
   );
