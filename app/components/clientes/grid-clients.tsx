@@ -4,72 +4,175 @@ import axios from "axios";
 import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Pagination from "../Pagination";
 import {
   acf_format,
   api_projects,
-  per_page,
 } from "@/app/data/enviroments/api.enviroment";
 import Image from "next/image";
+import Pagination from "@mui/material/Pagination";
+import { CardClientSkeleton } from "../skeleton";
+import { createTheme } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
 
-interface ClientItem {
-  id: string;
-  slug: string;
-  acf: {
-    imagen_url: string;
-    servicio: string;
-  };
-  title: {
-    rendered: string;
-  };
-}
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#9353B6",
+    },
+  },
+});
 
-function decodeHtml(html: string): string {
-  const txt = document.createElement("textarea");
-  txt.innerHTML = html;
-  return txt.value;
-}
-
-function GridClients() {
-  const [dataClient, setDataClient] = useState<ClientItem[]>([]);
+const GridClients = () => {
+  const [dataClient, setDataClient] = useState<ClientRender[]>([]);
 
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(6);
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
 
-  async function fetchData() {
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth >= 1536) {
+        setPerPage(18);
+      } else if (window.innerWidth >= 1280) {
+        setPerPage(15);
+      } else if (window.innerWidth >= 1024) {
+        setPerPage(12);
+      } else if (window.innerWidth >= 768) {
+        setPerPage(12);
+      } else if (window.innerWidth >= 640) {
+        setPerPage(9);
+      } else {
+        setPerPage(6);
+      }
+    };
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, [window.innerWidth]);
+
+  useEffect(() => {
+    fetchData(page, perPage);
+  }, [page, perPage]);
+
+  const fetchData = async (page = 1, per_page = 10) => {
+    setIsLoading(true);
     try {
       const response = await axios.get(
-        api_projects + "?" + acf_format + "&" + per_page
+        api_projects +
+          "?" +
+          acf_format +
+          "&" +
+          "page=" +
+          page.toString() +
+          "&per_page=" +
+          per_page.toString()
       );
-      const clients: ClientItem[] = response.data.map((client: ClientItem) => ({
-        ...client,
-        title: {
-          ...client.title,
-          rendered: decodeHtml(client.title.rendered),
-        },
+      console.log(response.data);
+      const clients: ClientRender[] = response.data.map((client: any) => ({
+        id: client.id,
+        slug: client.slug,
+        img: client.acf.imagen_destacada,
+        title: client.acf.cliente,
+        services: client.acf.services,
       }));
+
       setDataClient(clients);
-      console.log(clients);
+      setTotalPages(response.headers["x-wp-totalpages"]);
+      setTotalItems(response.headers["x-wp-total"]);
     } catch (error) {
     } finally {
       setIsLoading(false);
     }
-  }
+  };
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  return (
+    <section className="  w-full bg-gray-100 " id="clientes">
+      <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col">
+        <div className="text-center mb-16">
+          <h2 className="xl:text-[2.5rem] text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-6">
+            Empresas que han elegido{" "}
+            <span className="text-[#9353B6]">innovar</span> con nosotros
+          </h2>
+          <p className="text-stone-500 lg:text-[1.3rem] text-base">
+            Hemos tenido el privilegio de colaborar con múltiples empresas,
+            construyendo relaciones duraderas y desarrollando proyectos que
+            superan expectativas.
+          </p>
+        </div>
+        <div className="w-full ">
+          {/* grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 md:gap-4 lg:gap-6 xl:gap-6 2xl:gap-8">
+            {isLoading ? (
+              Array.from({ length: perPage }).map((_, index) => (
+                <CardClientSkeleton width={"100%"} height={"100%"} />
+              ))
+            ) : dataClient.length === 0 ? (
+              <div className="col-span-full text-center">
+                No se encontraron clientes disponibles{" "}
+              </div>
+            ) : (
+              dataClient.map((client) => (
+                <RenderClient
+                  id={client.id}
+                  slug={client.slug}
+                  img={client.img}
+                  title={client.title}
+                  services={client.services}
+                />
+              ))
+            )}
+          </div>
+          {/* paginacion */}
+          <div className="mx-auto mt-4 flex justify-center">
+            <ThemeProvider theme={theme}>
+              <Pagination
+                count={totalPages}
+                page={page}
+                onChange={handleChange}
+                color="primary"
+                shape="rounded"
+                
+              />
+            </ThemeProvider>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+type ClientRender = {
+  id: string;
+  slug: string;
+  img: string;
+  title: string;
+  services: string;
+};
+
+const RenderClient: React.FC<ClientRender> = ({
+  id,
+  slug,
+  img,
+  title,
+  services,
+}) => {
   const defaultImageUrl =
     "https://i.pinimg.com/originals/73/fe/ce/73fece7ac631330d0dd4c1bd22325029.png";
-  const renderClient = (client: any) => (
+  return (
     <RevealWrapper
-      key={client.id}
+      key={id}
       origin="bottom"
       duration={1000}
       className=" w-full justify-center flex items-center relative overflow-hidden group"
     >
       <Link
         href="/portafolio/[slug]"
-        as={`/portafolio/${client.slug}`}
+        as={`/portafolio/${slug}`}
         className="container w-full group"
         rel="bookmark"
       >
@@ -79,14 +182,10 @@ function GridClients() {
               width={237}
               height={237}
               loading="lazy"
-              className="w-[80%] h-[80%] lg:w-[70%] lg:h-[70%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
-              src={
-                client.acf?.imagen_destacada
-                  ? client.acf.imagen_destacada
-                  : defaultImageUrl
-              }
-              alt={"Cliente: " + client.title.rendered}
-              title={"Cliente: " + client.title.rendered}
+              className="w-[80%] h-[80%] group-hover:scale-105 transition-all duration-500 aspect-square ease-in-out object-contain"
+              src={img ? img : defaultImageUrl}
+              alt={"Cliente: " + title}
+              title={"Cliente: " + title}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = defaultImageUrl;
@@ -98,25 +197,21 @@ function GridClients() {
               width={237}
               height={237}
               loading="lazy"
-              className="w-[80%] h-[80%] lg:w-[70%] lg:h-[70%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
-              src={
-                client.acf?.imagen_destacada
-                  ? client.acf.imagen_destacada
-                  : defaultImageUrl
-              }
-              alt={"Cliente: " + client.acf.cliente}
-              title={"Cliente: " + client.acf.cliente}
+              className="w-[80%] h-[80%] group-hover:scale-105 transition-all duration-500 aspect-square ease-in-out object-contain"
+              src={img ? img : defaultImageUrl}
+              alt={"Cliente: " + title}
+              title={"Cliente: " + title}
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 e.currentTarget.src = defaultImageUrl;
               }}
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center px-1 md:px-2 gap-2">
-              <span className="text-base md:text-2xl text-white text-center font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700">
-                {client.acf.cliente}
+              <span className="text-small sm:text-base md:text-[1.1rem] lg:text-[1.3rem] text-white text-center font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700 inline-block  break-words whitespace-normal break-all">
+                {title}
               </span>
-              <p className=" text-sm md:text-base text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700">
-                {client.acf.services}
+              <p className=" text-xs md:text-base text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700">
+                {services}
               </p>
             </div>
           </div>
@@ -124,35 +219,6 @@ function GridClients() {
       </Link>
     </RevealWrapper>
   );
-
-  return (
-    <section className="  w-full bg-gray-100 " id="clientes">
-      <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col">
-        <div className="">
-          <h2
-            className="text-3xl text-center
-         text-[#3D3D3D] font-medium uppercase mb-3"
-          >
-            Nuestros clientes
-          </h2>
-        </div>
-        <div className="w-full ">
-          <Pagination
-            dataName="clientes"
-            data={dataClient}
-            itemsPerPageMobile={6}
-            itemsPerPageTablet={9}
-            itemsPerPageDesktop={12}
-            itemsPerPageLargeDesktop={15}
-            render={renderClient}
-            gridClass={
-              "grid lg:grid-cols-4 xl:grid-cols-5 md:grid-cols-3  grid-cols-2 xl:mt-8 mt-4 gap-2 md:gap-4 xl:gap-8 opacity-90"
-            }
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
+};
 
 export default GridClients;

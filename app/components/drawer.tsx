@@ -59,8 +59,8 @@ function Drawer() {
       <span
         role="button"
         onClick={() => handleRedirect(word)}
-        className={`relative xl:text-[3rem] md:text-[2rem] text-[1.5rem] font-semibold hover:text-black text-gray-500  transition-all ${
-          hovered === word && "text-black"
+        className={`relative xl:text-[3rem] md:text-[2rem] text-[1.5rem] font-semibold hover:text-slate-700 text-slate-500  transition-all ${
+          hovered === word && "text-slate-700"
         }`}
         onMouseEnter={() => handleHover(word)}
         // onMouseLeave={handleUnhover}
@@ -87,7 +87,7 @@ function Drawer() {
       <div className="overflow-y-scroll bg-white h-full w-screen  animate-fade-right animate-duration-500 animate-ease-linear animate-normal pt-8 md:pt-24 xl:  px-8 md:px-16 z-30">
         <div className="flex justify-between flex-col gap-4 md:gap-0 md:flex-row">
           <div className="flex flex-col">
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <div
                 className={`${
                   info === "Portafolio"
@@ -137,7 +137,7 @@ function Drawer() {
             <div className=" grid  md:grid-cols-3 gap-4 md:gap-8 lg:gap-10 xl:gap-12">
               {/* escribenos */}
               <div className="flex flex-col">
-                <span className="font-semibold">Escríbenos</span>
+                <span className="font-semibold text-slate-700">Escríbenos</span>
                 <Link
                   href={"mailto:info@gato.pe"}
                   className="text-slate-600
@@ -162,7 +162,7 @@ function Drawer() {
               </div>
               {/* hablanos */}
               <div className="flex flex-col">
-                <span className="font-semibold">Háblanos</span>
+                <span className="font-semibold text-slate-700">Háblanos</span>
                 <Link
                   href={"tel:+51 980005257"}
                   className="text-slate-600
@@ -203,7 +203,7 @@ function Drawer() {
             </div>
             {/* partners */}
             <div className="w-full">
-              <span className="font-semibold">Partners Tecnológicos</span>
+              <span className="font-semibold text-slate-700">Partners Tecnológicos</span>
               <div className="grid md:grid-cols-3 gap-4 md:gap-8 lg:gap-10 xl:gap-12 justify-between my-1">
                 {/* Google */}
                 <svg

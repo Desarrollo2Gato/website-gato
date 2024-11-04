@@ -2,6 +2,43 @@ import type { Metadata } from "next";
 import "./globals.css";
 import type { Viewport } from 'next'
 
+import localFont from "next/font/local";
+
+const myFont = localFont({
+  src: [
+    {
+      path: "../assets/fonts/montserrat/Montserrat-Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/montserrat/Montserrat-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/montserrat/Montserrat-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/montserrat/Montserrat-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/montserrat/Montserrat-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/montserrat/Montserrat-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+});
+
 export const viewport: Viewport = {
   initialScale: 1,
   width: 'device-width'
@@ -45,7 +82,7 @@ export default function RootLayout({
 
   return (
     <html lang="es">
-      <body className="font-body">
+      <body className={`${myFont.className}`}>
       
         {children}</body>
     </html>

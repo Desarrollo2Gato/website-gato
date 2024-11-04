@@ -124,7 +124,7 @@ function CollagePortfolio() {
       <RevealWrapper duration={1500} origin="left">
         {isMobile ? (
           <select
-            className="cursor-pointer w-full border-none bg-white text-[#4F4F4F] text-lg font-semibold outline-none focus:ring-[#6D28D9] placeholder-[#3D3D3D]"
+            className="cursor-pointer w-full border-none bg-white text-[#4F4F4F] text-lg font-semibold outline-none focus:ring-[#9353B6] placeholder-[#3D3D3D]"
             value={selectedCategory}
             onChange={(e) => handleCategorySelect(e.target.value)}
           >
@@ -154,14 +154,14 @@ function CollagePortfolio() {
               ].map((category) => (
                 <li
                   key={category}
-                  className={`cursor-pointer group hover:text-[#6D28D9] lg:text-lg ${
-                    selectedCategory === category ? "text-[#6D28D9]" : ""
+                  className={`cursor-pointer group hover:text-[#9353B6] lg:text-lg ${
+                    selectedCategory === category ? "text-[#9353B6]" : ""
                   }`}
                   onClick={() => handleCategorySelect(category)}
                 >
                   {category}
                   <div
-                    className={`abslute w-full h-0.5 bg-[#6D28D9] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                    className={`abslute w-full h-0.5 bg-[#9353B6] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
                       selectedCategory === category ? "scale-x-100" : ""
                     }`}
                   ></div>
@@ -179,7 +179,7 @@ function CollagePortfolio() {
         {isLoading ? (
           <div className=" flex justify-center items-center bg-white bg-opacity-75 z-50">
             <svg
-              className="mr-3 h-20 w-20 animate-spin text-[#6D28D9]"
+              className="mr-3 h-20 w-20 animate-spin text-[#9353B6]"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

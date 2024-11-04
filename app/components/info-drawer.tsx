@@ -6,7 +6,7 @@ function InfoDrawer({ word }: { word: string }) {
   if (word === "Portafolio") {
     return (
       <div className="grid grid-cols-3 gap-8">
-        <span className=" font-light animate-fade-up animate-duration-500 animate-ease-linear animate-normal col-span-3 text-lg">
+        <span className=" text-slate-500 animate-fade-up animate-duration-500 animate-ease-linear animate-normal col-span-3 text-lg">
         ¡Descubre la magia de nuestros proyectos realizados! Sumérgete en un mundo donde la creatividad y la excelencia se unen para dar vida a ideas innovadoras. Desde diseños sorprendentes hasta soluciones tecnológicas de vanguardia, cada proyecto es una historia de éxito esperando ser explorada. Únete a nosotros y sé testigo de cómo convertimos visiones en realidad.
         </span>
       </div>
@@ -15,7 +15,7 @@ function InfoDrawer({ word }: { word: string }) {
   } else if (word === "Nosotros") {
     return (
       <div className="grid grid-cols-3 gap-8">
-        <span className=" font-light animate-fade-up animate-duration-500 animate-ease-linear animate-normal col-span-3 text-lg">
+        <span className=" text-slate-500 animate-fade-up animate-duration-500 animate-ease-linear animate-normal col-span-3 text-lg">
           En GATO, estamos comprometidos con la búsqueda de la excelencia en
           cada proyecto que emprendemos. Nos enorgullece trabajar con clientes
           que comparten nuestra pasión por el éxito y están dispuestos a
@@ -68,7 +68,7 @@ function InfoDrawer({ word }: { word: string }) {
   } else if (word === "Blog") {
     return (
       <div className="grid grid-cols-3 gap-8">
-        <span className=" font-light animate-fade-up animate-duration-500 animate-ease-linear animate-normal col-span-3 text-lg">
+        <span className=" text-slate-500 animate-fade-up animate-duration-500 animate-ease-linear animate-normal col-span-3 text-lg">
         Descubre un mundo de innovación y creatividad en el blog de GATO. Explora tendencias, consejos prácticos y conocimientos expertos diseñados para inspirar tu éxito empresarial. Únete a nosotros en un viaje emocionante hacia la excelencia y desata tu potencial ilimitado. ¡Bienvenido al blog de GATO, donde las ideas cobran vida!
         </span>
       </div>

@@ -395,7 +395,7 @@ function Services() {
           </div>
           <Items></Items>
           <Testimonios />
-          <Form color="#6D28D9" />
+          <Form color="#9353B6" />
           <Footer></Footer>
         </div>
       </div>

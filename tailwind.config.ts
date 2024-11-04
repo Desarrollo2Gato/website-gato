@@ -27,7 +27,7 @@ module.exports = {
     },
   },
   fontFamily:{
-    body: ['Rubik', 'sans-serif']
+    body: ['Montserrat', 'sans-serif']
   },
   plugins: [require("tailwindcss-animated"),
     /* flowbite.plugin(), */

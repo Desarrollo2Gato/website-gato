@@ -44,12 +44,12 @@ function Navigation({
       </div> */}
         <Link
           href={"/"}
-          className="hidden lg:flex  flex-col justify-center items-center gap-1 text-3xl"
+          className="hidden lg:flex  flex-col justify-center items-center gap-1 text-3xl text-stone-700"
         >
-          <span className="font-semibold">G</span>
-          <span className="font-semibold">A</span>
-          <span className="font-semibold">T</span>
-          <span className="font-semibold">O</span>
+          <span className="font-bold">G</span>
+          <span className="font-bold">A</span>
+          <span className="font-bold">T</span>
+          <span className="font-bold">O</span>
           
         </Link>
 
@@ -128,7 +128,7 @@ function Navigation({
         </Modal>
       </div>
 
-      <div className="bg-violet-700 flex justify-center items-center  text-center lg:max-h-52 max-w-full lg:overflow-hidden h-full px-4">
+      <div className="bg-[#9353B6] flex justify-center items-center  text-center lg:max-h-52 max-w-full lg:overflow-hidden h-full px-4">
         <Link
           href={"/contactanos"}
           className="lg:-rotate-90   flex justify-center items-center lg:min-w-48 "

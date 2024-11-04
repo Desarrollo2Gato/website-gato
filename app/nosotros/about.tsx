@@ -64,7 +64,7 @@ function About() {
           <Section1></Section1>
           <Team></Team>
           <GridClients></GridClients>
-          <Form color="#6D28D9"></Form>
+          <Form color="#9353B6"></Form>
           <Footer></Footer>
         </div>
 

@@ -11,6 +11,8 @@ import Footer from "../components/footer";
 import WhatsappContact from "../components/whatsapp-contact";
 import Form from "../components/form";
 import GridClients from "../components/clientes/grid-clients";
+import Resutls from "./results";
+import Services from "./services";
 
 function Home() {
   const [isDrawer, setIsDrawer] = useState(false);
@@ -42,12 +44,12 @@ function Home() {
         <header>
           <h1 className="sr-only">Gato: Marketing y Desarrollo de Software</h1>
         </header>
-        <Banner></Banner>
-        <Collage></Collage>
-        <Detail></Detail>
-        <GridClients></GridClients>
-        <Form color="#6D28D9"></Form>
-        <Footer></Footer>
+        <Banner/>
+        <Resutls/>
+        <Services/>
+        <GridClients/>
+        <Form color="#9353B6"/>
+        <Footer/>
       </main>
     </div>
   );

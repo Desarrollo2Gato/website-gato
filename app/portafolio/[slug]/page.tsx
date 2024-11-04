@@ -1,6 +1,9 @@
 import Detail from "./detail";
 import type { Metadata } from "next";
-import { acf_format, api_projects } from "@/app/data/enviroments/api.enviroment";
+import {
+  acf_format,
+  api_projects,
+} from "@/app/data/enviroments/api.enviroment";
 import axios from "axios";
 import { fetchYoastMeta } from "@/app/components/seo/fetchYoastMeta";
 import { CreativeWork, WithContext } from "schema-dts";
@@ -22,7 +25,6 @@ interface Project {
   slug: string;
   title: { rendered: string };
   acf: {
-    url: string;
     descripcion_corta: string;
     banner: string;
     "imagen-solucion": string;
@@ -38,11 +40,40 @@ interface Project {
     "solucion-pruebas": string;
     "solucion-despliegue": string;
     "banner-descripcion": string;
+    url: string;
     facebook: string;
     instagram: string;
     tiktok: string;
     linkedin: string;
     despliegue: string;
+    services_gato: {
+      description: string;
+      services: string[];
+    };
+    testimonial_client: {
+      xp_gato: string;
+      author: string;
+    };
+    service_result: {
+      item: string;
+    }[];
+    galery_1: {
+      img_1: string;
+      img_2: string;
+      img_3: string;
+      img_4: string;
+      description_1: string;
+      description_2: string;
+      description_3: string;
+      description_4: string;
+    };
+    galery_2: {
+      img_1: string;
+      img_2: string;
+      description_1: string;
+      description_2: string;
+    };
+    client_color: string;
   };
 }
 
@@ -97,7 +128,9 @@ export async function generateMetadata({
 
 async function fetchProjectData(slug: string): Promise<Project> {
   try {
-    const response = await axios.get(`${api_projects}?slug=${slug}&${acf_format}`);
+    const response = await axios.get(
+      `${api_projects}?slug=${slug}&${acf_format}`
+    );
     const projects: Project[] = response.data;
 
     if (!projects || projects.length === 0) {

@@ -19,7 +19,7 @@ const fundamentals = () => {
             <div className="h-full w-full flex flex-col gap-4 items-center justify-between text-[#3D3D3D]">
               <RevealWrapper origin="left" duration={1500}>
                 <div className="flex flex-col gap-4">
-                  <div className="w-[80px] h-auto aspect-square rounded-full shadow-md bg-[#6D28D9] flex justify-center items-center ">
+                  <div className="w-[80px] h-auto aspect-square rounded-full shadow-md bg-[#9353B6] flex justify-center items-center ">
                     <svg
                       className="h-[40px] w-auto "
                       width="100%"
@@ -69,7 +69,7 @@ const fundamentals = () => {
             <div className="h-full w-full flex flex-col gap-4 items-center justify-between text-[#3D3D3D]">
               <RevealWrapper origin="left" duration={1500}>
                 <div className="flex flex-col gap-4">
-                  <div className="w-[80px] h-auto aspect-square rounded-full shadow-md bg-[#6D28D9] flex justify-center items-center ">
+                  <div className="w-[80px] h-auto aspect-square rounded-full shadow-md bg-[#9353B6] flex justify-center items-center ">
                     <svg
                       className="h-[40px] w-auto "
                       width="100%"
@@ -140,7 +140,7 @@ const fundamentals = () => {
             <div className="h-full w-full flex flex-col gap-4 items-center justify-between text-[#3D3D3D]">
               <RevealWrapper origin="left" duration={1500}>
                 <div className="flex flex-col gap-4">
-                  <div className="w-[80px] h-auto aspect-square rounded-full shadow-md bg-[#6D28D9] flex justify-center items-center ">
+                  <div className="w-[80px] h-auto aspect-square rounded-full shadow-md bg-[#9353B6] flex justify-center items-center ">
                     <svg
                       className="h-[40px] w-auto "
                       width="100%"

@@ -10,6 +10,7 @@ import {
   FaLinkedinIn,
   FaGlobe,
 } from "react-icons/fa";
+
 import Image from "next/image";
 
 interface ProjectData {
@@ -43,7 +44,7 @@ interface BannerDetailProps {
 function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
   const colors = [
     {
-      color: "#6D28D9",
+      color: "#9353B6",
       solution: "#A52DE6",
     },
     {
@@ -373,7 +374,7 @@ function BannerDetailPortfolio({ proyecto }: BannerDetailProps) {
       ) : (
         <div className=" flex justify-center items-center bg-white bg-opacity-75 z-50">
           <svg
-            className="mr-3 h-20 w-20 animate-spin text-[#6D28D9]"
+            className="mr-3 h-20 w-20 animate-spin text-[#9353B6]"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

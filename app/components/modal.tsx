@@ -49,7 +49,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
           )}
 
           <button
-            className="bg-[#6D28D9] text-white px-4 py-2 rounded transition-all duration-300 hover:bg-[#4C03BE]"
+            className="bg-[#9353B6] text-white px-4 py-2 rounded transition-all duration-300 hover:bg-[#4C03BE]"
             onClick={onClose}
           >
             Cerrar

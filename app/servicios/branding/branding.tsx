@@ -32,7 +32,7 @@ function Branding() {
         description="Haz que tu marca brille: ¡Descubre cómo podemos transformar tu identidad!"
       />
       <Benefits color="#A52DE6" />
-      <Plans color="#A52DE6" data={dataBranding} />
+      {/* <Plans color="#A52DE6" data={dataBranding} /> */}
       <Process />
     </>
   );

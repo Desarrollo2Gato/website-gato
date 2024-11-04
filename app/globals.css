@@ -4,8 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
+/* *{
+  border: 1px solid red;
+} */
 /* Estilo para el track del scrollbar */
 *::-webkit-scrollbar-track {
   background-color: #f5f5f5;
@@ -35,7 +38,7 @@ html {
 body {
   font-family: var(--font-poppins);
   overflow-x: hidden;
-  color: #3D3D3D;
+  color: #3d3d3d;
 }
 
 .floating-image {
@@ -54,25 +57,22 @@ body {
   }
 }
 
-
 .card {
   transform-style: preserve-3d;
-	
 }
-.front{
+.front {
   backface-visibility: hidden;
 }
-.back{
+.back {
   transform: rotateY(180deg);
 }
-.container:hover .card{
+.container:hover .card {
   transform: rotateY(180deg);
 }
-
 
 .scrollDown span::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 15px;
   height: 15px;
   border: none;
@@ -85,11 +85,9 @@ body {
   animation: ani 1.8s infinite linear;
 }
 
-
-
 .scrollDown span::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 15px;
   height: 15px;
   border: none;
@@ -106,19 +104,19 @@ body {
 
 @keyframes ani {
   0% {
-      margin-top: 10px;
-      opacity: 0;
+    margin-top: 10px;
+    opacity: 0;
   }
 
   50% {
-      margin-top: 25px;
-      opacity: 1;
+    margin-top: 25px;
+    opacity: 1;
   }
 
   100% {
-      margin-top: 40px;
-      opacity: 0;
+    margin-top: 40px;
+    opacity: 0;
   }
 }
 
-
+ 

@@ -24,7 +24,7 @@ const Testimonios: React.FC<Props> = ({
   };
 
   return (
-    <div className="w-full relative bg-[#6D28D9] text-white h-auto  rounded-2xl shadow-lg ">
+    <div className="w-full relative bg-[#9353B6] text-white h-auto  rounded-2xl shadow-lg ">
       <div className=" px-6 py-8">
         <div className="flex gap-4">
           <Image
