@@ -92,7 +92,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           text="Solicitar"
           type="primary"
           isFull
-          url={`contactanos`}
+          url={`#contactanos`}
         />
       </div>
     </div>
