@@ -48,7 +48,7 @@ const ItemService: React.FC<Props> = ({
 
   return (
     <section
-    id={path}
+      id={path}
       className={`w-full lg:flex gap-4 ${
         reverse ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
@@ -64,7 +64,7 @@ const ItemService: React.FC<Props> = ({
           width={400}
           className="w-full max-h-[200px] md:max-h-[300px] lg:max-h-[80%] sm:w-1/2 lg:w-[70%] 2xl:max-w-[400px] object-cover  shadow-xl pb-8 md:pb-0"
           src={img_1}
-          alt={"Imagen principal sobre " + name + "en Agencia Gato" }
+          alt={"Imagen principal sobre " + name + "en Agencia Gato"}
           title={"Imagen principal sobre " + name + "en Agencia Gato"}
         />
         <Image
@@ -170,7 +170,7 @@ const ItemService: React.FC<Props> = ({
         <Link
           href={"/portafolio"}
           style={{ color: color }}
-          className="hover:translate-x-2 font-medium transition-all duration-300 inline-block 2xl:text-lg content-center"
+          className="hover:translate-x-2 font-medium transition-all duration-300 inline-block md:text-[1.1rem] lg:text-21.3rem] xl:text-31.4rem]content-center"
         >
           <FaArrowRightLong className="inline-block mr-2 " />
           Conoce nuestro trabajo
@@ -179,7 +179,9 @@ const ItemService: React.FC<Props> = ({
           <h2 className="text-2xl 2xl:text-3xl text-[#3d3d3d] font-semibold mb-2 lg:mb-4 2xl:bg-8">
             {name}
           </h2>
-          <p className="text-[#8D8D8D] 2xl:text-lg">{description}</p>
+          <p className="text-[#8D8D8D] md:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.2rem]">
+            {description}
+          </p>
         </div>
         <div className="flex flex-wrap md:flex-nowrap justify-between xl:grid xl:grid-cols-2 xl:gap-8 gap-4  w-full">
           {benefits.map((benefits: any, index: number) => (
@@ -195,7 +197,7 @@ const ItemService: React.FC<Props> = ({
                 {benefits.icon}
               </div>
 
-              <p className="font-medium whitespace-break-spaces text-lg 2xl:text-xl text-[#5d5d5d] md:text-center">
+              <p className="font-medium whitespace-break-spaces md:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.2rem] text-[#5d5d5d] md:text-center">
                 {benefits.text}
               </p>
             </div>
@@ -206,7 +208,7 @@ const ItemService: React.FC<Props> = ({
             {items.map((item: string, index: number) => (
               <li
                 key={index}
-                className="mb-2 text-[#6d6d6d] xl:text-lg flex items-start"
+                className="mb-2 text-[#6d6d6d] md:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.2rem] flex items-start"
               >
                 <FaCheckCircle
                   style={{ color: color }}
@@ -220,7 +222,7 @@ const ItemService: React.FC<Props> = ({
             {items2.map((item: string, index: number) => (
               <li
                 key={index}
-                className="mb-2 text-[#6d6d6d] xl:text-lg flex items-start"
+                className="mb-2 text-[#6d6d6d] md:text-[1.05rem] lg:text-[1.1rem] xl:text-[1.2rem] flex items-start"
               >
                 <FaCheckCircle
                   style={{ color: color }}

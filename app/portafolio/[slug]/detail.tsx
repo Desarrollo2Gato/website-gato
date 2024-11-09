@@ -18,6 +18,12 @@ interface DetailProps {
 }
 
 function Detail({ project }: DetailProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    if (project) {
+      setIsLoading(false);
+    }
+  }, [project]);
   const {
     slug,
     title: { rendered: title },
@@ -39,8 +45,6 @@ function Detail({ project }: DetailProps) {
   } = project;
 
   const [isDrawer, setIsDrawer] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -69,11 +73,13 @@ function Detail({ project }: DetailProps) {
 
       <div className="min-w-screen flex flex-col w-full pt-[60px] lg:pl-[80px] lg:pt-0">
         <>
+          
           <Banner
             color={client_color}
             title={title}
             image={banner}
             marca={title}
+            isLoading={isLoading}
           />
           <BodyProject
             client={project.acf.cliente}
@@ -85,6 +91,7 @@ function Detail({ project }: DetailProps) {
             logo={project.acf.imagen_destacada}
             testimonial={project.acf.testimonial_client.xp_gato}
             testimonial_name={project.acf.testimonial_client.author}
+            isLoading={isLoading}
           />
           <Gallery
             client={project.acf.cliente}
@@ -106,9 +113,10 @@ function Detail({ project }: DetailProps) {
             linkedin={linkedin}
             web={project.acf.url}
             tiktok={tiktok}
+            isLoading={isLoading}
           />
           {/* <BannerDetailPortfolio proyecto={project} /> */}
-          <Form color="#9353B6"  />
+          <Form color="#9353B6" />
           <Footer />
         </>
       </div>

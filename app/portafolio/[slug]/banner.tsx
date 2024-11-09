@@ -2,38 +2,60 @@ import { useImageSize } from "@/app/hooks/useImageSize";
 import Image from "next/image";
 
 import ButtonGato from "@/app/components/button";
+import { ImgBannerClient, SkeletonText } from "@/app/components/skeleton";
+import { RevealWrapper } from "next-reveal";
+import Link from "next/link";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 type BannerProps = {
   color: string;
   title: string;
   image?: string;
   marca?: string;
+  isLoading?: boolean;
 };
 
 const Banner: React.FC<BannerProps> = ({
-  color,
+  color = "#9353B6",
   title,
   image,
   marca,
+  isLoading = false,
 }) => {
   const size = useImageSize(image || "");
+
   return (
     <section className=" w-full">
-      <div className="max-w-[1440px]  justify-between flex flex-col md:flex-row mx-auto relative sm:px-12 lg:px-16 px-8 py-16  2xl:gap-16 xl:gap-12 lg:gap-8 gap-4">
+      <div className="max-w-[1440px]  mx-auto relative sm:px-12 lg:px-16 px-8 pt-16 pb-8">
+        <RevealWrapper origin="left" duration={1500}>
+          <Link
+            href={"/portafolio"}
+            style={{ color: color }}
+            className={`flex gap-x-1 items-center hover:translate-x-1 transition-all duration-300 font-medium`}
+          >
+            <IoChevronBackOutline style={{ color: color }} className="" />
+            Ver todos los proyectos
+          </Link>
+        </RevealWrapper>
+      </div>
+      <div className="max-w-[1440px]  justify-between flex flex-col md:flex-row mx-auto relative sm:px-12 lg:px-16 px-8 pb-16  2xl:gap-16 xl:gap-12 lg:gap-8 gap-4">
         <div className="md:w-[50%] flex flex-col gap-4">
           <div className="">
             <h1
               className={`text-stone-700  xl:text-[2.5rem] text-[1.3rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-4`}
             >
               Nuestro Camino con
-              <span className={`text-[${color}]`}> {title}</span>
+              <span style={{ color: color }} className={``}>
+                {" "}
+                {isLoading ? <SkeletonText width="200px" lines={1} /> : title}
+              </span>
             </h1>
             <p className="text-stone-500  md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem]">
               Acompañamos a nuestro cliente en cada paso, desde la idea inicial
               hasta los resultados finales. Descubre cómo logramos sus objetivos
               con un enfoque personalizado y estratégico.
             </p>
-            <div className="flex gap-4 flex-col sm:flex-row mt-2 md:mt-4 ">
+            <div className="flex sm:flex-wrap gap-4 flex-col sm:flex-row mt-2 md:mt-4 ">
               <ButtonGato
                 wIcon
                 bgColor={"#fff"}
@@ -80,14 +102,20 @@ const Banner: React.FC<BannerProps> = ({
           </div>
         </div>
         <div className="xl:w-[50%]">
-          {image && size && (
-            <Image
-              className="drop-shadow-lg w-full h-full aspect-auto object-contain"
-              src={image}
-              alt={marca + ": banner"}
-              height={size.height}
-              width={size.width}
-            />
+          {isLoading ? (
+            <ImgBannerClient />
+          ) : (
+            image &&
+            size && (
+              <Image
+                className="drop-shadow-lg w-full h-full aspect-auto object-contain"
+                src={image}
+                alt={marca + ": banner"}
+                priority
+                height={size.height}
+                width={size.width}
+              />
+            )
           )}
         </div>
       </div>

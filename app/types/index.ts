@@ -1,4 +1,5 @@
 export interface IProject {
+  id: string;
   slug: string;
   title: { rendered: string };
   acf: {

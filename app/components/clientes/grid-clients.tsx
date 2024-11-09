@@ -13,6 +13,7 @@ import Pagination from "@mui/material/Pagination";
 import { CardClientSkeleton } from "../skeleton";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
+import { useMediaQuery } from "react-responsive";
 
 const theme = createTheme({
   palette: {
@@ -31,30 +32,29 @@ const GridClients = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
 
-  useEffect(() => {
-    const updateItemsPerPage = () => {
-      if (window.innerWidth >= 1536) {
-        setPerPage(18);
-      } else if (window.innerWidth >= 1280) {
-        setPerPage(15);
-      } else if (window.innerWidth >= 1024) {
-        setPerPage(12);
-      } else if (window.innerWidth >= 768) {
-        setPerPage(12);
-      } else if (window.innerWidth >= 640) {
-        setPerPage(9);
-      } else {
-        setPerPage(6);
-      }
-    };
-    updateItemsPerPage();
-    window.addEventListener("resize", updateItemsPerPage);
-    return () => window.removeEventListener("resize", updateItemsPerPage);
-  }, [window.innerWidth]);
+  const is2ExtraLarge = useMediaQuery({ minWidth: 1536 }); // 2xl min: 1325 col - 8
+  const isExtraLarge = useMediaQuery({ minWidth: 1280, maxWidth: 1535 }); //xl min : 1280 col - 7
+  const isLarge = useMediaQuery({ minWidth: 1024, maxWidth: 1279 }); // lg: min: 1024 col - 6
+  const isMedium = useMediaQuery({ minWidth: 768, maxWidth: 1023 }); // md: min 768 col -5
+  const isSmall = useMediaQuery({ minWidth: 640, maxWidth: 767 }); // sm: min 640 col - 4
+  const isExtraSmall = useMediaQuery({ maxWidth: 639 }); //normal - col - 3
+  const [isScreenChecked, setIsScreenChecked] = useState(false);
 
   useEffect(() => {
-    fetchData(page, perPage);
-  }, [page, perPage]);
+    if (is2ExtraLarge) setPerPage(28);
+    else if (isExtraLarge) setPerPage(28);
+    else if (isLarge) setPerPage(24);
+    else if (isMedium) setPerPage(15);
+    else if (isSmall) setPerPage(12);
+    else if (isExtraSmall) setPerPage(9);
+    setIsScreenChecked(true);
+  }, [isExtraLarge, isLarge, isMedium, isSmall, isExtraSmall]);
+
+  useEffect(() => {
+    if (isScreenChecked) {
+      fetchData(page, perPage);
+    }
+  }, [page, perPage, isScreenChecked]);
 
   const fetchData = async (page = 1, per_page = 10) => {
     setIsLoading(true);
@@ -91,7 +91,7 @@ const GridClients = () => {
   };
 
   return (
-    <section className="  w-full bg-gray-100 " id="clientes">
+    <section className="  w-full bg-zinc-50 " id="clientes">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col">
         <div className="text-center mb-16">
           <h2 className="xl:text-[2.5rem] text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-6">
@@ -106,10 +106,14 @@ const GridClients = () => {
         </div>
         <div className="w-full ">
           {/* grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 md:gap-4 lg:gap-6 xl:gap-6 2xl:gap-8">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-7 gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-6 2xl:gap-6">
             {isLoading ? (
               Array.from({ length: perPage }).map((_, index) => (
-                <CardClientSkeleton width={"100%"} height={"100%"} />
+                <CardClientSkeleton
+                  key={index}
+                  width={"100%"}
+                  height={"100%"}
+                />
               ))
             ) : dataClient.length === 0 ? (
               <div className="col-span-full text-center">
@@ -128,18 +132,19 @@ const GridClients = () => {
             )}
           </div>
           {/* paginacion */}
-          <div className="mx-auto mt-4 flex justify-center">
-            <ThemeProvider theme={theme}>
-              <Pagination
-                count={totalPages}
-                page={page}
-                onChange={handleChange}
-                color="primary"
-                shape="rounded"
-                
-              />
-            </ThemeProvider>
-          </div>
+          {dataClient.length > 0 && (
+            <div className="mx-auto mt-4 flex justify-center">
+              <ThemeProvider theme={theme}>
+                <Pagination
+                  count={totalPages}
+                  page={page}
+                  onChange={handleChange}
+                  color="primary"
+                  shape="rounded"
+                />
+              </ThemeProvider>
+            </div>
+          )}
         </div>
       </div>
     </section>
@@ -207,10 +212,10 @@ const RenderClient: React.FC<ClientRender> = ({
               }}
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center px-1 md:px-2 gap-2">
-              <span className="text-small sm:text-base md:text-[1.1rem] lg:text-[1.3rem] text-white text-center font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700 inline-block  break-words whitespace-normal break-all">
+              <span className="text-xs sm:text-sm md:text-base text-white text-center font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700 inline-block  break-words whitespace-normal break-all">
                 {title}
               </span>
-              <p className=" text-xs md:text-base text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700">
+              <p className=" text-xs md:text-sm text-white text-center drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700">
                 {services}
               </p>
             </div>

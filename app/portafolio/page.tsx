@@ -1,6 +1,5 @@
 import Portfolio from "./portafolio";
 import { Metadata } from "next";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Portafolio de Proyectos",
@@ -38,10 +37,10 @@ export const metadata: Metadata = {
     "diseño de logotipos trabajos destacados",
     "posicionamiento de marca proyectos",
     "gestión integral de marca estudios de caso",
-    "consultoría de marca ejemplos"
+    "consultoría de marca ejemplos",
   ],
-  alternates:{
-    canonical: 'https://www.gato.pe/portafolio'
+  alternates: {
+    canonical: "https://www.gato.pe/portafolio",
   },
   openGraph: {
     type: "website",
@@ -71,7 +70,7 @@ function Page() {
   return (
     <>
       <div className="min-w-screen w-full min-h-screen">
-        <Portfolio></Portfolio>
+        <Portfolio/>
       </div>
     </>
   );

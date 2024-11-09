@@ -9,7 +9,7 @@ import BannerAbout from "./banner";
 import WhatsappContact from "../components/whatsapp-contact";
 import Fundamentals from "./fundamentals";
 import Team from "./team";
-import GridClients from "../components/clientes/grid-clients";
+import GridClients from "../components/clientes/grid-clients_old";
 import Form from "../components/form";
 
 function About() {

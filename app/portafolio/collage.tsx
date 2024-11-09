@@ -4,221 +4,314 @@ import axios from "axios";
 import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Pagination from "../components/Pagination";
 import Image from "next/image";
-import { acf_format, api_projects, per_page } from "../data/enviroments/api.enviroment";
+import {
+  acf_format,
+  api_projects,
+  api_services,
+} from "../data/enviroments/api.enviroment";
+import { useMediaQuery } from "react-responsive";
+import { ThemeProvider } from "@emotion/react";
+import { createTheme } from "@mui/material";
+import Pagination from "@mui/material/Pagination";
+import { CardClientSkeleton } from "../components/skeleton";
+import { IProject } from "../types";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#9353B6",
+    },
+  },
+});
+
+const servicesName = [
+  { name: "Todo", slug: "todo" },
+  { name: "Marketing Digital", slug: "marketing-digital" },
+  { name: "Diseño Web", slug: "diseno-web" },
+  { name: "Desarrollo de Software", slug: "desarrollo-de-software" },
+  { name: "Desarrollo de Móvil", slug: "desarrollo-movil" },
+  { name: "Branding", slug: "branding" },
+];
 
 function CollagePortfolio() {
-  interface PortafolioItem {
-    slug: string;
-    acf: {
-      imagen: string;
-      cliente: string;
-      "cliente-slug": string;
-      services: string;
-    };
-    title: {
-      rendered: string;
-    };
-  }
-
-  const [dataPortfolio, setDataPortfolio] = useState<PortafolioItem[]>([]);
+  const [dataPortfolio, setDataPortfolio] = useState<IProject[]>([]);
+  const [servicesData, setServicesData] = useState<any[]>([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
-  const [selectedCategory, setSelectedCategory] = useState(
-    "Todas las categorías"
-  );
+  const [selectedCategory, setSelectedCategory] = useState<{
+    id: number | null;
+    name: string;
+  }>({
+    id: null,
+    name: "todo",
+  });
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(6);
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalItems, setTotalItems] = useState(0);
 
-  async function fetchData() {
+  const is2ExtraLarge = useMediaQuery({ minWidth: 1536 }); // 2xl min: 1325 col - 8
+  const isExtraLarge = useMediaQuery({ minWidth: 1280, maxWidth: 1535 }); //xl min : 1280 col - 7
+  const isLarge = useMediaQuery({ minWidth: 1024, maxWidth: 1279 }); // lg: min: 1024 col - 6
+  const isMedium = useMediaQuery({ minWidth: 768, maxWidth: 1023 }); // md: min 768 col -5
+  const isSmall = useMediaQuery({ minWidth: 640, maxWidth: 767 }); // sm: min 640 col - 4
+  const isExtraSmall = useMediaQuery({ maxWidth: 639 }); //normal - col - 3
+  const [isScreenChecked, setIsScreenChecked] = useState(false);
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
+  useEffect(() => {
+    if (is2ExtraLarge) setPerPage(28);
+    else if (isExtraLarge) setPerPage(28);
+    else if (isLarge) setPerPage(24);
+    else if (isMedium) setPerPage(20);
+    else if (isSmall) setPerPage(12);
+    else if (isExtraSmall) setPerPage(9);
+    setIsScreenChecked(true);
+  }, [isExtraLarge, isLarge, isMedium, isSmall, isExtraSmall]);
+
+  useEffect(() => {
+    if (isScreenChecked) {
+      fetchData(page, perPage);
+    }
+  }, [page, perPage, isScreenChecked]);
+
+  useEffect(() => {
+    if (selectedCategory?.name === "todo" || !selectedCategory?.name) return;
+    fetchDataByService(page, perPage);
+  }, [page, perPage, , selectedCategory]);
+
+  const fetchData = async (page = 1, per_page = 10) => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        api_projects + "?" + acf_format + "&" + per_page
+        api_projects +
+          "?" +
+          acf_format +
+          "&" +
+          "page=" +
+          page.toString() +
+          "&per_page=" +
+          per_page.toString()
       );
       const projects = response.data;
       setDataPortfolio(projects);
+      setTotalPages(Number(response.headers["x-wp-totalpages"]));
+      setTotalItems(Number(response.headers["x-wp-total"]));
     } catch (error) {
     } finally {
       setIsLoading(false);
     }
-  }
-
-  useEffect(() => {
-    fetchData();
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleCategorySelect = (category: any) => {
-    setSelectedCategory(category);
-    setIsLoading(true);
-    setTimeout(() => {
+  };
+  const fetchDataByService = async (page = 1, per_page = 10) => {
+    try {
+      setIsLoading(true);
+      const response = await axios.get(
+        `${api_projects}?servicios=${selectedCategory?.id?.toString()}&${acf_format}&page=${page.toString()}&per_page=${per_page.toString()}`
+      );
+      const projects = response.data;
+      setDataPortfolio(projects);
+      setTotalPages(Number(response.headers["x-wp-totalpages"]));
+      setTotalItems(Number(response.headers["x-wp-total"]));
+    } catch (error) {
+      console.log("error by services", error);
+    } finally {
       setIsLoading(false);
-    }, 800);
+    }
   };
 
-  const filteredPortafolio =
-    selectedCategory === "Todas las categorías"
-      ? dataPortfolio
-      : dataPortfolio.filter((item) =>
-          item.slug.includes(
-            selectedCategory.toLowerCase().replace(/ /g, "-").replace(/ñ/g, "n")
-          )
-        );
-  const defaultImageUrl =
-    "https://i.pinimg.com/originals/73/fe/ce/73fece7ac631330d0dd4c1bd22325029.png";
+  const fetchServices = async () => {
+    try {
+      const response = await axios.get(api_services);
+      const services = response.data.map((item: any) => ({
+        name: item.name,
+        id: item.id,
+      }));
 
-  const renderPortfolioItem = (item: any) => (
-    <Link
-      key={item.id}
-      href="/portafolio/[slug]/"
-      as={`/portafolio/${item.slug}`}
-      className="group relative flex justify-center items-center overflow-hidden border aspect-square"
-    >
-      <Image
-        loading="lazy"
-        width={271}
-        height={271}
-        className="xl:w-[65%] xl:h-[65%] h-[85%] w-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
-        src={item.acf?.imagen_destacada ? item.acf.imagen_destacada : defaultImageUrl}
-        onError={(e) => {
-          e.currentTarget.onerror = null;
-          e.currentTarget.src = defaultImageUrl;
-        }}
-        alt={`Logo de  ${item.acf.cliente}`}
-        title={`Logo de  ${item.acf.cliente}`}
-      />
-      <div className="absolute hidden group-hover:flex inset-0 bg-black bg-opacity-70 w-full h-full top-0 p-1 md:p-3 animate-fade-up flex-col justify-center items-center gap-4 text-white">
-        <span className="font-semibold text-base md:text-2xl text-center">
-          {item.acf.cliente}
-        </span>
-        <span className="text-xs md:text-base text-center capitalize">{item.acf?.services}</span>
-      </div>
-    </Link>
-  );
+      setServicesData(services);
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+
+  const handleCategorySelect = (category: any) => {
+    if (servicesData.length === 0) {
+      return;
+    }
+    setDataPortfolio([]);
+    console.log("category", category);
+    if (category === "todo") {
+      setSelectedCategory({
+        id: null,
+        name: "todo",
+      });
+      fetchData(page, perPage);
+    } else {
+      const idService = servicesData.find(
+        (service) => service.name === category
+      );
+      console.log("servicio", idService);
+      if (idService.id) {
+        setSelectedCategory(idService);
+      }
+    }
+  };
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
+
   return (
     <section className="w-full">
       <div className="sm:px-12 lg:px-16 px-8 py-16 max-w-[1440px] mx-auto">
-         <RevealWrapper duration={1500} origin="top">
-        <div>
-          <h1
-            title="GATO - Portafolio de proyectos"
-            className="text-4xl
-            text-[#3D3D3D] font-medium uppercase mb-8"
-          >
-            Portafolio
-          </h1>
-        </div>
-      </RevealWrapper>
-      <RevealWrapper duration={1500} origin="left">
-        {isMobile ? (
+        <RevealWrapper duration={1500} origin="top">
+          <div>
+            <h1
+              title="GATO - Portafolio de proyectos"
+              className="text-4xl
+            text-stone-700 font-medium mb-8"
+            >
+              Portafolio
+            </h1>
+          </div>
+        </RevealWrapper>
+        <RevealWrapper duration={1500} origin="left">
           <select
-            className="cursor-pointer w-full border-none bg-white text-[#4F4F4F] text-lg font-semibold outline-none focus:ring-[#9353B6] placeholder-[#3D3D3D]"
-            value={selectedCategory}
+            className=" md:hidden cursor-pointer w-full border-none bg-white text-stone-500 text-lg font-semibold outline-none focus:ring-[#9353B6] placeholder-[#3D3D3D]"
+            value={selectedCategory?.name}
             onChange={(e) => handleCategorySelect(e.target.value)}
           >
-            {[
-              "Todas las categorías",
-              "Marketing Digital",
-              "Diseño Web",
-              "Desarrollo de Software",
-              "Desarrollo de Móvil",
-              "Branding",
-            ].map((category) => (
-              <option key={category} value={category} className="">
-                {category}
+            {servicesName.map((category, index) => (
+              <option key={index} value={category.slug} className="">
+                {category.name}
               </option>
             ))}
           </select>
-        ) : (
-          <nav className="w-full">
-            <ul className=" relative flex gap-x-4 lg:gap-x-6 text-[#4F4F4F] font-semibold">
-              {[
-                "Todas las categorías",
-                "Marketing Digital",
-                "Diseño Web",
-                "Desarrollo de Software",
-                "Desarrollo de Móvil",
-                "Branding",
-              ].map((category) => (
+          <nav className="hidden md:block w-full">
+            <ul className=" relative flex gap-x-4 lg:gap-x-6 text-stone-500 font-semibold">
+              {servicesName.map((category, index) => (
                 <li
-                  key={category}
+                  key={index}
                   className={`cursor-pointer group hover:text-[#9353B6] lg:text-lg ${
-                    selectedCategory === category ? "text-[#9353B6]" : ""
+                    selectedCategory?.name === category.slug
+                      ? "text-[#9353B6]"
+                      : ""
                   }`}
-                  onClick={() => handleCategorySelect(category)}
+                  onClick={() => handleCategorySelect(category.slug)}
                 >
-                  {category}
+                  {category.name}
                   <div
                     className={`abslute w-full h-0.5 bg-[#9353B6] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
-                      selectedCategory === category ? "scale-x-100" : ""
+                      selectedCategory?.name === category.slug
+                        ? "scale-x-100"
+                        : ""
                     }`}
                   ></div>
                 </li>
               ))}
             </ul>
           </nav>
-        )}
-      </RevealWrapper>
-      <RevealWrapper
-        duration={1500}
-        origin="bottom"
-        className={`mt-8 md:mt-12`}
-      >
-        {isLoading ? (
-          <div className=" flex justify-center items-center bg-white bg-opacity-75 z-50">
-            <svg
-              className="mr-3 h-20 w-20 animate-spin text-[#9353B6]"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                strokeLinecap="round"
-              ></path>
-            </svg>
+        </RevealWrapper>
+        <RevealWrapper
+          duration={1500}
+          origin="bottom"
+          className={`mt-8 md:mt-12`}
+        >
+          <div className="w-full ">
+            {/* grid */}
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-7 gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-6 2xl:gap-6">
+              {isLoading ? (
+                Array.from({ length: perPage }).map((_, index) => (
+                  <CardClientSkeleton
+                    key={index}
+                    width={"100%"}
+                    height={"100%"}
+                  />
+                ))
+              ) : dataPortfolio.length === 0 ? (
+                <div className="col-span-full text-center">
+                  No se encontraron clientes disponibles{" "}
+                </div>
+              ) : (
+                dataPortfolio.map((client, index: number) => (
+                  <RenderPortfolioItem
+                    key={index}
+                    img={client?.acf?.imagen_destacada}
+                    services={client?.acf?.services}
+                    slug={client?.slug}
+                    title={client?.acf?.cliente}
+                  />
+                ))
+              )}
+            </div>
           </div>
-        ) : (
-          <Pagination
-            dataName="proyectos"
-            data={filteredPortafolio}
-            itemsPerPageMobile={6}
-            itemsPerPageTablet={9}
-            itemsPerPageDesktop={12}
-            itemsPerPageLargeDesktop={15}
-            render={renderPortfolioItem}
-            gridClass={
-              "grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3  grid-cols-2 gap-2 md:gap-4 xl:gap-8 "
-            }
-          />
-        )}
-      </RevealWrapper>
+          {/* paginacion */}
+
+          {dataPortfolio.length > 0 && (
+            <div className="mx-auto mt-4 flex justify-center">
+              <ThemeProvider theme={theme}>
+                <Pagination
+                  count={totalPages}
+                  page={page}
+                  onChange={handleChange}
+                  color="primary"
+                  shape="rounded"
+                />
+              </ThemeProvider>
+            </div>
+          )}
+        </RevealWrapper>
       </div>
-     
     </section>
   );
 }
+type ClientRender = {
+  slug: string;
+  img: string;
+  title: string;
+  services: string;
+};
+
+const RenderPortfolioItem: React.FC<ClientRender> = ({
+  slug,
+  img,
+  title,
+  services,
+}) => {
+  const defaultImageUrl =
+    "https://i.pinimg.com/originals/73/fe/ce/73fece7ac631330d0dd4c1bd22325029.png";
+  return (
+    <Link
+      href="/portafolio/[slug]/"
+      as={`/portafolio/${slug}`}
+      className="group relative flex justify-center items-center overflow-hidden border aspect-square"
+    >
+      <Image
+        priority
+        width={271}
+        height={271}
+        className="xl:w-[65%] xl:h-[65%] h-[85%] w-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
+        src={img ? img : defaultImageUrl}
+        onError={(e) => {
+          e.currentTarget.onerror = null;
+          e.currentTarget.src = defaultImageUrl;
+        }}
+        alt={`Logo de  ${title}`}
+        title={`Logo de  ${title}`}
+      />
+      <div className="absolute hidden group-hover:flex inset-0 bg-stone-900 bg-opacity-70 w-full h-full top-0 p-1 md:p-3 animate-fade-up flex-col justify-center items-center gap-4 text-white transition-all duration-700 ease-in-out">
+        <span className="font-semibold text-xs sm:text-sm md:text-base text-center">
+          {title}
+        </span>
+        <span className="text-xs md:text-sm text-center capitalize">
+          {services}
+        </span>
+      </div>
+    </Link>
+  );
+};
 
 export default CollagePortfolio;

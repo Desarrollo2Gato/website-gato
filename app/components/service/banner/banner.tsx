@@ -1,6 +1,7 @@
 import { RevealWrapper } from "next-reveal";
 import Image from "next/image";
 import Link from "next/link";
+import ButtonGato from "../../button";
 
 type Props = {
   color: string;
@@ -120,22 +121,31 @@ const banner = (prop: Props) => {
               className={"w-full lg:w-1/3"}
             >
               <div className="flex flex-col gap-5 lg:gap-4 xl:gap-8  md:justify-start items-center md:items-start">
-                <h1 className="uppercase text-4xl sm:text-5xl 2xl:text-7xl font-bold w-full text-center md:text-left">
+                <h1 className="xl:text-heading-1 text-heading-6 sm:text-heading-5 md:text-heading-4 lg:text-heading-3 font-bold w-full text-center md:text-left text-stone-700">
                   {prop.service}
                   <span className={`text-[${mainColor}]`}>
                     {" "}
                     {prop.service2}
                   </span>
                 </h1>
-                <p className="w-full text-center md:text-left text-lg sm:text-xl lg:text-2xl text-[#666666]">
+                <p className="w-full text-center md:text-left lg:text-lg xl:text-xl text-stone-500">
                   {prop.description}
                 </p>
-                <Link
+                <ButtonGato
+                  type={"primary"}
+                  bgColor={mainColor}
+                  bgHover={"#ffffff"}
+                  textColor={"#ffffff"}
+                  textHover={mainColor}
+                  url={"#contactanos"}
+                  text={"Solicitar servicio"}
+                />
+                {/* <Link
                   href={"#plans"}
-                  className={`px-5 py-2 uppercase font-bold bg-[${mainColor}] rounded-md text-white text-lg sm:text-xl lg:text-2xl`}
+                  className={`px-5 py-2 capitalize font-bold bg-[${mainColor}] rounded-md text-white`}
                 >
                   ver más
-                </Link>
+                </Link> */}
               </div>
             </RevealWrapper>
 

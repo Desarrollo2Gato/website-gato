@@ -28,27 +28,27 @@ function Footer() {
 
           <div className="flex flex-col ">
             <span className="font-semibold mb-2">Visítanos </span>
-            <span className="text-slate-600">Av. Brasil 2475, Jesús María</span>
+            <span className="text-stone-600">Av. Brasil 2475, Jesús María</span>
           </div>
           <div className="flex flex-col ">
             <span className="font-semibold mb-2">Hablemos</span>
             <Link
               href={"tel:+51 980005257"}
-              className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-2"
+              className="text-stone-600 md:text-sm text-xs
+            hover:underline underline-offset-4 mb-2 transition-all duration-700"
             >
               +51 946380310
             </Link>
             <Link
               href={"tel:+51 980005257"}
-              className="text-slate-600 md:text-sm text-xs relative inline-block hover:underline underline-offset-4 mb-2"
+              className="text-stone-600 md:text-sm text-xs relative inline-block hover:underline underline-offset-4 mb-2 transition-all duration-700"
             >
               +51 980005257
             </Link>
             <Link
               href={"tel:+51 952341679"}
-              className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-2"
+              className="text-stone-600 md:text-sm text-xs
+            hover:underline underline-offset-4 mb-2 transition-all duration-700"
             >
               +51 952341679
             </Link>
@@ -57,22 +57,22 @@ function Footer() {
             <span className="font-semibold ">Escríbenos</span>
             <Link
               href={"mailto:info@gato.pe"}
-              className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-2 mt-2"
+              className="text-stone-600 md:text-sm text-xs
+            hover:underline underline-offset-4 mb-2 transition-all duration-700 mt-2"
             >
               info@gato.pe
             </Link>
             <Link
               href={"mailto:dortega@gato.pe"}
-              className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-2"
+              className="text-stone-600 md:text-sm text-xs
+            hover:underline underline-offset-4 mb-2 transition-all duration-700"
             >
               dortega@gato.pe
             </Link>
             <Link
               href={"mailto:mjara@gato.pe"}
-              className="text-slate-600 md:text-sm text-xs
-            hover:underline underline-offset-4 mb-2"
+              className="text-stone-600 md:text-sm text-xs
+            hover:underline underline-offset-4 mb-2 transition-all duration-700"
             >
               mjara@gato.pe
             </Link>
@@ -400,7 +400,7 @@ function Footer() {
         </div>
         <hr />
         <div className="text-center w-full my-4 ">
-          <span className="text-slate-600">&copy; 2024 - Agencia Gato</span>
+          <span className="text-stone-600">&copy; 2024 - Agencia Gato</span>
         </div>
       </div>
     </footer>

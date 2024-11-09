@@ -12,11 +12,29 @@ export const CardClientSkeleton: React.FC<CardClientPropd> = ({
 }) => {
   return (
     <div>
-      <Skeleton
-        width={width}
-        height={height}
-        className="aspect-square"
-      />
+      <Skeleton width={width} height={height} className="aspect-square" />
+    </div>
+  );
+};
+
+export const ImgBannerClient = () => {
+  return (
+    <div className="w-full h-[300px]">
+      <Skeleton width={"100%"} height={"100%"} className="aspect-square" />
+    </div>
+  );
+};
+
+export const SkeletonText = ({
+  lines,
+  width,
+}: {
+  lines: number;
+  width: string;
+}) => {
+  return (
+    <div style={{ width: width }}>
+      <Skeleton count={lines} height={20} />
     </div>
   );
 };

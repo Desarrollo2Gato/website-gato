@@ -10,6 +10,8 @@ export const api_send_mail = apiURL + 'api/v1/send-mail/';
 
 export const api_projects =
   apiURL + "wp/v2/proyecto";
+export const api_services =
+  apiURL + "wp/v2/servicios";
 
 export const api_clients =
   apiURL + "wp/v2/cliente";

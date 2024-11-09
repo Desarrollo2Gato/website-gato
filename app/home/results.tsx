@@ -8,7 +8,7 @@ const Resutls = () => {
           <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-6">
             Resultados que te <span className="text-[#9353B6]">Impulsan</span>
           </h2>
-          <p className="text-stone-500 md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem]">
+          <p className="text-stone-600 md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem]">
             Transformamos tu negocio con estrategias personalizadas y tecnología
             de vanguardia.
           </p>
@@ -17,7 +17,7 @@ const Resutls = () => {
           <div className="flex flex-col sm:flex-row sm:gap-8 relative justify-center  lg:items-end items-center z-[1]">
             <div className="flex relative gap-6 lg:gap-24 flex-col justify-between pb-4">
               <div className="w-full flex flex-col lg:flex-row gap-3 md:gap-4 lg:gap-6 xl:gap-8 justify-center items-center transform lg:translate-x-1/4">
-                <span className="font-medium lg:text-[1.3rem] text-stone-500 lg:text-right text-center">
+                <span className="font-medium lg:text-[1.3rem] text-stone-600 lg:text-right text-center">
                   Optimización de procesos
                 </span>
                 <Image
@@ -30,7 +30,7 @@ const Resutls = () => {
                 />
               </div>
               <div className="flex flex-col lg:flex-row gap-3 md:gap-4 lg:gap-6 xl:gap-8 justify-center items-center">
-                <span className="font-medium lg:text-[1.3rem] text-stone-500 lg:text-right text-center">
+                <span className="font-medium lg:text-[1.3rem] text-stone-600 lg:text-right text-center">
                   Aplicaciones <br className="hidden lg:block" /> intuitivas
                 </span>
                 <Image
@@ -43,7 +43,7 @@ const Resutls = () => {
                 />
               </div>
               <div className="flex flex-col lg:flex-row gap-3 md:gap-4 lg:gap-6 xl:gap-8 justify-center items-center transform lg:translate-x-[10%]">
-                <span className="font-medium lg:text-[1.3rem] text-stone-500 lg:text-right text-center">
+                <span className="font-medium lg:text-[1.3rem] text-stone-600 lg:text-right text-center">
                   Identidad de marca
                 </span>
                 <Image
@@ -67,7 +67,7 @@ const Resutls = () => {
             </div>
             <div className="flex relative gap-6 lg:gap-24 flex-col justify-between pb-4">
               <div className="flex flex-col lg:flex-row-reverse  gap-3 md:gap-4 lg:gap-6 xl:gap-8 justify-center items-center transform lg:-translate-x-1/4">
-                <span className="font-medium lg:text-[1.3rem] text-stone-500 lg:text-left text-center">
+                <span className="font-medium lg:text-[1.3rem] text-stone-600 lg:text-left text-center">
                   Estrategias Personalizadas
                 </span>
                 <Image
@@ -80,7 +80,7 @@ const Resutls = () => {
                 />
               </div>
               <div className="flex gap-3 md:gap-4 lg:gap-6 xl:gap-8 justify-center items-center flex-col lg:flex-row-reverse ">
-                <span className="font-medium lg:text-[1.3rem] text-stone-500 lg:text-left text-center">
+                <span className="font-medium lg:text-[1.3rem] text-stone-600 lg:text-left text-center">
                   Diseño web <br className="hidden lg:block" /> atractivo
                 </span>
                 <Image
@@ -93,7 +93,7 @@ const Resutls = () => {
                 />
               </div>
               <div className="flex gap-3 md:gap-4 lg:gap-6 xl:gap-8 justify-center items-center flex-col lg:flex-row-reverse  transform lg:-lg:translate-x-[10%]">
-                <span className="font-medium lg:text-[1.3rem] text-stone-500 lg:text-left text-center">
+                <span className="font-medium lg:text-[1.3rem] text-stone-600 lg:text-left text-center">
                   Gestión de redes sociales
                 </span>
                 <Image

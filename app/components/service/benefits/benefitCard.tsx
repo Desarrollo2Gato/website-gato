@@ -26,9 +26,9 @@ const benefitCard = (prop:Props) => {
                 />
               </svg>
             </div>
-            <div className="flex flex-col gap-4 text-[#666666]">
+            <div className="flex flex-col gap-4 text-stone-600">
               <h3 className="font-bold capitalize text-xl">{prop.title}</h3>
-              <p className="font-light">
+              <p className="font-normal text-sotne-500">
                 {prop.content}
               </p>
             </div>
