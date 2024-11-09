@@ -25,6 +25,7 @@ function Detail({ project }: DetailProps) {
     }
   }, [project]);
   const {
+    id,
     slug,
     title: { rendered: title },
     acf: {
