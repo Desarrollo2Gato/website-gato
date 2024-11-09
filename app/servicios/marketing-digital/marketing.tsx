@@ -31,7 +31,7 @@ function Service01() {
         description="Conquista el mundo digital: ¡Descubre nuestras estrategias de marketing digital!"
       />
       <Benefits color="#A52DE6" />
-      <Plans color="#A52DE6" data={dataMk} />
+      {/* <Plans color="#A52DE6" data={dataMk} /> */}
       <Process />
     </>
   );

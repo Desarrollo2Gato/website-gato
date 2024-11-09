@@ -32,7 +32,7 @@ function Service02() {
         description="Diseños web que inspiran y convierten. ¡Descubre nuestras soluciones de diseño web!"
       />
       <Benefits color="#0BC2E1" />
-      <Plans2 color="#0BC2E1" data={dataWeb} />
+      {/* <Plans2 color="#0BC2E1" data={dataWeb} /> */}
       <Process />
     </>
   );
