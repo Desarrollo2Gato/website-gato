@@ -24,6 +24,7 @@ function Detail({ project }: DetailProps) {
       setIsLoading(false);
     }
   }, [project]);
+  
   const {
     id,
     slug,
@@ -42,6 +43,8 @@ function Detail({ project }: DetailProps) {
       galery_1,
       galery_2,
       client_color,
+      baner_img,
+      text_color
     },
   } = project;
 
@@ -78,8 +81,9 @@ function Detail({ project }: DetailProps) {
           <Banner
             color={client_color}
             title={title}
-            image={banner}
+            image={baner_img}
             marca={title}
+            textColor={project.acf.text_color}
             isLoading={isLoading}
           />
           <BodyProject
@@ -88,6 +92,7 @@ function Detail({ project }: DetailProps) {
             description_service={project.acf.services_gato.description}
             services={project.acf.services_gato.services}
             color={project.acf.client_color}
+            textColor={project.acf.text_color}
             results={project.acf.service_result}
             logo={project.acf.imagen_destacada}
             testimonial={project.acf.testimonial_client.xp_gato}
@@ -97,6 +102,7 @@ function Detail({ project }: DetailProps) {
           <Gallery
             client={project.acf.cliente}
             color={project.acf.client_color}
+            textColor={project.acf.text_color}
             img_sq_1={project.acf.galery_1.img_1}
             img_sq_2={project.acf.galery_1.img_2}
             img_sq_3={project.acf.galery_1.img_3}

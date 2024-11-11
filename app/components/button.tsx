@@ -25,10 +25,6 @@ const ButtonGato: React.FC<ButtonGatoProp> = ({
   isFull = false,
 }) => {
   const [isHoverd, setIsHovered] = useState<boolean>(false);
-
-  const redirect = (url: string) => {
-    window.location.href = url;
-  };
   return (
     <>
       <Link

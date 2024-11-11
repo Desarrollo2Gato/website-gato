@@ -15,7 +15,7 @@ import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import { CardClientSkeleton } from "../components/skeleton";
-import { IProject } from "../types";
+import { IImage, IProject } from "../types";
 
 const theme = createTheme({
   palette: {
@@ -270,7 +270,7 @@ function CollagePortfolio() {
 }
 type ClientRender = {
   slug: string;
-  img: string;
+  img: IImage;
   title: string;
   services: string;
 };
@@ -294,13 +294,13 @@ const RenderPortfolioItem: React.FC<ClientRender> = ({
         width={271}
         height={271}
         className="xl:w-[65%] xl:h-[65%] h-[85%] w-[85%] group-hover:scale-105 transition-all duration-500 ease-in-out object-contain"
-        src={img ? img : defaultImageUrl}
+        src={img ? img.url : defaultImageUrl}
         onError={(e) => {
           e.currentTarget.onerror = null;
           e.currentTarget.src = defaultImageUrl;
         }}
-        alt={`Logo de  ${title}`}
-        title={`Logo de  ${title}`}
+        alt={img.alt ? img.alt : "Logo"}
+        title={img.title ? img.title : "Logo"}
       />
       <div className="absolute hidden group-hover:flex inset-0 bg-stone-900 bg-opacity-70 w-full h-full top-0 p-1 md:p-3 animate-fade-up flex-col justify-center items-center gap-4 text-white transition-all duration-700 ease-in-out">
         <span className="font-semibold text-xs sm:text-sm md:text-base text-center">

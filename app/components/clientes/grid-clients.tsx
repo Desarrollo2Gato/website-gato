@@ -14,6 +14,7 @@ import { CardClientSkeleton } from "../skeleton";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { useMediaQuery } from "react-responsive";
+import { IImage } from "@/app/types";
 
 const theme = createTheme({
   palette: {
@@ -69,7 +70,6 @@ const GridClients = () => {
           "&per_page=" +
           per_page.toString()
       );
-      console.log(response.data);
       const clients: ClientRender[] = response.data.map((client: any) => ({
         id: client.id,
         slug: client.slug,
@@ -154,7 +154,7 @@ const GridClients = () => {
 type ClientRender = {
   id: string;
   slug: string;
-  img: string;
+  img: IImage;
   title: string;
   services: string;
 };
@@ -183,34 +183,39 @@ const RenderClient: React.FC<ClientRender> = ({
       >
         <div className="card group relative transition-all duration-500">
           <div className="front w-full h-full bg-white flex items-center justify-center  aspect-square">
-            <Image
-              width={237}
-              height={237}
-              loading="lazy"
-              className="w-[80%] h-[80%] group-hover:scale-105 transition-all duration-500 aspect-square ease-in-out object-contain"
-              src={img ? img : defaultImageUrl}
-              alt={"Cliente: " + title}
-              title={"Cliente: " + title}
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = defaultImageUrl;
-              }}
-            />
+            {img && (
+              <Image
+                width={img.width}
+                height={img.height}
+                loading="lazy"
+                className="w-[80%] h-[80%] group-hover:scale-105 transition-all duration-500 aspect-square ease-in-out object-contain"
+                src={img.url ? img.url : defaultImageUrl}
+                alt={img.alt ? img.alt : "Logo"}
+                title={img.title ? img.title : "Logo"}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = defaultImageUrl;
+                }}
+              />
+            )}
           </div>
           <div className="back absolute opacity-0 group-hover:opacity-100 flex flex-col top-0 h-full w-full transition-all justify-center items-center duration-500 ease-in-out bg-white">
-            <Image
-              width={237}
-              height={237}
-              loading="lazy"
-              className="w-[80%] h-[80%] group-hover:scale-105 transition-all duration-500 aspect-square ease-in-out object-contain"
-              src={img ? img : defaultImageUrl}
-              alt={"Cliente: " + title}
-              title={"Cliente: " + title}
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = defaultImageUrl;
-              }}
-            />
+            {img && (
+              <Image
+                width={img.width}
+                height={img.height}
+                loading="lazy"
+                className="w-[80%] h-[80%] group-hover:scale-105 transition-all duration-500 aspect-square ease-in-out object-contain"
+                src={img ? img.url : defaultImageUrl}
+                alt={img ? img.alt : "Logo"}
+                title={img ? img.title : "Logo"}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = defaultImageUrl;
+                }}
+              />
+            )}
+
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center px-1 md:px-2 gap-2">
               <span className="text-xs sm:text-sm md:text-base text-white text-center font-bold drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]  transition-all duration-700 inline-block  break-words whitespace-normal break-all">
                 {title}

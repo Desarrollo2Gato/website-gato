@@ -1,5 +1,6 @@
 import { SkeletonText } from "@/app/components/skeleton";
 import { useImageSize } from "@/app/hooks/useImageSize";
+import { IImage } from "@/app/types";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import { RiDoubleQuotesL } from "react-icons/ri";
@@ -11,10 +12,11 @@ type BodyProjectProps = {
   services: string[];
   color: string;
   results: { item: string }[];
-  logo: string;
+  logo: IImage;
   testimonial: string;
   testimonial_name: string;
   isLoading?: boolean;
+  textColor: string;
 };
 const BodyProject: React.FC<BodyProjectProps> = ({
   client,
@@ -22,13 +24,14 @@ const BodyProject: React.FC<BodyProjectProps> = ({
   description_service,
   services,
   color = "#9353B6",
+  textColor = "#ffffff",
   results,
   logo,
   testimonial,
   testimonial_name,
   isLoading = false,
 }) => {
-  const logoSize = useImageSize(logo || "");
+  // const logoSize = useImageSize(logo || "");
 
   return (
     <section className=" w-full bg-zinc-100" id="proceso">
@@ -172,13 +175,14 @@ const BodyProject: React.FC<BodyProjectProps> = ({
                 {testimonial ? testimonial : "Testimonio no disponible"}
               </p>
               <div className="rounded-r-2xl flex gap-2 items-center mt-4">
-                {logoSize && (
+                {logo && (
                   <Image
                     className="h-[40px] w-[40px] sm:h-[60px] sm:w-[60px] aspect-square object-contain rounded-full border-zinc-200 border "
-                    src={logo}
-                    width={logoSize?.width}
-                    height={logoSize?.height}
-                    alt={`Logo del cliente: ${client}`}
+                    src={logo.url}
+                    width={logo.width}
+                    height={logo.height}
+                    title={logo.title ? logo.title : "Logo"}
+                    alt={logo.alt ? logo.alt : "Logo"}
                   />
                 )}
                 <span className="text-zinc-400 font-medium text-xs sm:text-sm">

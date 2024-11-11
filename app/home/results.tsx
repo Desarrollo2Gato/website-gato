@@ -56,13 +56,14 @@ const Resutls = () => {
                 />
               </div>
             </div>
-            <div className="max-w-[380px]  max-h-[500px] hidden lg:flex ">
+            <div className="max-w-[400px]  max-h-[500px] hidden lg:flex h-auto  ">
+             
               <Image
-                className="object-contain aspect-auto drop-shadow-[8px_8px_20px_rgba(147,83,182,0.2)] "
-                src={"/img/boy_home.png"}
+                className="object-contain aspect-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] rounded-lg h-full w-auto "
+                src={"/img/gato_real.png"}
                 alt="Chico con una laptop"
-                height={570}
-                width={396}
+                height={467}
+                width={412}
               />
             </div>
             <div className="flex relative gap-6 lg:gap-24 flex-col justify-between pb-4">

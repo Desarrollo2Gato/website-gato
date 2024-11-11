@@ -6,23 +6,27 @@ import { ImgBannerClient, SkeletonText } from "@/app/components/skeleton";
 import { RevealWrapper } from "next-reveal";
 import Link from "next/link";
 import { IoChevronBackOutline } from "react-icons/io5";
+import { IImage } from "@/app/types";
+import { FaImage } from "react-icons/fa6";
 
 type BannerProps = {
   color: string;
   title: string;
-  image?: string;
+  image?: IImage;
   marca?: string;
   isLoading?: boolean;
+  textColor: string;
 };
 
 const Banner: React.FC<BannerProps> = ({
   color = "#9353B6",
+  textColor = "#ffffff",
   title,
   image,
   marca,
   isLoading = false,
 }) => {
-  const size = useImageSize(image || "");
+  // const size = useImageSize(image || "");
 
   return (
     <section className=" w-full">
@@ -58,10 +62,10 @@ const Banner: React.FC<BannerProps> = ({
             <div className="flex sm:flex-wrap gap-4 flex-col sm:flex-row mt-2 md:mt-4 ">
               <ButtonGato
                 wIcon
-                bgColor={"#fff"}
+                bgColor={textColor}
                 bgHover={color}
                 textColor={color}
-                textHover="#fff"
+                textHover={textColor}
                 text="Exporar más"
                 type="secondary"
                 url="#proceso"
@@ -81,8 +85,8 @@ const Banner: React.FC<BannerProps> = ({
               </button> */}
               <ButtonGato
                 bgColor={color}
-                bgHover="#fff"
-                textColor="#fff"
+                bgHover={textColor}
+                textColor={textColor}
                 textHover={color}
                 text="Solicitar consulta"
                 type="primary"
@@ -104,18 +108,20 @@ const Banner: React.FC<BannerProps> = ({
         <div className="xl:w-[50%]">
           {isLoading ? (
             <ImgBannerClient />
+          ) : image ? (
+            <Image
+              className="drop-shadow-lg w-full h-full aspect-auto object-contain"
+              src={image.url}
+              alt={image.alt ? image.alt : "Logo"}
+              priority
+              title={image.title ? image.title : "Logo"}
+              height={image.height}
+              width={image.width}
+            />
           ) : (
-            image &&
-            size && (
-              <Image
-                className="drop-shadow-lg w-full h-full aspect-auto object-contain"
-                src={image}
-                alt={marca + ": banner"}
-                priority
-                height={size.height}
-                width={size.width}
-              />
-            )
+            <div className="flex justify-center bg-zinc-100 items-center w-full h-full aspect-auto">
+              <FaImage className="text-zinc-300 text-2xl xl:text-4xl" />
+            </div>
           )}
         </div>
       </div>

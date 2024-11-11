@@ -357,7 +357,7 @@ function Banner() {
         <div className="h-full max-w-[80%] md:max-w-[40%] w-full flex justify-center items-center">
           <Image
             className=" w-full h-auto object-contain "
-            src={"/img/banner_home.png"}
+            src={"/img/banner_home_new.png"}
             height={329}
             width={333}
             layout="responsive"
