@@ -44,7 +44,6 @@ const ButtonGato: React.FC<ButtonGatoProp> = ({
         className={`${
           isFull ? "w-full" : ""
         } lg:px-6 lg:py-2 px-4 py-2  text-sm md:text-base xl:text-lg rounded-full  border-2  font-semibold relative transition-all duration-700 ease-in-out`}
-        // onClick={() => redirect(url)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

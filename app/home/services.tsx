@@ -47,8 +47,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div
       className={`${
-        haveBg ? "bg-violet-50 " : "bg-white-50 "
-      } hover:shadow-[0px_0px_15px_rgba(0,0,0,0.2)] rounded-xl p-4 md:p-6 xl:p-8 flex flex-col gap-5 md:gap-6 lg:gap-8 xl:gap-10 justify-between  transition-all duration-700 shadow-[0px_0px_15px_rgba(0,0,0,0.08)] `}
+        haveBg ? "bg-zinc-50 " : "bg-zinc-50  "
+      } hover:shadow-[0px_0px_15px_rgba(0,0,0,0.2)] rounded-xl p-4 md:p-6 xl:p-8 flex flex-col gap-5 md:gap-6 lg:gap-8 xl:gap-10 justify-between  transition-all duration-700  `}
     >
       <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 xl:gap-10">
         <div
@@ -75,10 +75,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       {/* className={`${}`} */}
       <div className="flex flex-col xl:flex-row gap-2 md:gap-4">
         <ButtonGato
-          bgColor={haveBg ? "#F5F3FF" : "#ffffff"}
+          bgColor={haveBg ? "#fafafa" : "#fafafa"}
           bgHover={haveBg ? "#9353B6" : "#9353B6"}
           textColor={haveBg ? "#9353B6" : "#9353B6"}
-          textHover={haveBg ? "#F5F3FF" : "#ffffff"}
+          textHover={haveBg ? "#ffffff" : "#ffffff"}
           text="Ver"
           type="secondary"
           url={`/servicios/${tag}`}
@@ -86,8 +86,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         />
         <ButtonGato
           bgColor={haveBg ? "#9353B6" : "#9353B6"}
-          bgHover={haveBg ? "#fff" : "#fff"}
-          textColor={haveBg ? "#fff" : "#fff"}
+          bgHover={haveBg ? "#fafafa" : "#fafafa"}
+          textColor={haveBg ? "#ffffff" : "#ffffff"}
           textHover={haveBg ? "#9353B6" : "#9353B6"}
           text="Solicitar"
           type="primary"

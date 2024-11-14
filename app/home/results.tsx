@@ -57,13 +57,12 @@ const Resutls = () => {
               </div>
             </div>
             <div className="max-w-[400px]  max-h-[500px] hidden lg:flex h-auto  ">
-             
               <Image
                 className="object-contain aspect-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] rounded-lg h-full w-auto "
-                src={"/img/gato_real.png"}
+                src={"/img/cats/gato_maletin_marron_foco.png"}
                 alt="Chico con una laptop"
-                height={467}
-                width={412}
+                height={294}
+                width={397}
               />
             </div>
             <div className="flex relative gap-6 lg:gap-24 flex-col justify-between pb-4">
