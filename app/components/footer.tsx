@@ -55,13 +55,13 @@ function Footer() {
           </div>
           <div className="flex flex-col ">
             <span className="font-semibold ">Escríbenos</span>
-            <Link
+            {/* <Link
               href={"mailto:info@gato.pe"}
               className="text-stone-600 md:text-sm text-xs
             hover:underline underline-offset-4 mb-2 transition-all duration-700 mt-2"
             >
               info@gato.pe
-            </Link>
+            </Link> */}
             <Link
               href={"mailto:dortega@gato.pe"}
               className="text-stone-600 md:text-sm text-xs

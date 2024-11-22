@@ -18,7 +18,7 @@ function Items() {
   const services = [
     {
       reverse: false,
-      color: "#9353B6",
+      color: "#4608AD",
       name: "Marketing Digital",
       description:
         "Transforme su presencia en línea con nuestro servicio de marketing digital. Desde estrategias SEO y gestión de redes sociales hasta campañas PPC y análisis de datos, ayudamos a maximizar su visibilidad y conectar con su audiencia de manera efectiva, impulsando así el crecimiento y el éxito de su negocio en el mundo digital.",
@@ -51,7 +51,7 @@ function Items() {
 
     {
       reverse: true,
-      color: "#9353B6",
+      color: "#4608AD",
       name: "Diseño Web",
       description:
         "Revitalice su presencia en línea con nuestro servicio especializado en diseño web. Desde la creación de sitios web atractivos y funcionales hasta la optimización para dispositivos móviles y la implementación de experiencias de usuario intuitivas, nos aseguramos de que su negocio destaque visualmente y ofrezca una navegación fluida que convierta visitantes en clientes fieles",
@@ -79,7 +79,7 @@ function Items() {
     },
     {
       reverse: false,
-      color: "#9353B6",
+      color: "#4608AD",
       name: "Desarrollo de Software",
       description:
         "Nos especializamos en el desarrollo de software a medida que se adapta exactamente a las necesidades específicas de su negocio. Desde la conceptualizacion hasta la implementación y soporte continuo, creamos soluciones personalizadas que potencian la eficiencia, la productividad y el éxito a largo plazo de su empresa en el entorno digital.",
@@ -107,7 +107,7 @@ function Items() {
     },
     {
       reverse: true,
-      color: "#9353B6",
+      color: "#4608AD",
       name: "Branding",
       description:
         "Potencie la identidad de su marca con nuestro servicio integral de branding. Desde la creación de una identidad visual única hasta estrategias de posicionamiento de marca y desarrollo de contenido coherente, trabajamos para fortalecer su presencia en el mercado y conectar emocionalmente con su audiencia, asegurando que cada interacción refleje la esencia y los valores de su negocio.",
@@ -135,7 +135,7 @@ function Items() {
     },
     {
       reverse: false,
-      color: "#9353B6",
+      color: "#4608AD",
       name: "Desarrollo Movil",
       description:
         "Potencie su alcance móvil con nuestro servicio especializado en desarrollo móvil. Desde la creación de aplicaciones innovadoras hasta la optimización para diversas plataformas y la integración de funcionalidades avanzadas, nos aseguramos de que su negocio esté preparado para captar y retener clientes en el mundo digital móvil, impulsando su crecimiento y éxito.",
@@ -167,7 +167,7 @@ function Items() {
     },
     {
       reverse: true,
-      color: "#9353B6",
+      color: "#4608AD",
       name: "E-mail Marketing",
       description:
         "Optimice su comunicación con nuestros servicios de email marketing. Desde la creación de campañas personalizadas y el diseño de plantillas hasta la segmentación de audiencias y el análisis de resultados, le ayudamos a maximizar el impacto de sus correos electrónicos y a conectar de manera efectiva con sus clientes.",

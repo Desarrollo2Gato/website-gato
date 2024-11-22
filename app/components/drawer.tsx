@@ -138,13 +138,13 @@ function Drawer() {
               {/* escribenos */}
               <div className="flex flex-col">
                 <span className="font-semibold text-slate-700">Escríbenos</span>
-                <Link
+                {/* <Link
                   href={"mailto:info@gato.pe"}
                   className="text-slate-600
             hover:underline underline-offset-4 my-1"
                 >
                   info@gato.pe
-                </Link>
+                </Link> */}
                 <Link
                   href={"mailto:dortega@gato.pe"}
                   className="text-slate-600

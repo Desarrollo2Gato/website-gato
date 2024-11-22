@@ -19,7 +19,7 @@ type BannerProps = {
 };
 
 const Banner: React.FC<BannerProps> = ({
-  color = "#9353B6",
+  color = "#4608AD",
   textColor = "#ffffff",
   title,
   image,

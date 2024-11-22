@@ -32,7 +32,7 @@ function Collage() {
                 />
               </div>
               <div
-                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#9353B6]  group-hover:bg-opacity-70
+                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#4608AD]  group-hover:bg-opacity-70
                   "
                 role="button"
               >
@@ -73,7 +73,7 @@ function Collage() {
                 />
               </div>
               <div
-                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#9353B6]  group-hover:bg-opacity-70
+                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#4608AD]  group-hover:bg-opacity-70
                   "
                 role="button"
               >
@@ -112,7 +112,7 @@ function Collage() {
                 />
               </div>
               <div
-                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#9353B6]  group-hover:bg-opacity-70
+                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#4608AD]  group-hover:bg-opacity-70
                   "
                 role="button"
               >
@@ -153,7 +153,7 @@ function Collage() {
                 />
               </div>
               <div
-                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#9353B6]  group-hover:bg-opacity-70
+                className="absolute w-full h-full flex px-4 lg:px-6 transition-all justify-center items-center flex-col duration-500 ease-in-out group-hover:bg-[#4608AD]  group-hover:bg-opacity-70
                   "
                 role="button"
               >

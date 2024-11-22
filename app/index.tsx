@@ -42,13 +42,13 @@ function Index() {
     <>
       {isLoading ? (
         <div
-          className={`bg-[#9623DE] w-full h-screen flex justify-center items-center ${
+          className={`bg-[#4608AD] w-full h-screen flex justify-center items-center ${
             isFade &&
             "animate-fade animate-duration-1000 animate-ease-linear animate-reverse"
           }`}
         >
           <div className="flex gap-4">
-            <div className="rounded-full p-2 bg-[#9623DE]">
+            <div className="rounded-full p-2 bg-[#4608AD]">
               <Image
                 quality={75}
                 height={160}

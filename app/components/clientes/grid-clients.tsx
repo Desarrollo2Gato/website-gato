@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import {
   acf_format,
   api_projects,
+  api_proyjects_priority,
 } from "@/app/data/enviroments/api.enviroment";
 import Image from "next/image";
 import Pagination from "@mui/material/Pagination";
@@ -19,7 +20,7 @@ import { IImage } from "@/app/types";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#9353B6",
+      main: "#4608AD",
     },
   },
 });
@@ -61,21 +62,19 @@ const GridClients = () => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        api_projects +
+        api_proyjects_priority +
           "?" +
-          acf_format +
-          "&" +
           "page=" +
           page.toString() +
           "&per_page=" +
           per_page.toString()
       );
-      const clients: ClientRender[] = response.data.map((client: any) => ({
+      const clients: ClientRender[] = response.data.projects.map((client: any) => ({
         id: client.id,
         slug: client.slug,
-        img: client.acf.imagen_destacada,
-        title: client.acf.cliente,
-        services: client.acf.services,
+        img: client.acf_fields.imagen_destacada,
+        title: client.acf_fields.cliente,
+        services: client.acf_fields.services,
       }));
 
       setDataClient(clients);
@@ -96,7 +95,7 @@ const GridClients = () => {
         <div className="text-center mb-16">
           <h2 className="xl:text-[2.5rem] text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-6">
             Empresas que han elegido{" "}
-            <span className="text-[#9353B6]">innovar</span> con nosotros
+            <span className="text-[#4608AD]">innovar</span> con nosotros
           </h2>
           <p className="text-stone-500 lg:text-[1.3rem] text-base">
             Hemos tenido el privilegio de colaborar con múltiples empresas,

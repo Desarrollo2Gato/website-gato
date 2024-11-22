@@ -20,7 +20,7 @@ import { IImage, IProject } from "../types";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#9353B6",
+      main: "#4608AD",
     },
   },
 });
@@ -180,7 +180,7 @@ function CollagePortfolio() {
         </RevealWrapper>
         <RevealWrapper duration={1500} origin="left">
           <select
-            className=" md:hidden cursor-pointer w-full border-none bg-white text-stone-500 text-lg font-semibold outline-none focus:ring-[#9353B6] placeholder-[#3D3D3D]"
+            className=" md:hidden cursor-pointer w-full border-none bg-white text-stone-500 text-lg font-semibold outline-none focus:ring-[#4608AD] placeholder-[#3D3D3D]"
             value={selectedCategory?.name}
             onChange={(e) => handleCategorySelect(e.target.value)}
           >
@@ -195,16 +195,16 @@ function CollagePortfolio() {
               {servicesName.map((category, index) => (
                 <li
                   key={index}
-                  className={`cursor-pointer group hover:text-[#9353B6] lg:text-lg ${
+                  className={`cursor-pointer group hover:text-[#4608AD] lg:text-lg ${
                     selectedCategory?.name === category.slug
-                      ? "text-[#9353B6]"
+                      ? "text-[#4608AD]"
                       : ""
                   }`}
                   onClick={() => handleCategorySelect(category.slug)}
                 >
                   {category.name}
                   <div
-                    className={`abslute w-full h-0.5 bg-[#9353B6] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
+                    className={`abslute w-full h-0.5 bg-[#4608AD] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${
                       selectedCategory?.name === category.slug
                         ? "scale-x-100"
                         : ""
