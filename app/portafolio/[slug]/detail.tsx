@@ -123,7 +123,7 @@ function Detail({ project }: DetailProps) {
             isLoading={isLoading}
           />
           {/* <BannerDetailPortfolio proyecto={project} /> */}
-          <Form color="#9353B6" />
+          <Form color="#4608AD" />
           <Footer />
         </>
       </div>

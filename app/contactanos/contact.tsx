@@ -51,7 +51,7 @@ function Contact() {
         <div className="w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
           {/* <Header></Header> */}
           <Header></Header>
-          <Form color="#9353B6"></Form>
+          <Form color="#4608AD"></Form>
           <Ubication></Ubication>
       <Footer></Footer>
         </div>

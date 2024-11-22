@@ -128,7 +128,7 @@ function Navigation({
         </Modal>
       </div>
 
-      <div className="bg-[#9353B6] flex justify-center items-center  text-center lg:max-h-52 max-w-full lg:overflow-hidden h-full px-4">
+      <div className="bg-[#4608AD] flex justify-center items-center  text-center lg:max-h-52 max-w-full lg:overflow-hidden h-full px-4">
         <Link
           href={"/contactanos"}
           className="lg:-rotate-90   flex justify-center items-center lg:min-w-48 "

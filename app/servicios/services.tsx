@@ -110,7 +110,7 @@ function Services() {
                 style={{
                   backgroundColor:
                     activeSection === "#marketing-digital"
-                      ? hexToRgba("#9353B6", "1")
+                      ? hexToRgba("#4608AD", "1")
                       : "white",
                 }}
                 className={`${
@@ -207,7 +207,7 @@ function Services() {
                 style={{
                   backgroundColor:
                     activeSection === "#diseno-web"
-                      ? hexToRgba("#9353B6", "1")
+                      ? hexToRgba("#4608AD", "1")
                       : "white",
                 }}
                 className={`${
@@ -328,7 +328,7 @@ function Services() {
                 style={{
                   backgroundColor:
                     activeSection === "#desarrollo-software"
-                      ? hexToRgba("#9353B6", "1")
+                      ? hexToRgba("#4608AD", "1")
                       : "white",
                 }}
                 className={`${
@@ -448,7 +448,7 @@ function Services() {
                 style={{
                   backgroundColor:
                     activeSection === "#branding"
-                      ? hexToRgba("#9353B6", "1")
+                      ? hexToRgba("#4608AD", "1")
                       : "white",
                 }}
                 className={`${
@@ -518,7 +518,7 @@ function Services() {
                 style={{
                   backgroundColor:
                     activeSection === "#desarrollo-movil"
-                      ? hexToRgba("#9353B6", "1")
+                      ? hexToRgba("#4608AD", "1")
                       : "white",
                 }}
                 className={`${
@@ -575,7 +575,7 @@ function Services() {
               <button
                 style={{
                   backgroundColor:
-                    activeSection === "#email-marketing" ? "#9353B6" : "white",
+                    activeSection === "#email-marketing" ? "#4608AD" : "white",
                 }}
                 className={`${
                   activeSection === "#email-marketing" ? "shadow" : ""
@@ -685,7 +685,7 @@ function Services() {
           </div>
           <Items></Items>
           <Testimonios />
-          <Form color="#9353B6" />
+          <Form color="#4608AD" />
           <Footer></Footer>
         </div>
       </div>

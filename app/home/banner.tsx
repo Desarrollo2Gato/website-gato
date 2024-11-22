@@ -51,7 +51,7 @@ function Banner() {
           <div className="text-stone-700">
             <h1 className="xl:text-heading-1 text-heading-6 sm:text-heading-5 md:text-heading-4 lg:text-heading-3 font-bold drop-shadow-md">
               Transforma tu Visión en{" "}
-              <span className="text-[#9353B6]">Realidad</span>
+              <span className="text-[#4608AD]">Realidad</span>
             </h1>
             <p className="text-stone-500 lg:text-lg xl:text-xl">
               Descubre cómo nuestros servicios de marketing y desarrollo de
@@ -63,18 +63,18 @@ function Banner() {
             <ButtonGato
               wIcon
               bgColor="#ffffff"
-              bgHover="#9353B6"
-              textColor="#9353B6"
+              bgHover="#4608AD"
+              textColor="#4608AD"
               textHover="#ffffff"
               text="Explorar más"
               type="secondary"
               url="#resultados"
             />
             <ButtonGato
-              bgColor="#9353B6"
+              bgColor="#4608AD"
               bgHover="#fff"
               textColor="#fff"
-              textHover="#9353B6"
+              textHover="#4608AD"
               text="Solicitar consulta"
               type="primary"
               url="#contactanos"

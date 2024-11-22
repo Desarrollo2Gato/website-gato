@@ -42,7 +42,7 @@ export default function ErrorPage() {
             <Link
               href={"/"}
               title="GATO"
-              className="text-[#9353B6] font-bold hover:scale-105 transition-all duration-300"
+              className="text-[#4608AD] font-bold hover:scale-105 transition-all duration-300"
             >
               Volver al inicio
             </Link>

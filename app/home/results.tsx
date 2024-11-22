@@ -6,7 +6,7 @@ const Resutls = () => {
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 pt-16">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-6">
-            Resultados que te <span className="text-[#9353B6]">Impulsan</span>
+            Resultados que te <span className="text-[#4608AD]">Impulsan</span>
           </h2>
           <p className="text-stone-600 md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem]">
             Transformamos tu negocio con estrategias personalizadas y tecnología

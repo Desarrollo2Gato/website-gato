@@ -7,6 +7,7 @@ export const api_token = apiURL + 'jwt-auth/v1/token';
 export const api_email_job_aplication = apiURL + 'api/v1/send-job-aplication-mail';
 export const api_send_mail = apiURL + 'api/v1/send-mail/';
 
+export const api_proyjects_priority = apiURL + 'api/v1/proyectos-priority'
 
 export const api_projects =
   apiURL + "wp/v2/proyecto";

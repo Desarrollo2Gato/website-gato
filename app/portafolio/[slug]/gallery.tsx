@@ -40,7 +40,7 @@ type GalleryProps = {
 };
 const Gallery: React.FC<GalleryProps> = ({
   client,
-  color = "#9353B6",
+  color = "#4608AD",
   img_sq_1,
   img_sq_2,
   img_sq_3,
@@ -327,7 +327,7 @@ type SocialLinkProps = {
 };
 const SocialLink: React.FC<SocialLinkProps> = ({
   href,
-  color = "#9353B6",
+  color = "#4608AD",
   children,
   textColor = "#ffffff",
 }) => {

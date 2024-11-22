@@ -5,8 +5,6 @@ import Banner from "./banner";
 import Navigation from "../components/navigation";
 import Drawer from "../components/drawer";
 import "react-awesome-slider/dist/styles.css";
-import Collage from "./collage";
-import Detail from "./detail";
 import Footer from "../components/footer";
 import WhatsappContact from "../components/whatsapp-contact";
 import Form from "../components/form";
@@ -48,7 +46,7 @@ function Home() {
         <Resutls/>
         <Services/>
         <GridClients/>
-        <Form color="#9353B6"/>
+        <Form color="#4608AD"/>
         <Footer/>
       </main>
     </div>

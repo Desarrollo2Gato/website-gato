@@ -76,7 +76,7 @@ const ContentPost = ({ post }: PostProps) => {
           <MorePost currentPost={post.slug}></MorePost>
         </div>
       </div>
-      <Form color="#9353B6"></Form>
+      <Form color="#4608AD"></Form>
     </div>
   );
 };

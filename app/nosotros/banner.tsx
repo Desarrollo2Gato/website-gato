@@ -37,7 +37,7 @@ function BannerAbout() {
                 text-[#3D3D3D] w-full font-semibold `}
             title="Agencia GATO"
           >
-            En <span className="text-[#9353B6]">GATO</span> nos destacamos por
+            En <span className="text-[#4608AD]">GATO</span> nos destacamos por
             nuestra
           </h2>
 
@@ -112,7 +112,7 @@ function BannerAbout() {
                       alt="Atención Personalizada fondo"
                       title="Atención Personalizada fondo"
                     />
-                    <div className="absolute top-0 left-0 bg-[#9353B6] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
+                    <div className="absolute top-0 left-0 bg-[#4608AD] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
                       <p>
                         Nos enorgullece ofrecer una atención personalizada a
                         cada uno de nuestros clientes. Nos tomamos el tiempo
@@ -155,7 +155,7 @@ function BannerAbout() {
                       alt="Experiencia fondo"
                       title="Experiencia fondo"
                     />
-                    <div className="absolute top-0 left-0 bg-[#9353B6] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
+                    <div className="absolute top-0 left-0 bg-[#4608AD] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
                       <p>
                         Con años de experiencia en marketing, branding,
                         desarrollo de software y web, nuestro equipo está
@@ -199,7 +199,7 @@ function BannerAbout() {
                       alt="Transparencia y confianza fondo"
                       title="Transparencia y confianza fondo"
                     />
-                    <div className="absolute top-0 left-0 bg-[#9353B6] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
+                    <div className="absolute top-0 left-0 bg-[#4608AD] bg-opacity-70 w-full h-full text-white text-center p-2 flex items-center justify-center text-[1rem] 2xl:text-[1.4rem]">
                       <p>
                         La transparencia es fundamental en nuestra relación con
                         los clientes. Nos comprometemos a ser claros y honestos

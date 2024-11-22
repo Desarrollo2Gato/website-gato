@@ -23,7 +23,7 @@ const BodyProject: React.FC<BodyProjectProps> = ({
   who_client,
   description_service,
   services,
-  color = "#9353B6",
+  color = "#4608AD",
   textColor = "#ffffff",
   results,
   logo,
