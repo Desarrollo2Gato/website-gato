@@ -54,7 +54,7 @@ function Content() {
         </div>
         <div className="w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
           {/* <Header></Header> */}
-
+          
           <Service01></Service01>
           <Form color="#A52DE6"></Form>
           <Footer></Footer>
