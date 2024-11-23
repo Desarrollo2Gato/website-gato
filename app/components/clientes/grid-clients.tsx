@@ -69,13 +69,15 @@ const GridClients = () => {
           "&per_page=" +
           per_page.toString()
       );
-      const clients: ClientRender[] = response.data.projects.map((client: any) => ({
-        id: client.id,
-        slug: client.slug,
-        img: client.acf_fields.imagen_destacada,
-        title: client.acf_fields.cliente,
-        services: client.acf_fields.services,
-      }));
+      const clients: ClientRender[] = response.data.projects.map(
+        (client: any) => ({
+          id: client.id,
+          slug: client.slug,
+          img: client.acf_fields.imagen_destacada,
+          title: client.acf_fields.cliente,
+          services: client.acf_fields.services,
+        })
+      );
 
       setDataClient(clients);
       setTotalPages(response.headers["x-wp-totalpages"]);
@@ -90,7 +92,7 @@ const GridClients = () => {
   };
 
   return (
-    <section className="  w-full bg-zinc-50 " id="clientes">
+    <section className="  w-full bg-[#F4F5FF] " id="clientes">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col">
         <div className="text-center mb-16">
           <h2 className="xl:text-[2.5rem] text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-6">

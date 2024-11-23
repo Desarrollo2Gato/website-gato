@@ -44,7 +44,7 @@ function Navigation({
       </div> */}
         <Link
           href={"/"}
-          className="hidden lg:flex  flex-col justify-center items-center gap-1 text-3xl text-stone-700"
+          className="hidden lg:flex  flex-col justify-center items-center gap-1 text-3xl text-stone-800"
         >
           <span className="font-bold">G</span>
           <span className="font-bold">A</span>

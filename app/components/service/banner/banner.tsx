@@ -121,7 +121,7 @@ const banner = (prop: Props) => {
               className={"w-full lg:w-1/3"}
             >
               <div className="flex flex-col gap-5 lg:gap-4 xl:gap-8  md:justify-start items-center md:items-start">
-                <h1 className="xl:text-heading-1 text-heading-6 sm:text-heading-5 md:text-heading-4 lg:text-heading-3 font-bold w-full text-center md:text-left text-stone-700">
+                <h1 className="xl:text-heading-1 text-heading-6 sm:text-heading-5 md:text-heading-4 lg:text-heading-3 font-bold w-full text-center md:text-left text-stone-800">
                   {prop.service}
                   <span className={`text-[${mainColor}]`}>
                     {" "}

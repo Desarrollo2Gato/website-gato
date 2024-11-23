@@ -1,41 +1,34 @@
 "use client";
 
-import Banner from "@/app/components/service/banner/banner";
-import Benefits from "./benefits";
-import Process from "./process";
+import SubServices from "../../components/service/new/subservices";
+import BenefitsNew from "../../components/service/new/benefits-new";
+import Banner from "@/app/components/service/new/bannerNew";
+import Gallery from "../../components/service/new/gallery";
+import ContactServices from "../../components/service/new/contact-service";
+import { InfoDisenioWeb } from "@/app/data/services/disenioweb";
 
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { api_plan } from "@/app/data/enviroments/api.enviroment";
-import Plans2 from "@/app/components/service/plan/plans2";
+function DisenoWeb() {
 
-function Service02() {
-  const [dataWeb, setDataWeb] = useState<any[]>([]);
-  const fetchDtaWeb = async () => {
-    try {
-      const response = await axios.get(`${api_plan}?slug=planes-de-disenio-web`);
-      setDataWeb(response.data[0].acf.plans);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-  useEffect(() => {
-    fetchDtaWeb();
-  }, []);
   return (
     <>
-      <Banner
-        banner="https://i.pinimg.com/originals/07/dd/95/07dd95f62157b84210fad871a5f69727.jpg"
-        color="#0BC2E1"
-        service="Diseño"
-        service2="web"
-        description="Diseños web que inspiran y convierten. ¡Descubre nuestras soluciones de diseño web!"
+      <Banner description={InfoDisenioWeb.description} img={InfoDisenioWeb.img}>
+        {InfoDisenioWeb.title}
+      </Banner>
+      <SubServices
+        subservices={InfoDisenioWeb.subservices}
+        description={InfoDisenioWeb.description}
+        img={InfoDisenioWeb.img}
       />
-      <Benefits color="#0BC2E1" />
-      {/* <Plans2 color="#0BC2E1" data={dataWeb} /> */}
-      <Process />
+      <BenefitsNew
+        title={InfoDisenioWeb.benefits.title}
+        description={InfoDisenioWeb.benefits.description}
+        img={InfoDisenioWeb.benefits.img}
+        benefits={InfoDisenioWeb.benefits.benefitsItems}
+      />
+      <Gallery gallery={InfoDisenioWeb.gallery} />
+      <ContactServices/>
     </>
   );
 }
 
-export default Service02;
+export default DisenoWeb;

@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const ContactServices = () => {
   return (
-    <section className="bg-zinc-50 w-full">
+    <section className="bg-[#F4F5FF] w-full">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 pt-8 pb-16 flex flex-col md:flex-row gap-8">
-        <div className="bg-white rounded-xl p-4 flex flex-row shadow-md w-1/2 justify-between items-center gap-2">
+        <div className="bg-white rounded-xl p-4 md:p-6 flex flex-row shadow-md lg:w-1/2 justify-between items-center gap-2">
           <Image
             src={"/img/cats/gato_corbata_morado_foco.png"}
             width={340}
@@ -17,13 +17,13 @@ const ContactServices = () => {
 
           <div className="w-full flex flex-col justify-start items-start gap-4">
             <p className="text-xl"> 
-              ¿Eres un <span className="text-[#9353B6]">emprendedor</span> con
+              ¿Eres un <span className="text-[#4608AD]">emprendedor</span> con
               grandes ideas y ganas de hacerlas realidad?
             </p>
             <ButtonGato
               bgColor="#ffffff"
-              bgHover="#9353B6"
-              textColor="#9353B6"
+              bgHover="#4608AD"
+              textColor="#4608AD"
               textHover="#ffffff"
               text="Impulsa tu idea"
               type="secondary"
@@ -31,7 +31,7 @@ const ContactServices = () => {
             />
           </div>
         </div>
-        <div className="bg-white rounded-xl p-4 flex flex-row justify-between items-center shadow-md w-1/2 gap-2">
+        <div className="bg-white rounded-xl p-4 md:p-6 flex flex-row justify-between items-center shadow-md lg:w-1/2 gap-2">
           <Image
             src={"/img/cats/gato_maletin_marron_foco.png"}
             width={294}
@@ -42,14 +42,14 @@ const ContactServices = () => {
           />
           <div className="w-full flex flex-col justify-start items-start gap-4">
             <p className="text-xl">
-              ¿Eres una <span className="text-[#9353B6]">empresa</span> que
+              ¿Eres una <span className="text-[#4608AD]">empresa</span> que
               busca soluciones efectivas y creativas en marketing digital?
             </p>
             <ButtonGato
-              textColor="#9353B6"
+              textColor="#4608AD"
               textHover="#ffffff"
               bgColor="#ffffff"
-              bgHover="#9353B6"
+              bgHover="#4608AD"
               type="secondary"
               text="Potencia tu empresa"
               url="#contactanos"

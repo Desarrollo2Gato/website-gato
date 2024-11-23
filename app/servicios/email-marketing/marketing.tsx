@@ -25,13 +25,13 @@ function Service01() {
     <>
       <Banner
         banner="https://i.pinimg.com/originals/8e/cb/9c/8ecb9cb7a19615e059b8e7b639b178db.png"
-        color="#A52DE6"
+        color="#4608AD"
         service="E-mail"
         service2="Marketing"
         description="Impulsa tu negocio: ¡Descubre nuestras soluciones de email marketing efectivas!"
       />
-      <Benefits color="#A52DE6" />
-      <Plans color="#A52DE6" data={dataMk} />
+      <Benefits color="#4608AD" />
+      <Plans color="#4608AD" data={dataMk} />
       <Process />
     </>
   );

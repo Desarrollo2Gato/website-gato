@@ -3,10 +3,10 @@
 import Navigation from "@/app/components/navigation";
 import Drawer from "@/app/components/drawer";
 import { useEffect, useState } from "react";
-import Service03 from "./desarrolloSoftware";
 import WhatsappContact from "@/app/components/whatsapp-contact";
 import Form from "@/app/components/form";
 import Footer from "@/app/components/footer";
+import Software from "./desarrolloSoftware";
 
 
 function Content() {
@@ -52,8 +52,8 @@ function Content() {
           {isDrawer && <Drawer></Drawer>}
         </div>
         <div className="w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
-          <Service03></Service03>
-          <Form color="#007CF8"></Form>
+          <Software/>
+          <Form color="#4608AD"></Form>
           <Footer></Footer>
         </div>
 

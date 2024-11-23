@@ -20,34 +20,46 @@ const Gallery: React.FC<GalleryProps> = ({ gallery }) => {
   };
 
   return (
-    <section id="resultados" className="bg-zinc-50 text-stone-700">
+    <section id="resultados" className="bg-[#F4F5FF] text-stone-800">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 pt-16 pb-8">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-4">
             Galeria de{" "}
-            <span style={{ color: "#9353B6" }} className={``}>
+            <span style={{ color: "#4608AD" }} className={``}>
               fotos
             </span>
           </h2>
-          <p className="text-stone-500 md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem]">
+          <p className="text-stone-500 lg:text-lg xl:text-xl">
             Conoce nuestro trabajo
           </p>
         </div>
         {/* galeria */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
-          {gallery.map((image) => (
-            <div
-              key={image.id}
-              className="w-full aspect-square rounded-lg shadow-sm overflow-hidden"
-              onClick={() => handleImageClick(image)}
-            >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          ))}
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
+          {gallery.length > 0 ? (
+            gallery.map((image) => (
+              <div
+                key={image.id}
+                className="w-full aspect-square rounded-lg shadow-sm overflow-hidden"
+                onClick={() => handleImageClick(image)}
+              >
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            ))
+          ) : (
+            <p className=" text-stone-600 text-center col-span-2 lg:col-span-3 xl:col-span-4 ">
+              No se encontraron imagenes disponibles{" "}
+              <Link
+                href={"/portafolio"}
+                className="text-[#4608AD] underline underline-offset-1 font-semibold"
+              >
+                visita nuestro portafolio
+              </Link>
+            </p>
+          )}
         </div>
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {gallery.map((image) => (
@@ -90,7 +102,7 @@ type SocialLinkProps = {
 };
 const SocialLink: React.FC<SocialLinkProps> = ({
   href,
-  color = "#9353B6",
+  color = "#4608AD",
   children,
   textColor = "#ffffff",
 }) => {

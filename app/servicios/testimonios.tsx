@@ -112,7 +112,7 @@ const TestimoniosClients = () => {
       <div className="max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16">
         <h2
           className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] text-center
-         text-stone-700 font-bold  mb-8"
+         text-stone-800 font-bold  mb-8"
         >
           Testimonios
         </h2>

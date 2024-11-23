@@ -51,9 +51,9 @@ function Content() {
           {isDrawer && <Drawer></Drawer>}
         </div>
         <div className="min-w-screen w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
-          <Branding></Branding>
-          <Form color="#A52DE6"></Form>
-          <Footer></Footer>
+          <Branding />
+          <Form color="#4608AD" />
+          <Footer />
         </div>
       </div>
     </>

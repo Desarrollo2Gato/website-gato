@@ -13,11 +13,11 @@ const Banner: React.FC<BannerProps> = ({ children, description, img }) => {
     <section className="bg-white w-full">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col md:flex-row  justify-between items-center xl:gap-20 lg:gap-12 md:gap-6 gap-4 ">
         <div className="flex flex-col gap-4 md:gap-8 md:max-w-[60%] xl:max-w-[55%]">
-          <div className="text-stone-700">
+          <div className="text-stone-800">
             <h1 className="xl:text-heading-1 text-heading-6 sm:text-heading-5 md:text-heading-4 lg:text-heading-3 font-bold drop-shadow-md">
               {children}
             </h1>
-            <p className="text-stone-500 lg:text-lg xl:text-xl mt-2">
+            <p className="text-stone-500 lg:text-lg xl:text-xl mt-4">
             
               {description}
             </p>
@@ -26,18 +26,18 @@ const Banner: React.FC<BannerProps> = ({ children, description, img }) => {
             <ButtonGato
               wIcon
               bgColor="#ffffff"
-              bgHover="#9353B6"
-              textColor="#9353B6"
+              bgHover="#4608AD"
+              textColor="#4608AD"
               textHover="#ffffff"
               text="Ver más"
               type="secondary"
               url="#resultados"
             />
             <ButtonGato
-              bgColor="#9353B6"
+              bgColor="#4608AD"
               bgHover="#fff"
               textColor="#fff"
-              textHover="#9353B6"
+              textHover="#4608AD"
               text="Solicitar servicio"
               type="primary"
               url="#contactanos"
@@ -46,7 +46,7 @@ const Banner: React.FC<BannerProps> = ({ children, description, img }) => {
         </div>
         <div className="h-full max-w-[80%] md:max-w-[40%] w-full flex justify-center items-center">
           <Image
-            className="w-full h-auto object-contain "
+            className="w-full h-full max-h-[360px] md:max-h-[350px] xl:max-h-[400px] object-contain "
             src={img.url}
             height={img.height}
             width={img.width}

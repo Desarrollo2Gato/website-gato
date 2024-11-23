@@ -70,7 +70,7 @@ const Gallery: React.FC<GalleryProps> = ({
   };
 
   return (
-    <section id="resultados" className="bg-white text-stone-700">
+    <section id="resultados" className="bg-white text-stone-800">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 pt-16">
         <div className="text-center mb-8 md:mb-10">
           <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-4">

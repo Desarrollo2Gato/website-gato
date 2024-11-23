@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Resutls = () => {
   return (
-    <section id="resultados" className="bg-zinc-50 text-stone-700">
+    <section id="resultados" className="bg-[#F4F5FF] text-stone-800">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 pt-16">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-6">
@@ -109,7 +109,7 @@ const Resutls = () => {
           </div>
           <div className="absolute top-0 left-0 w-full h-full md:flex justify-center items-center hidden ">
             <Image
-              className="opacity-10 mx-auto w-[80%] object-contain  rounded-md"
+              className="opacity-20 mx-auto w-[80%] object-contain  rounded-md"
               src={"/img/upright_home.png"}
               alt="Flecha hacia la derecha y arriba, simbolizando crecimiento"
               height={430}

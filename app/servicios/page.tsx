@@ -65,7 +65,7 @@ function Page() {
   return (
     <>
       <div className="w-full h-screen ">
-        <Services></Services>
+        <Services/>
         
       </div>
     </>

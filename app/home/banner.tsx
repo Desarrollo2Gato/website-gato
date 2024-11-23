@@ -48,7 +48,7 @@ function Banner() {
     <section className="bg-white w-full">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16 flex flex-col md:flex-row  justify-between items-center xl:gap-20 lg:gap-12 md:gap-6 gap-4 ">
         <div className="flex flex-col gap-4 md:gap-8 md:max-w-[60%] xl:max-w-[55%]">
-          <div className="text-stone-700">
+          <div className="text-stone-800">
             <h1 className="xl:text-heading-1 text-heading-6 sm:text-heading-5 md:text-heading-4 lg:text-heading-3 font-bold drop-shadow-md">
               Transforma tu Visión en{" "}
               <span className="text-[#4608AD]">Realidad</span>
@@ -80,7 +80,7 @@ function Banner() {
               url="#contactanos"
             />
           </div>
-          <div className="bg-zinc-50 rounded-lg p-4 flex justify-between">
+          <div className="bg-[#F4F5FF] rounded-lg p-4 flex justify-between">
             {/* Google */}
 
             <svg

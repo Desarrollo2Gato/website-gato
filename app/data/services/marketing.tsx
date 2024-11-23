@@ -1,19 +1,21 @@
 import { dataService } from "@/app/types/services";
+import { FaBroadcastTower } from "react-icons/fa";
+import { FaChartLine, FaDollarSign, FaEye, FaLightbulb, FaRegHandshake } from "react-icons/fa6";
 import { IoExtensionPuzzle } from "react-icons/io5";
 export const InfoMk: dataService = {
   title: (
     <>
       Impulsa tu negocio con
-      <span className="text-[#9353B6]"> Marketing digital</span>
+      <span className="text-[#4608AD]"> Marketing digital</span>
     </>
   ),
   img: {
     id: 1,
-    url: "/img/banner_home_new.png",
-    width: 333,
-    height: 329,
-    alt: "Un post refenciando, vista de un dashboard y una app movil",
-    title: "Un post refenciando, vista de un dashboard y una app movil",
+    url: "/img/services/banner_mk.png",
+    width: 618,
+    height: 540,
+    alt: "2 post que muestran el servicio de marketing digital hacia HierroLate, cliente de Agencia Gato",
+    title: "Servicio de Marketing digital en lima, Agencia Gato",
   },
   description:
     "Desde estrategias visuales impactantes hasta campañas digitales efectivas, conectamos tu marca con el público adecuado para generar resultados medibles y un crecimiento real.",
@@ -21,9 +23,17 @@ export const InfoMk: dataService = {
     {
       name: "Diseño Gráfico",
       id: "diseno-grafico",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
-          Diseño <span className="text-[#9353B6]">Gráfico</span>
+          Diseño <span className="text-[#4608AD]">Gráfico</span>
         </>
       ),
       description:
@@ -44,9 +54,17 @@ export const InfoMk: dataService = {
     {
       name: "Producción Audiovisual",
       id: "prduccion-audiovisual",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
-          Producción <span className="text-[#9353B6]">Audiovisual</span>
+          Producción <span className="text-[#4608AD]">Audiovisual</span>
         </>
       ),
       description:
@@ -62,10 +80,18 @@ export const InfoMk: dataService = {
     {
       name: "Edición y desarrollo audiovisual",
       id: "edicion-desarrollo-audiovisual",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
           Edición y Desarrollo{" "}
-          <span className="text-[#9353B6]">Audiovisual</span>
+          <span className="text-[#4608AD]">Audiovisual</span>
         </>
       ),
       description:
@@ -87,9 +113,17 @@ export const InfoMk: dataService = {
     {
       name: "Community Manager",
       id: "community-manager",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
-          Community <span className="text-[#9353B6]">Manager</span>
+          Community <span className="text-[#4608AD]">Manager</span>
         </>
       ),
       description:
@@ -105,9 +139,17 @@ export const InfoMk: dataService = {
     {
       name: "Manejo de crisis",
       id: "manejo-crisis",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
-          Manejo de <span className="text-[#9353B6]">crisis</span>
+          Manejo de <span className="text-[#4608AD]">crisis</span>
         </>
       ),
       description:
@@ -122,9 +164,17 @@ export const InfoMk: dataService = {
     {
       name: "Content Manager",
       id: "content-manager",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
-          Content <span className="text-[#9353B6]">Manager</span>
+          Content <span className="text-[#4608AD]">Manager</span>
         </>
       ),
       description:
@@ -141,15 +191,15 @@ export const InfoMk: dataService = {
   benefits: {
     img: {
       id: 2,
-      url: "/img/banner_home_new.png",
-      width: 333,
-      height: 329,
-      alt: "Un post refenciando, vista de un dashboard y una app movil",
-      title: "Un post refenciando, vista de un dashboard y una app movil",
+      url: "/img/services/benefits_marketing.png",
+      width: 318,
+      height: 620,
+      alt: "Perfil de instagram de Hierrolate, mostrando el aumento de audiencia",
+      title: "Servicio de marketing digital, aumento de audiendia | Agencia Gato",
     },
     title: (
       <>
-        <span className="text-[#9353B6]">Beneficios </span>de trabajar con
+        <span className="text-[#4608AD]">Beneficios </span>de trabajar con
         nosotros{" "}
       </>
     ),
@@ -157,37 +207,37 @@ export const InfoMk: dataService = {
       "Descubre cómo nuestros servicios pueden transformar tu marca, mejorar tu presencia digital y generar resultados efectivos",
     benefitsItems: [
       {
-        icon: <IoExtensionPuzzle />,
+        icon: <FaRegHandshake/>,
         title: "Estrategias Personalizadas",
         description:
           "Diseñamos campañas a medida que se adaptan a las necesidades y objetivos específicos de tu negocio.",
       },
       {
-        icon: <IoExtensionPuzzle />,
+        icon: <FaChartLine/>,
         title: "Análisis de Datos",
         description:
           "Utilizamos herramientas avanzadas para analizar el rendimiento y ajustar estrategias en tiempo real.",
       },
       {
-        icon: <IoExtensionPuzzle />,
+        icon: <FaBroadcastTower/>,
         title: "Presencia Multicanal",
         description:
           "Abarcamos diversos canales, desde redes sociales hasta email marketing, para maximizar tu alcance.",
       },
       {
-        icon: <IoExtensionPuzzle />,
+        icon: <FaDollarSign/>,
         title: "Incremento del ROI",
         description:
           "Optimizamos tus inversiones en marketing para garantizar el máximo retorno de inversión.",
       },
       {
-        icon: <IoExtensionPuzzle />,
+        icon: <FaLightbulb/>,
         title: "Creatividad e Innovación",
         description:
           "Campañas innovadoras que destacan tu marca y atraen a tu audiencia.",
       },
       {
-        icon: <IoExtensionPuzzle />,
+        icon: <FaEye/>,
         title: "Mejora de la Visibilidad",
         description:
           "Aumentamos la visibilidad de tu marca y productos, atrayendo más tráfico y clientes potenciales.",

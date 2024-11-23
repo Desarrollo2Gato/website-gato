@@ -56,7 +56,7 @@ function Content() {
           {/* <Header></Header> */}
 
           <Service01></Service01>
-          <Form color="#A52DE6"></Form>
+          <Form color="#4608AD"></Form>
           <Footer></Footer>
         </div>
 

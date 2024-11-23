@@ -8,6 +8,7 @@ interface Subservice {
   description: string;
   items: string[];
   process?: string[];
+  img: IImage;
 }
 
 interface Benefits {

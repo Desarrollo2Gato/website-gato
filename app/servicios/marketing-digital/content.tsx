@@ -3,10 +3,10 @@
 import Navigation from "@/app/components/navigation";
 import Drawer from "@/app/components/drawer";
 import { useEffect, useState } from "react";
-import Service01 from "./marketing";
 import WhatsappContact from "@/app/components/whatsapp-contact";
 import Form from "@/app/components/form";
 import Footer from "@/app/components/footer";
+import Marketing from "./marketing";
 
 
 function Content() {
@@ -55,7 +55,7 @@ function Content() {
         <div className="w-full flex flex-col  justify-between pt-[60px] lg:pl-[80px] lg:pt-0">
           {/* <Header></Header> */}
           
-          <Service01></Service01>
+          <Marketing/>
           <Form color="#A52DE6"></Form>
           <Footer></Footer>
         </div>

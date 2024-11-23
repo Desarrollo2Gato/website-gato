@@ -46,7 +46,7 @@ const Banner: React.FC<BannerProps> = ({
         <div className="md:w-[50%] flex flex-col gap-4">
           <div className="">
             <h1
-              className={`text-stone-700  xl:text-[2.5rem] text-[1.3rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-4`}
+              className={`text-stone-800  xl:text-[2.5rem] text-[1.3rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-4`}
             >
               Nuestro Camino con
               <span style={{ color: color }} className={``}>

@@ -40,12 +40,12 @@ function Service06() {
     <>
       <Banner
         banner="https://i.pinimg.com/originals/56/eb/29/56eb29798b209c84efe1a4bcc2df250c.jpg"
-        color="#007CF8"
+        color="#4608AD"
         service="Desarrollo"
         service2="móvil"
         description="Lleva tu negocio al bolsillo de tus clientes: ¡Conoce nuestras soluciones de desarrollo móvil!"
       />
-      <Benefits color="#007CF8" />
+      <Benefits color="#4608AD" />
 
       <Process />
     </>

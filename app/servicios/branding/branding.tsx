@@ -1,39 +1,32 @@
 "use client";
 
-import Banner from "@/app/components/service/banner/banner";
-import Benefits from "./benefits";
-import Plans from "@/app/components/service/plan/plans";
-import Process from "./process";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { api_plan } from "@/app/data/enviroments/api.enviroment";
+import SubServices from "../../components/service/new/subservices";
+import BenefitsNew from "../../components/service/new/benefits-new";
+import Banner from "@/app/components/service/new/bannerNew";
+import Gallery from "../../components/service/new/gallery";
+import ContactServices from "../../components/service/new/contact-service";
+import { InfoBranding } from "@/app/data/services/branding";
 
 function Branding() {
-  const [dataBranding, setDataBranding] = useState<any[]>([]);
-  const fetchDtaBranding = async () => {
-    try {
-      const response = await axios.get(`${api_plan}?slug=planes-de-branding`);
-      setDataBranding(response.data[0].acf.plans);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-  useEffect(() => {
-    fetchDtaBranding();
-  }, []);
 
   return (
     <>
-      <Banner
-      banner="https://i.pinimg.com/originals/54/74/dd/5474dde8d339a45b0f813e7e137c326c.jpg"
-        color="#A52DE6"
-        service="Branding"
-        service2=""
-        description="Haz que tu marca brille: ¡Descubre cómo podemos transformar tu identidad!"
+      <Banner description={InfoBranding.description} img={InfoBranding.img}>
+        {InfoBranding.title}
+      </Banner>
+      <SubServices
+        subservices={InfoBranding.subservices}
+        description={InfoBranding.description}
+        img={InfoBranding.img}
       />
-      <Benefits color="#A52DE6" />
-      {/* <Plans color="#A52DE6" data={dataBranding} /> */}
-      <Process />
+      <BenefitsNew
+        title={InfoBranding.benefits.title}
+        description={InfoBranding.benefits.description}
+        img={InfoBranding.benefits.img}
+        benefits={InfoBranding.benefits.benefitsItems}
+      />
+      <Gallery gallery={InfoBranding.gallery} />
+      <ContactServices/>
     </>
   );
   

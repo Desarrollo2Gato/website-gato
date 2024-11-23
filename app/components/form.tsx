@@ -260,10 +260,10 @@ function Form({ color }: FormProps) {
         >
           <form
             onSubmit={handleSubmit}
-            className="w-full flex flex-col gap-6 text-stone-700"
+            className="w-full flex flex-col gap-6 text-stone-800"
           >
             <div>
-              <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] text-center text-stone-700 font-bold capitalize">
+              <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] text-center text-stone-800 font-bold capitalize">
                 Contáctanos
               </h2>
             </div>
@@ -292,11 +292,11 @@ function Form({ color }: FormProps) {
               personalizadas. ¡Contáctanos y descubre cómo podemos ayudarte a
               destacar en la web!
             </p>
-            <div className="flex flex-col gap-6 text-stone-700">
+            <div className="flex flex-col gap-6 text-stone-800">
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="relative w-full">
                   <input
-                    className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-700 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
+                    className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-800 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
                     placeholder=""
                     id="name"
                     type="text"
@@ -306,14 +306,14 @@ function Form({ color }: FormProps) {
                   />
                   <label
                     htmlFor="name"
-                    className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-700 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
+                    className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-800 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
                   >
                     Nombres
                   </label>
                 </div>
                 <div className="relative w-full">
                   <input
-                    className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-700 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
+                    className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-800 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
                     placeholder=""
                     id="company"
                     type="text"
@@ -325,7 +325,7 @@ function Form({ color }: FormProps) {
                   />
                   <label
                     htmlFor="company"
-                    className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-700 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
+                    className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-800 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
                   >
                     Empresa
                   </label>
@@ -334,7 +334,7 @@ function Form({ color }: FormProps) {
 
               <div className="relative w-full ">
                 <input
-                  className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-700 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
+                  className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-800 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
                   placeholder=""
                   id="email"
                   type="email"
@@ -344,7 +344,7 @@ function Form({ color }: FormProps) {
                 />
                 <label
                   htmlFor="email"
-                  className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-700 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
+                  className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-800 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
                 >
                   Correo
                 </label>
@@ -357,7 +357,7 @@ function Form({ color }: FormProps) {
                 </div>
                 <div className="relative w-full md:w-2/4">
                   <input
-                    className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-700 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
+                    className="peer h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-800 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
                     placeholder=""
                     id="phone"
                     type="text"
@@ -370,7 +370,7 @@ function Form({ color }: FormProps) {
                   />
                   <label
                     htmlFor="phone"
-                    className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-700 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
+                    className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-800 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
                   >
                     Número
                   </label>
@@ -379,7 +379,7 @@ function Form({ color }: FormProps) {
               <label htmlFor="service">
                 <select
                   id="service"
-                  className="h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans  font-normal text-stone-700 outline outline-0 "
+                  className="h-full w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans  font-normal text-stone-800 outline outline-0 "
                   defaultValue={data.service}
                   onChange={(e) =>
                     setData({ ...data, service: e.target.value })
@@ -397,7 +397,7 @@ function Form({ color }: FormProps) {
 
               <div className="relative w-full">
                 <textarea
-                  className="resize-none peer  w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-700 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
+                  className="resize-none peer  w-full border-b border-stone-700 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-stone-800 outline outline-0 transition-all placeholder-shown:border-stone-700 focus:border-stone-700 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
                   rows={4}
                   placeholder=""
                   id="message"
@@ -408,7 +408,7 @@ function Form({ color }: FormProps) {
                 />
                 <label
                   htmlFor="message"
-                  className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-700 transition-all after:absolute after:-bottom-0 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
+                  className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-stone-800 transition-all after:absolute after:-bottom-0 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-stone-700 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-stone-700 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-stone-700"
                 >
                   Cuéntanos tu idea
                 </label>

@@ -2,13 +2,13 @@ import ButtonGato from "../components/button";
 
 const Services = () => {
   return (
-    <section id="Resultados" className="bg-white text-stone-700">
+    <section id="Resultados" className="bg-white text-stone-800">
       <div className="w-full max-w-[1440px] mx-auto sm:px-12 lg:px-16 px-8 py-16">
         <div className="text-center mb-8 md:mb-16">
           <h2 className="xl:text-[2.5rem] text-[1.5rem] md:text-[1.8rem] lg:text-[2rem] font-bold mb-2 md:mb-6">
             Conoce nuestros <span className="text-[#4608AD]">servicios</span>
           </h2>
-          <p className="text-stone-700 md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem]">
+          <p className="text-stone-800 md:text-[1.1rem] lg:text-[1.3rem] xl:text-[1.4rem]">
             Te ofrecemos los servicios esenciales para hacer crecer tu negocio y
             alcanzar tus objetivos.
           </p>
@@ -47,7 +47,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <div
       className={`${
-        haveBg ? "bg-zinc-50 " : "bg-zinc-50  "
+        haveBg ? "bg-[#F4F5FF] " : "bg-[#F4F5FF] "
       } hover:shadow-[0px_0px_15px_rgba(0,0,0,0.2)] rounded-xl p-4 md:p-6 xl:p-8 flex flex-col gap-5 md:gap-6 lg:gap-8 xl:gap-10 justify-between  transition-all duration-700  `}
     >
       <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 xl:gap-10">
@@ -75,7 +75,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       {/* className={`${}`} */}
       <div className="flex flex-col xl:flex-row gap-2 md:gap-4">
         <ButtonGato
-          bgColor={haveBg ? "#fafafa" : "#fafafa"}
+          bgColor={haveBg ? "#F4F5FF" : "#F4F5FF"}
           bgHover={haveBg ? "#4608AD" : "#4608AD"}
           textColor={haveBg ? "#4608AD" : "#4608AD"}
           textHover={haveBg ? "#ffffff" : "#ffffff"}
@@ -86,7 +86,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         />
         <ButtonGato
           bgColor={haveBg ? "#4608AD" : "#4608AD"}
-          bgHover={haveBg ? "#fafafa" : "#fafafa"}
+          bgHover={haveBg ? "#F4F5FF" : "#F4F5FF"}
           textColor={haveBg ? "#ffffff" : "#ffffff"}
           textHover={haveBg ? "#4608AD" : "#4608AD"}
           text="Solicitar"

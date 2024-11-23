@@ -172,7 +172,7 @@ function CollagePortfolio() {
             <h1
               title="GATO - Portafolio de proyectos"
               className="text-4xl
-            text-stone-700 font-medium mb-8"
+            text-stone-800 font-medium mb-8"
             >
               Portafolio
             </h1>

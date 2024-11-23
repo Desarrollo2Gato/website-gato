@@ -87,7 +87,7 @@ function Footer() {
                   href={"https://www.instagram.com/agenciagato.pe"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-purple-800 group "
+                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-[#4608AD] group "
                 >
                   <FaInstagram className=""/>
                 </Link>
@@ -96,7 +96,7 @@ function Footer() {
                   href={"https://www.tiktok.com/@agenciagato"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-purple-800 group "
+                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-[#4608AD] group "
                 >
                   <FaTiktok className=""/>
                 </Link>
@@ -105,7 +105,7 @@ function Footer() {
                   href={"https://www.facebook.com/agenciagatope"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-purple-800 group "
+                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-[#4608AD] group "
                 >
                   <FaFacebookF className=""/>
                 </Link>
@@ -115,7 +115,7 @@ function Footer() {
                   href={"https://www.linkedin.com/company/agenciagato/"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-purple-800 group "
+                  className="w-7 h-7 text-center content-center bg-zinc-600 text-white rounded-full flex justify-center items-center transition-all duration-700 hover:bg-[#4608AD] group "
                 >
                   <FaLinkedinIn className=""/>
                 </Link>

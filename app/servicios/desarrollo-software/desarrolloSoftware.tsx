@@ -1,23 +1,33 @@
 "use client";
 
-import Banner from "@/app/components/service/banner/banner";
-import Benefits from "./benefits";
-import Process from "./process";
+import SubServices from "../../components/service/new/subservices";
+import BenefitsNew from "../../components/service/new/benefits-new";
+import Banner from "@/app/components/service/new/bannerNew";
+import Gallery from "../../components/service/new/gallery";
+import ContactServices from "../../components/service/new/contact-service";
+import { InfoDesarrollo } from "@/app/data/services/desarrollo";
 
-function Service03() {
+function Software() {
   return (
     <>
-      <Banner
-        banner="https://i.pinimg.com/originals/fc/56/7e/fc567ed8e463a7a69a0dc50c2e7e518c.jpg"
-        color="#007CF8"
-        service="Desarrollo de"
-        service2="Software"
-        description="Software a medida para tus necesidades. ¡Descubre cómo podemos ayudarte!"
+      <Banner description={InfoDesarrollo.description} img={InfoDesarrollo.img}>
+        {InfoDesarrollo.title}
+      </Banner>
+      <SubServices
+        subservices={InfoDesarrollo.subservices}
+        description={InfoDesarrollo.description}
+        img={InfoDesarrollo.img}
       />
-      <Benefits color="#007CF8" />
-      <Process />
+      <BenefitsNew
+        title={InfoDesarrollo.benefits.title}
+        description={InfoDesarrollo.benefits.description}
+        img={InfoDesarrollo.benefits.img}
+        benefits={InfoDesarrollo.benefits.benefitsItems}
+      />
+      <Gallery gallery={InfoDesarrollo.gallery} />
+      <ContactServices />
     </>
   );
 }
 
-export default Service03;
+export default Software;
