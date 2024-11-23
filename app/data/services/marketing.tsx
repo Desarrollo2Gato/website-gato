@@ -1,6 +1,12 @@
 import { dataService } from "@/app/types/services";
 import { FaBroadcastTower } from "react-icons/fa";
-import { FaChartLine, FaDollarSign, FaEye, FaLightbulb, FaRegHandshake } from "react-icons/fa6";
+import {
+  FaChartLine,
+  FaDollarSign,
+  FaEye,
+  FaLightbulb,
+  FaRegHandshake,
+} from "react-icons/fa6";
 import { IoExtensionPuzzle } from "react-icons/io5";
 export const InfoMk: dataService = {
   title: (
@@ -195,7 +201,8 @@ export const InfoMk: dataService = {
       width: 318,
       height: 620,
       alt: "Perfil de instagram de Hierrolate, mostrando el aumento de audiencia",
-      title: "Servicio de marketing digital, aumento de audiendia | Agencia Gato",
+      title:
+        "Servicio de marketing digital, aumento de audiendia | Agencia Gato",
     },
     title: (
       <>
@@ -207,37 +214,37 @@ export const InfoMk: dataService = {
       "Descubre cómo nuestros servicios pueden transformar tu marca, mejorar tu presencia digital y generar resultados efectivos",
     benefitsItems: [
       {
-        icon: <FaRegHandshake/>,
+        icon: <FaRegHandshake />,
         title: "Estrategias Personalizadas",
         description:
           "Diseñamos campañas a medida que se adaptan a las necesidades y objetivos específicos de tu negocio.",
       },
       {
-        icon: <FaChartLine/>,
+        icon: <FaChartLine />,
         title: "Análisis de Datos",
         description:
           "Utilizamos herramientas avanzadas para analizar el rendimiento y ajustar estrategias en tiempo real.",
       },
       {
-        icon: <FaBroadcastTower/>,
+        icon: <FaBroadcastTower />,
         title: "Presencia Multicanal",
         description:
           "Abarcamos diversos canales, desde redes sociales hasta email marketing, para maximizar tu alcance.",
       },
       {
-        icon: <FaDollarSign/>,
+        icon: <FaDollarSign />,
         title: "Incremento del ROI",
         description:
           "Optimizamos tus inversiones en marketing para garantizar el máximo retorno de inversión.",
       },
       {
-        icon: <FaLightbulb/>,
+        icon: <FaLightbulb />,
         title: "Creatividad e Innovación",
         description:
           "Campañas innovadoras que destacan tu marca y atraen a tu audiencia.",
       },
       {
-        icon: <FaEye/>,
+        icon: <FaEye />,
         title: "Mejora de la Visibilidad",
         description:
           "Aumentamos la visibilidad de tu marca y productos, atrayendo más tráfico y clientes potenciales.",
@@ -245,53 +252,13 @@ export const InfoMk: dataService = {
     ],
   },
   gallery: [
-    {
-      id: 1,
-      title: "img",
-      alt: "img",
-      width: 480,
-      height: 480,
-      url: "https://i.pinimg.com/enabled_lo_mid/736x/2b/04/47/2b04471c36079c90b9c3999d81d0f161.jpg",
-    },
-    {
-      id: 2,
-      title: "img",
-      alt: "img",
-      width: 624,
-      height: 1114,
-      url: "https://i.pinimg.com/enabled_lo_mid/736x/84/7f/e9/847fe98af13d049a78bf28738ea6e166.jpg",
-    },
-    {
-      id: 3,
-      title: "img",
-      alt: "img",
-      width: 736,
-      height: 981,
-      url: "https://i.pinimg.com/736x/60/16/ed/6016ede8877e0eb31f17b1f9aa15cbe2.jpg",
-    },
-    {
-      id: 4,
-      title: "img",
-      alt: "img",
-      width: 480,
-      height: 480,
-      url: "https://i.pinimg.com/enabled_lo_mid/736x/2b/04/47/2b04471c36079c90b9c3999d81d0f161.jpg",
-    },
-    {
-      id: 5,
-      title: "img",
-      alt: "img",
-      width: 624,
-      height: 1114,
-      url: "https://i.pinimg.com/enabled_lo_mid/736x/84/7f/e9/847fe98af13d049a78bf28738ea6e166.jpg",
-    },
-    {
-      id: 6,
-      title: "img",
-      alt: "img",
-      width: 736,
-      height: 981,
-      url: "https://i.pinimg.com/736x/60/16/ed/6016ede8877e0eb31f17b1f9aa15cbe2.jpg",
-    },
+    // {
+    //   id: 1,
+    //   title: "img",
+    //   alt: "img",
+    //   width: 480,
+    //   height: 480,
+    //   url: "https://i.pinimg.com/enabled_lo_mid/736x/2b/04/47/2b04471c36079c90b9c3999d81d0f161.jpg",
+    // },
   ],
 };

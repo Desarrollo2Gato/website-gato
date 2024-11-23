@@ -21,6 +21,14 @@ export const InfoBranding: dataService = {
     {
       name: "Diseños de logos",
       id: "diseno-logos",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
           Diseños de <span className="text-[#4608AD]">Logo</span>
@@ -37,6 +45,14 @@ export const InfoBranding: dataService = {
     {
       name: "Diseño de manual de marca",
       id: "diseno-manual-marca",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
           Diseño de manual <span className="text-[#4608AD]">de marca</span>
@@ -54,6 +70,14 @@ export const InfoBranding: dataService = {
     {
       name: "Diseño de papelería corporativa",
       id: "diseno-papeleria-corporativa",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
           Diseño de papelería{" "}
@@ -72,6 +96,14 @@ export const InfoBranding: dataService = {
     {
       name: "Diseño de Merchandising",
       id: "community-manager",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
           Community <span className="text-[#4608AD]">Manager</span>
@@ -94,6 +126,14 @@ export const InfoBranding: dataService = {
     {
       name: "Sesión de fotos y videos",
       id: "sesion-fotos-videos",
+      img: {
+        id: 1,
+        url: "/img/cats/gato_lupa.png",
+        width: 433,
+        height: 500,
+        alt: "gato negro con una lupa buscando la imagen",
+        title: "Gato negro con una lupa",
+      },
       title: (
         <>
           Sesión de fotos <span className="text-[#4608AD]">y videos</span>
