@@ -82,12 +82,12 @@ function Form({ color }: FormProps) {
       );
       if (response.status === 200) {
         setModalMessage(
-          "Gracias por dejar tus datos, Un ejecutivo te contactara o puedes contactarnos."
+          "Gracias por tu mensaje. Nos pondremos en contacto contigo pronto."
         );
         setIsModalOpen(true);
       } else {
         setModalMessage(
-          "Error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos"
+          "Error al enviar el mensaje. Por favor, intenta de nuevo."
         );
         setIsModalOpen(true);
       }
@@ -95,10 +95,23 @@ function Form({ color }: FormProps) {
       window.history.replaceState(null, "", newPath);
       setIsSubmitting(false);
     } catch (error) {
-      console.error("Error sending data:", error);
-      setModalMessage(
-        "Error al enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos"
-      );
+      if (axios.isAxiosError(error)) {
+        console.log(error.response);
+        setModalMessage(
+          `Error: ${
+            error.response?.data ||
+            "Ocurrió un problema, por favor intenta de nuevo."
+          }`
+        );
+      } else if (error instanceof Error) {
+        setModalMessage(
+          `Error: ${error.message || "Ha ocurrido un error inesperado."}`
+        );
+      } else {
+        setModalMessage(
+          "Ocurrió un error inesperado. Intenta de nuevo más tarde."
+        );
+      }
       setIsModalOpen(true);
     } finally {
       setIsSubmitting(false);
